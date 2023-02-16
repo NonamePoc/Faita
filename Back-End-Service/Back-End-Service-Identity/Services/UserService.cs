@@ -1,4 +1,6 @@
-﻿using Back_End_Service_Identity.Entities;
+﻿using AutoMapper;
+using Back_End_Service_Identity.Entities;
+using Back_End_Service_Identity.Helpers;
 using Back_End_Service_Identity.Models;
 using Back_End_Service_Identity.Services;
 
@@ -29,6 +31,8 @@ public class UserService : IUserService
             return null;
         }
 
+        
+
         var token = _configuration.GenerateJwtToken(user);
 
         return new AuthenticateResponse(user, token);
@@ -58,5 +62,4 @@ public class UserService : IUserService
     {
         return _userRepository.GetById(id);
     }
-}
 }

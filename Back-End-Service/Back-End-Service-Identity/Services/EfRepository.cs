@@ -4,9 +4,9 @@ namespace Back_End_Service_Identity.Services;
 
 public class UserRepository<T>: IEfRepository<T> where T: IBaseEntity
 {
-    private readonly DataContext _context;
+    private readonly DateContext.DataContext _context;
 
-    public UserRepository(DataContext context)
+    public UserRepository(DateContext.DataContext context)
     {
         _context = context;
     }

@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Back_End_Service_Identity.Services;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Back_End_Service_Identity.Helpers;
 
@@ -50,5 +53,4 @@ public class JwtMiddleware
             // todo: need to add logger
         }
     }
-}
 }
