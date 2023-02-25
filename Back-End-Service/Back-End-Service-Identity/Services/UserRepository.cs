@@ -1,12 +1,16 @@
-﻿using Back_End_Service_Identity.Entities;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+using Back_End_Service_Identity.Entities;
 
 namespace Back_End_Service_Identity.Services;
 
-public class UserRepository<T>: IEfRepository<T> where T: IBaseEntity
+public class UserRepository<T>: IEfRepository<T> where T: BaseEntity
 {
-    private readonly DateContext.DataContext _context;
+    private readonly DataContext _context;
 
-    public UserRepository(DateContext.DataContext context)
+    public UserRepository(DataContext context)
     {
         _context = context;
     }

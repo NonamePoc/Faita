@@ -2,8 +2,9 @@
 
 namespace Back_End_Service_Identity;
 
-public class SeedData
+public static class SeedData
 {
+    // users hardcoded for simplicity, store in a db with hashed passwords in production applications
     public static List<User> Users = new List<User>
     {
         new User

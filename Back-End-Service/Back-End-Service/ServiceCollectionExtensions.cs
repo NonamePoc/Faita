@@ -10,7 +10,7 @@ public static class ServiceCollectionExtensions
     {
         return services
             .AddDbContext<DataContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")))
+                options.UseSqlServer(configuration.GetConnectionString("Service-Context-Connection")))
             .AddScoped(typeof(IDbRepository<>), typeof(DbRepository<>));
     }
 }

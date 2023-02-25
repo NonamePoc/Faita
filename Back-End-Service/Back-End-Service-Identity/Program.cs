@@ -6,15 +6,13 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+;
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var connectionString = builder.Configuration.GetConnectionString("Service-Context-Connection") ?? throw new InvalidOperationException("Connection string 'Service-Context-Connection' not found.");
 
-builder.Services.AddDbContext<DbContext>(options =>
-    options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Service-Context-Connection")));
 builder.Services.AddScoped(typeof(IEfRepository<>), typeof(UserRepository<>));      
 builder.Services.AddAutoMapper(typeof(UserProfile));
 builder.Services.AddCors();
@@ -23,7 +21,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Back-End-Service WEB API v1" });
 });
-            
+
 builder.Services.AddScoped<IUserService, UserService>();
 
 
@@ -32,6 +30,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseRouting();
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI(x =>
     {
@@ -48,8 +48,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
 

@@ -15,7 +15,9 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Back-End-Service API", Version = "v1" });
 });
-builder.Services.AddDatabase();
+
+// add database
+builder.Services.AddDatabase(builder.Configuration);
 
 var app = builder.Build();
 

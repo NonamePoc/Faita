@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tT5bl3jcuVg5DF1OmW6gs7EvKi6wIl0jyWOtbGUw6JE=",
+  "Source": "Back-End-Service-Identity",
+  "BasePath": "_content/Back-End-Service-Identity",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

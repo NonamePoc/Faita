@@ -1,6 +1,6 @@
 ﻿namespace Back_End_Service_Identity.Entities;
 
-public class IBaseEntity
+public class BaseEntity
 {
     public long Id { get; set; }
 }

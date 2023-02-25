@@ -2,9 +2,8 @@
 using Back_End_Service_Identity.Entities;
 using Back_End_Service_Identity.Helpers;
 using Back_End_Service_Identity.Models;
-using Back_End_Service_Identity.Services;
 
-namespace Back_End_Service_Identity;
+namespace Back_End_Service_Identity.Services;
 
 public class UserService : IUserService
 {
