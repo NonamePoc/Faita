@@ -1,0 +1,130 @@
+.chat {
+  cursor: pointer;
+  margin: 1em 0;
+  padding: 1.5em;
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  gap: 1em;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  &:hover {
+    z-index: 5;
+    transform: translateX(0.5rem);
+    -webkit-transform: translateX(0.5rem);
+    -moz-transform: translateX(0.5rem);
+    -ms-transform: translateX(0.5rem);
+    -o-transform: translateX(0.5rem);
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+  }
+  &__img {
+    width: 76px;
+    object-position: center;
+    border-radius: $main-border-radius;
+    -webkit-border-radius: $main-border-radius;
+    -moz-border-radius: $main-border-radius;
+  }
+  &__info {
+    padding: 0.5rem 0;
+    &__firstLine {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+  }
+  &__name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__message {
+    font-size: 15px;
+    color: $dark-secondary-color;
+  }
+  &__date {
+    font-size: 12px;
+    color: $secondary-color;
+  }
+  .msgCounter {
+    font-size: 15px;
+    height: 30px;
+    width: 30px;
+    margin: 0.4em auto;
+  }
+}
+
+.chatroom {
+  display: grid;
+  grid-template-rows: 11% 1fr 5%;
+  min-height: 75dvh;
+  min-height: 75vh;
+  &__header {
+    display: grid;
+    grid-template-columns: 8% 10% 1fr 9%;
+    align-items: center;
+    padding-left: 2rem;
+    &__img {
+      width: 60px;
+      height: 60px;
+      border-radius: $main-border-radius;
+      -webkit-border-radius: $main-border-radius;
+    }
+    &__info {
+      .name {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+        &__text {
+          font-size: 16px;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  &__field {
+    display: grid;
+    grid-template-columns: 1fr 5% 7%;
+    align-items: center;
+    gap: 1em;
+    border: none;
+    height: 5rem;
+    padding: 0.5em 2em;
+    &__input {
+      font-size: 16px;
+      border: none;
+      width: 85%;
+      height: 100%;
+      &::placeholder {
+        font-weight: 600;
+        color: $secondary-color;
+      }
+    }
+    .send-btn {
+      color: white;
+      background-color: $accent-color;
+      border: 1px solid white;
+      padding: 0.7em;
+      border-radius: $main-border-radius;
+      -webkit-border-radius: $main-border-radius;
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      &:hover {
+        background-color: white;
+        border: 1px solid $accent-color;
+        transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        svg path {
+          fill: $accent-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+.emoji {
+  &__btn {
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    &__svg {
+      width: 33px;
+      fill: $accent-color;
+      opacity: $medium-opacity;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    overflow: hidden;
+    max-width: 25rem;
+    right: 5%;
+    bottom: 14%;
+    background-color: white;
+    padding: 1em 0 1em 1em;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      -ms-transition: all 0.25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out;
+    }
+
+    &__type {
+      display: flex;
+      &__giph {
+        padding: 1.5em 0 0 0.5em;
+        border: 1px solid;
+        border-color: #e7e7e7;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        width: 0%;
+        opacity: 0;
+        transform: translateX(10em);
+        -webkit-transform: translateX(10em);
+        -moz-transform: translateX(10em);
+        -ms-transform: translateX(10em);
+        -o-transform: translateX(10em);
+        input {
+          border: 1px solid transparent;
+          margin-bottom: 1em;
+          width: 95%;
+          padding: 0.6em 1em;
+          background-color: #e7e7e75b;
+          font-size: 0.9rem;
+          border-radius: 8px;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+          -ms-border-radius: 8px;
+          -o-border-radius: 8px;
+          &:focus {
+            border: 1px solid $accent-color;
+            transition: border 0.25s ease-in-out;
+            -webkit-transition: border 0.25s ease-in-out;
+            -moz-transition: border 0.25s ease-in-out;
+            -ms-transition: border 0.25s ease-in-out;
+            -o-transition: border 0.25s ease-in-out;
+          }
+        }
+        &.active {
+          width: 96%;
+          opacity: 1;
+          transform: translateX(0em);
+          -webkit-transform: translateX(0em);
+          -moz-transform: translateX(0em);
+          -ms-transform: translateX(0em);
+          -o-transform: translateX(0em);
+          transition: all 0.5s ease-in-out;
+          -webkit-transition: all 0.5s ease-in-out;
+          -moz-transition: all 0.5s ease-in-out;
+          -ms-transition: all 0.5s ease-in-out;
+          -o-transition: all 0.5s ease-in-out;
+        }
+      }
+      &__emoji {
+        width: 0%;
+        opacity: 0;
+        &.active {
+          width: 100%;
+          opacity: 1;
+          transition: all 0.5s ease-in-out;
+          -webkit-transition: all 0.5s ease-in-out;
+          -moz-transition: all 0.5s ease-in-out;
+          -ms-transition: all 0.5s ease-in-out;
+          -o-transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+
+    &__options {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5em 0;
+      gap: 1em;
+      li {
+        cursor: pointer;
+        text-align: center;
+        opacity: $medium-opacity;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.reactGiphySearchbox-listWrapper {
+  overflow-x: hidden;
+}
+
+.reactGiphySearchbox-poweredByGiphy {
+  display: none;
+}
+
+.Flex.epr-preview.FlexRow {
+  display: none;
+}

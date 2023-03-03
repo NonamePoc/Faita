@@ -1,0 +1,17 @@
+.profileCard {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  &__img {
+    width: 60px;
+    border-radius: $main-border-radius;
+    -webkit-border-radius: $main-border-radius;
+  }
+  &__caption {
+    font-size: 17px;
+    font-weight: bold;
+  }
+}

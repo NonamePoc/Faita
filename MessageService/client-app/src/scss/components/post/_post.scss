@@ -1,0 +1,39 @@
+.post {
+  display: grid;
+  padding: 1em 2em;
+  gap: 1.2em;
+  margin-bottom: 1rem;
+  &__info {
+    display: grid;
+    grid-template-columns: 8% auto 5%;
+    align-items: center;
+  }
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: $main-border-radius;
+    -webkit-border-radius: $main-border-radius;
+  }
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__date {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.8;
+    color: $secondary-color;
+  }
+  &__below {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      color: $secondary-color;
+      margin-right: 1em;
+    }
+  }
+}

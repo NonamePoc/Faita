@@ -1,0 +1,38 @@
+.friendsTitle {
+  margin-left: 0.5em;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: $secondary-color;
+}
+.friends {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5em;
+  .friend {
+    padding: 0.8em 1em;
+    border-bottom: 1px solid $grey-line-clr;
+    display: flex;
+    align-items: center;
+    flex-basis: 90%;
+    justify-content: space-between;
+    &__figure {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    &__avatar {
+      width: 50px;
+      border-radius: $main-border-radius;
+      -webkit-border-radius: $main-border-radius;
+    }
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &:hover {
+      background-color: #fbfbfc;
+    }
+  }
+}

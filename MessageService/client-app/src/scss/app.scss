@@ -1,0 +1,53 @@
+@import 'fonts';
+@import 'variables';
+@import 'normalize';
+@import 'components/all';
+
+body {
+  accent-color: $accent-color;
+  background: $light-bg-clr;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 18% 1fr 20%;
+  padding: 2rem 12rem;
+  gap: 4.5rem;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 15px;
+  color: white;
+  background-color: $accent-color;
+  border: 1px solid white;
+  padding: 0.8em 1.2em;
+  border-radius: $main-border-radius;
+  -webkit-border-radius: $main-border-radius;
+  font-weight: 600;
+}
+.card {
+  background-color: white;
+  border-radius: $main-border-radius;
+  -webkit-border-radius: $main-border-radius;
+  box-shadow: $main-shadow;
+}
+.msgCounter {
+  font-weight: bold;
+  padding: 0.5em;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: $accent-color;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.statusCircle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: rgb(27, 192, 27);
+}

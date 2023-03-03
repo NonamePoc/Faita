@@ -1,0 +1,41 @@
+.menu {
+  margin-top: 2em;
+  width: 100%;
+  &__item {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 1em 2em;
+    gap: 2em;
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid $grey-line-clr;
+    & svg {
+      min-width: 30px;
+    }
+    &.active {
+      background-color: #fbfbfc;
+      border-left: 3px solid $accent-color;
+      color: $accent-color;
+
+      & svg path {
+        fill: $accent-color;
+      }
+      &.home {
+        & svg path {
+          stroke: $accent-color;
+          fill: none;
+        }
+      }
+    }
+    .msgCounter {
+      font-size: 15px;
+      margin-left: 3em;
+      height: 30px;
+      width: 30px;
+    }
+    &:hover {
+      background-color: #fbfbfc;
+    }
+  }
+}

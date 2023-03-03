@@ -1,0 +1,18 @@
+.header {
+  border: 1px solid #e2e5ed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.5rem 12rem;
+  background: white;
+  &__rightSide {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .avatar {
+      width: 50px;
+      border-radius: $main-border-radius;
+      -webkit-border-radius: $main-border-radius;
+    }
+  }
+}

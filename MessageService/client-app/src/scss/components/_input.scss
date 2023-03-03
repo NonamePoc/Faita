@@ -1,0 +1,117 @@
+.card {
+  &.input {
+    border-radius: 15px 15px 0 0;
+    -webkit-border-radius: 15px 15px 0 0;
+    box-shadow: none;
+    -moz-border-radius: 15px 15px 0 0;
+    -ms-border-radius: 15px 15px 0 0;
+    -o-border-radius: 15px 15px 0 0;
+    padding: 1em 2em;
+    &.sendPost {
+      border-radius: $main-border-radius;
+      -webkit-border-radius: $main-border-radius;
+      box-shadow: $main-shadow;
+    }
+  }
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 8% 1fr 17%;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  &.sendPost {
+    grid-template-columns: 8% 1fr 20%;
+    margin-bottom: 1.5rem;
+    padding: 1em;
+  }
+  &__info {
+    display: flex;
+    gap: 0.8em;
+  }
+  &__avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: $main-border-radius;
+    -webkit-border-radius: $main-border-radius;
+    -moz-border-radius: $main-border-radius;
+    &.sendPost {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &__name {
+    padding-top: 0.5em;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+  }
+  &__input {
+    padding-top: 1em;
+    z-index: 5;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    background: transparent;
+    overflow: hidden;
+    resize: none;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    &::placeholder {
+      font-weight: 600;
+      color: #a3aebd;
+    }
+  }
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    svg {
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      -webkit-transition: all 0.5s ease-in-out;
+    }
+  }
+  .postIt {
+    height: 3.2rem;
+    margin-left: auto;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+  }
+  &.active {
+    padding-bottom: 6.5rem;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    .input {
+      &__name {
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+      }
+      &__input {
+        padding-top: 0;
+        width: 95%;
+        transform: translateY(3.2rem);
+        -webkit-transform: translateY(3.2rem);
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+      }
+      &__btns {
+        transform: translateY(6rem);
+        -webkit-transform: translateY(6rem);
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        svg {
+          opacity: 1;
+          transition: all 0.5s ease-in-out;
+          -webkit-transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
