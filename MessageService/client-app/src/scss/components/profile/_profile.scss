@@ -7,8 +7,8 @@
   background: linear-gradient(
     to top,
     transparent 0%,
-    transparent 65%,
-    #859bd4 65%,
+    transparent 16.5rem,
+    #859bd4 16.5rem,
     #859bd4 100%
   );
   svg {
@@ -19,6 +19,12 @@
     margin-bottom: 1.5em;
     display: flex;
     align-items: center;
+  }
+  .addFriendBtn:hover {
+    svg path {
+      fill: none;
+      stroke: $accent-color;
+    }
   }
   &__photo {
     border-radius: $main-border-radius;

@@ -1,5 +1,4 @@
 .chat {
-  cursor: pointer;
   margin: 1em 0;
   padding: 1.5em;
   display: grid;
@@ -61,12 +60,12 @@
   min-height: 75vh;
   &__header {
     display: grid;
-    grid-template-columns: 8% 10% 1fr 9%;
+    grid-template-columns: 9% 9% 1fr 9%;
     align-items: center;
     padding-left: 2rem;
     &__img {
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
       border-radius: $main-border-radius;
       -webkit-border-radius: $main-border-radius;
     }
@@ -106,25 +105,7 @@
       }
     }
     .send-btn {
-      color: white;
-      background-color: $accent-color;
-      border: 1px solid white;
-      padding: 0.7em;
-      border-radius: $main-border-radius;
-      -webkit-border-radius: $main-border-radius;
-      transition: all 0.25s ease-in-out;
-      -webkit-transition: all 0.25s ease-in-out;
-      -moz-transition: all 0.25s ease-in-out;
-      &:hover {
-        background-color: white;
-        border: 1px solid $accent-color;
-        transition: all 0.25s ease-in-out;
-        -webkit-transition: all 0.25s ease-in-out;
-        -moz-transition: all 0.25s ease-in-out;
-        svg path {
-          fill: $accent-color;
-        }
-      }
+      padding: 0.7rem 0.9rem;
     }
   }
 }

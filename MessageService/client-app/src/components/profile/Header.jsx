@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className='card profile'>
+    <section className='card profile'>
       <svg
         width='30'
         height='30'
@@ -47,7 +47,7 @@ function Header() {
         neque vel aliquet sollicitudin. Morbi eros dui, consectetur vitae rutrum
         in, fringilla vitae ligula. Proin et malesuada justo. Sed varius lib
       </p>
-      <button className='btn'>
+      <button className='btn addFriendBtn'>
         <svg
           width='24px'
           height='24px'
@@ -77,7 +77,7 @@ function Header() {
         </svg>
         Add to friends
       </button>
-    </div>
+    </section>
   )
 }
 

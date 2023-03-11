@@ -3,14 +3,14 @@ import { BackHeader, Input, Post, Comments } from '../components'
 
 function PostDetails() {
   return (
-    <div>
+    <main>
       <BackHeader />
       <Post />
-      <div className='card'>
+      <section className='card'>
         <Input type={false} />
         <Comments />
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }
 

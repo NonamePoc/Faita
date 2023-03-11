@@ -3,10 +3,10 @@ import { FriendsMini, ProfileHeader } from '../components'
 
 function Profile() {
   return (
-    <div>
+    <main>
       <ProfileHeader />
       <FriendsMini />
-    </div>
+    </main>
   )
 }
 

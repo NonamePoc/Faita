@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
-    <div className='header'>
+    <header className='header'>
       <p>Logo</p>
       <div className='header__rightSide'>
         <button className='btn'>
@@ -26,15 +27,15 @@ function Header() {
           </svg>
           Create
         </button>
-        <a href='/#'>
+        <Link to='/profile'>
           <img
             className='avatar'
             src='https://picsum.photos/200'
             alt='avatar'
           ></img>
-        </a>
+        </Link>
       </div>
-    </div>
+    </header>
   )
 }
 

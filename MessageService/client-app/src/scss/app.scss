@@ -15,6 +15,7 @@ body {
   gap: 4.5rem;
 }
 .btn {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.3em;
@@ -26,6 +27,23 @@ body {
   border-radius: $main-border-radius;
   -webkit-border-radius: $main-border-radius;
   font-weight: 600;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  &:hover {
+    background-color: white;
+    color: $accent-color;
+    border: 1px solid $accent-color;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    svg path {
+      fill: $accent-color;
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+    }
+  }
 }
 .card {
   background-color: white;

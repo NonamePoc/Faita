@@ -1,20 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function UserDetails() {
+function Aside() {
   return (
-    <div className='post__info'>
+    <div className='friend'>
       <Link to='/profile'>
-        <img
-          src='https://picsum.photos/id/34/200'
-          alt='Profile'
-          className='post__avatar'
-        />
+        <figure className='friend__figure'>
+          <img
+            className='friend__avatar'
+            src='https://picsum.photos/id/235/500'
+            alt='friend'
+          />
+          <figcaption className='friend__name'>Friend 1</figcaption>
+        </figure>
       </Link>
-      <div>
-        <h1 className='post__name'>ProfileName</h1>
-        <p className='post__date'>27 hours ago</p>
-      </div>
       <svg
         className='friend__dots'
         width='30'
@@ -53,4 +52,4 @@ function UserDetails() {
   )
 }
 
-export default UserDetails
+export default Aside
