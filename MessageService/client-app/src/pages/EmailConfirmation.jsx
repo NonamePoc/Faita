@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function EmailConfirmation() {
   return (
     <div className='emailConfirm__bg'>
       <div className='emailConfirm'>
-        <a href='/#' className='emailConfirm__return'>
+        <Link to='/auth' className='emailConfirm__return'>
           <svg
             className='emailConfirm__return__img'
             width='26px'
@@ -14,18 +15,18 @@ function EmailConfirmation() {
           >
             <path
               d='M12.9998 8L6 14L12.9998 21'
-              stroke-width='4'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='4'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             />
             <path
               d='M6 14H28.9938C35.8768 14 41.7221 19.6204 41.9904 26.5C42.2739 33.7696 36.2671 40 28.9938 40H11.9984'
-              stroke-width='4'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='4'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             />
           </svg>
-        </a>
+        </Link>
         <div className='emailConfirm__body'>
           <svg
             className='emailConfirm__img'
@@ -168,10 +169,7 @@ function EmailConfirmation() {
           <hr className='emailConfirm__divider' />
           <p>
             If you not got any mail
-            <a href='/#' className='accent'>
-              {' '}
-              Resend cofirmation mail
-            </a>
+            <span className='accent'> Resend cofirmation mail</span>
           </p>
         </div>
       </div>
