@@ -11,7 +11,8 @@ body {
 .wrapper {
   display: grid;
   grid-template-columns: 18% 1fr 20%;
-  padding: 2rem 12rem;
+  padding: 2rem 10rem;
+  padding-left: 8rem;
   gap: 4.5rem;
 }
 .btn {
@@ -101,4 +102,23 @@ body {
   border-radius: 50%;
   -webkit-border-radius: 50%;
   background-color: rgb(27, 192, 27);
+}
+
+.dots {
+  fill: #9ba9ba;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  &__prfl {
+    fill: white;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    &:hover {
+      fill: black;
+    }
+  }
+  &:hover {
+    fill: $accent-color;
+  }
 }

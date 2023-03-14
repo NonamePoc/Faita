@@ -21,7 +21,7 @@
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   &.sendPost {
-    grid-template-columns: 8% 1fr 20%;
+    grid-template-columns: 8% 1fr 18%;
     margin-bottom: 1.5rem;
     padding: 1em;
   }
@@ -66,7 +66,6 @@
   }
   &__btns {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-top: auto;
     transition: all 0.5s ease-in-out;

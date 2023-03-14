@@ -11,6 +11,7 @@
   flex-direction: column;
   padding-top: 0.5em;
   .friend {
+    position: relative;
     padding: 0.8em 1em;
     border-bottom: 1px solid $grey-line-clr;
     display: flex;

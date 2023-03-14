@@ -1,10 +1,10 @@
 import React from 'react'
-import { FriendsMini, ProfileHeader } from '../components'
+import { FriendsMini, UserInfo } from '../components'
 
 function Profile() {
   return (
     <main>
-      <ProfileHeader />
+      <UserInfo />
       <FriendsMini />
     </main>
   )

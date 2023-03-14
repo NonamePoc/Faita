@@ -1,0 +1,63 @@
+.popup {
+  opacity: 0;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  z-index: -1;
+  color: white;
+  font-size: 15px;
+  background-color: $accent-color;
+  border-radius: $main-border-radius;
+  -webkit-border-radius: $main-border-radius;
+  padding: 0.8em 0;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  &.open {
+    opacity: 0.8;
+    z-index: 5;
+    &:hover {
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+    }
+  }
+
+  li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2em 1.2em 0.2em 1em;
+    font-weight: 600;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.138);
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+    }
+  }
+  svg {
+    width: 23px;
+  }
+}
+
+.popup__exit {
+  top: 4.7rem;
+  right: 9.5rem;
+}
+
+.popup__friendCard {
+  top: 2rem;
+}
+
+.popup__prfl {
+  top: 2.3rem;
+  margin-right: 0.5rem;
+}

@@ -9,6 +9,7 @@ function Friends() {
       <FriendCard />
       <FriendCard />
       <FriendCard />
+      <FriendCard />
     </section>
   )
 }

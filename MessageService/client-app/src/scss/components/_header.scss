@@ -1,18 +1,16 @@
 .header {
   border: 1px solid #e2e5ed;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 7% 2%;
+  gap: 0.5rem;
+  align-items: center;
   padding: 1.5rem 12rem;
   background: white;
-  &__rightSide {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    .avatar {
-      width: 50px;
-      border-radius: $main-border-radius;
-      -webkit-border-radius: $main-border-radius;
-    }
+  .avatar {
+    cursor: pointer;
+    width: 50px;
+    border-radius: $main-border-radius;
+    -webkit-border-radius: $main-border-radius;
   }
 }

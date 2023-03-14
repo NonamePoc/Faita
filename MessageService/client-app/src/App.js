@@ -28,7 +28,7 @@ const MainLayout = () => (
 
 function App() {
   return (
-    <>
+    <div id='light'>
       <Routes>
         <Route element={<MainLayout />}>
           <Route path='/' element={<Home />} exact />
@@ -41,7 +41,7 @@ function App() {
         <Route path='/auth' element={<Auth />} />
         <Route path='/email-cnfrm' element={<EmailConfirmation />} exact />
       </Routes>
-    </>
+    </div>
   )
 }
 
