@@ -1,20 +1,21 @@
 .menu {
   margin-top: 2em;
   width: 100%;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   &__item {
     font-size: 16px;
     font-weight: 600;
     display: flex;
     align-items: center;
-    padding: 1em 2em;
+    padding: 0.9rem 2rem;
     gap: 2em;
     border-left: 3px solid transparent;
-    border-bottom: 1px solid $grey-line-clr;
+
     & svg {
       min-width: 30px;
     }
     &.active {
-      background-color: #fbfbfc;
       border-left: 3px solid $accent-color;
       color: $accent-color;
 
@@ -33,9 +34,6 @@
       margin-left: 3em;
       height: 30px;
       width: 30px;
-    }
-    &:hover {
-      background-color: #fbfbfc;
     }
   }
 }

@@ -16,19 +16,6 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: black;
-}
-
-a,
-span,
-p,
-b,
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: black;
 }
 
 h1 {
@@ -43,6 +30,10 @@ h2 {
 
 a {
   text-decoration: none;
+}
+
+a:focus {
+  color: black;
 }
 
 @mixin noselect {

@@ -4,7 +4,7 @@
   &__title {
     font-size: 16px;
     font-weight: bold;
-    color: $secondary-color;
+
     text-transform: uppercase;
   }
   &__list {
@@ -39,7 +39,6 @@
     align-items: center;
     gap: 0.3em;
     border: none;
-    background-color: #c9dcf2;
     font-size: 13px;
     font-weight: 600;
     border-radius: $main-border-radius;

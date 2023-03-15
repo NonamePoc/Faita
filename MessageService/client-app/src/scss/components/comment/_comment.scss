@@ -4,7 +4,6 @@
 
 .comment {
   padding: 1em;
-  border-top: 1px solid $grey-line-clr;
   &__avatar {
     width: 50px;
     height: 50px;
@@ -55,7 +54,6 @@
       }
     }
     &__button {
-      background-color: #f2f6ff;
       color: $accent-color;
       border-radius: $main-border-radius;
       -webkit-border-radius: $main-border-radius;

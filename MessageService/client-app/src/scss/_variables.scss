@@ -1,16 +1,33 @@
-$accent-color: #2176e5;
+$accent-color: #1b5bae;
 $secondary-color: #9ba9ba;
-$light-secondary-color: #d9d9d9;
+$light-secondary-color: #eaeaea;
 $dark-secondary-color: #939393;
-$light-bg-clr: #f9fafb;
-$grey-line-clr: #f8f9fb;
+
 $main-border-radius: 15px;
 $main-shadow: 1px 2px 10px 3px rgba(111, 112, 114, 0.05);
-
-$gradient-color: -webkit-linear-gradient(left, $accent-color, #afb5db);
-
 $box-shadow: 0px 8px 15px rgb(75 72 72 / 10%);
-$black-drop-shadow: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.543));
 
-$light-opacity: 0.3;
-$medium-opacity: 0.6;
+$gradient-color: -webkit-linear-gradient(left, #2176e5, #afb5db);
+
+//Light Mod
+$lt-body-bg-color: #f9fafb;
+$lt-body-text-color: black;
+$lt-header-bg-color: white;
+$lt-card-bg-color: white;
+$lt-line-color: #f8f9fb;
+$lt-header-brdr-color: #e2e5ed;
+$lt-hover-bg-color: #fbfbfc;
+$lt-btn-bg-color: #c9dcf2;
+$lt-rpls-btn-bg-color: #f2f6ff;
+$lt-auth-img-text-color: #ebf3f5;
+$lt-auth-body-bg-color: #ebf3f5;
+$lt-auth-field-bg-color: #f3f4f9;
+
+//Dark Mod
+$drk-body-bg-color: #1b1d1e;
+$drk-body-text-color: rgb(191, 191, 191);
+$drk-header-bg-color: #232628;
+$drk-card-bg-color: #232628;
+$drk-line-color: #373b3d72;
+$drk-hover-bg-color: #1f20208f;
+$drk-btn-bg-color: #2b2e30;

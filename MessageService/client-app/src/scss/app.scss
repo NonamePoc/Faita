@@ -2,10 +2,10 @@
 @import 'variables';
 @import 'normalize';
 @import 'components/all';
+@import 'theme';
 
 body {
   accent-color: $accent-color;
-  background: $light-bg-clr;
 }
 
 .wrapper {
@@ -15,6 +15,7 @@ body {
   padding-left: 8rem;
   gap: 4.5rem;
 }
+
 .btn {
   cursor: pointer;
   display: flex;
@@ -23,7 +24,6 @@ body {
   font-size: 15px;
   color: white;
   background-color: $accent-color;
-  border: 1px solid white;
   padding: 0.8em 1.2em;
   border-radius: $main-border-radius;
   -webkit-border-radius: $main-border-radius;
@@ -31,10 +31,13 @@ body {
   transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
+  svg path {
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+  }
   &:hover {
-    background-color: white;
     color: $accent-color;
-    border: 1px solid $accent-color;
     transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
@@ -54,7 +57,6 @@ body {
   gap: 0.3em;
   font-size: 15px;
   color: $accent-color;
-  background-color: white;
   border: 1px solid $accent-color;
   padding: 0.8em 1.2em;
   border-radius: $main-border-radius;
@@ -80,7 +82,6 @@ body {
 }
 
 .card {
-  background-color: white;
   border-radius: $main-border-radius;
   -webkit-border-radius: $main-border-radius;
   box-shadow: $main-shadow;

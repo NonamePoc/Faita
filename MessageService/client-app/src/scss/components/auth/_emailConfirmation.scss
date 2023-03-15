@@ -25,7 +25,7 @@
         stroke: $secondary-color;
       }
       &:hover path {
-        stroke: $accent-color;
+        stroke: theme-color(accent-color);
       }
     }
   }
@@ -50,7 +50,7 @@
     font-size: 14px;
     .accent {
       font-weight: 600;
-      color: $accent-color;
+      stroke: theme-color(accent-color);
     }
     .user-email {
       color: rgb(44, 192, 44);

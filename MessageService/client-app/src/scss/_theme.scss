@@ -1,0 +1,185 @@
+#light,
+#dark {
+  min-height: 100vh;
+}
+#light {
+  background-color: $lt-body-bg-color;
+  color: $lt-body-text-color;
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span {
+    color: $lt-body-text-color;
+  }
+  .card {
+    background-color: $lt-card-bg-color;
+  }
+  .header {
+    background-color: $lt-header-bg-color;
+    border-bottom: 1px solid $lt-header-brdr-color;
+  }
+  .btn {
+    border: 1px solid white;
+
+    &:hover {
+      background-color: white;
+      border: 1px solid $accent-color;
+    }
+  }
+  .btn__outline {
+    background-color: white;
+  }
+
+  .friendsTitle {
+    color: $secondary-color;
+  }
+  .friendCard__btns .msg {
+    background-color: white;
+    border: 1px solid $accent-color;
+    &:hover {
+      background-color: $light-secondary-color;
+    }
+  }
+  .friends .friend {
+    border-bottom: 1px solid $lt-line-color;
+    &:hover {
+      background-color: $lt-hover-bg-color;
+    }
+  }
+  .menu__item {
+    border-bottom: 1px solid $lt-line-color;
+    &.active {
+      background-color: $lt-hover-bg-color;
+    }
+    &:hover {
+      background-color: $lt-hover-bg-color;
+    }
+  }
+  .comment {
+    border-top: 1px solid $lt-line-color;
+  }
+  .comment__replies__button {
+    background-color: $lt-rpls-btn-bg-color;
+  }
+  .chatroom__field__input {
+    color: black;
+  }
+  .input__input {
+    color: black;
+  }
+  .friendsMini__button {
+    background-color: $lt-btn-bg-color;
+    svg path {
+      stroke: $lt-body-text-color;
+    }
+  }
+  .friendsMini__title {
+    color: $secondary-color;
+  }
+  .backIcon__bg {
+    fill: #9ba9ba;
+  }
+
+  .auth {
+    background-color: $lt-auth-body-bg-color;
+    .field {
+      background-color: $lt-auth-field-bg-color;
+    }
+  }
+  .img-text h2,
+  .img-text p,
+  .img-btn span {
+    color: $lt-auth-img-text-color;
+  }
+  .label span {
+    color: $secondary-color;
+  }
+}
+
+#dark {
+  background-color: $drk-body-bg-color;
+  color: $drk-body-text-color;
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span {
+    color: $drk-body-text-color;
+  }
+  .card {
+    background-color: $drk-card-bg-color;
+  }
+  .header {
+    background-color: $drk-header-bg-color;
+    border-bottom: 1px solid $drk-line-color;
+  }
+  .btn {
+    border: 1px solid black;
+    &:hover {
+      background-color: $drk-body-bg-color;
+      border: 1px solid $accent-color;
+    }
+  }
+  .btn__outline {
+    background-color: $drk-btn-bg-color;
+  }
+  .friendCard__btns .msg {
+    background-color: $drk-body-bg-color;
+    &:hover {
+      background-color: $drk-hover-bg-color;
+    }
+  }
+  .friends .friend {
+    border-bottom: 1px solid $drk-line-color;
+    &:hover {
+      background-color: $drk-hover-bg-color;
+    }
+  }
+  .menu__item {
+    border-bottom: 1px solid $drk-line-color;
+    &.active {
+      background-color: $drk-hover-bg-color;
+    }
+    &:hover {
+      background-color: $drk-hover-bg-color;
+    }
+  }
+  .comment {
+    border-top: 1px solid $drk-line-color;
+  }
+  .comment__replies__button {
+    background-color: $drk-hover-bg-color;
+  }
+  .chatroom__field__input {
+    color: white;
+  }
+  .input__input {
+    color: $secondary-color;
+  }
+  .friendsMini__button {
+    background-color: $drk-btn-bg-color;
+    color: $drk-body-text-color;
+    svg path {
+      stroke: $drk-body-text-color;
+    }
+  }
+  .backIcon__bg {
+    fill: $drk-body-bg-color;
+  }
+  .auth {
+    .sub-cont {
+      background-color: $drk-card-bg-color;
+    }
+    .sign-up {
+      background-color: $drk-card-bg-color;
+    }
+    input {
+      color: $drk-body-text-color;
+    }
+  }
+}

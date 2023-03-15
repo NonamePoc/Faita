@@ -4,16 +4,15 @@
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  color: $secondary-color;
 }
 .friends {
   display: flex;
   flex-direction: column;
-  padding-top: 0.5em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8rem;
   .friend {
     position: relative;
-    padding: 0.8em 1em;
-    border-bottom: 1px solid $grey-line-clr;
+    padding: 0.7em 1em;
     display: flex;
     align-items: center;
     flex-basis: 90%;
@@ -31,9 +30,6 @@
     &__name {
       font-size: 16px;
       font-weight: bold;
-    }
-    &:hover {
-      background-color: #fbfbfc;
     }
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import usePopup from '../hooks/usePopup'
+import ThemeSwitcher from './ThemeSwitcher'
 
 function Header() {
   const { Popup, togglePopup } = usePopup()
@@ -7,6 +8,7 @@ function Header() {
   return (
     <header className='header'>
       <p>Logo</p>
+      <ThemeSwitcher />
       <button className='btn'>
         <svg
           width='20'

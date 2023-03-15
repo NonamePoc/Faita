@@ -1,5 +1,6 @@
 import React from 'react'
 import { Login, Registration } from '../components'
+import ThemeSwitcher from '../components/ThemeSwitcher'
 
 function Auth() {
   const [isSignUpVisible, setSignUpVisible] = React.useState(false)
@@ -24,9 +25,12 @@ function Auth() {
                   If you already has an account, just sign in. We've missed you!
                 </p>
               </div>
+              <div className='auth-theme-btn'>
+                <ThemeSwitcher />
+              </div>
               <div className='img-btn ' onClick={toggleSignUpVisible}>
-                <span className='m-up'>Sign Up</span>
-                <span className='m-in'>Sign In</span>
+                <span className='m-up '>Sign Up</span>
+                <span className='m-in '>Sign In</span>
               </div>
             </div>
             <Registration />
