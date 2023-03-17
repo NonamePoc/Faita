@@ -8,6 +8,7 @@ import {
   PostDetails,
   Profile,
   EmailConfirmation,
+  Settings,
 } from './pages'
 import { Header, ProfileCard, MenuTab, FriendList } from './components'
 import { Route, Routes, Outlet } from 'react-router-dom'
@@ -28,7 +29,9 @@ const MainLayout = () => (
 )
 
 function App() {
-  const [theme, setTheme] = React.useState('light')
+  const [theme, setTheme] = React.useState(() => {
+    return localStorage.getItem('theme') || 'light'
+  })
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
@@ -36,7 +39,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div id={theme}>
+      <div className={theme}>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path='/' element={<Home />} exact />
@@ -45,6 +48,7 @@ function App() {
             <Route path='/chat/1' element={<ChatRoom />} exact />
             <Route path='/post' element={<PostDetails />} exact />
             <Route path='/profile' element={<Profile />} exact />
+            <Route path='/settings' element={<Settings />} exact />
           </Route>
           <Route path='/auth' element={<Auth />} />
           <Route path='/email-cnfrm' element={<EmailConfirmation />} exact />

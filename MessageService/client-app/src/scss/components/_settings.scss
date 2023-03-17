@@ -1,0 +1,48 @@
+.stngs {
+  .card {
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    margin-left: 0.7em;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: $secondary-color;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 14px;
+    color: $secondary-color;
+    font-weight: 600;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 1rem 5rem;
+  }
+  &__change {
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+    gap: 0.2rem;
+  }
+  input {
+    padding: 0.5rem;
+    border: none;
+    background-color: transparent;
+    color: $secondary-color;
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    text-align: end;
+  }
+  .input-dis {
+    color: black;
+  }
+}

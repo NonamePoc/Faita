@@ -1,8 +1,8 @@
-#light,
-#dark {
+.light,
+.dark {
   min-height: 100vh;
 }
-#light {
+.light {
   background-color: $lt-body-bg-color;
   color: $lt-body-text-color;
   a,
@@ -10,8 +10,10 @@
   h2,
   h3,
   h4,
-  p,
   span {
+    color: $lt-body-text-color;
+  }
+  a:focus {
     color: $lt-body-text-color;
   }
   .card {
@@ -97,9 +99,29 @@
   .label span {
     color: $secondary-color;
   }
+
+  .stngs__item {
+    border-bottom: 1px solid $lt-line-color;
+  }
+
+  #switch {
+    background-color: $light-secondary-color;
+    border: 1.5px solid $dark-secondary-color;
+  }
+  #switch:checked {
+    background-color: $accent-color;
+    border: 1px solid $accent-color;
+  }
+  #switch::after {
+    background-color: $dark-secondary-color;
+  }
+  #switch:checked::after {
+    background-color: white;
+    border: 1px solid $accent-color;
+  }
 }
 
-#dark {
+.dark {
   background-color: $drk-body-bg-color;
   color: $drk-body-text-color;
   a,
@@ -109,6 +131,9 @@
   h4,
   p,
   span {
+    color: $drk-body-text-color;
+  }
+  a:focus {
     color: $drk-body-text-color;
   }
   .card {
@@ -181,5 +206,24 @@
     input {
       color: $drk-body-text-color;
     }
+  }
+
+  .stngs__item {
+    border-bottom: 1px solid $drk-line-color;
+  }
+
+  #switch {
+    background-color: $drk-body-bg-color;
+    border: 1.5px solid $drk-hover-bg-color;
+  }
+  #switch:checked {
+    background-color: $drk-body-bg-color;
+  }
+
+  #switch::after {
+    background-color: $secondary-color;
+  }
+  #switch:checked::after {
+    background-color: $accent-color;
   }
 }

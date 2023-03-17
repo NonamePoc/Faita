@@ -1,12 +1,17 @@
 import React from 'react'
-import ThemeContext from '../contexts/ThemeContext'
+import useTheme from '../hooks/useTheme'
 
 function ThemeSwitcher() {
-  const { toggleTheme } = React.useContext(ThemeContext)
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <div className='theme-switch'>
-      <input onClick={toggleTheme} id='checkbox' type='checkbox' />
+      <input
+        onClick={toggleTheme}
+        id='checkbox'
+        type='checkbox'
+        defaultChecked={theme === 'dark'}
+      />
     </div>
   )
 }
