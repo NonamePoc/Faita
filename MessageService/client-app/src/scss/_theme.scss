@@ -119,6 +119,14 @@
     background-color: white;
     border: 1px solid $accent-color;
   }
+  .msg {
+    &__text {
+      background-color: #e0e6f8;
+    }
+    &__user p {
+      background-color: white;
+    }
+  }
 }
 
 .dark {
@@ -225,5 +233,17 @@
   }
   #switch:checked::after {
     background-color: $accent-color;
+  }
+
+  .msg {
+    &__text {
+      background-color: #313647;
+    }
+    &__user p {
+      background-color: rgb(52, 52, 54);
+    }
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $drk-btn-bg-color;
   }
 }

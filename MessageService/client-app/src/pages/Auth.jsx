@@ -1,6 +1,5 @@
 import React from 'react'
-import { Login, Registration } from '../components'
-import ThemeSwitcher from '../components/ThemeSwitcher'
+import { Login, Registration, ThemeSwitcher } from '../components'
 
 function Auth() {
   const [isSignUpVisible, setSignUpVisible] = React.useState(false)

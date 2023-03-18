@@ -1,7 +1,7 @@
 @import 'fonts';
 @import 'variables';
-@import 'theme';
 @import 'normalize';
+@import 'theme';
 @import 'components/all';
 
 body {
@@ -122,4 +122,9 @@ body {
   &:hover {
     fill: $accent-color;
   }
+}
+
+.flex {
+  display: flex;
+  gap: 0.3rem;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import ThemeSwitcher from '../components/ThemeSwitcher'
+import { ThemeSwitcher } from '../components'
 
 function Settings() {
   const [inputValue, setInputValue] = React.useState('Vlasta')
@@ -10,7 +10,6 @@ function Settings() {
       <div className='card'>
         <div className='stngs__item'>
           <div>
-            <input />
             <h2>Change Name</h2>
             <p>Change your name as it appears on your account.</p>
           </div>

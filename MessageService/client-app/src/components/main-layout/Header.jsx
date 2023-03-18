@@ -1,6 +1,6 @@
 import React from 'react'
-import usePopup from '../hooks/usePopup'
-import ThemeSwitcher from './ThemeSwitcher'
+import usePopup from '../../hooks/usePopup'
+import ThemeSwitcher from '../switcher/ThemeSwitcher'
 
 function Header() {
   const { Popup, togglePopup } = usePopup()

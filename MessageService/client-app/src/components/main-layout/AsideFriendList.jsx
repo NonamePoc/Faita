@@ -1,7 +1,7 @@
 import React from 'react'
-import Friend from './friend/Aside'
+import Friend from '../friend/Aside'
 
-function FriendList() {
+function AsideFriendList() {
   return (
     <aside>
       <h1 className='friendsTitle'>Friends</h1>
@@ -13,4 +13,4 @@ function FriendList() {
   )
 }
 
-export default FriendList
+export default AsideFriendList

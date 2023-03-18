@@ -1,17 +1,16 @@
-import React from 'react'
-import FriendItem from './FriendItem'
 import { Link } from 'react-router-dom'
+import ProfileItem from '../friend/ProfileItem'
 
-function Friends() {
+function ProfilesFriendList() {
   return (
     <section className='card friendsMini'>
       <h1 className='friendsMini__title'>Friends</h1>
       <div className='friendsMini__list'>
-        <FriendItem />
-        <FriendItem />
-        <FriendItem />
-        <FriendItem />
-        <FriendItem />
+        <ProfileItem />
+        <ProfileItem />
+        <ProfileItem />
+        <ProfileItem />
+        <ProfileItem />
       </div>
       <Link to='/friends'>
         <button className='friendsMini__button'>
@@ -55,4 +54,4 @@ function Friends() {
   )
 }
 
-export default Friends
+export default ProfilesFriendList

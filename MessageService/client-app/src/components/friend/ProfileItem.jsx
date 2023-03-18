@@ -1,7 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
-function FriendItem() {
+function ProfileItem() {
   return (
     <Link to='/profile'>
       <div className='friendsMini__item'>
@@ -12,4 +11,4 @@ function FriendItem() {
   )
 }
 
-export default FriendItem
+export default ProfileItem

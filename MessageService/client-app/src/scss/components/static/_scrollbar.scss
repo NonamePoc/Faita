@@ -1,0 +1,18 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin-bottom: 1rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: $light-secondary-color;
+  border-radius: $main-border-radius;
+  -webkit-border-radius: $main-border-radius;
+  -moz-border-radius: $main-border-radius;
+  -ms-border-radius: $main-border-radius;
+  -o-border-radius: $main-border-radius;
+}

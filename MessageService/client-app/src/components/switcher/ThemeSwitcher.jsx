@@ -1,16 +1,21 @@
 import React from 'react'
-import useTheme from '../hooks/useTheme'
+import useTheme from '../../hooks/useTheme'
 
 function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme()
+  const inputRef = React.useRef()
+
+  React.useEffect(() => {
+    inputRef.current.checked = theme === 'dark'
+  }, [theme])
 
   return (
     <div className='theme-switch'>
       <input
-        onClick={toggleTheme}
+        ref={inputRef}
         id='checkbox'
         type='checkbox'
-        defaultChecked={theme === 'dark'}
+        onClick={toggleTheme}
       />
     </div>
   )

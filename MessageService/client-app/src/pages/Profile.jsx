@@ -1,11 +1,11 @@
 import React from 'react'
-import { FriendsMini, UserInfo } from '../components'
+import { ProfilesFriendList, UserInfo } from '../components'
 
 function Profile() {
   return (
     <main>
       <UserInfo />
-      <FriendsMini />
+      <ProfilesFriendList />
     </main>
   )
 }

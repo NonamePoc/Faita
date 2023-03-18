@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function ProfileCard() {
+function UserMiniCard() {
   return (
     <Link to='/profile'>
       <figure className='card profileCard'>
@@ -18,4 +18,4 @@ function ProfileCard() {
   )
 }
 
-export default ProfileCard
+export default UserMiniCard

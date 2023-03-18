@@ -1,11 +1,11 @@
 import React from 'react'
-import { ChatHeader, ChatInput } from '../components'
+import { ChatHeader, ChatInput, ChatMessages } from '../components'
 
 function ChatRoom() {
   return (
     <div className='chatroom'>
       <ChatHeader />
-      <div className='chatroom__chat'></div>
+      <ChatMessages />
       <ChatInput />
     </div>
   )
