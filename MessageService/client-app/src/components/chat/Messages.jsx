@@ -1,8 +1,13 @@
 import React from 'react'
 
 function Messages() {
+  const msgContainerRef = React.useRef(null)
+  React.useEffect(() => {
+    msgContainerRef.current.scrollTop = msgContainerRef.current.scrollHeight
+  }, [])
+
   return (
-    <div className='chat__msgs__cont'>
+    <div ref={msgContainerRef} className='chat__msgs__cont'>
       <div className='msg msg__stranger'>
         <img
           className='msg__stranger__img'

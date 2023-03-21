@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function EmailConfirmation() {
   return (
     <div className='emailConfirm__bg'>
-      <div className='emailConfirm'>
+      <div className='card emailConfirm'>
         <Link to='/auth' className='emailConfirm__return'>
           <svg
             className='emailConfirm__return__img'

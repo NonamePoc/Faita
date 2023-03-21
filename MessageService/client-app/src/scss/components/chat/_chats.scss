@@ -97,11 +97,12 @@
     padding: 0.5em 2em;
     &__input {
       background-color: transparent;
-      font-size: 16px;
+      font-size: 18px;
       border: none;
       width: 85%;
       height: 100%;
       &::placeholder {
+        font-size: 16px;
         font-weight: 600;
         color: $secondary-color;
       }

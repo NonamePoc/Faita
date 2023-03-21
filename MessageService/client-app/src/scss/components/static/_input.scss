@@ -42,6 +42,7 @@
     }
   }
   &__name {
+    z-index: -1;
     padding-top: 0.5em;
     font-size: 16px;
     font-weight: 600;
@@ -50,17 +51,17 @@
     -webkit-transition: all 0.5s ease-in-out;
   }
   &__input {
+    overflow: hidden;
     padding-top: 1em;
-    z-index: 5;
     border: none;
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     background: transparent;
-    overflow: hidden;
     resize: none;
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     &::placeholder {
+      font-size: 16px;
       font-weight: 600;
       color: #a3aebd;
     }
@@ -90,6 +91,7 @@
     .input {
       &__name {
         opacity: 1;
+        z-index: 0;
         transition: all 0.5s ease-in-out;
         -webkit-transition: all 0.5s ease-in-out;
       }

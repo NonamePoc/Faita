@@ -127,6 +127,9 @@
       background-color: white;
     }
   }
+  .emailConfirm__bg {
+    background: $lt-email-confirm-bg-color;
+  }
 }
 
 .dark {
@@ -245,5 +248,8 @@
   }
   ::-webkit-scrollbar-thumb {
     background-color: $drk-btn-bg-color;
+  }
+  .emailConfirm__bg {
+    background-color: $drk-body-bg-color;
   }
 }

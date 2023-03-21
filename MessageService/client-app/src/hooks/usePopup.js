@@ -8,7 +8,7 @@ const usePopup = () => {
   }
 
   const handleOutsideClick = (event) => {
-    if (!event.target.closest('.popup')) {
+    if (!event.target.closest('.pop')) {
       setOpen(false)
     }
   }
@@ -19,15 +19,24 @@ const usePopup = () => {
       : document.removeEventListener('mousedown', handleOutsideClick)
   })
 
-  const Popup = ({ svgs, items, actions, styles }) => (
-    <ul className={`popup ${isOpen ? 'open' : ''} ${styles}`}>
-      {items.map((item, index) => (
-        <li key={index} onClick={actions[index]}>
-          {svgs[index]} {item}
-        </li>
-      ))}
-    </ul>
-  )
+  const Popup = ({ svgs, items, actions, styles, type = 'default' }) =>
+    type === 'default' ? (
+      <ul className={`pop popup ${isOpen ? 'open' : ''} ${styles}`}>
+        {items.map((item, index) => (
+          <li key={index} onClick={actions[index]}>
+            {svgs[index]} {item}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <ul
+        className={`pop emoji emoji__wrapper ${isOpen ? 'open' : ''} ${styles}`}
+      >
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    )
 
   return { Popup, togglePopup }
 }

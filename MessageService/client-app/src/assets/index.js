@@ -1,0 +1,13 @@
+export { default as logo } from './logo.svg'
+export { default as pen } from './settings-pen.svg'
+export { default as home } from './home.svg'
+export { default as friends } from './friends.svg'
+export { default as chat } from './chat.svg'
+export { default as user } from './user.svg'
+export { default as settings } from './settings.svg'
+
+export { default as homeHover } from './hover/home.svg'
+export { default as friendsHover } from './hover/friends.svg'
+export { default as chatHover } from './hover/chat.svg'
+export { default as userHover } from './hover/user.svg'
+export { default as settingsHover } from './hover/settings.svg'

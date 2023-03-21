@@ -1,7 +1,6 @@
 .emailConfirm__bg {
   height: 100vh;
   width: 100vw;
-  background: $gradient-color;
 }
 .emailConfirm {
   position: absolute;
@@ -11,7 +10,6 @@
   -webkit-transform: translate(-50%, -40%);
   padding: 2em;
   text-align: center;
-  background: white;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -49,8 +47,9 @@
   p {
     font-size: 14px;
     .accent {
+      cursor: pointer;
       font-weight: 600;
-      stroke: theme-color(accent-color);
+      color: $accent-color;
     }
     .user-email {
       color: rgb(44, 192, 44);

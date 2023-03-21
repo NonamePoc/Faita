@@ -1,15 +1,20 @@
 import React from 'react'
 import { Emoji } from '../../components'
+import useInput from '../../hooks/useInput'
 
 function Input() {
+  const { value, handleChange, handleEmojiSelect } = useInput('')
+
   return (
     <fieldset className='card chatroom__field'>
       <input
+        onChange={handleChange}
+        value={value}
         className='chatroom__field__input'
         placeholder='Write something...'
       />
       <div className='flex'>
-        <Emoji />
+        <Emoji handleEmojiSelect={handleEmojiSelect} />
         <button className='btn send-btn'>
           <svg
             width='20'

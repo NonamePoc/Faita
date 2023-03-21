@@ -1,13 +1,14 @@
 import React from 'react'
 import usePopup from '../../hooks/usePopup'
 import ThemeSwitcher from '../switcher/ThemeSwitcher'
+import { logo } from '../../assets'
 
 function Header() {
   const { Popup, togglePopup } = usePopup()
 
   return (
     <header className='header'>
-      <p>Logo</p>
+      <img width='115' src={logo} alt='Faita logo' />
       <ThemeSwitcher />
       <button className='btn'>
         <svg

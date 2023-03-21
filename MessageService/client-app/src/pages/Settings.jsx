@@ -1,8 +1,13 @@
 import React from 'react'
 import { ThemeSwitcher } from '../components'
+import { pen } from '../assets'
 
 function Settings() {
   const [inputValue, setInputValue] = React.useState('Vlasta')
+
+  const onChangeInput = (event) => {
+    setInputValue(event.target.value)
+  }
 
   return (
     <section className='stngs'>
@@ -14,33 +19,8 @@ function Settings() {
             <p>Change your name as it appears on your account.</p>
           </div>
           <div className='stngs__change'>
-            <input
-              type='text'
-              value={inputValue}
-              onChange={(event) => {
-                setInputValue(event.target.value)
-              }}
-            />
-            <svg
-              width='22'
-              height='22'
-              viewBox='0 0 22 22'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                opacity='0.15'
-                d='M3.66666 18.3333H7.33332L16.5 9.16667L12.8333 5.5L3.66666 14.6667V18.3333Z'
-                fill='#9BA9BA'
-              />
-              <path
-                d='M16.5 9.16667L19.25 6.41667L15.5833 2.75L12.8333 5.5M16.5 9.16667L7.33332 18.3333H3.66666V14.6667L12.8333 5.5M16.5 9.16667L12.8333 5.5'
-                stroke='#9BA9BA'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              />
-            </svg>
+            <input type='text' value={inputValue} onChange={onChangeInput} />
+            <img src={pen} alt='pen' />
           </div>
         </div>
         <div className='stngs__item'>
@@ -50,26 +30,7 @@ function Settings() {
           </div>
           <div className='stngs__change'>
             <input value='Vasylechko' disabled />
-            <svg
-              width='22'
-              height='22'
-              viewBox='0 0 22 22'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                opacity='0.15'
-                d='M3.66666 18.3333H7.33332L16.5 9.16667L12.8333 5.5L3.66666 14.6667V18.3333Z'
-                fill='#9BA9BA'
-              />
-              <path
-                d='M16.5 9.16667L19.25 6.41667L15.5833 2.75L12.8333 5.5M16.5 9.16667L7.33332 18.3333H3.66666V14.6667L12.8333 5.5M16.5 9.16667L12.8333 5.5'
-                stroke='#9BA9BA'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              />
-            </svg>
+            <img src={pen} alt='pen' />
           </div>
         </div>
         <div className='stngs__item'>
@@ -79,26 +40,7 @@ function Settings() {
           </div>
           <div className='stngs__change'>
             <input value='example@gmail.com' disabled />
-            <svg
-              width='22'
-              height='22'
-              viewBox='0 0 22 22'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                opacity='0.15'
-                d='M3.66666 18.3333H7.33332L16.5 9.16667L12.8333 5.5L3.66666 14.6667V18.3333Z'
-                fill='#9BA9BA'
-              />
-              <path
-                d='M16.5 9.16667L19.25 6.41667L15.5833 2.75L12.8333 5.5M16.5 9.16667L7.33332 18.3333H3.66666V14.6667L12.8333 5.5M16.5 9.16667L12.8333 5.5'
-                stroke='#9BA9BA'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              />
-            </svg>
+            <img src={pen} alt='pen' />
           </div>
         </div>
         <div className='stngs__item'>
@@ -108,26 +50,7 @@ function Settings() {
           </div>
           <div className='stngs__change'>
             <input value='********' disabled />
-            <svg
-              width='22'
-              height='22'
-              viewBox='0 0 22 22'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                opacity='0.15'
-                d='M3.66666 18.3333H7.33332L16.5 9.16667L12.8333 5.5L3.66666 14.6667V18.3333Z'
-                fill='#9BA9BA'
-              />
-              <path
-                d='M16.5 9.16667L19.25 6.41667L15.5833 2.75L12.8333 5.5M16.5 9.16667L7.33332 18.3333H3.66666V14.6667L12.8333 5.5M16.5 9.16667L12.8333 5.5'
-                stroke='#9BA9BA'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              />
-            </svg>
+            <img src={pen} alt='pen' />
           </div>
         </div>
       </div>
