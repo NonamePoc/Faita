@@ -6,12 +6,20 @@
   gap: 1em;
 
   &__img {
+    object-fit: cover;
     width: 60px;
+    height: 60px;
     border-radius: $main-border-radius;
     -webkit-border-radius: $main-border-radius;
   }
   &__caption {
     font-size: 17px;
     font-weight: bold;
+  }
+}
+
+@media (max-width: 1400px) {
+  .profileCard {
+    display: none;
   }
 }

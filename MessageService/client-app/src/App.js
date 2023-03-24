@@ -1,22 +1,14 @@
 import React from 'react'
 import Router from './router'
-import ThemeContext from './contexts/ThemeContext'
+import { useSelector } from 'react-redux'
 
 function App() {
-  const [theme, setTheme] = React.useState(() => {
-    return localStorage.getItem('theme') || 'light'
-  })
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
-  }
+  const { theme } = useSelector((state) => state.theme)
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className={theme}>
-        <Router />
-      </div>
-    </ThemeContext.Provider>
+    <div className={theme}>
+      <Router />
+    </div>
   )
 }
 

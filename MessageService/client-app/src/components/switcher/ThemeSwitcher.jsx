@@ -1,9 +1,14 @@
 import React from 'react'
-import useTheme from '../../hooks/useTheme'
+import { useDispatch, useSelector } from 'react-redux'
 
 function ThemeSwitcher() {
-  const { theme, toggleTheme } = useTheme()
-  const inputRef = React.useRef()
+  const inputRef = React.useRef(null)
+  const { theme } = useSelector((state) => state.theme)
+  const dispatch = useDispatch()
+
+  const toggleTheme = () => {
+    dispatch({ type: 'TOGGLE_THEME' })
+  }
 
   React.useEffect(() => {
     inputRef.current.checked = theme === 'dark'

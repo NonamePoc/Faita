@@ -16,6 +16,25 @@ body {
   gap: 4.5rem;
 }
 
+@media (max-width: 1600px) {
+  .wrapper {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+@media (max-width: 960px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+
 .btn {
   cursor: pointer;
   display: flex;

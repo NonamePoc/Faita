@@ -1,6 +1,10 @@
 .light,
 .dark {
   min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: scroll;
 }
 .light {
   background-color: $lt-body-bg-color;
@@ -130,6 +134,14 @@
   .emailConfirm__bg {
     background: $lt-email-confirm-bg-color;
   }
+
+  .newMsgAlert {
+    background-color: rgba(32, 40, 57, 0.166);
+    &__name,
+    &__text {
+      color: $lt-body-text-color;
+    }
+  }
 }
 
 .dark {
@@ -251,5 +263,13 @@
   }
   .emailConfirm__bg {
     background-color: $drk-body-bg-color;
+  }
+
+  .newMsgAlert {
+    background-color: rgba(151, 145, 145, 0.096);
+    &__name,
+    &__text {
+      color: $secondary-color;
+    }
   }
 }

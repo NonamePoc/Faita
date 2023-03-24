@@ -1,12 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
-import useTheme from '../../hooks/useTheme'
 import usePopup from '../../hooks/usePopup'
 
 const Emoji = React.memo(function Emoji({ popupStyle, handleEmojiSelect }) {
   const { Popup, togglePopup } = usePopup()
-  const { theme } = useTheme()
+  const { theme } = useSelector((state) => state.theme)
 
   return (
     <div>

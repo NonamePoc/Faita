@@ -1,5 +1,5 @@
 import React from 'react'
-import { Emoji } from '../../components'
+import { Emoji, Gif } from '../../components'
 import useInput from '../../hooks/useInput'
 
 function Input() {
@@ -14,6 +14,7 @@ function Input() {
         placeholder='Write something...'
       />
       <div className='flex'>
+        <Gif />
         <Emoji handleEmojiSelect={handleEmojiSelect} />
         <button className='btn send-btn'>
           <svg

@@ -30,7 +30,7 @@ const usePopup = () => {
       </ul>
     ) : (
       <ul
-        className={`pop emoji emoji__wrapper ${isOpen ? 'open' : ''} ${styles}`}
+        className={`pop emoji-gif__wrapper ${isOpen ? 'open' : ''} ${styles}`}
       >
         {items.map((item, index) => (
           <li key={index}>{item}</li>

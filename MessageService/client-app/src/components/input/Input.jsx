@@ -1,5 +1,5 @@
 import React from 'react'
-import Emoji from '../emoji/Emoji'
+import Emoji from '../emoji-giphs/Emoji'
 import useInput from '../../hooks/useInput'
 
 function Input({ type }) {
@@ -8,7 +8,7 @@ function Input({ type }) {
   const { value, handleChange, handleEmojiSelect } = useInput('')
 
   const handleBlur = (event) => {
-    if (event.relatedTarget === null) {
+    if (event.relatedTarget === null && inputRef.current.value === '') {
       setFocused(false)
     }
   }
@@ -29,7 +29,7 @@ function Input({ type }) {
       <div className='input__info'>
         <img
           className={`input__avatar ${type ? 'sendPost' : ''}`}
-          src='https://picsum.photos/200'
+          src='https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?fit=476%2C280&ssl=1'
           alt='user avatar'
         />
         <h1 className='input__name'>ProfileName_001</h1>

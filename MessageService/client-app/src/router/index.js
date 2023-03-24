@@ -10,7 +10,13 @@ import {
   EmailConfirmation,
   Settings,
 } from '../pages'
-import { Header, UserMiniCard, MenuTab, AsideFriendList } from '../components'
+import {
+  Header,
+  UserMiniCard,
+  MenuTab,
+  AsideFriendList,
+  NewMessageAlert,
+} from '../components'
 
 const MainLayout = () => (
   <>
@@ -19,6 +25,7 @@ const MainLayout = () => (
       <div>
         <UserMiniCard />
         <MenuTab />
+        <NewMessageAlert />
       </div>
       <Outlet />
       <AsideFriendList />

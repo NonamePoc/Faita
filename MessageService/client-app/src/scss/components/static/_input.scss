@@ -31,8 +31,10 @@
     gap: 0.8em;
   }
   &__avatar {
-    width: 45px;
-    height: 45px;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin-top: 0.2rem;
     border-radius: $main-border-radius;
     -webkit-border-radius: $main-border-radius;
     -moz-border-radius: $main-border-radius;
@@ -69,7 +71,7 @@
   &__btns {
     display: flex;
     align-items: center;
-    margin-top: auto;
+
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     svg {
@@ -104,6 +106,7 @@
         -webkit-transition: all 0.5s ease-in-out;
       }
       &__btns {
+        margin-top: auto;
         transform: translateY(6rem);
         -webkit-transform: translateY(6rem);
         transition: all 0.5s ease-in-out;

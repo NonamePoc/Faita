@@ -33,3 +33,10 @@
     }
   }
 }
+
+@media (max-width: 1400px) {
+  .friends,
+  .friendsTitle {
+    display: none;
+  }
+}
