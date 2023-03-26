@@ -31,7 +31,7 @@
 
   h2 {
     width: 100%;
-    font-size: 30px;
+    font-size: clamp(1.375rem, 0.4861rem + 4.4444vw, 1.875rem);
     text-align: center;
     font-weight: bold;
     margin-bottom: 3rem;
@@ -55,10 +55,10 @@
   }
 
   label span {
-    font-size: 14px;
+    font-size: clamp(0.75rem, 0.5278rem + 1.1111vw, 0.875rem);
     font-weight: 600;
     text-transform: uppercase;
-    margin: 1rem;
+    margin: 1rem clamp(0rem, -0.4706rem + 2.3529vw, 1rem);
   }
   .field {
     display: flex;
@@ -75,7 +75,7 @@
   input {
     width: 100%;
     font-weight: 600;
-    font-size: 15px;
+    font-size: clamp(0.875rem, 0.7639rem + 0.5556vw, 0.9375rem);
     background: transparent;
   }
 
@@ -84,7 +84,7 @@
     margin-top: 1rem;
     text-align: center;
     width: 10rem;
-    font-size: 16px;
+    font-size: clamp(0.875rem, 0.6528rem + 1.1111vw, 1rem);
     display: block;
     text-align: center;
     &:hover {
@@ -162,7 +162,7 @@
     left: 0;
     top: 50px;
     width: 100%;
-    padding: 4.5rem 20px;
+    padding: 4.5rem clamp(0rem, 2rem + -10vw, 1.25rem);
     text-align: center;
     -webkit-transition: -webkit-transform 1.2s ease-in-out;
     transition: -webkit-transform 1.2s ease-in-out;
@@ -175,9 +175,8 @@
   }
 
   .img-text p {
-    font-size: 14px;
+    font-size: clamp(0.75rem, 0.5278rem + 1.1111vw, 0.875rem);
     font-weight: 600;
-
     text-shadow: 1px 1px 2px black;
   }
 
@@ -219,7 +218,8 @@
     height: 36px;
     margin: auto;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: clamp(0.75rem, 0.5278rem + 1.1111vw, 0.875rem);
+    white-space: nowrap;
     background: transparent;
     border: 1px solid #b8bad1;
     border-radius: $main-border-radius;
@@ -292,5 +292,56 @@
   .cont.s-signup .sign-up {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 800px) {
+  .auth {
+    .cont {
+      width: 320px;
+    }
+    .form {
+      width: 230px;
+    }
+    .row .label {
+      width: 80px;
+    }
+    .label {
+      width: 180px;
+    }
+    .sub-cont {
+      left: 230px;
+      width: 320px;
+      padding-left: 80px;
+    }
+    .cont.s-signup .sub-cont {
+      -webkit-transform: translate3d(-230px, 0, 0);
+      transform: translate3d(-230px, 0, 0);
+    }
+
+    .img {
+      width: 90px;
+    }
+    .img:before {
+      width: 320px;
+    }
+    .cont.s-signup .img:before {
+      -webkit-transform: translate3d(230px, 0, 0);
+      transform: translate3d(230px, 0, 0);
+    }
+    .cont.s-signup .sign-in {
+      -webkit-transform: translate3d(230px, 0, 0);
+      transform: translate3d(230px, 0, 0);
+    }
+    .sign-up {
+      -webkit-transform: translate3d(-320px, 0, 0);
+      transform: translate3d(-320px, 0, 0);
+    }
+    .img-btn {
+      width: 80px;
+    }
+    .img-text p {
+      display: none;
+    }
   }
 }

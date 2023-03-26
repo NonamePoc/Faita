@@ -1,15 +1,16 @@
 .friendsMini {
-  padding: 1rem 3rem;
-  display: grid;
+  padding: 1rem clamp(1.5rem, 0.9545rem + 2.7273vw, 3rem);
   &__title {
     font-size: 16px;
     font-weight: bold;
-
     text-transform: uppercase;
   }
   &__list {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(1rem, -0.4545rem + 7.2727vw, 2.5rem);
   }
   &__item {
     display: flex;
@@ -18,8 +19,8 @@
     transform: translateY(1rem);
     -webkit-transform: translateY(1rem);
     img {
-      width: 107px;
-      height: 107px;
+      width: clamp(5rem, 4.3864rem + 3.0682vw, 6.6875rem);
+      height: clamp(5rem, 4.3864rem + 3.0682vw, 6.6875rem);
       border-radius: $main-border-radius;
       -webkit-border-radius: $main-border-radius;
     }

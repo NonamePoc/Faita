@@ -8,7 +8,7 @@
   top: 40%;
   transform: translate(-50%, -40%);
   -webkit-transform: translate(-50%, -40%);
-  padding: 2em;
+  padding: clamp(1rem, 0.6364rem + 1.8182vw, 2rem);
   text-align: center;
   z-index: 1000;
   display: flex;

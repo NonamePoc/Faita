@@ -5,14 +5,14 @@
   }
   h1 {
     margin-left: 0.7em;
-    font-size: 16px;
+    font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 1rem;
     color: $secondary-color;
   }
   h2 {
-    font-size: 16px;
+    font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
     font-weight: 600;
   }
   p {
@@ -22,9 +22,9 @@
   }
   &__item {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr min-content;
     align-items: center;
-    padding: 1rem 5rem;
+    padding: 1rem clamp(2rem, 0.9091rem + 5.4545vw, 5rem);
   }
   &__change {
     display: flex;
@@ -44,5 +44,13 @@
   }
   .input-dis {
     color: black;
+  }
+}
+
+@media (max-width: 500px) {
+  .stngs {
+    &__item {
+      grid-template-columns: 1fr;
+    }
   }
 }

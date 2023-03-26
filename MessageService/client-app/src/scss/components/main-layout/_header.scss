@@ -1,11 +1,15 @@
 .header {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 4.5% 7% 3%;
+  grid-template-columns: 1fr min-content;
   gap: 0.5rem;
   align-items: center;
-  padding: 1.5rem 12rem;
+  padding: 1.5rem 10rem;
   background: white;
+  .flex {
+    align-items: center;
+    gap: 0.5rem;
+  }
   .avatar {
     cursor: pointer;
     object-fit: cover;

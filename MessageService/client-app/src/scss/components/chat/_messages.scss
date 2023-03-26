@@ -5,7 +5,7 @@
     align-self: flex-end;
     gap: 1rem;
     padding: 1rem;
-    max-height: calc(100dvh - 21.5rem);
+    max-height: calc(100dvh - clamp(16rem, 14.9091rem + 5.4545vw, 19rem));
   }
 }
 
@@ -33,11 +33,10 @@
 
   &__text {
     padding: 1rem;
-
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    font-size: 16px;
+    font-size: clamp(0.90625rem, 0.8722rem + 0.1705vw, 1rem);
   }
   &__date {
     font-size: 14px;

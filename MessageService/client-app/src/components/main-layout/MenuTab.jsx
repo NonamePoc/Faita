@@ -49,7 +49,7 @@ function MenuTab() {
                 }`}
                 alt='Menu Item'
               />
-              {item}
+              <span> {item} </span>
             </li>
           </Link>
         ))}

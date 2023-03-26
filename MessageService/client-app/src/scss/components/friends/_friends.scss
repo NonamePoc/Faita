@@ -45,6 +45,9 @@
       font-size: 14px;
       font-weight: 600;
       padding: 0.8rem 0.6rem;
+      &:after {
+        content: 'Profile';
+      }
     }
     .msg {
       cursor: pointer;
@@ -52,6 +55,9 @@
       font-size: 14px;
       font-weight: bold;
       padding: 0.8rem 0.6rem;
+      &:after {
+        content: 'Message';
+      }
       svg path {
         fill: $accent-color;
       }
@@ -59,6 +65,36 @@
     svg {
       width: 20px;
       height: 20px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .friendPage {
+    gap: 1rem;
+  }
+  .friendCard {
+    padding: 0.3rem 2rem;
+    justify-content: space-between;
+    gap: 0.5rem;
+    &__image {
+      width: 80px;
+      height: 80px;
+    }
+    &__btns {
+      gap: 0.5rem;
+      .prfl {
+        padding: 0.5rem;
+        &:after {
+          content: none;
+        }
+      }
+      .msg {
+        padding: 0.5rem;
+        &:after {
+          content: none;
+        }
+      }
     }
   }
 }

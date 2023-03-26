@@ -1,8 +1,8 @@
 .chat {
   margin: 1em 0;
-  padding: 1.5em;
+  padding: clamp(0.5rem, 0.1364rem + 1.8182vw, 1.5rem);
   display: grid;
-  grid-template-columns: 10% 1fr 10%;
+  grid-template-columns: min-content 1fr min-content;
   gap: 1em;
   transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
@@ -19,7 +19,8 @@
     -moz-transition: all 0.25s ease-in-out;
   }
   &__img {
-    width: 76px;
+    width: clamp(3.5rem, 3.0455rem + 2.2727vw, 4.75rem);
+    align-self: center;
     object-position: center;
     border-radius: $main-border-radius;
     -webkit-border-radius: $main-border-radius;
@@ -34,16 +35,17 @@
     }
   }
   &__name {
-    font-size: 16px;
+    font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
     font-weight: bold;
   }
   &__message {
-    font-size: 15px;
+    font-size: clamp(0.8125rem, 0.767rem + 0.2273vw, 0.9375rem);
     color: $dark-secondary-color;
   }
   &__date {
-    font-size: 12px;
+    font-size: clamp(0.625rem, 0.5795rem + 0.2273vw, 0.75rem);
     color: $secondary-color;
+    white-space: nowrap;
   }
   .msgCounter {
     font-size: 15px;
@@ -55,24 +57,23 @@
 
 .chatroom {
   display: grid;
-  grid-template-rows: 11% 1fr 5%;
-  min-height: 75dvh;
-  min-height: 75vh;
+  grid-template-rows: min-content 1fr min-content;
   &__header {
     display: grid;
-    grid-template-columns: 9% 9% 1fr 9%;
+    grid-template-columns: min-content min-content 1fr min-content;
+    gap: 0.5rem;
     align-items: center;
-    padding-left: 2rem;
+    padding: 0.3rem 2rem;
     position: relative;
     &__img {
-      width: 55px;
-      height: 55px;
+      width: clamp(2.8125rem, 2.5852rem + 1.1364vw, 3.4375rem);
+      height: clamp(2.8125rem, 2.5852rem + 1.1364vw, 3.4375rem);
       border-radius: $main-border-radius;
       -webkit-border-radius: $main-border-radius;
     }
     &__info {
       .name {
-        font-size: 16px;
+        font-size: clamp(0.9375rem, 0.9148rem + 0.1136vw, 1rem);
         font-weight: bold;
       }
       .status {
@@ -80,7 +81,7 @@
         align-items: center;
         gap: 0.2em;
         &__text {
-          font-size: 16px;
+          font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
           color: $secondary-color;
         }
       }
@@ -89,7 +90,7 @@
 
   &__field {
     display: grid;
-    grid-template-columns: 1fr 15%;
+    grid-template-columns: 1fr min-content;
     align-items: center;
     gap: 1em;
     border: none;
@@ -97,12 +98,12 @@
     padding: 0.5em 2em;
     &__input {
       background-color: transparent;
-      font-size: 18px;
+      font-size: clamp(0.9375rem, 0.8693rem + 0.3409vw, 1.125rem);
       border: none;
       width: 85%;
       height: 100%;
       &::placeholder {
-        font-size: 16px;
+        font-size: clamp(0.9375rem, 0.8693rem + 0.3409vw, 1.125rem);
         font-weight: 600;
         color: $secondary-color;
       }

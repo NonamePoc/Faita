@@ -17,12 +17,11 @@
 
 .input {
   display: grid;
-  grid-template-columns: 8% 1fr 17%;
+  grid-template-columns: 8% 1fr min-content;
   transition: padding-bottom 0.5s ease-in-out;
   -webkit-transition: padding-bottom 0.5s ease-in-out;
 
   &.sendPost {
-    grid-template-columns: 8% 1fr 18%;
     margin-bottom: 1.5rem;
     padding: 1em;
   }
@@ -57,13 +56,13 @@
     padding-top: 1em;
     border: none;
     width: 100%;
-    font-size: 18px;
+    font-size: clamp(1rem, 0.9545rem + 0.2273vw, 1.125rem);
     background: transparent;
     resize: none;
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     &::placeholder {
-      font-size: 16px;
+      font-size: clamp(0.84375rem, 0.7869rem + 0.2841vw, 1rem);
       font-weight: 600;
       color: #a3aebd;
     }
@@ -71,9 +70,12 @@
   &__btns {
     display: flex;
     align-items: center;
-
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
+    gap: 0.2rem;
+    button {
+      white-space: nowrap;
+    }
     svg {
       opacity: 0;
       transition: all 0.5s ease-in-out;
@@ -100,21 +102,83 @@
       &__input {
         padding-top: 0;
         width: 95%;
-        transform: translateY(3.2rem);
-        -webkit-transform: translateY(3.2rem);
+        transform: translateY(3rem);
         transition: all 0.5s ease-in-out;
         -webkit-transition: all 0.5s ease-in-out;
+        -webkit-transform: translateY(3rem);
+        -moz-transform: translateY(3rem);
+        -ms-transform: translateY(3rem);
+        -o-transform: translateY(3rem);
       }
       &__btns {
         margin-top: auto;
-        transform: translateY(6rem);
-        -webkit-transform: translateY(6rem);
+        transform: translateY(5.5rem);
+        -webkit-transform: translateY(5.5rem);
         transition: all 0.5s ease-in-out;
         -webkit-transition: all 0.5s ease-in-out;
         svg {
           opacity: 1;
           transition: all 0.5s ease-in-out;
           -webkit-transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .input {
+    grid-template-columns: 0 1fr min-content;
+    &__avatar {
+      display: none;
+      height: 0;
+    }
+    &__name {
+      display: none;
+      height: 0;
+    }
+    &__input {
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+    }
+    &.active {
+      .input {
+        &__input {
+          transform: translateY(1.5rem);
+          -webkit-transform: translateY(1.5rem);
+          -moz-transform: translateY(1.5rem);
+          -ms-transform: translateY(1.5rem);
+          -o-transform: translateY(1.5rem);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .input {
+    grid-template-columns: 0 1fr;
+    grid-template-rows: auto 0;
+    &__btns {
+      grid-column: span 2;
+      justify-self: self-end;
+      transform: translateY(-1.8rem);
+      -webkit-transform: translateY(-1.8rem);
+      -moz-transform: translateY(-1.8rem);
+      -ms-transform: translateY(-1.8rem);
+      -o-transform: translateY(-1.8rem);
+    }
+    &.active {
+      .input {
+        &__btns {
+          transform: translateY(1.7rem);
+          -webkit-transform: translateY(1.7rem);
+          -moz-transform: translateY(1.7rem);
+          -ms-transform: translateY(1.7rem);
+          -o-transform: translateY(1.7rem);
         }
       }
     }

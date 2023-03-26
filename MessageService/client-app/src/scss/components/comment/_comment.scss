@@ -12,8 +12,9 @@
   }
   &__info {
     display: grid;
-    grid-template-columns: 8% 1fr 17%;
+    grid-template-columns: min-content 1fr min-content;
     align-items: center;
+    gap: 0.5rem;
     &__name {
       font-size: 16px;
       font-weight: 600;
@@ -24,6 +25,7 @@
       color: $secondary-color;
       opacity: 0.8;
     }
+
     &__reactions {
       display: flex;
       gap: 0.2em;
@@ -39,6 +41,9 @@
         margin-right: 0.5em;
       }
     }
+  }
+  &__content {
+    grid-column: span 2;
   }
   &__replies {
     display: flex;

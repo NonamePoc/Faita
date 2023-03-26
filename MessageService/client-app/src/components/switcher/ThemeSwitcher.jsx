@@ -6,9 +6,7 @@ function ThemeSwitcher() {
   const { theme } = useSelector((state) => state.theme)
   const dispatch = useDispatch()
 
-  const toggleTheme = () => {
-    dispatch({ type: 'TOGGLE_THEME' })
-  }
+  const toggleTheme = () => dispatch({ type: 'TOGGLE_THEME' })
 
   React.useEffect(() => {
     inputRef.current.checked = theme === 'dark'

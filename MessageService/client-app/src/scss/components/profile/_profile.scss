@@ -1,5 +1,5 @@
 .profile {
-  padding: 0.5em 2em;
+  padding: 0.5em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,18 +30,18 @@
   &__photo {
     border-radius: $main-border-radius;
     -webkit-border-radius: $main-border-radius;
-    width: 136px;
-    height: 136px;
+    width: clamp(5.9375rem, 5.0057rem + 4.6591vw, 8.5rem);
+    height: clamp(5.9375rem, 5.0057rem + 4.6591vw, 8.5rem);
     margin-bottom: 2em;
   }
   &__name {
-    font-size: 20px;
+    font-size: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
     font-weight: bold;
     margin-bottom: 0.5em;
   }
   &__descr {
-    padding: 0 4rem;
-    font-size: 16px;
+    padding: 0 clamp(0rem, -0.0909rem + 5.4545vw, 4rem);
+    font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
     font-weight: 600;
     color: #7b8590;
     text-align: center;

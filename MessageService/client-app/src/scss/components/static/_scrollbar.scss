@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
@@ -9,7 +9,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-color: $light-secondary-color;
+  background-color: #8d91be6d;
   border-radius: $main-border-radius;
   -webkit-border-radius: $main-border-radius;
   -moz-border-radius: $main-border-radius;

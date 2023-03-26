@@ -4,7 +4,7 @@
   height: 100%;
   width: 100%;
   position: fixed;
-  overflow: scroll;
+  overflow: auto;
 }
 .light {
   background-color: $lt-body-bg-color;
@@ -257,9 +257,6 @@
     &__user p {
       background-color: rgb(52, 52, 54);
     }
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: $drk-btn-bg-color;
   }
   .emailConfirm__bg {
     background-color: $drk-body-bg-color;

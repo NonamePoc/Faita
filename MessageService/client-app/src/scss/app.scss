@@ -18,7 +18,7 @@ body {
 
 @media (max-width: 1600px) {
   .wrapper {
-    padding: 0 2rem;
+    padding: 2rem;
   }
 }
 
@@ -40,7 +40,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.3em;
-  font-size: 15px;
+  font-size: clamp(0.75rem, 0.6818rem + 0.3409vw, 0.9375rem);
   color: white;
   background-color: $accent-color;
   padding: 0.8em 1.2em;
@@ -66,6 +66,13 @@ body {
       -webkit-transition: all 0.25s ease-in-out;
       -moz-transition: all 0.25s ease-in-out;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .btn {
+    padding: 0.8em;
+    max-height: 2.8rem;
   }
 }
 
