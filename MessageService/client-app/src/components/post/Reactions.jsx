@@ -4,8 +4,9 @@ function Reactions() {
   return (
     <div className='post__below'>
       <svg
+        className='reaction heart'
         width='32'
-        height='32'
+        height='31'
         viewBox='0 0 32 32'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
@@ -18,15 +19,16 @@ function Reactions() {
         </g>
         <defs>
           <clipPath id='clip0_13_219'>
-            <rect width='32' height='32' fill='white' />
+            <rect width='32' height='32' />
           </clipPath>
         </defs>
       </svg>
       <p>122</p>
       <svg
+        className='reaction com'
         width='32'
-        height='26'
-        viewBox='0 0 32 26'
+        height='30'
+        viewBox='0 0 32 30'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
       >
@@ -44,6 +46,7 @@ function Reactions() {
       </svg>
       <p>12</p>
       <svg
+        className='reaction repost'
         width='32'
         height='32'
         viewBox='0 0 32 32'

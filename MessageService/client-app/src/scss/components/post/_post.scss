@@ -2,8 +2,8 @@
   display: grid;
   position: relative;
   padding: 1em 2em;
-  gap: 1.2em;
   margin-bottom: 1rem;
+  gap: 1rem;
   &__info {
     display: grid;
     grid-template-columns: min-content 1fr min-content;
@@ -40,5 +40,60 @@
       color: $secondary-color;
       margin-right: 1em;
     }
+    .reaction {
+      display: grid;
+      align-self: flex-end;
+      transition: fill 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+    .reaction path {
+      cursor: pointer;
+      transition: fill 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+    .heart:hover path {
+      fill: rgba(225, 70, 70, 0.55);
+    }
+    .heart:active path {
+      fill: rgb(200, 67, 67);
+    }
+    .com:hover path {
+      fill: rgba(70, 83, 225, 0.55);
+    }
+    .com:active path {
+      fill: rgb(50, 87, 208);
+    }
+    .repost:hover path {
+      stroke: rgba(70, 83, 225, 0.55);
+    }
+    .repost:active path {
+      stroke: rgb(50, 87, 208);
+    }
+    .reaction:active {
+      animation-name: reaction;
+      animation-duration: 0.5s;
+    }
+  }
+}
+
+@keyframes reaction {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.1rem);
+    -webkit-transform: translateY(-0.1rem);
+    -moz-transform: translateY(-0.1rem);
+    -ms-transform: translateY(-0.1rem);
+    -o-transform: translateY(-0.1rem);
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
   }
 }

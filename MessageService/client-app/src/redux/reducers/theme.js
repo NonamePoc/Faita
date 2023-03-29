@@ -1,19 +1,19 @@
-const INITIAL_STATE = {
-  theme: localStorage.getItem('theme') || 'light',
-}
+import { createSlice } from '@reduxjs/toolkit'
 
-const theme = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case 'TOGGLE_THEME':
-      localStorage.setItem('theme', state.theme === 'light' ? 'dark' : 'light')
-      console.log(localStorage.getItem('theme'))
-      return {
-        ...state,
-        theme: state.theme === 'light' ? 'dark' : 'light',
-      }
-    default:
-      return state
-  }
-}
+const theme = createSlice({
+  name: 'theme',
+  initialState: {
+    theme: localStorage.getItem('theme') || 'light',
+  },
+  reducers: {
+    toggleTheme: (state) => {
+      const newTheme = state.theme === 'light' ? 'dark' : 'light'
+      localStorage.setItem('theme', newTheme)
+      state.theme = newTheme
+    },
+  },
+})
 
-export default theme
+export const { toggleTheme } = theme.actions
+
+export default theme.reducer

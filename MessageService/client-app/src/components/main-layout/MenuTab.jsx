@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { setMenu } from '../../redux/reducers/menu'
 import {
   home,
   friends,
@@ -25,11 +27,15 @@ const iconsHover = [
 const links = ['/', '/friends', '/chat', '/profile', '/settings']
 
 function MenuTab() {
-  const [activeItem, setActiveItem] = React.useState(0)
+  const dispatch = useDispatch()
+  const activeItem = useSelector((state) => state.menu.activeItem)
 
-  const onClickItem = (index) => {
-    setActiveItem(index)
-  }
+  const onClickItem = React.useCallback(
+    (index) => {
+      dispatch(setMenu(index))
+    },
+    [dispatch]
+  )
 
   return (
     <nav className='card menu'>
