@@ -23,7 +23,7 @@
         stroke: $secondary-color;
       }
       &:hover path {
-        stroke: theme-color(accent-color);
+        stroke: $accent-color;
       }
     }
   }
