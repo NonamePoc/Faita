@@ -83,8 +83,8 @@ function Card() {
         <div className='statusCircle'></div>
       </div>
       <div className='friendCard__btns'>
-        <Link to='/profile'>
-          <button className='btn prfl'>
+        <Link to='/profile' aria-label='View Profile'>
+          <button className='btn prfl' aria-label='view profile'>
             <svg
               width='26'
               height='26'
@@ -107,8 +107,8 @@ function Card() {
             </svg>
           </button>
         </Link>
-        <Link to='/chat'>
-          <button className='btn msg'>
+        <Link to='/chat' aria-label='Chat with User'>
+          <button className='btn msg' aria-label='chat with user'>
             <svg
               width='25'
               height='25'

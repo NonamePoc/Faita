@@ -13,7 +13,7 @@ function ProfilesFriendList() {
         <ProfileItem />
       </div>
       <Link to='/friends'>
-        <button className='friendsMini__button'>
+        <button className='friendsMini__button' aria-label='view more friends'>
           View more
           <svg
             width='18'

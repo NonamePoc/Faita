@@ -41,6 +41,9 @@
   .menu__item {
     border-left: none;
     border-bottom: 3px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &.active {
       border-left: none;
       border-bottom: 3px solid $accent-color;

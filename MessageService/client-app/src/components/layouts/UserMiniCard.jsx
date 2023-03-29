@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function UserMiniCard() {
   return (
-    <Link to='/profile'>
+    <Link to='/profile' aria-labelledby='View Profile'>
       <figure className='card profileCard'>
         <img
           className='profileCard__img'

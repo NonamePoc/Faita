@@ -40,7 +40,7 @@
   }
 
   .friendsTitle {
-    color: $secondary-color;
+    color: $lt-secondary-color;
   }
   .friendCard__btns .msg {
     background-color: white;
@@ -83,7 +83,7 @@
     }
   }
   .friendsMini__title {
-    color: $secondary-color;
+    color: $lt-secondary-color;
   }
   .backIcon__bg {
     fill: #9ba9ba;
@@ -101,7 +101,7 @@
     color: $lt-auth-img-text-color;
   }
   .label span {
-    color: $secondary-color;
+    color: $lt-secondary-color;
   }
 
   .stngs__item {
@@ -109,7 +109,7 @@
   }
 
   #switch {
-    background-color: $light-secondary-color;
+    background-color: $dark-secondary-color;
     border: 1.5px solid $dark-secondary-color;
   }
   #switch:checked {
@@ -117,7 +117,7 @@
     border: 1px solid $accent-color;
   }
   #switch::after {
-    background-color: $dark-secondary-color;
+    background-color: rgb(210, 210, 210);
   }
   #switch:checked::after {
     background-color: white;
@@ -141,6 +141,46 @@
     &__text {
       color: $lt-body-text-color;
     }
+  }
+
+  .emailConfirm__return__img path {
+    stroke: $lt-secondary-color;
+  }
+  input::placeholder {
+    color: $lt-secondary-color;
+  }
+
+  .chat__date {
+    color: $lt-secondary-color;
+  }
+  .status__text {
+    color: $lt-secondary-color;
+  }
+  .msg__date {
+    color: $lt-secondary-color;
+  }
+  .post__date {
+    color: $lt-secondary-color;
+  }
+  .post__below p {
+    color: $lt-secondary-color;
+  }
+  .comment__replies__create p {
+    color: $lt-secondary-color;
+  }
+  .comment__info__date {
+    color: $lt-secondary-color;
+  }
+  .comment__info__reactions p {
+    color: $lt-secondary-color;
+  }
+  .stngs h1,
+  .stngs p,
+  .stngs input {
+    color: $lt-secondary-color;
+  }
+  .chat__message {
+    color: $lt-secondary-color;
   }
 }
 
@@ -203,11 +243,17 @@
   .comment__replies__button {
     background-color: $drk-hover-bg-color;
   }
+  .comment__replies__create p {
+    color: $drk-secondary-color;
+  }
+  .comment__info__date {
+    color: $drk-secondary-color;
+  }
   .chatroom__field__input {
     color: white;
   }
   .input__input {
-    color: $secondary-color;
+    color: $drk-secondary-color;
   }
   .friendsMini__button {
     background-color: $drk-btn-bg-color;
@@ -244,7 +290,7 @@
   }
 
   #switch::after {
-    background-color: $secondary-color;
+    background-color: $drk-secondary-color;
   }
   #switch:checked::after {
     background-color: $accent-color;
@@ -263,10 +309,46 @@
   }
 
   .newMsgAlert {
-    background-color: rgba(151, 145, 145, 0.096);
+    background-color: rgba(162, 155, 155, 0.096);
     &__name,
     &__text {
-      color: $secondary-color;
+      color: $drk-body-text-color;
     }
+  }
+  .emailConfirm__return__img path {
+    stroke: $drk-secondary-color;
+  }
+  input::placeholder {
+    color: $drk-secondary-color;
+  }
+
+  .chat__date {
+    color: $drk-secondary-color;
+  }
+  .status__text {
+    color: $drk-secondary-color;
+  }
+  .msg__date {
+    color: $drk-secondary-color;
+  }
+  .post__date {
+    color: $drk-secondary-color;
+  }
+  .post__below p {
+    color: $drk-secondary-color;
+  }
+  .comment__info__date {
+    color: $drk-secondary-color;
+  }
+  .comment__info__reactions p {
+    color: $drk-secondary-color;
+  }
+  .stngs h1,
+  .stngs p,
+  .stngs input {
+    color: $drk-secondary-color;
+  }
+  .chat__message {
+    color: $dark-secondary-color;
   }
 }

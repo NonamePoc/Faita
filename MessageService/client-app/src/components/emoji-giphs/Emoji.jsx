@@ -24,7 +24,11 @@ const Emoji = React.memo(function Emoji({ popupStyle, handleEmojiSelect }) {
         type='emoji'
         styles={popupStyle}
       />
-      <button onClick={togglePopup} className='emoji__btn'>
+      <button
+        onClick={togglePopup}
+        className='emoji__btn'
+        aria-label='choose emoji'
+      >
         <svg
           width='28'
           height='28'

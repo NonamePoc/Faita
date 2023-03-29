@@ -22,8 +22,6 @@
     &__date {
       font-size: 14px;
       font-weight: 600;
-      color: $secondary-color;
-      opacity: 0.8;
     }
 
     &__reactions {
@@ -35,7 +33,6 @@
         width: 24px;
       }
       p {
-        color: $secondary-color;
         font-size: 14px;
         font-weight: 600;
         margin-right: 0.5em;
@@ -53,7 +50,6 @@
     &__create {
       display: flex;
       p {
-        color: $secondary-color;
         font-size: 16px;
         font-weight: 600;
       }

@@ -5,7 +5,11 @@ function EmailConfirmation() {
   return (
     <div className='emailConfirm__bg'>
       <div className='card emailConfirm'>
-        <Link to='/auth' className='emailConfirm__return'>
+        <Link
+          to='/auth'
+          className='emailConfirm__return'
+          aria-label='Go Back to Authentication Page'
+        >
           <svg
             className='emailConfirm__return__img'
             width='26px'

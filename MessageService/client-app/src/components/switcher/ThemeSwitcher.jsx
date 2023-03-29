@@ -17,6 +17,7 @@ function ThemeSwitcher() {
         ref={inputRef}
         id='checkbox'
         type='checkbox'
+        aria-label='theme switcher'
         onClick={() => dispatch(toggleTheme())}
       />
     </div>

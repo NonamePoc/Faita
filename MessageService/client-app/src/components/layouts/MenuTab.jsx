@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { setMenu } from '../../redux/reducers/menu'
+import { NavLink } from 'react-router-dom'
 import {
   home,
   friends,
@@ -27,37 +25,33 @@ const iconsHover = [
 const links = ['/', '/friends', '/chat', '/profile', '/settings']
 
 function MenuTab() {
-  const dispatch = useDispatch()
-  const activeItem = useSelector((state) => state.menu.activeItem)
+  const [activeItem, setActiveItem] = React.useState(null)
 
-  const onClickItem = React.useCallback(
-    (index) => {
-      dispatch(setMenu(index))
-    },
-    [dispatch]
-  )
+  React.useEffect(() => {
+    setActiveItem(links.indexOf(window.location.pathname))
+  }, [])
 
   return (
     <nav className='card menu'>
       <ul>
         {items.map((item, index) => (
-          <Link
-            key={index}
-            to={links[index]}
-            onClick={() => onClickItem(index)}
-          >
-            <li
-              className={`menu__item  ${activeItem === index ? 'active' : ''}`}
+          <li key={index}>
+            <NavLink
+              className='menu__item'
+              to={links[index]}
+              onClick={() => setActiveItem(index)}
             >
               <img
+                width={33}
+                height={33}
                 src={`${
                   activeItem === index ? iconsHover[index] : icons[index]
                 }`}
                 alt='Menu Item'
               />
               <span> {item} </span>
-            </li>
-          </Link>
+            </NavLink>
+          </li>
         ))}
       </ul>
     </nav>

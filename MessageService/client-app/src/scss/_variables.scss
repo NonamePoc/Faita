@@ -1,6 +1,5 @@
-$accent-color: #1b64c3;
-$secondary-color: #b2b5b8;
-$light-secondary-color: #eaeaea;
+$accent-color: #1d6fdb;
+$light-secondary-color: #c2bebe;
 $dark-secondary-color: #999999;
 
 $main-border-radius: 9px;
@@ -8,6 +7,7 @@ $main-shadow: 1px 2px 10px 3px rgba(111, 112, 114, 0.05);
 $box-shadow: 0px 8px 15px rgb(75 72 72 / 10%);
 
 //Light Mod
+$lt-secondary-color: #6b6e71;
 $lt-body-bg-color: #f9fafb;
 $lt-body-text-color: black;
 $lt-header-bg-color: white;
@@ -15,8 +15,8 @@ $lt-card-bg-color: white;
 $lt-line-color: #f8f9fb;
 $lt-header-brdr-color: #e2e5ed;
 $lt-hover-bg-color: #fbfbfc;
-$lt-btn-bg-color: #c9dcf2;
-$lt-rpls-btn-bg-color: #f2f6ff;
+$lt-btn-bg-color: #d5dfe9;
+$lt-rpls-btn-bg-color: #dae4fb70;
 $lt-auth-img-text-color: #ebf3f5;
 $lt-auth-body-bg-color: #ebf3f5;
 $lt-auth-field-bg-color: #f3f4f9;
@@ -27,6 +27,7 @@ $lt-email-confirm-bg-color: -webkit-linear-gradient(
 );
 
 //Dark Mod
+$drk-secondary-color: #a2a9a9;
 $drk-body-bg-color: #1b1d1e;
 $drk-body-text-color: rgb(212, 212, 212);
 $drk-header-bg-color: #232628;

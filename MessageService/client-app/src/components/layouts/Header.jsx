@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <header className='header'>
-      <img width='115' src={logo} alt='Faita logo' />
+      <img width='115' height='50' src={logo} alt='Faita logo' />
       <div className='flex'>
         <ThemeSwitcher />
         <button className='btn'>

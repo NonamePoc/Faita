@@ -19,9 +19,6 @@
 
   &__return {
     &__img {
-      path {
-        stroke: $secondary-color;
-      }
       &:hover path {
         stroke: $accent-color;
       }
@@ -52,7 +49,7 @@
       color: $accent-color;
     }
     .user-email {
-      color: rgb(44, 192, 44);
+      color: #008004;
     }
   }
 }

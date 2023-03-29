@@ -19,7 +19,12 @@ function Settings() {
             <p>Change your name as it appears on your account.</p>
           </div>
           <div className='stngs__change'>
-            <input type='text' value={inputValue} onChange={onChangeInput} />
+            <input
+              type='text'
+              value={inputValue}
+              onChange={onChangeInput}
+              aria-label='User Name'
+            />
             <img src={pen} alt='pen' />
           </div>
         </div>
@@ -29,7 +34,7 @@ function Settings() {
             <p>Change your surname as it appears on your account.</p>
           </div>
           <div className='stngs__change'>
-            <input value='Vasylechko' disabled />
+            <input value='Vasylechko' aria-label='User Surname' disabled />
             <img src={pen} alt='pen' />
           </div>
         </div>
@@ -39,7 +44,7 @@ function Settings() {
             <p>Change your email.</p>
           </div>
           <div className='stngs__change'>
-            <input value='example@gmail.com' disabled />
+            <input value='example@gmail.com' aria-label='User Email' disabled />
             <img src={pen} alt='pen' />
           </div>
         </div>
@@ -49,7 +54,7 @@ function Settings() {
             <p>Change your password.</p>
           </div>
           <div className='stngs__change'>
-            <input value='********' disabled />
+            <input value='********' aria-label='User Password' disabled />
             <img src={pen} alt='pen' />
           </div>
         </div>
@@ -74,7 +79,11 @@ function Settings() {
             </p>
           </div>
           <div className='stngs__change'>
-            <input type='checkbox' id='switch' />
+            <input
+              type='checkbox'
+              id='switch'
+              aria-label='Message Notifications Switcher'
+            />
           </div>
         </div>
       </div>

@@ -9,7 +9,6 @@
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 1rem;
-    color: $secondary-color;
   }
   h2 {
     font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
@@ -17,7 +16,6 @@
   }
   p {
     font-size: 14px;
-    color: $secondary-color;
     font-weight: 600;
   }
   &__item {
@@ -31,12 +29,15 @@
     align-items: center;
     justify-self: flex-end;
     gap: 0.2rem;
+    img {
+      width: 20px;
+      height: 20px;
+    }
   }
   input {
     padding: 0.5rem;
     border: none;
     background-color: transparent;
-    color: $secondary-color;
     font-size: 16px;
     font-weight: 600;
     overflow: hidden;

@@ -20,6 +20,7 @@
   }
   &__img {
     width: clamp(3.5rem, 3.0455rem + 2.2727vw, 4.75rem);
+    height: clamp(3.5rem, 3.0455rem + 2.2727vw, 4.75rem);
     align-self: center;
     object-position: center;
     border-radius: $main-border-radius;
@@ -40,11 +41,9 @@
   }
   &__message {
     font-size: clamp(0.8125rem, 0.767rem + 0.2273vw, 0.9375rem);
-    color: $dark-secondary-color;
   }
   &__date {
     font-size: clamp(0.625rem, 0.5795rem + 0.2273vw, 0.75rem);
-    color: $secondary-color;
     white-space: nowrap;
   }
   .msgCounter {
@@ -82,7 +81,6 @@
         gap: 0.2em;
         &__text {
           font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
-          color: $secondary-color;
         }
       }
     }
@@ -105,7 +103,6 @@
       &::placeholder {
         font-size: clamp(0.9375rem, 0.8693rem + 0.3409vw, 1.125rem);
         font-weight: 600;
-        color: $secondary-color;
       }
     }
     .send-btn {
