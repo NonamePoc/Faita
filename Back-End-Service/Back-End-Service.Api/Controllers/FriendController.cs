@@ -22,8 +22,8 @@ public class FriendController : ControllerBase
         _friendService = friendService;
     }
 
-// todo Забрати атрибут [AllowAnonymous] поміняти на [Authorize]
-    [AllowAnonymous]
+
+    [Authorize]
     [HttpGet("getFriends")]
     public async Task<ActionResult<List<User>>> GetFriends(GetFriends getFriends)
     {
@@ -31,7 +31,7 @@ public class FriendController : ControllerBase
         return friends.ToList();
     }
 
-    [AllowAnonymous]
+    [Authorize]
     [HttpPost("addFriend")]
     public async Task<ActionResult> AddFriend(AddFriends friends)
     {
@@ -42,7 +42,7 @@ public class FriendController : ControllerBase
         return Ok();
     }
 
-    [AllowAnonymous]
+    [Authorize]
     [HttpPost("removeFriend")]
     public async Task<IActionResult> RemoveFriend(RemoveFriend removeFriend)
     {
