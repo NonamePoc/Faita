@@ -23,7 +23,8 @@ public static class ServiceCollectionExtensions
             })
             .AddEntityFrameworkStores<DataContext>()
             .AddDefaultTokenProviders();
-        
+        services.AddSignalR();
+        services.AddScoped<IMessage, MessageService>();
         
         services.AddScoped<IFriendService, FriendService>();
         services.Configure<IdentityOptions>(options =>

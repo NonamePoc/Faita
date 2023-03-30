@@ -5,6 +5,8 @@ using Back_End_Service.Identity.Entities;
 using Back_End_Service.Identity.Helpers;
 using Back_End_Service.Identity.Models;
 using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -50,6 +52,16 @@ public class UserService : IUserService
             $"Link confirm email: {confirmationLink} ");
     }
 
+    public async Task Logout(string userid)
+    {
+        var user = await _userManager.FindByIdAsync(userid);
+        if (user == null)
+        {
+            throw new Exception("User not found");
+        }
+
+        await _userManager.UpdateSecurityStampAsync(user);
+    }
 
     private async Task SendEmailAsync(string email, string subject, string message)
     {

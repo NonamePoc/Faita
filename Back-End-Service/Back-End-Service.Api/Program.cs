@@ -1,4 +1,5 @@
 using Back_End_Service;
+using Back_End_Service.Chat;
 using Back_End_Service.Chat.Service;
 using Back_End_Service.Identity.Context;
 using Back_End_Service.Identity.Service;
@@ -59,5 +60,9 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseEndpoints(u => u.MapControllers());
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapHub<ChatHub>("/chatHub"); 
+});
 app.Run();

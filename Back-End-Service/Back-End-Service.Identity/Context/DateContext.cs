@@ -6,19 +6,23 @@ namespace Back_End_Service.Identity.Context;
 
 public class DataContext : IdentityDbContext<User>
 {
-    
     public DbSet<Friend> Friend { get; set; }
-    
+
     public DbSet<Message> Message { get; set; }
 
-    public DataContext(DbContextOptions<DataContext> options) : base(options)
+  
+
+    public DataContext(DbContextOptions<DataContext> options) :
+        base(options)
     {
-        
     }
+
+  
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        
         
         builder.Entity<Friend>(b =>
         {
@@ -34,5 +38,17 @@ public class DataContext : IdentityDbContext<User>
                 .HasForeignKey(x => x.UserFriendId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
+
+        builder.Entity<Message>()
+            .HasOne<User>(m => m.Sender)
+            .WithMany(u => u.SentMessages)
+            .HasForeignKey(m => m.SenderId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.Entity<Message>()
+            .HasOne<User>(m => m.Receiver)
+            .WithMany(u => u.ReceivedMessages)
+            .HasForeignKey(m => m.ReceiverId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "h+ZGSmpsBHl2aeaGkukOtWsmHFEkdhznvdQf4B7XslkVSJhQ4BKCMIkh0sEVODKqrBf1sU+iqNSNm+Kp+7XC1A==",
+  "dgSpecHash": "229ODsf6XTUlCcRfj5+4cD9E9k25+7dDpBtXQsXqSgSXg06qPvwRNftf4Oz+rq9bIuIM1W+zIPi6lmgoONe2Wg==",
   "success": true,
   "projectFilePath": "D:\\Message\\Back-End-Service\\Back-End-Service.Identity\\Back-End-Service.Identity.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\pavlo\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.3\\microsoft.entityframeworkcore.design.7.0.3.nupkg.sha512",
     "C:\\Users\\pavlo\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.3\\microsoft.entityframeworkcore.relational.7.0.3.nupkg.sha512",
     "C:\\Users\\pavlo\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.3\\microsoft.entityframeworkcore.sqlserver.7.0.3.nupkg.sha512",
+    "C:\\Users\\pavlo\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.3\\microsoft.entityframeworkcore.tools.7.0.3.nupkg.sha512",
     "C:\\Users\\pavlo\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\pavlo\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\pavlo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

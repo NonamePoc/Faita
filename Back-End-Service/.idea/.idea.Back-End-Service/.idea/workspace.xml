@@ -8,51 +8,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc450ce3-e5c5-49f1-acaf-080975eb5224" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriends.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetFriends.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/RemoveFriend.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/UserConnection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Friend.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreDialogsState.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Api.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Api.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Chat.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Chat.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Chat.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Chat.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Identity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/bin/Debug/net6.0/Back-End-Service.Identity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Back-End-Service.Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Back-End-Service.Api.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/Back-End-Service.Api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/ref/Back-End-Service.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/ref/Back-End-Service.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/refint/Back-End-Service.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/Debug/net6.0/refint/Back-End-Service.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessageService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/bin/Debug/net6.0/Back-End-Service.Chat.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/bin/Debug/net6.0/Back-End-Service.Chat.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/bin/Debug/net6.0/Back-End-Service.Chat.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/bin/Debug/net6.0/Back-End-Service.Chat.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/bin/Debug/net6.0/Back-End-Service.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/bin/Debug/net6.0/Back-End-Service.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/bin/Debug/net6.0/Back-End-Service.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/bin/Debug/net6.0/Back-End-Service.Identity.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Back-End-Service.Chat.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Back-End-Service.Chat.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/Back-End-Service.Chat.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/Back-End-Service.Chat.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/Back-End-Service.Chat.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/Back-End-Service.Chat.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/Back-End-Service.Chat.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/Back-End-Service.Chat.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/Back-End-Service.Chat.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/Back-End-Service.Chat.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/ref/Back-End-Service.Chat.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/ref/Back-End-Service.Chat.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/refint/Back-End-Service.Chat.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/Debug/net6.0/refint/Back-End-Service.Chat.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Message.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230326182726_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230326182726_Initial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230330102233_Initial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230329203207_v2.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230329203207_v2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230330051337_v3.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230330102233_Initial.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230330051337_v3.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/bin/Debug/net6.0/Back-End-Service.Identity.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/bin/Debug/net6.0/Back-End-Service.Identity.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/bin/Debug/net6.0/Back-End-Service.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/bin/Debug/net6.0/Back-End-Service.Identity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/bin/Debug/net6.0/Back-End-Service.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/bin/Debug/net6.0/Back-End-Service.Identity.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Back-End-Service.Identity.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Back-End-Service.Identity.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Back-End-Service.Identity.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Back-End-Service.Identity.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/Back-End-Service.Identity.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/Back-End-Service.Identity.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/Back-End-Service.Identity.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/Back-End-Service.Identity.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/Back-End-Service.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/Back-End-Service.Identity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/Back-End-Service.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/Back-End-Service.Identity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/ref/Back-End-Service.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/ref/Back-End-Service.Identity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/refint/Back-End-Service.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/Debug/net6.0/refint/Back-End-Service.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +104,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/07513982777949909bf4982316a066d174480/49/5e4c7a3e/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/07513982777949909bf4982316a066d174480/aa/2d6078a4/Attribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/1264f5504f5849918eb1a1671090bcb2182b0/82/721f0c5b/IdentityDbContext`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/14ac561640a3414a8072267f3854fea910a80/ee/e1d5bd00/ClientProxyExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/36ef385736ec4d8da791d67144d6c4e2be90/4e/e84c4e79/IdentityUser`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/36ef385736ec4d8da791d67144d6c4e2be90/ea/4c60ae62/IdentityRole.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/36ef385736ec4d8da791d67144d6c4e2be90/ea/dc143f0d/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/3c3a53ef47e94a768134589a3a34a1768280/35/9b10e6a7/WebApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/5bf2b084dc28406484fe4ee92e8282f211f800/49/64fac46e/MimeMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/7501aa01c9cc44779143ce71800caa8917a00/4c/8d62a8a3/IOperationFilter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/771cc568860444b9b58dd8b3f424990c7880/6f/e1cebbce/StaticFileOptions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -221,6 +248,9 @@
       <workItem from="1680119254144" duration="3121000" />
       <workItem from="1680152952743" duration="4218000" />
       <workItem from="1680157436448" duration="1952000" />
+      <workItem from="1680168658029" duration="2134000" />
+      <workItem from="1680170842096" duration="59000" />
+      <workItem from="1680171579216" duration="11687000" />
     </task>
     <servers />
   </component>
@@ -258,26 +288,26 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs</url>
-          <line>126</line>
+          <line>138</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Identity\Service\UserService.cs" initialLine="126" containingFunctionPresentation="method 'ChangeEmailAsync'">
             <startOffsets>
-              <option value="3954" />
+              <option value="4322" />
             </startOffsets>
             <endOffsets>
-              <option value="3955" />
+              <option value="4323" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs</url>
-          <line>169</line>
+          <line>181</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Identity\Service\UserService.cs" initialLine="157" containingFunctionPresentation="method 'SendRequestChangeEmailAsync'">
             <startOffsets>
-              <option value="5141" />
+              <option value="5509" />
             </startOffsets>
             <endOffsets>
-              <option value="5159" />
+              <option value="5527" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="26" />
@@ -287,13 +317,26 @@
           <line>47</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\FriendController.cs" initialLine="47" containingFunctionPresentation="method 'RemoveFriend'">
             <startOffsets>
-              <option value="1398" />
+              <option value="1319" />
             </startOffsets>
             <endOffsets>
-              <option value="1399" />
+              <option value="1320" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs</url>
+          <line>39</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\UserController.cs" initialLine="39" containingFunctionPresentation="method 'Logout'">
+            <startOffsets>
+              <option value="1017" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1018" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
