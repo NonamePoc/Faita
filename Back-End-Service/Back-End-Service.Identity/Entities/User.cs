@@ -10,4 +10,7 @@ public class User : IdentityUser
     public string LastName { get; set; }
     public string Patronymic { get; set; }
     
+    public ICollection<Friend> FriendsOf { get; set; }
+    public ICollection<Friend> Friends { get; set; }
+    
 }

@@ -108,3 +108,5 @@ D:\Message\Back-End-Service\Back-End-Service.Api\bin\Debug\net6.0\Microsoft.Exte
 D:\Message\Back-End-Service\Back-End-Service.Api\bin\Debug\net6.0\System.Formats.Asn1.dll
 D:\Message\Back-End-Service\Back-End-Service.Api\bin\Debug\net6.0\System.Security.Cryptography.Xml.dll
 D:\Message\Back-End-Service\Back-End-Service.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Message\Back-End-Service\Back-End-Service.Api\bin\Debug\net6.0\Back-End-Service.Chat.dll
+D:\Message\Back-End-Service\Back-End-Service.Api\bin\Debug\net6.0\Back-End-Service.Chat.pdb

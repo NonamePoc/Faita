@@ -1,0 +1,23 @@
+# папки
+bin/
+obj/
+Debug/
+Release/
+logs/
+node_modules/
+packages/
+
+# файлы
+*.dll
+*.exe
+*.log
+*.json
+*.pdb
+*.swp
+*.suo
+*.user
+*.cache
+*.csproj.user
+*.snk
+*.vs/
+*.vscode/

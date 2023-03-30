@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-End-Service.Api", "Bac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-End-Service.Identity", "Back-End-Service.Identity\Back-End-Service.Identity.csproj", "{6EA71FD1-B5A9-49D7-A422-BF80ADE820B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-End-Service.Chat", "Back-End-Service.Chat\Back-End-Service.Chat.csproj", "{0EFB87E0-E141-4865-B928-9AB776902367}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{6EA71FD1-B5A9-49D7-A422-BF80ADE820B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EA71FD1-B5A9-49D7-A422-BF80ADE820B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA71FD1-B5A9-49D7-A422-BF80ADE820B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EFB87E0-E141-4865-B928-9AB776902367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFB87E0-E141-4865-B928-9AB776902367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFB87E0-E141-4865-B928-9AB776902367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFB87E0-E141-4865-B928-9AB776902367}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

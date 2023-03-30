@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Cryptography;
 using System.Text;
+using Back_End_Service.Chat.Service;
 
 namespace Back_End_Service;
 
@@ -23,6 +24,8 @@ public static class ServiceCollectionExtensions
             .AddEntityFrameworkStores<DataContext>()
             .AddDefaultTokenProviders();
         
+        
+        services.AddScoped<IFriendService, FriendService>();
         services.Configure<IdentityOptions>(options =>
             options.SignIn.RequireConfirmedEmail = true);
         
