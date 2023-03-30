@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Back_End_Service.Chat.Models;
 using Back_End_Service.Identity.Entities;
 using Back_End_Service.Identity.Models;
 
@@ -11,5 +12,7 @@ public class UserProfile : Profile
         CreateMap<UserModel, User>();
 
         CreateMap<User, AuthenticateResponse>();
+        
+        CreateMap<SendMessageModel, Message>();
     }
 }

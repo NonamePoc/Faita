@@ -2,15 +2,14 @@
 
 public class Message
 {
-    public int Id { get; set; }
-    
+    public string Id { get; set; }
     public string Text { get; set; }
-    
-    // userId
-    public string SenderId { get; set; }
-    
-    // friendId
-    public string ReceiverId { get; set; }
 
-    public DateTime CreateAt { get; set; }
+    public string SenderId { get; set; }
+    public User Sender { get; set; }
+
+    public string ReceiverId { get; set; }
+    public User Receiver { get; set; }
+
+    public DateTime CreatedAt { get; set; }
 }

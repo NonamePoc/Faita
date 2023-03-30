@@ -1,5 +1,4 @@
-﻿using System.Security.Claims;
-using Back_End_Service.Identity.Entities;
+﻿using Back_End_Service.Identity.Entities;
 using Back_End_Service.Identity.Models;
 using Back_End_Service.Identity.Service;
 using Microsoft.AspNetCore.Authorization;
@@ -33,6 +32,20 @@ public class UsersController : ControllerBase
 
 
         return Ok(response);
+    }
+    
+    [Authorize]
+    [HttpPost("logout")]
+    public async Task<IActionResult> Logout()
+    {
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        if (user == null)
+        {
+            return BadRequest(new { message = "User not found." });
+        }
+
+        await _userService.Logout(user);
+        return Ok();
     }
 
     [AllowAnonymous]
