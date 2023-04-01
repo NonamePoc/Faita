@@ -1,4 +1,6 @@
-﻿using Back_End_Service.Identity.Entities;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Back_End_Service.Identity.Entities;
 using Back_End_Service.Identity.Models;
 using Back_End_Service.Identity.Service;
 using Microsoft.AspNetCore.Authorization;
@@ -147,9 +149,17 @@ public class UsersController : ControllerBase
     }
 
 
+    [Authorize]
     [HttpGet("get-user-id")]
-    public string GetUserId()
+    public async Task<IActionResult> GetUserId()
     {
-        return User.Identity.Name;
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        if (user == null)
+        {
+            return BadRequest(new { message = "User not found." });
+        }
+
+        await _userService.GetUserId(user);
+        return Ok();
     }
 }

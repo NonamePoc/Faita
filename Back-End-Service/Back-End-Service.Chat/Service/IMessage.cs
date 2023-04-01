@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Back_End_Service.Chat.Models;
 
 namespace Back_End_Service.Chat.Service;
