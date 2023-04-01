@@ -46,7 +46,7 @@ const Router = () => {
         <Route path='/settings' element={<Settings />} exact />
       </Route>
       <Route path='/auth' element={<Auth />} />
-      <Route path='/email-cnfrm' element={<EmailConfirmation />} exact />
+      <Route path='/confirm-email' element={<EmailConfirmation />} exact />
     </Routes>
   )
 }

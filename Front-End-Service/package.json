@@ -3,6 +3,8 @@
   "author": "Vlasta Vasylechko <what.is.love.baby.dont.hurt.mu@gmail.com>",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://localhost:7206",
+  "allowedHosts": "all",
   "repository": {
     "type": "git",
     "url": "https://github.com/NonamePoc/MessageService/tree/client-app"
@@ -22,6 +24,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "10.4.5",
+    "axios": "^1.3.4",
     "emoji-mart": "^5.5.2",
     "gif-picker-react": "^1.1.0",
     "react": "^18.2.0",

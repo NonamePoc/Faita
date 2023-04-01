@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { registerUser } from '../api/userRequests'
 
 function EmailConfirmation() {
+  const userData = useSelector((state) => state.user)
+
+  const handleClick = () => {
+    registerUser(userData)
+  }
+
   return (
     <div className='emailConfirm__bg'>
       <div className='card emailConfirm'>
@@ -165,15 +173,18 @@ function EmailConfirmation() {
           </svg>
           <h2>Email Confirmation</h2>
           <p>
-            We have sent email to{' '}
-            <span className='user-email'>emailexample@gmail.com</span> to
-            confirm the validity of our email address. After receicing the email
-            follow the link provided to complete your registration.
+            We have sent email to your address{' '}
+            <span className='user-email'>{userData.email}</span> to confirm the
+            validity of our email address. After receicing the email follow the
+            link provided to complete your registration.
           </p>
           <hr className='emailConfirm__divider' />
           <p>
             If you not got any mail
-            <span className='accent'> Resend cofirmation mail</span>
+            <span onClick={handleClick} className='accent'>
+              {' '}
+              Resend cofirmation mail
+            </span>
           </p>
         </div>
       </div>
