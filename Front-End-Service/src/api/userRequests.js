@@ -4,7 +4,7 @@ export const registerUser = async (user) => {
   try {
     return await axios.post('https://localhost:7206/api/users/register', user)
   } catch (error) {
-    console.error(error)
+    console.error('Registration Failed', error)
   }
 }
 
@@ -16,7 +16,7 @@ export const loginUser = async (user) => {
     )
     return response
   } catch (error) {
-    console.error(error)
+    console.error('Login Failed', error)
   }
 }
 
@@ -32,14 +32,12 @@ export const logoutUser = async (token) => {
   }
 }
 
-export const changeEmail = async (email, newEmail, token) => {
+export const changeEmail = async (newEmail, token) => {
   try {
     return await axios.put(
       'https://localhost:7206/api/users/change-email',
       {
-        Email: email,
         newEmail: newEmail,
-        token: token,
       },
       {
         headers: {
@@ -52,13 +50,14 @@ export const changeEmail = async (email, newEmail, token) => {
   }
 }
 
-export const changePassword = async (password, email, token) => {
+export const changePassword = async (password, newPassword, email, token) => {
   try {
     return await axios.put(
       'https://localhost:7206/api/users/change-password',
       {
         password: password,
         email: email,
+        newPassword: newPassword,
       },
       {
         headers: {

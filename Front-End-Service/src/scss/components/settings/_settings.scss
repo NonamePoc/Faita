@@ -42,6 +42,7 @@
     font-weight: 600;
     overflow: hidden;
     text-align: end;
+    width: clamp(10rem, 3.3333rem + 33.3333vw, 20rem);
   }
   .input-dis {
     color: black;
@@ -52,6 +53,9 @@
   .stngs {
     &__item {
       grid-template-columns: 1fr;
+    }
+    input {
+      width: auto;
     }
   }
 }

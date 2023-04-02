@@ -19,7 +19,7 @@ const usePopup = () => {
       : document.removeEventListener('mousedown', handleOutsideClick)
   })
 
-  const Popup = ({ svgs, items, actions, styles, type = 'default' }) =>
+  /* const Popup = ({ svgs, items, actions, styles, type = 'default' }) =>
     type === 'default' ? (
       <ul className={`pop popup ${isOpen ? 'open' : ''} ${styles}`}>
         {items.map((item, index) => (
@@ -36,9 +36,9 @@ const usePopup = () => {
           <li key={index}>{item}</li>
         ))}
       </ul>
-    )
+    ) */
 
-  return { Popup, togglePopup }
+  return { isOpen, togglePopup }
 }
 
 export default usePopup

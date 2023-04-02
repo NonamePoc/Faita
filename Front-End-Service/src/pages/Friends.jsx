@@ -14,10 +14,9 @@ function Friends() {
         response.status === 200 &&
         dispatch(setUserData({ ...user, friends: response.data }))
     )
-    console.log(user.friends)
   }, [])
 
-  const handleAddFriend = () => {
+  function handleAddFriend() {
     addFriend(user.id, 'f63335bb-5f9a-486b-9b26-6c1a48888131', user.token)
   }
 

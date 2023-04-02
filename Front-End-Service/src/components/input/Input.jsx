@@ -47,10 +47,7 @@ function Input({ type }) {
       />
 
       <div className='input__btns'>
-        <Emoji
-          popupStyle='replie-input'
-          handleEmojiSelect={handleEmojiSelect}
-        />
+        <Emoji handleEmojiSelect={handleEmojiSelect} />
         <button className='btn postIt'>{`${
           type ? 'Post it!' : 'Send'
         }`}</button>

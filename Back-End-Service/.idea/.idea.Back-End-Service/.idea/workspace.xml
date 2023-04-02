@@ -11,7 +11,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeEmail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeEmail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/userRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/userRequests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +104,8 @@
       <workItem from="1680258449072" duration="966000" />
       <workItem from="1680297631403" duration="75000" />
       <workItem from="1680341937292" duration="2016000" />
-      <workItem from="1680344673289" duration="4388000" />
+      <workItem from="1680344673289" duration="8386000" />
+      <workItem from="1680426413405" duration="4561000" />
     </task>
     <servers />
   </component>
@@ -108,6 +118,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs</url>
+          <line>106</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\UserController.cs" initialLine="106" containingFunctionPresentation="method 'ChangeEmail'" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs</url>
+          <line>184</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Identity\Service\UserService.cs" initialLine="181" containingFunctionPresentation="method 'SendRequestChangeEmailAsync'" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#System.Security.Claims.Claim" memberName="Subject" />

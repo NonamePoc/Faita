@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 
 function UserDetails() {
-  const { Popup, togglePopup } = usePopup()
+  const { isOpen, togglePopup } = usePopup()
   const navigate = useNavigate()
 
   const navigateTo = () => {
@@ -117,7 +117,7 @@ function UserDetails() {
           </clipPath>
         </defs>
       </svg>
-      <Popup items={popupItems} svgs={popupSvgs} actions={popupActions} />
+      <ul className='pop popup'></ul>
     </div>
   )
 }

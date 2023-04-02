@@ -62,7 +62,8 @@ public class UserService : IUserService
         {
             throw new Exception("User not found");
         }
-
+        
+        
         await _userManager.UpdateSecurityStampAsync(user);
     }
 
@@ -138,8 +139,10 @@ public class UserService : IUserService
             $" Confirm password ");
     }
 
-    public async Task ChangeEmailAsync(ChangeEmail changeEmail, string route, User user)
+    public async Task ChangeEmailAsync(ChangeEmail changeEmail)
     {
+        
+        var user = await _userManager.FindByEmailAsync(changeEmail.Email);
         var validToken = changeEmail.Token.Replace(" ", "+");
         var result = await _userManager.ChangeEmailAsync(user, changeEmail.NewEmail, validToken);
 
@@ -185,17 +188,23 @@ public class UserService : IUserService
             throw new Exception("User not found");
         }
 
+        
+        if (user.Email == changeEmail.NewEmail)
+        {
+            throw new Exception("Email is the same");
+        }
 
         var token = await _userManager.GenerateChangeEmailTokenAsync(user, changeEmail.NewEmail);
+        var validToken = token.Replace(" ", "+");
 
 
-        if (token == null)
+        if (validToken == null)
         {
             throw new Exception("Token is null");
         }
 
         var confirmationLink =
-            route + $"?userId={user.Id}&token={token}";
+            route + $"?email={user.Email}&newEmail={changeEmail.NewEmail}&token={validToken}";   
         await SendEmailAsync(changeEmail.NewEmail, $"link change email",
             $"Link change email: {confirmationLink} ");
     }

@@ -5,9 +5,8 @@ public class ChangeEmail
     /// <summary>
     ///     Почта.
     /// </summary>
-    
-    
-    
+
+
     public string Email { get; set; }
 
     /// <summary>

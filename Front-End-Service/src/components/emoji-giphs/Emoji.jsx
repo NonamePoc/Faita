@@ -4,26 +4,26 @@ import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
 import usePopup from '../../hooks/usePopup'
 
-const Emoji = React.memo(function Emoji({ popupStyle, handleEmojiSelect }) {
-  const { Popup, togglePopup } = usePopup()
+const Emoji = React.memo(function Emoji({ handleEmojiSelect }) {
+  const { isOpen, togglePopup } = usePopup()
   const { theme } = useSelector((state) => state.theme)
 
   return (
     <div>
-      <Popup
-        items={[
-          <Picker
-            data={data}
-            onEmojiSelect={handleEmojiSelect}
-            previewPosition={'none'}
-            theme={theme}
-            maxFrequentRows={2}
-            perLine={8}
-          />,
-        ]}
-        type='emoji'
-        styles={popupStyle}
-      />
+      <div
+        className={`pop emoji-gif__wrapper replie-input  ${
+          isOpen ? 'open' : ''
+        } `}
+      >
+        <Picker
+          data={data}
+          onEmojiSelect={handleEmojiSelect}
+          previewPosition={'none'}
+          theme={theme}
+          maxFrequentRows={2}
+          perLine={8}
+        />
+      </div>
       <button
         onClick={togglePopup}
         className='emoji__btn'

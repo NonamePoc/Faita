@@ -16,7 +16,7 @@ public interface IUserService
 
     Task ChangePasswordAsync(ChangePassword changePassword, string route, User user);
     
-    Task ChangeEmailAsync(ChangeEmail changeEmail, string route, User user);
+    Task ChangeEmailAsync(ChangeEmail changeEmail);
 
     Task SendRequestChangeEmailAsync(SendChangeEmail changeEmail, string route, User user);
     

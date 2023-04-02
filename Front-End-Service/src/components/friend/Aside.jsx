@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 
 function Aside() {
-  const { Popup, togglePopup } = usePopup()
+  const { isOpen, togglePopup } = usePopup()
 
   const popupItems = ['View profile', 'Go to chat', 'Delete']
   const popupSvgs = [
@@ -113,7 +113,7 @@ function Aside() {
           </clipPath>
         </defs>
       </svg>
-      <Popup items={popupItems} svgs={popupSvgs} actions={popupActions} />
+      <div className='pop popup'> </div>
     </div>
   )
 }
