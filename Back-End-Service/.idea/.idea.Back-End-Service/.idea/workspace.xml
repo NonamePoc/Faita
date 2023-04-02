@@ -9,7 +9,10 @@
     <projectFile profileName="IIS Express">Back-End-Service/Back-End-Service.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89e65e0d-0a54-4090-ac20-ca08238c921f" name="Changes" comment="" />
+    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,9 +28,6 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectId" id="2Nm9YPlcEd8Ey1oyg4cCGYodrhg" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,9 +46,9 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\marlb\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\pavlo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -87,7 +87,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="89e65e0d-0a54-4090-ac20-ca08238c921f" name="Changes" comment="" />
+      <changelist id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="" />
       <created>1680258447457</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -95,8 +95,7 @@
       <workItem from="1680258449072" duration="966000" />
       <workItem from="1680297631403" duration="75000" />
       <workItem from="1680341937292" duration="2016000" />
-      <workItem from="1680344673289" duration="300000" />
-      <workItem from="1680361040358" duration="1150000" />
+      <workItem from="1680344673289" duration="4388000" />
     </task>
     <servers />
   </component>

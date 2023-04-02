@@ -18,7 +18,6 @@ public class UsersController : ControllerBase
     private readonly UserManager<User> _userManager;
     private const string Route = "api/users";
 
-
     public UsersController(IUserService userService, UserManager<User> userManager)
     {
         _userManager = userManager;
@@ -35,7 +34,7 @@ public class UsersController : ControllerBase
 
         return Ok(response);
     }
-    
+
     [Authorize]
     [HttpPost("logout")]
     public async Task<IActionResult> Logout()
