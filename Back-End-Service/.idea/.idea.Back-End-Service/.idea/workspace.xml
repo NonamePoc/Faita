@@ -9,34 +9,7 @@
     <projectFile profileName="IIS Express">Back-End-Service/Back-End-Service.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89e65e0d-0a54-4090-ac20-ca08238c921f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Middlware/GlobalExceptionMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Middlware/GlobalExceptionMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/IdentityUserManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/IdentityUserManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Helpers/UserHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Helpers/UserHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/userRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/userRequests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/reducers/user.js" afterDir="false" />
-    </list>
+    <list default="true" id="89e65e0d-0a54-4090-ac20-ca08238c921f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
