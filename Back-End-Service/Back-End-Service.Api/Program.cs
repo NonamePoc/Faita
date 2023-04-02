@@ -23,7 +23,16 @@ builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddScoped<IUserService, UserService>();
 // use UserManager
 builder.Services.AddAutoMapper(typeof(UserProfile));
-builder.Services.AddCors();
+builder.Services.AddSignalR();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+});
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -45,9 +54,10 @@ if (app.Environment.IsDevelopment())
 app.UseSwagger();
 app.UseSwaggerUI(x => { x.SwaggerEndpoint("/swagger/v1/swagger.json", "Back-End-Service.Api WEB API v1"); });
 app.UseCors(x => x
-    .AllowAnyOrigin()
     .AllowAnyMethod()
-    .AllowAnyHeader());
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowCredentials());
 
 app.UseStaticFiles(new StaticFileOptions
 {

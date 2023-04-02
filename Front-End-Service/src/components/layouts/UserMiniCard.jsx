@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function UserMiniCard() {
+  const user = useSelector((state) => state.user)
   return (
     <Link to='/profile' aria-labelledby='View Profile'>
       <figure className='card profileCard'>
@@ -11,7 +13,7 @@ function UserMiniCard() {
           alt='avatar'
         />
         <figcaption className='profileCard__caption'>
-          ProfileName_001
+          {user.userName}
         </figcaption>
       </figure>
     </Link>

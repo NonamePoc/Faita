@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 
-function Card() {
+function Card({ userName }) {
   const { Popup, togglePopup } = usePopup()
 
-  const popupItems = ['Delete']
+  const popupItems = ['Delete friend']
   const popupSvgs = [
     <svg
       width='24'
@@ -79,7 +79,7 @@ function Card() {
         alt='avatar'
       />
       <div className='friendCard__info'>
-        <h1 className='friendCard__name'>Name</h1>
+        <h1 className='friendCard__name'>{userName}</h1>
         <div className='statusCircle'></div>
       </div>
       <div className='friendCard__btns'>

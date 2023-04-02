@@ -33,6 +33,7 @@
     "react-router-dom": "^6.9.0",
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
+    "redux-persist": "^6.0.0",
     "sass": "^1.57.1",
     "web-vitals": "^2.1.4"
   },

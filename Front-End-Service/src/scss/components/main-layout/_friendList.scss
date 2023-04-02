@@ -1,15 +1,15 @@
 .friendsTitle {
   margin-left: 0.5em;
+  margin-bottom: 0.8rem;
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1rem;
 }
 .friends {
   display: flex;
   flex-direction: column;
-  padding-top: 0.8em;
   padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
   .friend {
     position: relative;
     padding: 0.7em 1em;

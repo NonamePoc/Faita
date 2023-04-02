@@ -26,8 +26,8 @@ public class FriendController : ControllerBase
     }
 
 
-    [Authorize]
-    [HttpGet("getFriends")]
+    [AllowAnonymous]
+    [HttpPost("getFriends")]
     public async Task<ActionResult<List<User>>> GetFriends(GetFriends getFriends)
     {
         var friends = await _friendService.GetFriends(getFriends);

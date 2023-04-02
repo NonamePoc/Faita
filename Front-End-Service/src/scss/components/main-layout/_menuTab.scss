@@ -18,6 +18,13 @@
       span {
         color: $accent-color;
       }
+      svg path {
+        fill: $accent-color;
+      }
+      .home-icon path {
+        fill: none;
+        stroke: $accent-color;
+      }
     }
     .msgCounter {
       font-size: 15px;

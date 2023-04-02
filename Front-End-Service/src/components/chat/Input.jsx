@@ -1,9 +1,49 @@
 import React from 'react'
 import { Emoji, Gif } from '../../components'
 import useInput from '../../hooks/useInput'
+import { useSelector } from 'react-redux'
+import * as signalR from '@microsoft/signalr'
 
 function Input() {
   const { value, handleChange, handleEmojiSelect } = useInput('')
+  const user = useSelector((state) => state.user)
+  const [hubConnection, setHubConnection] = React.useState(null)
+  React.useEffect(() => {
+    const createHubConnection = async () => {
+      const hubUrl = 'https://localhost:7206/chatHub'
+
+      const connection = new signalR.HubConnectionBuilder()
+        .withUrl(hubUrl, {
+          withCredentials: true,
+          accessTokenFactory: () => {
+            return user.token
+          },
+        })
+        .build()
+
+      try {
+        await connection.start()
+        console.log('SignalR Connected!')
+        setHubConnection(connection)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
+    createHubConnection()
+  }, [user.token])
+
+  const handleSendMessage = async () => {
+    try {
+      await hubConnection.invoke('SendMessage', {
+        receiverId: 'a7b26916-2128-46f6-9b02-e6b9aa480137',
+        userId: user.id,
+        text: 'Hello!',
+      })
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
   return (
     <fieldset className='card chatroom__field'>
@@ -16,7 +56,7 @@ function Input() {
       <div className='flex'>
         <Gif />
         <Emoji handleEmojiSelect={handleEmojiSelect} />
-        <button className='btn send-btn'>
+        <button className='btn send-btn' onClick={handleSendMessage}>
           <svg
             width='17'
             height='17'

@@ -25,7 +25,7 @@ public static class ServiceCollectionExtensions
             })
             .AddEntityFrameworkStores<DataContext>()
             .AddDefaultTokenProviders();
-        services.AddSignalR();
+        services.AddSignalR(); 
         services.AddScoped<IMessage, MessageService>();
         
         services.AddScoped<IFriendService, FriendService>();
@@ -53,9 +53,10 @@ public static class ServiceCollectionExtensions
         {
             options.AddPolicy("CorsPolicy",
                 builder => builder
-                    .AllowAnyOrigin()
+                    .WithOrigins("http://localhost:3000")
                     .AllowAnyMethod()
-                    .AllowAnyHeader());
+                    .AllowAnyHeader()
+                    .AllowCredentials());
         });
         services.AddScoped<UserManager<User>>();
 
