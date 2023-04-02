@@ -1,4 +1,6 @@
-﻿namespace Back_End_Service.Identity.Entities;
+﻿using System;
+
+namespace Back_End_Service.Identity.Entities;
 
 public class Message
 {

@@ -1,5 +1,8 @@
-﻿using System.Security.Policy;
+﻿using System;
+using System.Linq;
+using System.Security.Policy;
 using System.Security.Principal;
+using System.Threading.Tasks;
 using AutoMapper;
 using Back_End_Service.Identity.Entities;
 using Back_End_Service.Identity.Helpers;
@@ -167,6 +170,13 @@ public class UserService : IUserService
                 result.Errors.Select(s => new Exception(s.Description)));
         }
     }
+
+    public Task GetUserId (string userId)
+    {
+        var user = _userManager.FindByIdAsync(userId);
+        return user;
+    }
+    
     
     public async Task SendRequestChangeEmailAsync(SendChangeEmail changeEmail, string route, User user)
     {

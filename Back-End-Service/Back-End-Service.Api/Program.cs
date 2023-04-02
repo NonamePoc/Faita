@@ -4,7 +4,11 @@ using Back_End_Service.Chat.Service;
 using Back_End_Service.Identity.Context;
 using Back_End_Service.Identity.Service;
 using Back_End_Service.Middlware;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
