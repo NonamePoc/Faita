@@ -1,14 +1,9 @@
 using Back_End_Service;
 using Back_End_Service.Chat;
-using Back_End_Service.Chat.Service;
 using Back_End_Service.Identity.Context;
 using Back_End_Service.Identity.Service;
 using Back_End_Service.Middlware;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,7 +18,16 @@ builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddScoped<IUserService, UserService>();
 // use UserManager
 builder.Services.AddAutoMapper(typeof(UserProfile));
-builder.Services.AddCors();
+builder.Services.AddSignalR();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+});
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -45,9 +49,10 @@ if (app.Environment.IsDevelopment())
 app.UseSwagger();
 app.UseSwaggerUI(x => { x.SwaggerEndpoint("/swagger/v1/swagger.json", "Back-End-Service.Api WEB API v1"); });
 app.UseCors(x => x
-    .AllowAnyOrigin()
     .AllowAnyMethod()
-    .AllowAnyHeader());
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowCredentials());
 
 app.UseStaticFiles(new StaticFileOptions
 {

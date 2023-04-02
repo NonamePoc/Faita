@@ -102,23 +102,16 @@ public class UsersController : ControllerBase
     }
 
     [AllowAnonymous]
-    [HttpGet("change-email")]
+    [HttpPost("change-email")]
     public async Task<IActionResult> ChangeEmail(ChangeEmail modelEmail)
     {
-        var user = await _userManager.FindByEmailAsync(modelEmail.Email);
-        if (user == null)
-        {
-            return BadRequest(new { message = "User not found." });
-        }
-
-        var validToken = modelEmail.Token.Replace(" ", "+");
-        await _userService.ChangeEmailAsync(modelEmail, validToken, user);
+        await _userService.ChangeEmailAsync(modelEmail);
 
 
         return Ok();
     }
 
-    [AllowAnonymous]
+    [Authorize]
     [HttpPut("change-email")]
     public async Task<IActionResult> SendRequestChangeEmail(SendChangeEmail changeEmail)
     {
