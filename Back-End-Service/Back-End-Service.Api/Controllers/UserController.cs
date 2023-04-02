@@ -102,12 +102,11 @@ public class UsersController : ControllerBase
     }
 
     [AllowAnonymous]
-    [HttpPost("change-email")]
-    public async Task<IActionResult> ChangeEmail(ChangeEmail modelEmail)
+    [HttpGet("change-email")]
+    public async Task<IActionResult> ChangeEmail([FromQuery] ChangeEmail modelEmail)
     {
         await _userService.ChangeEmailAsync(modelEmail);
-
-
+        
         return Ok();
     }
 
