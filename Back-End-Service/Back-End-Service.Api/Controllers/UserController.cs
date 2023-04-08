@@ -106,8 +106,7 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> ChangeEmail([FromQuery] ChangeEmail modelEmail)
     {
         await _userService.ChangeEmailAsync(modelEmail);
-
-
+        
         return Ok();
     }
 
