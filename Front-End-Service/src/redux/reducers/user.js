@@ -11,6 +11,7 @@ const user = createSlice({
     userName: '',
     password: '',
     email: '',
+    isAuth: false,
     friends: [],
   },
   reducers: {
@@ -20,8 +21,8 @@ const user = createSlice({
         ...action.payload,
       }
     },
-    resetUserData: (state) => {
-      return this.initialState
+    resetUserData: () => {
+      return { ...user.initialState }
     },
   },
 })

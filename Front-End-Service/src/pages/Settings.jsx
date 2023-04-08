@@ -7,8 +7,8 @@ import {
   changeEmail,
   changePassword,
   changeUserData,
-  logoutUser,
 } from '../api/userRequests'
+import axios from 'axios'
 
 function Settings() {
   const user = useSelector((state) => state.user)
@@ -18,8 +18,8 @@ function Settings() {
     changeUserData(event.target.value, user.lastName, user.token).then(
       (res) => {
         res.status === 200 &&
-          dispatch(setUserData({ ...user, firstName: event.target.value })) &&
-          alert('First name changed successfully!')
+          alert('First name changed successfully!') &&
+          dispatch(setUserData({ ...user, firstName: event.target.value }))
       }
     )
   }
@@ -28,17 +28,31 @@ function Settings() {
     changeUserData(user.firstName, event.target.value, user.token).then(
       (res) => {
         res.status === 200 &&
-          dispatch(setUserData({ ...user, lastName: event.target.value })) &&
-          alert('Last name changed successfully!')
+          alert('Last name changed successfully!') &&
+          dispatch(setUserData({ ...user, lastName: event.target.value }))
       }
     )
   }
 
   const onBlurEmail = (event) => {
     changeEmail(event.target.value, user.token).then((res) => {
-      res.status === 200 &&
-        /* dispatch(setUserData({ ...user, email: event.target.value })) */
+      if (res.status === 200) {
         alert('Please confirm your new email address.')
+        axios
+          .get(
+            `/api/users/change-email?email=${user.email}&newEmail=${event.target.value}&token=${user.token}`
+          )
+          .then((response) => {
+            if (response.status === 200) {
+              console.log('Email was verified')
+            }
+          })
+          .catch((error) => {
+            console.error(error)
+          })
+
+        dispatch(setUserData({ ...user, email: event.target.value }))
+      }
     })
   }
 
@@ -50,17 +64,16 @@ function Settings() {
       user.token
     ).then((res) => {
       res.status === 200 &&
-        dispatch(setUserData({ ...user, password: event.target.value })) &&
         alert(
           'Email list was sent on your email that your password was changed succesfuly.'
-        )
+        ) &&
+        dispatch(setUserData({ ...user, password: event.target.value }))
     })
   }
 
   const onExit = () => {
-    logoutUser(user.token).then((res) => {
-      res.status === 200 && dispatch(resetUserData())
-    })
+    /* logoutUser(user.token) */
+    dispatch(resetUserData())
   }
 
   return (

@@ -1,0 +1,5 @@
+export { default as Header } from './Header'
+export { default as UserMiniCard } from './UserMiniCard'
+export { default as MenuTab } from './MenuTab'
+export { default as NewMessageAlert } from './NewMessageAlert'
+export { default as AsideFriendList } from './AsideFriendList'

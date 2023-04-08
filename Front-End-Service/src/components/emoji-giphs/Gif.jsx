@@ -4,21 +4,18 @@ import GifPicker from 'gif-picker-react'
 import usePopup from '../../hooks/usePopup'
 
 const Giphs = React.memo(function Giphs() {
-  const { Popup, togglePopup } = usePopup()
+  const { isOpen, togglePopup } = usePopup()
   const { theme } = useSelector((state) => state.theme)
 
   return (
     <div>
-      <Popup
-        items={[
-          <GifPicker
-            tenorApiKey={'AIzaSyBglyKBDI9GlvU4qXZYzk459zKwERQ-r_I'}
-            theme={theme}
-            onGifClick={(gif) => console.log(gif)}
-          />,
-        ]}
-        type='emoji'
-      />
+      <div className={`pop emoji-gif__wrapper ${isOpen ? 'open' : ''}`}>
+        <GifPicker
+          tenorApiKey={'AIzaSyBglyKBDI9GlvU4qXZYzk459zKwERQ-r_I'}
+          theme={theme}
+          onGifClick={(gif) => console.log(gif)}
+        />
+      </div>
       <button onClick={togglePopup} className='emoji__btn'>
         <svg
           width='32px'

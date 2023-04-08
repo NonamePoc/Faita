@@ -3,11 +3,11 @@ import { ChatHeader, ChatInput, ChatMessages } from '../components'
 
 function ChatRoom() {
   return (
-    <div className='chatroom'>
+    <main className='chatroom'>
       <ChatHeader />
       <ChatMessages />
       <ChatInput />
-    </div>
+    </main>
   )
 }
 

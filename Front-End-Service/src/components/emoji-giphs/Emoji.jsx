@@ -10,11 +10,7 @@ const Emoji = React.memo(function Emoji({ handleEmojiSelect }) {
 
   return (
     <div>
-      <div
-        className={`pop emoji-gif__wrapper replie-input  ${
-          isOpen ? 'open' : ''
-        } `}
-      >
+      <div className={`pop emoji-gif__wrapper   ${isOpen ? 'open' : ''} `}>
         <Picker
           data={data}
           onEmojiSelect={handleEmojiSelect}

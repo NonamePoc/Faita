@@ -1,4 +1,5 @@
-import { Route, Routes, Outlet } from 'react-router-dom'
+import React from 'react'
+import { Route, Routes, Outlet, useNavigate } from 'react-router-dom'
 import {
   Home,
   Friends,
@@ -16,17 +17,18 @@ import {
   MenuTab,
   AsideFriendList,
   NewMessageAlert,
-} from '../components'
+} from '../layouts'
+import { useSelector } from 'react-redux'
 
 const MainLayout = () => (
   <>
     <Header />
     <div className='wrapper'>
-      <div>
+      <article>
         <UserMiniCard />
         <MenuTab />
         <NewMessageAlert />
-      </div>
+      </article>
       <Outlet />
       <AsideFriendList />
     </div>
@@ -34,6 +36,22 @@ const MainLayout = () => (
 )
 
 const Router = () => {
+  const navigate = useNavigate()
+  const isAuth = useSelector((state) => state.user.isAuth)
+
+  React.useEffect(() => {
+    if (!isAuth) navigate('/auth')
+  }, [isAuth, navigate])
+
+  if (!isAuth) {
+    return (
+      <Routes>
+        <Route path='/auth' element={<Auth />} />
+        <Route path='/confirm-email' element={<EmailConfirmation />} exact />
+      </Routes>
+    )
+  }
+
   return (
     <Routes>
       <Route element={<MainLayout />}>
@@ -45,8 +63,6 @@ const Router = () => {
         <Route path='/profile' element={<Profile />} exact />
         <Route path='/settings' element={<Settings />} exact />
       </Route>
-      <Route path='/auth' element={<Auth />} />
-      <Route path='/confirm-email' element={<EmailConfirmation />} exact />
     </Routes>
   )
 }

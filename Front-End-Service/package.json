@@ -3,8 +3,6 @@
   "author": "Vlasta Vasylechko <what.is.love.baby.dont.hurt.mu@gmail.com>",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:7206",
-  "allowedHosts": "all",
   "repository": {
     "type": "git",
     "url": "https://github.com/NonamePoc/MessageService/tree/client-app"

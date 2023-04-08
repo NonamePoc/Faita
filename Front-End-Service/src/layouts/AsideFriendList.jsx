@@ -1,19 +1,19 @@
 import React from 'react'
-import Friend from '../friend/Aside'
+import Friend from '../components/friend/Aside'
 
 function AsideFriendList() {
   return (
     <aside>
       <h1 className='friendsTitle'>Online Friends</h1>
-      <div className='card friends'>
+      <ul className='card friends'>
         <Friend />
         <Friend />
-      </div>
+      </ul>
       <h1 className='friendsTitle'>Offline Friends</h1>
-      <div className='card friends'>
+      <ul className='card friends'>
         <Friend />
         <Friend />
-      </div>
+      </ul>
     </aside>
   )
 }

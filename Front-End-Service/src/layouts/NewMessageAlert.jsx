@@ -10,17 +10,17 @@ function NewMessageAlert() {
   }, 1000)
 
   return (
-    <div className='newMsgAlert active'>
+    <figure className='newMsgAlert active'>
       <img
         className='newMsgAlert__img'
         src='https://picsum.photos/id/235/800'
         alt='profile-img'
       />
-      <div>
+      <figcaption>
         <h1 className='newMsgAlert__name'>User001</h1>
         <p className='newMsgAlert__text'>New message</p>
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   )
 }
 

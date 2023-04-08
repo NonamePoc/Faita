@@ -1,6 +1,6 @@
 import React from 'react'
-import ThemeSwitcher from '../switcher/ThemeSwitcher'
-import { logo } from '../../assets'
+import ThemeSwitcher from '../components/switcher/ThemeSwitcher'
+import { logo } from '../assets'
 
 function Header() {
   return (

@@ -9,7 +9,7 @@ function Auth() {
 
   return (
     <>
-      <div className=' auth'>
+      <div className='auth'>
         <section className={`card cont ${isSignUpVisible ? 's-signup' : ''}`}>
           <Login />
           <section className='sub-cont'>

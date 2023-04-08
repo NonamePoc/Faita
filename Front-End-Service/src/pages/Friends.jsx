@@ -14,10 +14,12 @@ function Friends() {
         response.status === 200 &&
         dispatch(setUserData({ ...user, friends: response.data }))
     )
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function handleAddFriend() {
-    addFriend(user.id, 'f63335bb-5f9a-486b-9b26-6c1a48888131', user.token)
+    addFriend(user.id, '4864220a-8c27-4b49-884f-c8228813d2db', user.token)
   }
 
   return (
@@ -25,7 +27,9 @@ function Friends() {
       {user.friends.map((friend, index) => (
         <FriendCard key={index} userName={friend.userName} />
       ))}
-      <button onClick={handleAddFriend}>Add Friend</button>
+      <button className='btn' onClick={handleAddFriend}>
+        Add Friend
+      </button>
     </section>
   )
 }
