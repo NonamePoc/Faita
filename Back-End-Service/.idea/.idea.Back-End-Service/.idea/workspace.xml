@@ -9,36 +9,7 @@
     <projectFile profileName="IIS Express">Back-End-Service/Back-End-Service.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/friendRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/friendRequests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/userRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/userRequests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Registration.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/emoji-giphs/Emoji.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/emoji-giphs/Emoji.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/emoji-giphs/Gif.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/emoji-giphs/Gif.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Aside.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Aside.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/layouts/AsideFriendList.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/layouts/Header.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/layouts/MenuTab.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/layouts/NewMessageAlert.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/layouts/UserMiniCard.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/profile/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/profile/UserInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/hooks/usePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/hooks/usePopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/ChatRoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/ChatRoom.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Settings.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/reducers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/static/_popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/static/_popup.scss" afterDir="false" />
-    </list>
+    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +100,7 @@
       <workItem from="1680602918250" duration="1774000" />
       <workItem from="1680624783287" duration="1800000" />
       <workItem from="1680627688825" duration="609000" />
-      <workItem from="1680948294996" duration="4246000" />
+      <workItem from="1680948294996" duration="4335000" />
     </task>
     <servers />
   </component>
