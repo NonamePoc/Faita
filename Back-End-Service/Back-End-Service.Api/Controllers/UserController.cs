@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Back_End_Service.Identity.Entities;
+﻿using Back_End_Service.Identity.Entities;
 using Back_End_Service.Identity.Models;
 using Back_End_Service.Identity.Service;
 using Microsoft.AspNetCore.Authorization;
@@ -106,7 +104,7 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> ChangeEmail([FromQuery] ChangeEmail modelEmail)
     {
         await _userService.ChangeEmailAsync(modelEmail);
-        
+
         return Ok();
     }
 
