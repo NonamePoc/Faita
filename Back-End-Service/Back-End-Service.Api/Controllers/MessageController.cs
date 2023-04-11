@@ -1,6 +1,7 @@
 using Back_End_Service.Chat;
 using Back_End_Service.Chat.Models;
 using Back_End_Service.Chat.Service;
+using Back_End_Service.Identity.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
@@ -15,6 +16,7 @@ public class MessageController : Controller
 
     private readonly IHubContext<ChatHub> _hubContext;
     private readonly IMessage _messageService;
+    private readonly DataContext _context;
 
     public MessageController(IHubContext<ChatHub> hubContext, IMessage messageService)
     {
@@ -33,4 +35,21 @@ public class MessageController : Controller
 
         return Ok();
     }
+    
+    [Authorize]
+    // JoinChatRoom - присоединиться к комнате чата
+    [HttpPost("joinChatRoom")]
+    
+    public async Task<IActionResult> JoinChatRoom (JoinChatRoomModel joinChatRoomModel)
+    {
+        await _messageService.JoinChatRoom(joinChatRoomModel);
+        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, joinChatRoomModel.UserId);
+        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId,_context.Friend
+            .Where(x => x.UserId == joinChatRoomModel.UserId)
+            .Select(x => x.UserFriendId)
+            .ToList());
+        return Ok();
+    }
+    
+    
 }

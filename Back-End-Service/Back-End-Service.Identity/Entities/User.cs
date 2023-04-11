@@ -18,4 +18,7 @@ public class User : IdentityUser
 
     // Связь между пользователем и полученными сообщениями
     public ICollection<Message> ReceivedMessages { get; set; }
+
+    // Связь между пользователем и комнатами чата
+    public ICollection<ChatRoom> ChatRooms { get; set; }
 }

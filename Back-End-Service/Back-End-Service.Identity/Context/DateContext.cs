@@ -10,7 +10,8 @@ public class DataContext : IdentityDbContext<User>
 
     public DbSet<Message> Message { get; set; }
 
-  
+    public DbSet<ChatRoom> ChatRoom { get; set; }
+
 
     public DataContext(DbContextOptions<DataContext> options) :
         base(options)
