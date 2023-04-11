@@ -12,6 +12,8 @@ public class Message
 
     public string ReceiverId { get; set; }
     public User Receiver { get; set; }
+    
+    public string ChatRoomId { get; set; }
 
     public DateTime CreatedAt { get; set; }
 }

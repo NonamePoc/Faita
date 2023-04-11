@@ -31,7 +31,8 @@ public class MessageController : Controller
         await _messageService.SendMessage(sendMessage);
 
         // Отправить сообщение всем подключенным клиентам через хаб
-        await _hubContext.Clients.All.SendAsync(sendMessage.ReceiverId, sendMessage.UserId, sendMessage.Text);
+        await _hubContext.Clients.All.SendAsync("ReceiveMessage", sendMessage.UserId,
+            sendMessage.Text, sendMessage.ChatRoomId, sendMessage.CreateMessage);
 
         return Ok();
     }
