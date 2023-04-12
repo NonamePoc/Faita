@@ -36,21 +36,36 @@ public class MessageController : Controller
 
         return Ok();
     }
-    
+
+    [Authorize]
+    [HttpPost("createChatRoom")]
+    public async Task<IActionResult> CreateChatRoom(CreateChatRoomModel createChatRoomModel)
+    {
+        await _messageService.CreateChatRoom(createChatRoomModel);
+        await _hubContext.Clients.All.SendAsync("CreateChatRoom", createChatRoomModel.UserId);
+        return Ok();
+    }
+
+
+    [AllowAnonymous]
+    [HttpGet("getChatRooms")]
+    public async Task<IActionResult> GetChatRooms(string userId)
+    {
+        var chatRooms = await _messageService.GetChatRoom(userId);
+        return Ok(chatRooms);
+    }
+
     [Authorize]
     // JoinChatRoom - присоединиться к комнате чата
     [HttpPost("joinChatRoom")]
-    
-    public async Task<IActionResult> JoinChatRoom (JoinChatRoomModel joinChatRoomModel)
+    public async Task<IActionResult> JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
     {
         await _messageService.JoinChatRoom(joinChatRoomModel);
         await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, joinChatRoomModel.UserId);
-        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId,_context.Friend
+        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, _context.Friend
             .Where(x => x.UserId == joinChatRoomModel.UserId)
             .Select(x => x.UserFriendId)
             .ToList());
         return Ok();
     }
-    
-    
 }

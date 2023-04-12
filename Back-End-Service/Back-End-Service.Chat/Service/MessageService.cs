@@ -48,6 +48,21 @@ public class MessageService : IMessage
         await _dataContext.SaveChangesAsync();
     }
 
+    public async Task CreateChatRoom(CreateChatRoomModel createChatRoomModel)
+    {
+        var user = await _userManager.FindByIdAsync(createChatRoomModel.UserId);
+        
+        var chatRoom = new ChatRoom
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = createChatRoomModel.Name,
+            Users = new List<User> {user}
+        };
+        
+        _dataContext.ChatRoom.Add(chatRoom);
+        await _dataContext.SaveChangesAsync();
+    }
+
     public async Task JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
     {
         // Получаем комнату чата по идентификатору
@@ -69,21 +84,16 @@ public class MessageService : IMessage
         // Добавляем пользователя в комнату чата и сохраняем изменения в базе данных
         room.Users.Add(user);
         await _dataContext.SaveChangesAsync();
+    }
 
-        // Получаем друзей пользователя и добавляем их в комнату чата
-        var friends = await _dataContext.Friend
-            .Where(f => f.UserId == joinChatRoomModel.UserId)
-            .Select(f => f.UserFriend)
-            .ToListAsync();
-
-        foreach (var friend in friends)
-        {
-            room.Users.Add(friend);
-        }
-
-        await _dataContext.SaveChangesAsync();
-
-        // Оповещаем пользователей в комнате о присоединении нового пользователя и его друзей через SignalR
+    public async Task<List<ChatRoom>> GetChatRoom(string UserId)
+    {
+        var user = await _userManager.FindByIdAsync(UserId);
         
+        var chatRoom = await _dataContext.ChatRoom
+            .Where(c => c.Users.Contains(user))
+            .ToListAsync();
+        
+        return chatRoom.ToList();
     }
 }
