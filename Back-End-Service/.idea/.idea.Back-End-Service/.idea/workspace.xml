@@ -18,11 +18,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Message.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230330102233_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230330102233_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/chatRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/chatRequests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/ChatRoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/ChatRoom.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +52,9 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/1264f5504f5849918eb1a1671090bcb2182b0/8d/9b43e3c3/IdentityDbContext`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/36ef385736ec4d8da791d67144d6c4e2be90/a5/f0e6366f/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9c8dd8bf233c4409b3da008fcaf737954f480/9c/ab6099bc/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/f7e2530ee1784107bb063950307afb9f2bc80/89/02d44647/UserManager`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Api/Controllers/FriendController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fead5fbf2bee3da1b9f378a09d78479a62db80dae1e1c6453efdb0bc92a8/String.Comparison.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f91195dc1f983d6ec69125bd192fea551738920a3ae32077f21c5af5b9/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fd4b12b3b09eb75d541efd2e12445569c7a57d8dc3745453ff2aaa61df28b1e/Hub.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />

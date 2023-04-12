@@ -1,20 +1,9 @@
 import React from 'react'
 import * as signalR from '@microsoft/signalr'
 import { ChatHeader, ChatInput, ChatMessages } from '../components'
+import { useSelector } from 'react-redux'
 
 function ChatRoom() {
-  let connection = new signalR.HubConnectionBuilder()
-    .withUrl('https://localhost:7206/chatHub')
-    .build()
-
-  connection.on('ReceiveMessage', (user, receiver, message) => {
-    console.log(user, receiver, message)
-  })
-
-  React.useEffect(() => {
-    connection.start()
-  }, [connection])
-
   return (
     <main className='chatroom'>
       <ChatHeader />

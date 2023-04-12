@@ -1,10 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { joinRoom } from '../../api/chatRequests'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function ChatBlock() {
+  const user = useSelector((state) => state.user)
+  const { navigate } = useNavigate()
+
+  const handleJoinRoom = () => {
+    joinRoom(user.id, 'room1', user.token).then((res) => {
+      res.status === 200 && navigate('/chat/1')
+    })
+  }
+
   return (
     <>
-      <Link to='/chat/1'>
+      <section onClick={handleJoinRoom}>
         <div className='chat card'>
           <img
             className='chat__img'
@@ -26,7 +38,7 @@ function ChatBlock() {
             <div className='msgCounter'>7</div>
           </div>
         </div>
-      </Link>
+      </section>
     </>
   )
 }
