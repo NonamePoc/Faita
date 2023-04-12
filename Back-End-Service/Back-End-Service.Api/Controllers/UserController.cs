@@ -34,14 +34,10 @@ public class UsersController : ControllerBase
     }
 
     [Authorize]
-    [HttpPost("logout")]
+    [HttpGet("logout")]
     public async Task<IActionResult> Logout()
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-        if (user == null)
-        {
-            return BadRequest(new { message = "User not found." });
-        }
 
         await _userService.Logout(user);
         return Ok();

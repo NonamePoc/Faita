@@ -22,7 +22,11 @@ export const loginUser = async (user) => {
 
 export const logoutUser = async (token) => {
   try {
-    return await axios.post('/api/users/logout')
+    return await axios.get('https://localhost:7206/api/users/logout', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
   } catch (error) {
     alert(error.response.data.Errors[0].Detail)
   }
@@ -42,7 +46,11 @@ export const changeEmail = async (newEmail, token) => {
       }
     )
   } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
+    if (error.response.data.Errors) {
+      alert(error.response.data.Errors[0].Detail)
+    } else {
+      alert(error.message)
+    }
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { ThemeSwitcher } from '../components'
 import { pen } from '../assets'
@@ -7,8 +8,8 @@ import {
   changeEmail,
   changePassword,
   changeUserData,
+  logoutUser,
 } from '../api/userRequests'
-import axios from 'axios'
 
 function Settings() {
   const user = useSelector((state) => state.user)
@@ -72,8 +73,9 @@ function Settings() {
   }
 
   const onExit = () => {
-    /* logoutUser(user.token) */
-    dispatch(resetUserData())
+    logoutUser(user.token).then((res) => {
+      res.status === 200 && dispatch(resetUserData())
+    })
   }
 
   return (
