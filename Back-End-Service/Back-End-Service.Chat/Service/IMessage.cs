@@ -6,4 +6,5 @@ namespace Back_End_Service.Chat.Service;
 public interface IMessage
 {
     Task SendMessage(SendMessageModel sendMessageModel);
+    Task JoinChatRoom(JoinChatRoomModel joinChatRoomModel);
 }
