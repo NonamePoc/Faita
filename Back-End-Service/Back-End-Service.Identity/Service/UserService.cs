@@ -1,16 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Security.Policy;
-using System.Security.Principal;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Back_End_Service.Identity.Entities;
 using Back_End_Service.Identity.Helpers;
 using Back_End_Service.Identity.Models;
 using MailKit.Net.Smtp;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
@@ -22,6 +14,7 @@ public class UserService : IUserService
     private readonly IConfiguration _configuration;
     private readonly IMapper _mapper;
     private readonly UserManager<User> _userManager;
+    private readonly SignInManager<User> _signInManager;
 
     private const string emailName = "faitauaofficial";
     private const string emailNameAdd = emailName + "@gmail.com";
@@ -29,12 +22,14 @@ public class UserService : IUserService
 
     public UserService(
         IConfiguration configuration,
-        IMapper mapper, UserManager<User> userManager)
+        IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager)
     {
         _configuration = configuration;
         _mapper = mapper;
         _userManager = userManager;
+        _signInManager = signInManager;
     }
+
 
     public async Task Register(UserModel userModel, string? route)
     {
@@ -62,9 +57,8 @@ public class UserService : IUserService
         {
             throw new Exception("User not found");
         }
-        
-        
-        await _userManager.UpdateSecurityStampAsync(user);
+
+        await _signInManager.SignOutAsync();
     }
 
     private async Task SendEmailAsync(string email, string subject, string message)
@@ -141,7 +135,6 @@ public class UserService : IUserService
 
     public async Task ChangeEmailAsync(ChangeEmail changeEmail)
     {
-        
         var user = await _userManager.FindByEmailAsync(changeEmail.Email);
         var validToken = changeEmail.Token.Replace(" ", "+");
         var result = await _userManager.ChangeEmailAsync(user, changeEmail.NewEmail, validToken);
@@ -154,7 +147,6 @@ public class UserService : IUserService
     }
 
 
-    
     public async Task ChangeUserDataAsync(ChangeUserData changeUserData, User user)
     {
         if (user == null)
@@ -174,13 +166,13 @@ public class UserService : IUserService
         }
     }
 
-    public Task GetUserId (string userId)
+    public Task GetUserId(string userId)
     {
         var user = _userManager.FindByIdAsync(userId);
         return user;
     }
-    
-    
+
+
     public async Task SendRequestChangeEmailAsync(SendChangeEmail changeEmail, string route, User user)
     {
         if (user == null)
@@ -188,7 +180,7 @@ public class UserService : IUserService
             throw new Exception("User not found");
         }
 
-        
+
         if (user.Email == changeEmail.NewEmail)
         {
             throw new Exception("Email is the same");
@@ -204,7 +196,7 @@ public class UserService : IUserService
         }
 
         var confirmationLink =
-            route + $"?email={user.Email}&newEmail={changeEmail.NewEmail}&token={validToken}";   
+            route + $"?email={user.Email}&newEmail={changeEmail.NewEmail}&token={validToken}";
         await SendEmailAsync(changeEmail.NewEmail, $"link change email",
             $"Link change email: {confirmationLink} ");
     }
