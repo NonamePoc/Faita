@@ -6,6 +6,7 @@ using Back_End_Service.Chat.Models;
 using Back_End_Service.Identity.Context;
 using Back_End_Service.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Back_End_Service.Chat.Service;
@@ -23,44 +24,66 @@ public class FriendService : IFriendService
     }
 
 
-    public async Task AddFriend(AddFriends addFriends, User user)
+    public async Task<bool> AddFriendAsync(AddFriends addFriends)
     {
-        var friend = await _userManager.FindByIdAsync(addFriends.FriendId);
-        if (friend == null)
+        var reverseFriend = await _context.Friend
+            .FirstOrDefaultAsync(f => f.UserId == addFriends.UserFriendId && f.UserFriendId == addFriends.UserId);
+
+        if (reverseFriend == null)
         {
-            throw new Exception("User not found");
+            reverseFriend = new Friend
+            {
+                UserId = addFriends.UserFriendId,
+                UserFriendId = addFriends.UserId,
+                IsAccepted = true
+            };
+
+            _context.Friend.Add(reverseFriend);
+        }
+        else
+        {
+            reverseFriend.IsAccepted = true;
+            _context.Friend.Update(reverseFriend);
         }
 
-        var friendEntity = new Friend
+        await _context.SaveChangesAsync();
+
+        var friend = await _context.Friend
+            .FirstOrDefaultAsync(f => f.UserId == addFriends.UserId && f.UserFriendId == addFriends.UserFriendId);
+
+        friend = new Friend
         {
             UserId = addFriends.UserId,
-            UserFriendId = addFriends.FriendId,
-            User = user,
-            UserFriend = friend
+            UserFriendId = addFriends.UserFriendId,
+            IsAccepted = false // Friend request
         };
 
+        _context.Friend.Add(friend);
+        await _context.SaveChangesAsync();
 
-        if (user.Friends == null)
+        return true;
+    }
+
+
+    public async Task<bool> ConfirmFriendRequestAsync(ConfirmFriendRequestAsync confirmFriendRequestAsync)
+    {
+        var friend = await _context.Friend
+            .FirstOrDefaultAsync(f =>
+                f.UserId == confirmFriendRequestAsync.UserId &&
+                f.UserFriendId == confirmFriendRequestAsync.UserFriendId && f.IsAccepted == false);
+
+        if (friend == null)
         {
-            user.Friends = new List<Friend>();
+            // Friend request not found
+            return false;
         }
 
-        user.Friends.Add(friendEntity);
+        friend.IsAccepted = true;
 
-        if (friend.FriendsOf == null)
-        {
-            friend.FriendsOf = new List<Friend>();
-        }
+        _context.Friend.Update(friend);
+        await _context.SaveChangesAsync();
 
-        friend.FriendsOf.Add(friendEntity);
-
-        if (_userManager == null)
-        {
-            throw new Exception("_userManager is null");
-        }
-
-        await _userManager.UpdateAsync(user);
-        await _userManager.UpdateAsync(friend);
+        return true;
     }
 
     public async Task RemoveFriend(RemoveFriend removeFriend, User user)

@@ -12,14 +12,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="Fix GetChatRooms">
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SearchUser.cs" afterDir="false" />
+    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/ConfirmFriendRequestAsync.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriends.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriends.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Friend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Friend.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +49,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9c8dd8bf233c4409b3da008fcaf737954f480/9c/ab6099bc/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9e385f927193487e8192e4d148746fa67e90/9b/c221f589/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/f7e2530ee1784107bb063950307afb9f2bc80/89/02d44647/UserManager`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Api/Controllers/FriendController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Api/Controllers/MessageController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Chat/Service/FriendService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Identity/Context/DateContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -150,7 +152,7 @@
       <workItem from="1681219925363" duration="544000" />
       <workItem from="1681310417517" duration="4852000" />
       <workItem from="1681387626350" duration="8427000" />
-      <workItem from="1681462917378" duration="4367000" />
+      <workItem from="1681462917378" duration="10806000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -180,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681464796479</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add search user (UserController)">
+      <created>1681467466541</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681467466541</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,23 +221,50 @@
     <MESSAGE value="Fix problem send message" />
     <MESSAGE value="Add CreateChatRoomModel.cs , fix bugs joinRoom" />
     <MESSAGE value="Fix GetChatRooms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix GetChatRooms" />
+    <MESSAGE value="Add search user (UserController)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add search user (UserController)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs</url>
-          <line>60</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\MessageController.cs" initialLine="55" containingFunctionPresentation="Method 'GetChatRooms'">
+          <url>file://$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs</url>
+          <line>70</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\FriendService.cs" initialLine="51" containingFunctionPresentation="Method 'ConfirmFriendRequestAsync'">
             <startOffsets>
-              <option value="1840" />
+              <option value="1919" />
             </startOffsets>
             <endOffsets>
-              <option value="1896" />
+              <option value="2155" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs</url>
+          <line>41</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\FriendController.cs" initialLine="41" containingFunctionPresentation="Method 'AddFriend'">
+            <startOffsets>
+              <option value="1239" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1240" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs</url>
+          <line>29</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\FriendService.cs" initialLine="29" containingFunctionPresentation="Lambda expression inside Method 'AddFriendAsync'">
+            <startOffsets>
+              <option value="788" />
+            </startOffsets>
+            <endOffsets>
+              <option value="862" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
