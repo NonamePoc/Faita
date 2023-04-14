@@ -24,6 +24,7 @@ public class MessageController : Controller
         _messageService = messageService;
     }
 
+
     [Authorize]
     [HttpPost("sendMessage")]
     public async Task<IActionResult> SendMessage(SendMessageModel sendMessage)
@@ -56,8 +57,9 @@ public class MessageController : Controller
         {
             return BadRequest(new { message = "User not found." });
         }
+
         var chatRooms = await _messageService.GetChatRoom(user);
-        return  Ok(chatRooms);
+        return Ok(chatRooms);
     }
 
     [Authorize]
@@ -73,4 +75,5 @@ public class MessageController : Controller
             .ToList());
         return Ok();
     }
+    
 }
