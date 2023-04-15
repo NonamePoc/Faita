@@ -1,8 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { setUserData } from '../../redux/reducers/user'
-import { loginUser } from '../../api/userRequests'
+import { setUserData, login } from '../../redux/slices/user'
 
 function Login() {
   const navigate = useNavigate()
@@ -17,22 +16,7 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    loginUser(userData).then((response) => {
-      if (response.status === 200) {
-        dispatch(
-          setUserData({
-            token: response.data.token,
-            id: response.data.id,
-            email: response.data.email,
-            firstName: response.data.firstName,
-            lastName: response.data.lastName,
-            patronymic: response.data.patronymic,
-            isAuth: true,
-          })
-        )
-        navigate('/')
-      }
-    })
+    dispatch(login(userData, navigate))
   }
 
   return (

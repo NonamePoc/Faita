@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 function UserMiniCard() {
   const user = useSelector((state) => state.user)
   return (
-    <Link to='/profile' aria-labelledby='View Profile'>
+    <Link to={`/profile/${user.userName}`} aria-labelledby='View Profile'>
       <figure className='card profileCard'>
         <img
           className='profileCard__img'

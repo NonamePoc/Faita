@@ -1,20 +1,16 @@
 import React from 'react'
 import { Emoji, Gif } from '../../components'
 import useInput from '../../hooks/useInput'
-import { useSelector } from 'react-redux'
-import { sendMessage } from '../../api/chatRequests'
+import { useDispatch } from 'react-redux'
+
+import { sendChatMessage } from '../../redux/slices/user'
 
 function Input() {
+  const dispatch = useDispatch()
   const { value, handleChange, handleEmojiSelect } = useInput('')
-  const user = useSelector((state) => state.user)
 
   const handleSendMessage = async () => {
-    sendMessage(
-      user.id,
-      '4864220a-8c27-4b49-884f-c8228813d2db',
-      'Hello!',
-      user.token
-    )
+    dispatch(sendChatMessage('Hello World', 'receiverId', 'roomId'))
   }
 
   return (

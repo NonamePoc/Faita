@@ -40,7 +40,9 @@ const Router = () => {
   const isAuth = useSelector((state) => state.user.isAuth)
 
   React.useEffect(() => {
-    if (!isAuth) navigate('/auth')
+    if (!isAuth) {
+      navigate('/auth')
+    }
   }, [isAuth, navigate])
 
   if (!isAuth) {
@@ -56,11 +58,11 @@ const Router = () => {
     <Routes>
       <Route element={<MainLayout />}>
         <Route path='/' element={<Home />} exact />
-        <Route path='/friends' element={<Friends />} exact />
+        <Route path='/friends/:userName' element={<Friends />} />
         <Route path='/chat' element={<Chats />} exact />
-        <Route path='/chat/1' element={<ChatRoom />} exact />
+        <Route path='/chat/:roomId' element={<ChatRoom />} />
         <Route path='/post' element={<PostDetails />} exact />
-        <Route path='/profile' element={<Profile />} exact />
+        <Route path='/profile/:userName' element={<Profile />} />
         <Route path='/settings' element={<Settings />} exact />
       </Route>
     </Routes>

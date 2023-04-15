@@ -127,7 +127,10 @@ body {
   height: 10px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
-  background-color: rgb(27, 192, 27);
+  background-color: rgb(149, 150, 149);
+  &.online {
+    background-color: rgb(27, 192, 27);
+  }
 }
 
 .dots {

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
+import { Status } from '../../components'
 
-function Card({ userName }) {
+function Card({ friend }) {
   const { isOpen, togglePopup } = usePopup()
 
   return (
@@ -73,11 +74,11 @@ function Card({ userName }) {
         alt='avatar'
       />
       <div className='friendCard__info'>
-        <h1 className='friendCard__name'>{userName}</h1>
-        <div className='statusCircle'></div>
+        <h1 className='friendCard__name'>{friend.userName}</h1>
+        <Status user={friend} />
       </div>
       <div className='friendCard__btns'>
-        <Link to='/profile' aria-label='View Profile'>
+        <Link to={`/profile/${friend.userName}`} aria-label='View Profile'>
           <button className='btn prfl' aria-label='view profile'>
             <svg
               width='26'

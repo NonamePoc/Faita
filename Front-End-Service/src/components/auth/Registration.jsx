@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { setUserData } from '../../redux/reducers/user'
+import { setUserData } from '../../redux/slices/user'
 import { registerUser } from '../../api/userRequests'
 
 function Registration() {

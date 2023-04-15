@@ -1,9 +1,9 @@
 import React from 'react'
-import * as signalR from '@microsoft/signalr'
 import { ChatHeader, ChatInput, ChatMessages } from '../components'
-import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
 function ChatRoom() {
+  const { roomId } = useParams()
   return (
     <main className='chatroom'>
       <ChatHeader />

@@ -1,18 +1,20 @@
 import { Link } from 'react-router-dom'
 import ProfileItem from '../friend/ProfileItem'
 
-function ProfilesFriendList() {
+function ProfilesFriendList({ user }) {
   return (
     <section className='card friendsMini'>
       <h1 className='friendsMini__title'>Friends</h1>
       <div className='friendsMini__list'>
-        <ProfileItem />
-        <ProfileItem />
-        <ProfileItem />
-        <ProfileItem />
-        <ProfileItem />
+        {user.friends
+          ? user.friends
+              .slice(0, 5)
+              .map((friend, index) => (
+                <ProfileItem key={index} friend={friend} />
+              ))
+          : null}
       </div>
-      <Link to='/friends'>
+      <Link to={`/friends/${user.userName}`}>
         <button className='friendsMini__button' aria-label='view more friends'>
           View more
           <svg

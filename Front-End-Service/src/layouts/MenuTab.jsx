@@ -1,7 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 function MenuTab() {
+  const user = useSelector((state) => state.user)
   return (
     <nav className='card menu'>
       <ul>
@@ -25,7 +27,7 @@ function MenuTab() {
           </NavLink>
         </li>
         <li>
-          <NavLink className='menu__item' to='/friends'>
+          <NavLink className='menu__item' to={`/friends/${user.userName}`}>
             <svg
               width='32'
               height='32'

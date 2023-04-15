@@ -52,7 +52,7 @@ public class MessageController : Controller
     public async Task<IActionResult> GetChatRooms(string userId)
     {
         var chatRooms = await _messageService.GetChatRoom(userId);
-        return Ok(chatRooms);
+        return  Ok(chatRooms);
     }
 
     [Authorize]

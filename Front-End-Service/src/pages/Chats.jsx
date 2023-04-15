@@ -1,10 +1,12 @@
 import React from 'react'
 import { ChatBlock } from '../components'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import * as signalR from '@microsoft/signalr'
+import { fetchRooms, createChatRoom } from '../redux/slices/user'
 
 function Chats() {
   const user = useSelector((state) => state.user)
+  const dispatch = useDispatch()
 
   React.useEffect(() => {
     let connection = new signalR.HubConnectionBuilder()
@@ -21,10 +23,22 @@ function Chats() {
     connection.start()
   }, [user.id])
 
+  React.useEffect(() => {
+    dispatch(fetchRooms())
+  }, [dispatch])
+
+  const handleAddChat = () => {
+    dispatch(createChatRoom('room1'))
+  }
+
   return (
     <div>
-      <ChatBlock />
-      <ChatBlock />
+      {user.rooms
+        ? user.rooms.map((room, index) => <ChatBlock key={index} />)
+        : null}
+      <button className='btn' onClick={handleAddChat}>
+        Add Room
+      </button>
     </div>
   )
 }

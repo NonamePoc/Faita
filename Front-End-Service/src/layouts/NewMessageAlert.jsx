@@ -1,13 +1,13 @@
 import React from 'react'
 
 function NewMessageAlert() {
-  setInterval(() => {
+  /* setInterval(() => {
     document.querySelector('.newMsgAlert').classList.add('active')
   }, 20000)
 
   setTimeout(() => {
     document.querySelector('.newMsgAlert').classList.remove('active')
-  }, 1000)
+  }, 1000) */
 
   return (
     <figure className='newMsgAlert active'>

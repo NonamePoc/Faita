@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { joinRoom } from '../../api/chatRequests'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -10,7 +9,7 @@ function ChatBlock() {
 
   const handleJoinRoom = () => {
     joinRoom(user.id, 'room1', user.token).then((res) => {
-      res.status === 200 && navigate('/chat/1')
+      res.status === 200 && navigate(`/chat/${res.data.id}`)
     })
   }
 

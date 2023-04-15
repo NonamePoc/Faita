@@ -35,7 +35,7 @@ export const logoutUser = async (token) => {
 export const changeEmail = async (newEmail, token) => {
   try {
     return await axios.put(
-      '/api/users/change-email',
+      'https://localhost:7206/api/users/change-email',
       {
         newEmail: newEmail,
       },
@@ -57,7 +57,7 @@ export const changeEmail = async (newEmail, token) => {
 export const changePassword = async (password, newPassword, email, token) => {
   try {
     return await axios.put(
-      '/api/users/change-password',
+      'https://localhost:7206/api/users/change-password',
       {
         password: password,
         email: email,
@@ -77,7 +77,7 @@ export const changePassword = async (password, newPassword, email, token) => {
 export const changeUserData = async (firstName, lastName, token) => {
   try {
     return await axios.put(
-      '/api/users/change-user-data',
+      'https://localhost:7206/api/users/change-user-data',
       {
         firstName: firstName,
         lastName: lastName,

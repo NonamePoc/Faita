@@ -1,81 +1,37 @@
 import React from 'react'
-import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { ThemeSwitcher } from '../components'
 import { pen } from '../assets'
-import { setUserData, resetUserData } from '../redux/reducers/user'
 import {
-  changeEmail,
-  changePassword,
-  changeUserData,
-  logoutUser,
-} from '../api/userRequests'
+  changeFirstName,
+  changeLastName,
+  changeUserEmail,
+  changeUserPassword,
+  exitUser,
+} from '../redux/slices/user'
 
 function Settings() {
   const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
 
   const onBlurFirstName = (event) => {
-    changeUserData(event.target.value, user.lastName, user.token).then(
-      (res) => {
-        res.status === 200 &&
-          alert('First name changed successfully!') &&
-          dispatch(setUserData({ ...user, firstName: event.target.value }))
-      }
-    )
+    dispatch(changeFirstName(event.target.value))
   }
 
   const onBlurLastName = (event) => {
-    changeUserData(user.firstName, event.target.value, user.token).then(
-      (res) => {
-        res.status === 200 &&
-          alert('Last name changed successfully!') &&
-          dispatch(setUserData({ ...user, lastName: event.target.value }))
-      }
-    )
+    dispatch(changeLastName(event.target.value))
   }
 
   const onBlurEmail = (event) => {
-    changeEmail(event.target.value, user.token).then((res) => {
-      if (res.status === 200) {
-        alert('Please confirm your new email address.')
-        axios
-          .get(
-            `/api/users/change-email?email=${user.email}&newEmail=${event.target.value}&token=${user.token}`
-          )
-          .then((response) => {
-            if (response.status === 200) {
-              console.log('Email was verified')
-            }
-          })
-          .catch((error) => {
-            console.error(error)
-          })
-
-        dispatch(setUserData({ ...user, email: event.target.value }))
-      }
-    })
+    dispatch(changeUserEmail(event.target.value))
   }
 
   const onBlurPassword = (event) => {
-    changePassword(
-      user.password,
-      event.target.value,
-      user.email,
-      user.token
-    ).then((res) => {
-      res.status === 200 &&
-        alert(
-          'Email list was sent on your email that your password was changed succesfuly.'
-        ) &&
-        dispatch(setUserData({ ...user, password: event.target.value }))
-    })
+    dispatch(changeUserPassword(event.target.value))
   }
 
-  const onExit = () => {
-    logoutUser(user.token).then((res) => {
-      res.status === 200 && dispatch(resetUserData())
-    })
+  const onClickExit = () => {
+    dispatch(exitUser())
   }
 
   return (
@@ -178,7 +134,7 @@ function Settings() {
             <p>To exit your account, click the button.</p>
           </div>
           <div className='stngs__change'>
-            <button className='btn' onClick={onExit}>
+            <button className='btn' onClick={onClickExit}>
               Exit
             </button>
           </div>
