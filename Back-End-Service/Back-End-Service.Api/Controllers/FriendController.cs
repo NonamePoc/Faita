@@ -47,17 +47,13 @@ public class FriendController : ControllerBase
             return BadRequest(new { message = "Invalid user." });
         }
 
-        if (await _friendService.AddFriendAsync(friends))
-        {
-            return StatusCode(200); // успешное добавление нового друга
-        }
-        else
-        {
-            return BadRequest(new { message = "Friend already exists." });
-        }
+        var response = await _friendService.AddFriendAsync(friends);
+
+
+        return Ok(response);
     }
 
-    
+
     [Authorize]
     [HttpPost("confirmFriendRequest")]
     public async Task<IActionResult> ConfirmFriendRequest(ConfirmFriendRequestAsync confirmFriendRequestAsync)
@@ -70,7 +66,7 @@ public class FriendController : ControllerBase
         }
 
         await _friendService.ConfirmFriendRequestAsync(confirmFriendRequestAsync);
-        
+
 
         return Ok();
     }

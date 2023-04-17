@@ -7,7 +7,7 @@ namespace Back_End_Service.Chat.Service;
 
 public interface IFriendService
 {
-    Task<bool> AddFriendAsync(AddFriends addFriends);
+    Task<Friend> AddFriendAsync(AddFriends addFriends);
     Task<bool> ConfirmFriendRequestAsync(ConfirmFriendRequestAsync confirmFriendRequestAsync);
 
     Task RemoveFriend(RemoveFriend removeFriend, User user);
