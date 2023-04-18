@@ -58,7 +58,7 @@ public class MessageController : Controller
             return BadRequest(new { message = "User not found." });
         }
 
-        var chatRooms = await _messageService.GetChatRoom(user);
+        var chatRooms = await _messageService.GetChatRooms(user);
         return Ok(chatRooms);
     }
 
@@ -69,11 +69,14 @@ public class MessageController : Controller
     {
         await _messageService.JoinChatRoom(joinChatRoomModel);
         await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, joinChatRoomModel.UserId);
-        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, _context.Friend
-            .Where(x => x.UserId == joinChatRoomModel.UserId)
-            .Select(x => x.UserFriendId)
-            .ToList());
         return Ok();
     }
-    
+
+    [AllowAnonymous]
+    [HttpGet("getChatRoom")]
+    public async Task<IActionResult> GetChatRoom(GetChatRoomModels getChatRoomModels)
+    {
+        var chatRoom = await _messageService.GetChatRoom(getChatRoomModels);
+        return Ok(chatRoom);
+    }
 }
