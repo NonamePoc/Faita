@@ -4,6 +4,7 @@ using Back_End_Service.Identity.Helpers;
 using Back_End_Service.Identity.Models;
 using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
 
@@ -165,6 +166,7 @@ public class UserService : IUserService
                 result.Errors.Select(s => new Exception(s.Description)));
         }
     }
+
 
     public Task GetUserId(string userId)
     {

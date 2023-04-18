@@ -1,6 +1,6 @@
-﻿namespace Back_End_Service.Chat.Models;
+namespace Back_End_Service.Chat.Models;
 
-public class AddFriends
+public class ConfirmFriendRequestAsync
 {
     public string UserId { get; set; }
 

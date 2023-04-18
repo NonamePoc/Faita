@@ -7,4 +7,6 @@ public class Friend
 
     public string UserFriendId { get; set; }
     public User UserFriend { get; set; }
+    
+    public bool IsAccepted { get; set; }
 }

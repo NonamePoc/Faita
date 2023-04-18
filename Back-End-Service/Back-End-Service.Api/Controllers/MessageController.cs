@@ -24,6 +24,7 @@ public class MessageController : Controller
         _messageService = messageService;
     }
 
+
     [Authorize]
     [HttpPost("sendMessage")]
     public async Task<IActionResult> SendMessage(SendMessageModel sendMessage)
@@ -49,10 +50,16 @@ public class MessageController : Controller
 
     [AllowAnonymous]
     [HttpGet("getChatRooms")]
-    public async Task<IActionResult> GetChatRooms(string userId)
+    public async Task<IActionResult> GetChatRooms()
     {
-        var chatRooms = await _messageService.GetChatRoom(userId);
-        return  Ok(chatRooms);
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        if (user == null)
+        {
+            return BadRequest(new { message = "User not found." });
+        }
+
+        var chatRooms = await _messageService.GetChatRoom(user);
+        return Ok(chatRooms);
     }
 
     [Authorize]
@@ -68,4 +75,5 @@ public class MessageController : Controller
             .ToList());
         return Ok();
     }
+    
 }

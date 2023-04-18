@@ -4,6 +4,7 @@ using Back_End_Service.Identity.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Back_End_Service.Controllers;
 
@@ -146,5 +147,16 @@ public class UsersController : ControllerBase
 
         await _userService.GetUserId(user);
         return Ok();
+    }
+
+    [AllowAnonymous]
+    [HttpPost("SearchUser")]
+    public async Task<IActionResult> SearchUser(SearchUser searchUser)
+    {
+        var users = await _userManager.Users
+            .Where(u => u.FirstName.Contains(searchUser.UserName))
+            .ToListAsync();
+
+        return Ok(users);
     }
 }
