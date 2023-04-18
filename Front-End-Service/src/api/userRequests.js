@@ -92,3 +92,13 @@ export const changeUserData = async (firstName, lastName, token) => {
     alert(error.response.data.Errors[0].Detail)
   }
 }
+
+export const searchUser = async (userName) => {
+  try {
+    return await axios.post('https://localhost:7206/api/users/SearchUser', {
+      userName: userName,
+    })
+  } catch (error) {
+    alert(error.response.data.Errors[0].Detail)
+  }
+}

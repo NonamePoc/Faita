@@ -3,19 +3,19 @@ import { joinRoom } from '../../api/chatRequests'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-function ChatBlock() {
+function ChatBlock({ room }) {
   const user = useSelector((state) => state.user)
-  const { navigate } = useNavigate()
+  const navigate = useNavigate()
 
-  const handleJoinRoom = () => {
-    joinRoom(user.id, 'room1', user.token).then((res) => {
+  const onClickRoom = (room) => {
+    joinRoom(user.id, room, user.token).then((res) => {
       res.status === 200 && navigate(`/chat/${res.data.id}`)
     })
   }
 
   return (
     <>
-      <section onClick={handleJoinRoom}>
+      <section onClick={() => onClickRoom(room.id)}>
         <div className='chat card'>
           <img
             className='chat__img'
@@ -24,12 +24,13 @@ function ChatBlock() {
           />
           <div className='chat__info'>
             <div className='chat__info__firstLine'>
-              <h1 className='chat__name'>Name</h1>
+              <h1 className='chat__name'>{room.name}</h1>
               <div className='statusCircle'></div>
             </div>
             <p className='chat__message'>
-              Hello! fkkkkkkkkkkkdsofkod fffffffffffffffff fffff fffffffff
-              fffffffff ffffffff fffff fffffff fesfkkkk kkkdofjkoe....
+              {room.messages
+                ? room.messages[room.messages.length - 1]
+                : 'No messages yet'}
             </p>
           </div>
           <div className='chat__info right'>

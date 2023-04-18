@@ -48,7 +48,7 @@ public class MessageController : Controller
     }
 
 
-    [AllowAnonymous]
+    [Authorize]
     [HttpGet("getChatRooms")]
     public async Task<IActionResult> GetChatRooms()
     {
@@ -69,10 +69,6 @@ public class MessageController : Controller
     {
         await _messageService.JoinChatRoom(joinChatRoomModel);
         await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, joinChatRoomModel.UserId);
-        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, _context.Friend
-            .Where(x => x.UserId == joinChatRoomModel.UserId)
-            .Select(x => x.UserFriendId)
-            .ToList());
         return Ok();
     }
     

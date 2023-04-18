@@ -26,11 +26,15 @@ export const sendMessage = async (userId, receiverId, text, roomId, token) => {
   }
 }
 
-export const getRooms = async (userId) => {
+export const getRooms = async (token) => {
   try {
     const response = await axios.get(
       `https://localhost:7206/api/chat/getChatRooms`,
-      { userId: userId }
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     )
     return response
   } catch (error) {
@@ -66,13 +70,13 @@ export const createRoom = async (room, userId, token) => {
   }
 }
 
-export const joinRoom = async (userId, room, token) => {
+export const joinRoom = async (userId, roomId, token) => {
   try {
     const response = await axios.post(
       `https://localhost:7206/api/chat/joinChatRoom`,
       {
         userId: userId,
-        chatRoomId: room,
+        chatRoomId: roomId,
       },
       {
         headers: {

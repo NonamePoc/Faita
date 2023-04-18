@@ -44,6 +44,7 @@ function Input({ type }) {
         placeholder={`${
           type ? "What's new, ProfileName__001?" : 'Write a comment...'
         }`}
+        aria-label='Input Field'
       />
 
       <div className='input__btns'>

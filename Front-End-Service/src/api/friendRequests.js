@@ -20,7 +20,7 @@ export const addFriend = async (id, friendId, token) => {
   try {
     const response = await axios.post(
       `https://localhost:7206/api/friends/addFriend`,
-      { userId: id, friendId: friendId },
+      { userId: id, userFriendId: friendId },
       {
         headers: {
           Authorization: `Bearer ${token}`,

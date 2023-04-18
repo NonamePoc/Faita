@@ -14,7 +14,7 @@ function Status({ user }) {
     window.addEventListener('online', handleStatusChange)
     window.addEventListener('offline', handleStatusChange)
 
-    console.log('Status useEffect', navigator.onLine, currentUser.isOnline)
+    /* console.log('Status useEffect', navigator.onLine, currentUser.isOnline) */
 
     return () => {
       window.removeEventListener('online', handleStatusChange)

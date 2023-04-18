@@ -154,7 +154,7 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> SearchUser(SearchUser searchUser)
     {
         var users = await _userManager.Users
-            .Where(u => u.FirstName.Contains(searchUser.UserName))
+            .Where(u => u.UserName.Contains(searchUser.UserName))
             .ToListAsync();
 
         return Ok(users);

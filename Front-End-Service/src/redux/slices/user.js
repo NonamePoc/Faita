@@ -7,7 +7,12 @@ import {
   loginUser,
 } from '../../api/userRequests'
 import { getFriends, addFriend, removeFriend } from '../../api/friendRequests'
-import { getRooms, sendMessage, createRoom } from '../../api/chatRequests'
+import {
+  getRooms,
+  sendMessage,
+  createRoom,
+  joinRoom,
+} from '../../api/chatRequests'
 
 const user = createSlice({
   name: 'user',
@@ -49,6 +54,8 @@ export const login = (userData, navigate) => async (dispatch) => {
         firstName: res.data.firstName,
         lastName: res.data.lastName,
         patronymic: res.data.patronymic,
+        friends: res.data.friends,
+        rooms: res.data.rooms,
         isAuth: true,
       })
     )
@@ -102,10 +109,13 @@ export const exitUser = () => async (dispatch, getState) => {
   }
 }
 
-export const fetchFriends = (userId) => async (dispatch) => {
+export const fetchFriends = (userId) => async (dispatch, getState) => {
+  const { id } = getState().user
   const res = await getFriends(userId)
   if (res.status === 200) {
-    dispatch(user.actions.setUserData({ friends: res.data }))
+    dispatch(
+      user.actions.setUserData({ friends: res.data.filter((v) => v.id !== id) })
+    )
   }
 }
 
@@ -126,8 +136,8 @@ export const removeFromFriends = (friendId) => async (dispatch, getState) => {
 }
 
 export const fetchRooms = () => async (dispatch, getState) => {
-  const { id } = getState().user
-  const res = await getRooms(id)
+  const { token } = getState().user
+  const res = await getRooms(token)
   if (res.status === 200) {
     dispatch(user.actions.setUserData({ rooms: res.data }))
   }
@@ -145,7 +155,14 @@ export const createChatRoom = (room) => async (dispatch, getState) => {
   const res = await createRoom(id, room, token)
   if (res.status === 200) {
     dispatch(fetchRooms())
-    console.log(res)
+  }
+}
+
+export const joinChatRoom = (roomId) => async (dispatch, getState) => {
+  const { id, token } = getState().user
+  const res = await joinRoom(id, roomId, token)
+  if (res.status === 200) {
+    dispatch(fetchRooms())
   }
 }
 

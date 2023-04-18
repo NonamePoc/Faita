@@ -10,7 +10,7 @@ public interface IMessage
     
     Task CreateChatRoom(CreateChatRoomModel createChatRoomModel);
     
-    Task JoinChatRoom(JoinChatRoomModel joinChatRoomModel);
+    Task<ChatRoom> JoinChatRoom(JoinChatRoomModel joinChatRoomModel);
     
     Task<List<ChatRoom>> GetChatRoom(string UserId);
 }

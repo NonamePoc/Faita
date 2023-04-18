@@ -34,7 +34,7 @@ function Chats() {
   return (
     <div>
       {user.rooms
-        ? user.rooms.map((room, index) => <ChatBlock key={index} />)
+        ? user.rooms.map((room, index) => <ChatBlock key={index} room={room} />)
         : null}
       <button className='btn' onClick={handleAddChat}>
         Add Room

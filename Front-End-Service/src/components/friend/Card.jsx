@@ -2,9 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 import { Status } from '../../components'
+import { useDispatch } from 'react-redux'
+import { removeFromFriends } from '../../redux/slices/user'
 
 function Card({ friend }) {
   const { isOpen, togglePopup } = usePopup()
+  const dispatch = useDispatch()
+  const onClickRemove = (user) => {
+    dispatch(removeFromFriends(user))
+  }
 
   return (
     <div className='card friendCard'>
@@ -41,7 +47,11 @@ function Card({ friend }) {
         </defs>
       </svg>
       <ul className={`pop popup popup__friendCard ${isOpen ? 'open' : ''}`}>
-        <li>
+        <li
+          onClick={() => {
+            onClickRemove(friend.id)
+          }}
+        >
           <svg
             width='24'
             height='24'

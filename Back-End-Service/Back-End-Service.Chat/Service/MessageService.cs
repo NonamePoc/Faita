@@ -63,27 +63,26 @@ public class MessageService : IMessage
         await _dataContext.SaveChangesAsync();
     }
 
-    public async Task JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
+    public async Task<ChatRoom> JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
     {
-        // Получаем комнату чата по идентификатору
-        var room = await _dataContext.ChatRoom.FindAsync(joinChatRoomModel.ChatRoomId);
+        var chatRoom = await _dataContext.ChatRoom
+            .Include(cr => cr.Users)
+            .FirstOrDefaultAsync(cr => cr.Id == joinChatRoomModel.ChatRoomId);
 
-        if (room == null)
+        if (chatRoom == null)
         {
-            throw new Exception("Chat room not found");
+            throw new ArgumentException("Chat room not found.");
         }
 
-        // Получаем пользователя по идентификатору
         var user = await _dataContext.Users.FindAsync(joinChatRoomModel.UserId);
-
         if (user == null)
         {
-            throw new Exception("User room not found");
+            throw new ArgumentException("User not found.");
         }
 
-        // Добавляем пользователя в комнату чата и сохраняем изменения в базе данных
-        room.Users.Add(user);
+        chatRoom.Users.Add(user);
         await _dataContext.SaveChangesAsync();
+        return chatRoom;
     }
 
     public async Task<List<ChatRoom>> GetChatRoom(string UserId)
