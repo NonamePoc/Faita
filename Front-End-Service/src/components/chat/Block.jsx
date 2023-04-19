@@ -1,16 +1,11 @@
 import React from 'react'
-import { joinRoom } from '../../api/chatRequests'
-import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 function ChatBlock({ room }) {
-  const user = useSelector((state) => state.user)
   const navigate = useNavigate()
 
-  const onClickRoom = (room) => {
-    joinRoom(user.id, room, user.token).then((res) => {
-      res.status === 200 && navigate(`/chat/${res.data.id}`)
-    })
+  const onClickRoom = (roomId) => {
+    navigate(`/chat/${roomId}`)
   }
 
   return (

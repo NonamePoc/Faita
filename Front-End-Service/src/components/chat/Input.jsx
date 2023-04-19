@@ -2,20 +2,23 @@ import React from 'react'
 import { Emoji, Gif } from '../../components'
 import useInput from '../../hooks/useInput'
 import { useDispatch } from 'react-redux'
-
-import { sendChatMessage } from '../../redux/slices/user'
+import { sendChatMessage } from '../../redux/slices/chat'
 
 function Input() {
   const dispatch = useDispatch()
-  const { value, handleChange, handleEmojiSelect } = useInput('')
+  const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
+  const inputRef = React.useRef()
 
-  const handleSendMessage = async () => {
-    dispatch(sendChatMessage('Hello World', 'receiverId', 'roomId'))
+  const handleSendMessage = (value) => {
+    dispatch(sendChatMessage(value, '991b81ce-6188-444e-898a-bb7a6da6c14c'))
+    resetValue()
   }
 
   return (
     <fieldset className='card chatroom__field'>
       <input
+        ref={inputRef}
+        type='text'
         onChange={handleChange}
         value={value}
         className='chatroom__field__input'
@@ -24,7 +27,10 @@ function Input() {
       <div className='flex'>
         <Gif />
         <Emoji handleEmojiSelect={handleEmojiSelect} />
-        <button className='btn send-btn' onClick={handleSendMessage}>
+        <button
+          className='btn send-btn'
+          onClick={() => handleSendMessage(inputRef.current.value)}
+        >
           <svg
             width='17'
             height='17'

@@ -1,11 +1,11 @@
 .chat {
   &__msgs__cont {
+    height: calc(100dvh - 21rem);
     display: grid;
-    overflow-y: scroll;
-    align-self: flex-end;
+    /* align-content: flex-end; */
     gap: 1rem;
     padding: 1rem;
-    max-height: calc(100dvh - clamp(16rem, 14.9091rem + 5.4545vw, 19rem));
+    overflow-y: scroll;
   }
 }
 

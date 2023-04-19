@@ -112,6 +112,7 @@ function Card({ friend }) {
             </svg>
           </button>
         </Link>
+
         <Link to='/chat' aria-label='Chat with User'>
           <button className='btn msg' aria-label='chat with user'>
             <svg

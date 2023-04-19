@@ -11,10 +11,15 @@ function useInput(initialValue) {
     setValue((prevValue) => prevValue + emoji.native)
   }
 
+  const resetValue = () => {
+    setValue('')
+  }
+
   return {
     value,
     handleChange,
     handleEmojiSelect,
+    resetValue,
   }
 }
 

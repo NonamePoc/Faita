@@ -1,9 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
+import { useSelector, useDispatch } from 'react-redux'
+import { joinToRoom } from '../../redux/slices/chat'
 
 function Header() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false)
   const { isOpen, togglePopup } = usePopup()
+  const room = useSelector((state) => state.chat)
+  const friends = useSelector((state) => state.user.friends)
+  const dispatch = useDispatch()
+
+  const onClickAddToChat = (friendId) => {
+    dispatch(joinToRoom(friendId))
+  }
 
   return (
     <figure className='card chatroom__header'>
@@ -33,7 +43,7 @@ function Header() {
         />
       </Link>
       <figcaption className='chatroom__header__info'>
-        <h1 className='name'>Name</h1>
+        <h1 className='name'>{room.name}</h1>
         <div className='status'>
           <div className='statusCircle'></div>
           <p className='status__text'>online</p>
@@ -95,7 +105,38 @@ function Header() {
           </svg>
           View profile
         </li>
+        <li onClick={() => setIsModalOpen(true)}>Add to chat</li>
       </ul>
+      <div className={`modal-overlay ${isModalOpen ? 'active' : ''}`}></div>
+      <div className={`modal card ${isModalOpen ? 'active' : ''}`}>
+        <div className='modal-header'>
+          <h2>Add to chat</h2>
+          <span className='close' onClick={() => setIsModalOpen(false)}>
+            &times;
+          </span>
+        </div>
+        <div className='modal-body'>
+          <ul className='modal-friend-list'>
+            {friends.map((friend, index) => (
+              <li key={index} className='modal-friend'>
+                <div className='flex'>
+                  <img
+                    src='https://picsum.photos/id/235/20'
+                    alt='User avatar'
+                  />
+                  <h3 className='modal-friend-name'>{friend.userName}</h3>
+                </div>
+                <button
+                  className='btn'
+                  onClick={() => onClickAddToChat(friend.id)}
+                >
+                  +
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </figure>
   )
 }
