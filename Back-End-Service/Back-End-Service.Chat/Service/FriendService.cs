@@ -24,7 +24,7 @@ public class FriendService : IFriendService
     }
 
 
-    public async Task<bool> AddFriendAsync(AddFriends addFriends)
+    public async Task<Friend> AddFriendAsync(AddFriends addFriends)
     {
         var reverseFriend = await _context.Friend
             .FirstOrDefaultAsync(f => f.UserId == addFriends.UserFriendId && f.UserFriendId == addFriends.UserId);
@@ -61,7 +61,7 @@ public class FriendService : IFriendService
         _context.Friend.Add(friend);
         await _context.SaveChangesAsync();
 
-        return true;
+        return friend;
     }
 
 

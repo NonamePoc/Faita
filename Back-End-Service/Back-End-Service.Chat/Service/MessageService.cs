@@ -51,14 +51,14 @@ public class MessageService : IMessage
     public async Task CreateChatRoom(CreateChatRoomModel createChatRoomModel)
     {
         var user = await _userManager.FindByIdAsync(createChatRoomModel.UserId);
-        
+
         var chatRoom = new ChatRoom
         {
             Id = Guid.NewGuid().ToString(),
             Name = createChatRoomModel.Name,
-            Users = new List<User> {user}
+            Users = new List<User> { user }
         };
-        
+
         _dataContext.ChatRoom.Add(chatRoom);
         await _dataContext.SaveChangesAsync();
     }
@@ -85,14 +85,33 @@ public class MessageService : IMessage
         return chatRoom;
     }
 
-    public async Task<List<ChatRoom>> GetChatRoom(string UserId)
+    public async Task<List<ChatRoom>> GetChatRooms(string UserId)
     {
         var user = await _userManager.FindByIdAsync(UserId);
-        
+
         var chatRoom = await _dataContext.ChatRoom
             .Where(c => c.Users.Contains(user))
             .ToListAsync();
-        
+
         return chatRoom.ToList();
     }
+
+    public async Task<ChatRoom> GetChatRoom(GetChatRoomModels getChatRoomModels)
+    {
+        // Ищем комнату чата с указанным идентификатором в базе данных
+        var chatRoom = await _dataContext.ChatRoom.FindAsync(getChatRoomModels.ChatRoomId);
+
+        // Если комната чата найдена, возвращаем ее
+        if (chatRoom != null)
+        {
+            return _mapper.Map<ChatRoom>(chatRoom);
+        }
+        else
+        {
+            // Иначе, выбрасываем исключение или возвращаем null, в зависимости от того, как вы хотите обрабатывать отсутствующие комнаты чата
+            throw new Exception($"Chat room with id {getChatRoomModels} not found");
+            // return null;
+        }
+    }
+
 }
