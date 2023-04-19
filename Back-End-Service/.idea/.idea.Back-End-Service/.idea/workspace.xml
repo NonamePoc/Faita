@@ -13,27 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Audio.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Comment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/CommentLike.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Photo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Post.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/PostLike.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Video.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Block.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Block.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Messages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Messages.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +160,7 @@
       <workItem from="1681799458276" duration="3540000" />
       <workItem from="1681816242523" duration="5294000" />
       <workItem from="1681893495467" duration="1973000" />
-      <workItem from="1681895996360" duration="3770000" />
+      <workItem from="1681895996360" duration="4366000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
