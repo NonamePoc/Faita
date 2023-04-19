@@ -12,20 +12,34 @@ public class DataContext : IdentityDbContext<User>
 
     public DbSet<ChatRoom> ChatRoom { get; set; }
 
+    public DbSet<Post> Post { get; set; }
+
+    public DbSet<PostLike> PostLike { get; set; }
+
+    public DbSet<Comment> Comment { get; set; }
+    
+    public DbSet<CommentLike> CommentLike { get; set; }
+
+    public DbSet<Repost> Repost { get; set; }
+
+    public DbSet<Photo> Photo { get; set; }
+
+    public DbSet<Video> Video { get; set; }
+
+    public DbSet<Audio> Audio { get; set; }
+
 
     public DataContext(DbContextOptions<DataContext> options) :
         base(options)
     {
-        
     }
 
-  
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        
-        
+
+
         builder.Entity<Friend>(b =>
         {
             b.HasKey(x => new { x.UserId, x.UserFriendId });
@@ -52,5 +66,6 @@ public class DataContext : IdentityDbContext<User>
             .WithMany(u => u.ReceivedMessages)
             .HasForeignKey(m => m.ReceiverId)
             .OnDelete(DeleteBehavior.Restrict);
+        
     }
 }
