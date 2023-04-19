@@ -104,7 +104,7 @@ public class UserService : IUserService
         return new AuthenticateResponse(user, token);
     }
 
-    public async Task ChangePasswordAsync(ChangePassword changePassword, string route, User user)
+    public async Task ChangePasswordAsync(ChangePasswordModel changePasswordModel, string route, User user)
     {
         if (user == null)
         {
@@ -112,7 +112,7 @@ public class UserService : IUserService
         }
 
         var changePasswordResult =
-            await _userManager.CheckPasswordAsync(user, changePassword.Password);
+            await _userManager.CheckPasswordAsync(user, changePasswordModel.Password);
 
 
         if (!changePasswordResult)
@@ -121,7 +121,7 @@ public class UserService : IUserService
         }
 
         var change =
-            await _userManager.ChangePasswordAsync(user, changePassword.Password, changePassword.NewPassword);
+            await _userManager.ChangePasswordAsync(user, changePasswordModel.Password, changePasswordModel.NewPassword);
 
 
         if (!change.Succeeded)
@@ -130,15 +130,15 @@ public class UserService : IUserService
                 change.Errors.Select(s => new Exception(s.Description)));
         }
 
-        await SendEmailAsync(changePassword.Email, $"confirm password",
+        await SendEmailAsync(changePasswordModel.Email, $"confirm password",
             $" Confirm password ");
     }
 
-    public async Task ChangeEmailAsync(ChangeEmail changeEmail)
+    public async Task ChangeEmailAsync(ChangeEmailModel changeEmailModel)
     {
-        var user = await _userManager.FindByEmailAsync(changeEmail.Email);
-        var validToken = changeEmail.Token.Replace(" ", "+");
-        var result = await _userManager.ChangeEmailAsync(user, changeEmail.NewEmail, validToken);
+        var user = await _userManager.FindByEmailAsync(changeEmailModel.Email);
+        var validToken = changeEmailModel.Token.Replace(" ", "+");
+        var result = await _userManager.ChangeEmailAsync(user, changeEmailModel.NewEmail, validToken);
 
         if (!result.Succeeded)
         {
@@ -148,15 +148,15 @@ public class UserService : IUserService
     }
 
 
-    public async Task ChangeUserDataAsync(ChangeUserData changeUserData, User user)
+    public async Task ChangeUserDataAsync(ChangeUserDataModel changeUserDataModel, User user)
     {
         if (user == null)
         {
             throw new Exception("User not found");
         }
 
-        user.FirstName = changeUserData.FirstName;
-        user.LastName = changeUserData.LastName;
+        user.FirstName = changeUserDataModel.FirstName;
+        user.LastName = changeUserDataModel.LastName;
 
         var result = await _userManager.UpdateAsync(user);
 
@@ -167,6 +167,26 @@ public class UserService : IUserService
         }
     }
 
+    public Task AddAvatarAsync(AddAvatarModel addAvatar, User user)
+    {
+        if (user == null)
+        {
+            throw new Exception("User not found");
+        }
+
+        user.Avatar = addAvatar.Avatar;
+
+        var result = _userManager.UpdateAsync(user);
+
+        if (!result.IsCompletedSuccessfully)
+        {
+            throw new AggregateException(
+                result.Exception?.InnerExceptions.Select(s => new Exception(s.Message)) ?? throw new InvalidOperationException());
+        }
+
+        return result;
+    }
+
 
     public Task GetUserId(string userId)
     {
@@ -175,7 +195,7 @@ public class UserService : IUserService
     }
 
 
-    public async Task SendRequestChangeEmailAsync(SendChangeEmail changeEmail, string route, User user)
+    public async Task SendRequestChangeEmailAsync(SendChangeEmailModel changeEmailModel, string route, User user)
     {
         if (user == null)
         {
@@ -183,12 +203,12 @@ public class UserService : IUserService
         }
 
 
-        if (user.Email == changeEmail.NewEmail)
+        if (user.Email == changeEmailModel.NewEmail)
         {
             throw new Exception("Email is the same");
         }
 
-        var token = await _userManager.GenerateChangeEmailTokenAsync(user, changeEmail.NewEmail);
+        var token = await _userManager.GenerateChangeEmailTokenAsync(user, changeEmailModel.NewEmail);
         var validToken = token.Replace(" ", "+");
 
 
@@ -198,8 +218,8 @@ public class UserService : IUserService
         }
 
         var confirmationLink =
-            route + $"?email={user.Email}&newEmail={changeEmail.NewEmail}&token={validToken}";
-        await SendEmailAsync(changeEmail.NewEmail, $"link change email",
+            route + $"?email={user.Email}&newEmail={changeEmailModel.NewEmail}&token={validToken}";
+        await SendEmailAsync(changeEmailModel.NewEmail, $"link change email",
             $"Link change email: {confirmationLink} ");
     }
 }

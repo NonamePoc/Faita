@@ -1,6 +1,6 @@
 ﻿namespace Back_End_Service.Identity.Models;
 
-public class ChangeUserData
+public class ChangeUserDataModel
 {
     public string FirstName { get; set; }
     

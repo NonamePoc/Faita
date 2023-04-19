@@ -28,40 +28,45 @@ public class FriendService : IFriendService
     {
         var reverseFriend = await _context.Friend
             .FirstOrDefaultAsync(f => f.UserId == addFriends.UserFriendId && f.UserFriendId == addFriends.UserId);
-
         if (reverseFriend == null)
         {
             reverseFriend = new Friend
             {
                 UserId = addFriends.UserFriendId,
                 UserFriendId = addFriends.UserId,
-                IsAccepted = true
+                IsAccepted = false
             };
 
             _context.Friend.Add(reverseFriend);
+            await _context.SaveChangesAsync();
         }
         else
         {
             reverseFriend.IsAccepted = true;
             _context.Friend.Update(reverseFriend);
+            await _context.SaveChangesAsync();
+
+            var friend = await _context.Friend
+                .FirstOrDefaultAsync(f => f.UserId == addFriends.UserId && f.UserFriendId == addFriends.UserFriendId);
+
+            friend.IsAccepted = true;
+            _context.Friend.Update(friend);
+            await _context.SaveChangesAsync();
+
+            return friend;
         }
 
-        await _context.SaveChangesAsync();
-
-        var friend = await _context.Friend
-            .FirstOrDefaultAsync(f => f.UserId == addFriends.UserId && f.UserFriendId == addFriends.UserFriendId);
-
-        friend = new Friend
+        var newFriendRequest = new Friend
         {
             UserId = addFriends.UserId,
             UserFriendId = addFriends.UserFriendId,
             IsAccepted = false // Friend request
         };
 
-        _context.Friend.Add(friend);
+        _context.Friend.Add(newFriendRequest);
         await _context.SaveChangesAsync();
 
-        return friend;
+        return newFriendRequest;
     }
 
 
@@ -79,9 +84,20 @@ public class FriendService : IFriendService
         }
 
         friend.IsAccepted = true;
-
         _context.Friend.Update(friend);
         await _context.SaveChangesAsync();
+
+        var reverseFriend = await _context.Friend
+            .FirstOrDefaultAsync(f =>
+                f.UserId == confirmFriendRequestAsync.UserFriendId &&
+                f.UserFriendId == confirmFriendRequestAsync.UserId);
+
+        if (reverseFriend != null)
+        {
+            reverseFriend.IsAccepted = true;
+            _context.Friend.Update(reverseFriend);
+            await _context.SaveChangesAsync();
+        }
 
         return true;
     }

@@ -1,6 +1,6 @@
 ﻿namespace Back_End_Service.Identity.Models;
 
-public class ChangeEmail
+public class ChangeEmailModel
 {
     /// <summary>
     ///     Почта.

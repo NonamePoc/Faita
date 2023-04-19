@@ -13,14 +13,16 @@ public interface IUserService
     
     Task Logout(string userid);
 
-    Task ChangePasswordAsync(ChangePassword changePassword, string route, User user);
+    Task ChangePasswordAsync(ChangePasswordModel changePasswordModel, string route, User user);
     
-    Task ChangeEmailAsync(ChangeEmail changeEmail);
+    Task ChangeEmailAsync(ChangeEmailModel changeEmailModel);
 
-    Task SendRequestChangeEmailAsync(SendChangeEmail changeEmail, string route, User user);
+    Task SendRequestChangeEmailAsync(SendChangeEmailModel changeEmailModel, string route, User user);
     
-    Task ChangeUserDataAsync(ChangeUserData changeUserData, User user);
+    Task ChangeUserDataAsync(ChangeUserDataModel changeUserDataModel, User user);
     
+    
+    Task AddAvatarAsync(AddAvatarModel addAvatar, User user);
     
     Task GetUserId(string userId);
     
