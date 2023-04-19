@@ -1,18 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
-import { useSelector, useDispatch } from 'react-redux'
-import { joinToRoom } from '../../redux/slices/chat'
+import { useSelector } from 'react-redux'
 
 function Header() {
-  const [isModalOpen, setIsModalOpen] = React.useState(false)
   const { isOpen, togglePopup } = usePopup()
   const room = useSelector((state) => state.chat)
-  const friends = useSelector((state) => state.user.friends)
-  const dispatch = useDispatch()
+  const user = useSelector((state) => state.user)
+  const receiver = room.users.find((u) => u.id !== user.id)
+  const navigate = useNavigate()
 
-  const onClickAddToChat = (friendId) => {
-    dispatch(joinToRoom(friendId))
+  const navigateToProfile = () => {
+    navigate(`/profile/${receiver.userName}`)
   }
 
   return (
@@ -82,7 +81,7 @@ function Header() {
         </defs>
       </svg>
       <ul className={`pop popup ${isOpen ? 'open' : ''}`}>
-        <li>
+        <li onClick={navigateToProfile}>
           <svg
             width='26'
             height='26'
@@ -105,38 +104,7 @@ function Header() {
           </svg>
           View profile
         </li>
-        <li onClick={() => setIsModalOpen(true)}>Add to chat</li>
       </ul>
-      <div className={`modal-overlay ${isModalOpen ? 'active' : ''}`}></div>
-      <div className={`modal card ${isModalOpen ? 'active' : ''}`}>
-        <div className='modal-header'>
-          <h2>Add to chat</h2>
-          <span className='close' onClick={() => setIsModalOpen(false)}>
-            &times;
-          </span>
-        </div>
-        <div className='modal-body'>
-          <ul className='modal-friend-list'>
-            {friends.map((friend, index) => (
-              <li key={index} className='modal-friend'>
-                <div className='flex'>
-                  <img
-                    src='https://picsum.photos/id/235/20'
-                    alt='User avatar'
-                  />
-                  <h3 className='modal-friend-name'>{friend.userName}</h3>
-                </div>
-                <button
-                  className='btn'
-                  onClick={() => onClickAddToChat(friend.id)}
-                >
-                  +
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
     </figure>
   )
 }

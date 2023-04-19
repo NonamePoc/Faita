@@ -1,11 +1,20 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import GifPicker from 'gif-picker-react'
 import usePopup from '../../hooks/usePopup'
+import { sendChatMessage } from '../../redux/slices/chat'
 
 const Giphs = React.memo(function Giphs() {
   const { isOpen, togglePopup } = usePopup()
   const { theme } = useSelector((state) => state.theme)
+  const room = useSelector((state) => state.chat)
+  const user = useSelector((state) => state.user)
+  const receiver = room.users.find((u) => u.id !== user.id)
+  const dispatch = useDispatch()
+
+  const handleSendMessage = (value) => {
+    dispatch(sendChatMessage(value, receiver.id))
+  }
 
   return (
     <div>
@@ -13,7 +22,7 @@ const Giphs = React.memo(function Giphs() {
         <GifPicker
           tenorApiKey={'AIzaSyBglyKBDI9GlvU4qXZYzk459zKwERQ-r_I'}
           theme={theme}
-          onGifClick={(gif) => console.log(gif)}
+          onGifClick={(gif) => handleSendMessage(gif.preview.url)}
         />
       </div>
       <button onClick={togglePopup} className='emoji__btn'>

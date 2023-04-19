@@ -7,7 +7,7 @@ import {
   loginUser,
 } from '../../api/userRequests'
 import { getFriends, addFriend, removeFriend } from '../../api/friendRequests'
-import { getRooms, sendMessage, createRoom } from '../../api/chatRequests'
+import { getRooms, createRoom } from '../../api/chatRequests'
 
 const user = createSlice({
   name: 'user',
@@ -138,16 +138,9 @@ export const fetchRooms = () => async (dispatch, getState) => {
   }
 }
 
-//add dispatch later
-export const sendChatMessage =
-  (message, receiverId, roomId) => async (getState) => {
-    const { id, token } = getState().user
-    await sendMessage(id, receiverId, message, roomId, token)
-  }
-
 export const createChatRoom = (room) => async (dispatch, getState) => {
   const { id, token } = getState().user
-  const res = await createRoom(id, room, token)
+  const res = await createRoom(room, id, token)
   if (res.status === 200) {
     dispatch(fetchRooms())
   }

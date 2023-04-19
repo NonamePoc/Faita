@@ -180,6 +180,10 @@
     color: $lt-secondary-color;
   }
   .chat__message {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     color: $lt-secondary-color;
   }
 }
