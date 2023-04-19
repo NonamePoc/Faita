@@ -6,6 +6,7 @@ using Back_End_Service.Identity.Context;
 using Back_End_Service.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace Back_End_Service.Chat.Service;
 
@@ -69,6 +70,7 @@ public class MessageService : IMessage
             .Include(cr => cr.Users)
             .FirstOrDefaultAsync(cr => cr.Id == joinChatRoomModel.ChatRoomId);
 
+
         if (chatRoom == null)
         {
             throw new ArgumentException("Chat room not found.");
@@ -85,33 +87,35 @@ public class MessageService : IMessage
         return chatRoom;
     }
 
-    public async Task<List<ChatRoom>> GetChatRooms(string UserId)
+    public async Task<List<object>> GetChatRooms(string UserId)
     {
         var user = await _userManager.FindByIdAsync(UserId);
 
-        var chatRoom = await _dataContext.ChatRoom
+        var chatRooms = await _dataContext.ChatRoom
+            .Include(c => c.Users)
+            .Include(c => c.Messages)
             .Where(c => c.Users.Contains(user))
             .ToListAsync();
 
-        return chatRoom.ToList();
-    }
-
-    public async Task<ChatRoom> GetChatRoom(GetChatRoomModels getChatRoomModels)
-    {
-        // Ищем комнату чата с указанным идентификатором в базе данных
-        var chatRoom = await _dataContext.ChatRoom.FindAsync(getChatRoomModels.ChatRoomId);
-
-        // Если комната чата найдена, возвращаем ее
-        if (chatRoom != null)
+        var result = chatRooms.Select(c => new
         {
-            return _mapper.Map<ChatRoom>(chatRoom);
-        }
-        else
-        {
-            // Иначе, выбрасываем исключение или возвращаем null, в зависимости от того, как вы хотите обрабатывать отсутствующие комнаты чата
-            throw new Exception($"Chat room with id {getChatRoomModels} not found");
-            // return null;
-        }
-    }
+            Id = c.Id,
+            Name = c.Name,
+            Users = c.Users.Select(u => new
+            {
+                Id = u.Id,
+                UserName = u.UserName
+            }),
+            Messages = c.Messages.Select(m => new
+            {
+                Id = m.Id,
+                Text = m.Text,
+                SenderId = m.SenderId,
+                ChatRoomId = m.ChatRoomId,
+                CreatedAt = m.CreatedAt
+            })
+        }).ToList<object>();
 
+        return result;
+    }
 }
