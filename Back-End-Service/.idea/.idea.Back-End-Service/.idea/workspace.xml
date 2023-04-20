@@ -12,19 +12,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="Add funcional db Post,fix bag or MessageService.cs">
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/AddAvatarModel.cs" afterDir="false" />
+    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/AddCommentModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/AddLikeModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/DeletePostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/EditCommentModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/EditPostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetCommentsByUserModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetCommentsModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetLikesByUserModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetLikesModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostsByUserModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetRepostsModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/RemoveCommentModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/RemoveLikeModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/RepostPostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriends.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriendsModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/ConfirmFriendRequestAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/ConfirmFriendRequestAsyncModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetFriends.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetFriendsModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/RemoveFriend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/RemoveFriendModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessageModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeEmail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeEmailModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangePassword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangePasswordModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeUserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeUserDataModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SearchUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SearchUserModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SendChangeEmail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SendChangeEmailModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Audio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Audio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Comment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/CommentLike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/CommentLike.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Photo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Photo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Posts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/PostLike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/PostLike.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Video.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Video.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,14 +88,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9c8dd8bf233c4409b3da008fcaf737954f480/9c/ab6099bc/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9e385f927193487e8192e4d148746fa67e90/9b/c221f589/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/f7e2530ee1784107bb063950307afb9f2bc80/89/02d44647/UserManager`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Api/Controllers/MessageController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Chat/Service/IMessage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Chat/Service/MessageService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Identity/Entities/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -167,7 +200,10 @@
       <workItem from="1681751622014" duration="1199000" />
       <workItem from="1681799458276" duration="3540000" />
       <workItem from="1681816242523" duration="5294000" />
-      <workItem from="1681893495467" duration="7529000" />
+      <workItem from="1681893495467" duration="8435000" />
+      <workItem from="1681978943564" duration="6152000" />
+      <workItem from="1681995695005" duration="239000" />
+      <workItem from="1681996219352" duration="2794000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -232,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681895503311</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add AvatarModel , new logic FriendService.cs method  &quot; AddFriend&quot;">
+      <created>1681919689009</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681919689009</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +312,8 @@
     <MESSAGE value="Fix  FriendService.cs" />
     <MESSAGE value="add MessageService.cs new method" />
     <MESSAGE value="Add funcional db Post,fix bag or MessageService.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add funcional db Post,fix bag or MessageService.cs" />
+    <MESSAGE value="Add AvatarModel , new logic FriendService.cs method  &quot; AddFriend&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add AvatarModel , new logic FriendService.cs method  &quot; AddFriend&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

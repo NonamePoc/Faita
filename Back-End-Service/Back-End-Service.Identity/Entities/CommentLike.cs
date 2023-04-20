@@ -2,9 +2,9 @@ namespace Back_End_Service.Identity.Entities;
 
 public class CommentLike
 {
-    public int Id { get; set; }
+    public string Id { get; set; }
 
-    public int CommentId { get; set; }
+    public string CommentId { get; set; }
     public virtual Comment Comment { get; set; }
 
     public string UserId { get; set; }

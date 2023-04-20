@@ -30,15 +30,15 @@ public class FriendController : ControllerBase
 
     [AllowAnonymous]
     [HttpPost("getFriends")]
-    public async Task<ActionResult<List<User>>> GetFriends(GetFriends getFriends)
+    public async Task<ActionResult<List<User>>> GetFriends(GetFriendsModel getFriendsModel)
     {
-        var friends = await _friendService.GetFriends(getFriends);
+        var friends = await _friendService.GetFriends(getFriendsModel);
         return friends.ToList();
     }
 
     [Authorize]
     [HttpPost("addFriend")]
-    public async Task<ActionResult> AddFriend(AddFriends friends)
+    public async Task<ActionResult> AddFriend(AddFriendsModel friendsModel)
     {
         var currentUser = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
 
@@ -47,7 +47,7 @@ public class FriendController : ControllerBase
             return BadRequest(new { message = "Invalid user." });
         }
 
-        var response = await _friendService.AddFriendAsync(friends);
+        var response = await _friendService.AddFriendAsync(friendsModel);
 
 
         return Ok(response);
@@ -56,7 +56,7 @@ public class FriendController : ControllerBase
 
     [Authorize]
     [HttpPost("confirmFriendRequest")]
-    public async Task<IActionResult> ConfirmFriendRequest(ConfirmFriendRequestAsync confirmFriendRequestAsync)
+    public async Task<IActionResult> ConfirmFriendRequest(ConfirmFriendRequestAsyncModel confirmFriendRequestAsyncModel)
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
 
@@ -65,7 +65,7 @@ public class FriendController : ControllerBase
             return NotFound("User not found");
         }
 
-        await _friendService.ConfirmFriendRequestAsync(confirmFriendRequestAsync);
+        await _friendService.ConfirmFriendRequestAsync(confirmFriendRequestAsyncModel);
 
 
         return Ok();
@@ -73,16 +73,16 @@ public class FriendController : ControllerBase
 
     [Authorize]
     [HttpPost("removeFriend")]
-    public async Task<IActionResult> RemoveFriend(RemoveFriend removeFriend)
+    public async Task<IActionResult> RemoveFriend(RemoveFriendModel removeFriendModel)
     {
-        var user = await _userManager.FindByIdAsync(removeFriend.UserId);
+        var user = await _userManager.FindByIdAsync(removeFriendModel.UserId);
 
         if (user == null)
         {
             return NotFound("User not found");
         }
 
-        await _friendService.RemoveFriend(removeFriend, user);
+        await _friendService.RemoveFriend(removeFriendModel, user);
 
         return Ok();
     }

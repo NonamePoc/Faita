@@ -50,17 +50,7 @@ public class UserService : IUserService
         await SendEmailAsync(userModel.Email, $"confirm email",
             $"Link confirm email: {confirmationLink} ");
     }
-
-    public async Task Logout(string userid)
-    {
-        var user = await _userManager.FindByIdAsync(userid);
-        if (user == null)
-        {
-            throw new Exception("User not found");
-        }
-
-        await _signInManager.SignOutAsync();
-    }
+    
 
     private async Task SendEmailAsync(string email, string subject, string message)
     {

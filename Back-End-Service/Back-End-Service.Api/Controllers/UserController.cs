@@ -34,19 +34,6 @@ public class UsersController : ControllerBase
         return Ok(response);
     }
 
-    [Authorize]
-    [HttpPost("logout")]
-    public async Task<IActionResult> Logout()
-    {
-        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-        if (user == null)
-        {
-            return BadRequest(new { message = "User not found." });
-        }
-
-        await _userService.Logout(user);
-        return Ok();
-    }
 
     [AllowAnonymous]
     [HttpPost("register")]
@@ -163,7 +150,7 @@ public class UsersController : ControllerBase
 
         return Ok(users);
     }
-    
+
     [Authorize]
     [HttpPost("add-avatar")]
     public async Task<IActionResult> AddAvatar(AddAvatarModel addAvatar)
