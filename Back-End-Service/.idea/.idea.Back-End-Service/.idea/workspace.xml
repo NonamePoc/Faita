@@ -12,9 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="Add funcional db Post,fix bag or MessageService.cs">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="Add funcional db Post,fix bag or MessageService.cs" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,6 +159,7 @@
       <workItem from="1681816242523" duration="5294000" />
       <workItem from="1681893495467" duration="1973000" />
       <workItem from="1681895996360" duration="4366000" />
+      <workItem from="1681973333956" duration="3716000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
