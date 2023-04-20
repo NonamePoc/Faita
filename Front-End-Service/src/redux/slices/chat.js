@@ -6,8 +6,8 @@ const chat = createSlice({
   name: 'chat',
   initialState: {
     id: '',
-    name: '',
     messages: [],
+    name: '',
     users: [],
   },
   reducers: {

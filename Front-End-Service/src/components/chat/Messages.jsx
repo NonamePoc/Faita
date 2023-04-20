@@ -1,18 +1,14 @@
 import React from 'react'
-import * as signalR from '@microsoft/signalr'
 import { useSelector } from 'react-redux'
 
 function Messages() {
+  const [messagesToShow, setMessagesToShow] = React.useState(20)
+  const [scrollPosition, setScrollPosition] = React.useState(0)
   const msgContainerRef = React.useRef(null)
   const user = useSelector((state) => state.user)
   const room = useSelector((state) => state.chat)
-  const [messagesToShow, setMessagesToShow] = React.useState(20)
   const [messages, setMessages] = React.useState([...room.messages])
-  const [scrollPosition, setScrollPosition] = React.useState(0)
-
-  let connection = new signalR.HubConnectionBuilder()
-    .withUrl('https://localhost:7206/chatHub')
-    .build()
+  let connection = useSelector((state) => state.message.connection)
 
   const changeCreateAt = (createdAt) => {
     const now = new Date()
@@ -53,15 +49,17 @@ function Messages() {
   }, [messages])
 
   React.useEffect(() => {
-    connection.on('ReceiveMessage', (senderId, text, chatRoomId) => {
-      setMessages((messages) => [
-        ...messages,
-        { senderId, text, chatRoomId, createdAt: new Date() },
-      ])
-    })
-    connection.start()
-    return () => connection.off('ReceiveMessage')
-  }, [connection])
+    if (connection) {
+      connection.on('ReceiveMessage', (senderId, text, chatRoomId) => {
+        setMessages((messages) => [
+          ...messages,
+          { senderId, text, chatRoomId, createdAt: new Date() },
+        ])
+      })
+
+      return () => connection.off('ReceiveMessage')
+    }
+  })
 
   return (
     <div
@@ -92,7 +90,11 @@ function Messages() {
                   src='https://picsum.photos/id/235/800'
                   alt='profile-img'
                 />
-                <p className='msg__text'>{msg.text}</p>
+                {msg.text.includes('https://media.tenor.com') ? (
+                  <img className='msg__text' src={msg.text} alt='gif' />
+                ) : (
+                  <p className='msg__text'>{msg.text}</p>
+                )}
                 <span className='msg__date'>
                   {changeCreateAt(msg.createdAt)}
                 </span>

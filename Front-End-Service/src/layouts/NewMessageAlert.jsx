@@ -1,24 +1,32 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { resetMessage } from '../redux/slices/message'
 
 function NewMessageAlert() {
-  /* setInterval(() => {
-    document.querySelector('.newMsgAlert').classList.add('active')
-  }, 20000)
+  const [isOpen, setIsOpen] = React.useState(false)
+  const newMsg = useSelector((state) => state.message)
+  const dispatch = useDispatch()
 
-  setTimeout(() => {
-    document.querySelector('.newMsgAlert').classList.remove('active')
-  }, 1000) */
+  React.useEffect(() => {
+    if (newMsg.isShown) {
+      setIsOpen(true)
+      setTimeout(() => {
+        dispatch(resetMessage())
+        setIsOpen(false)
+      }, 4000)
+    }
+  }, [dispatch, newMsg])
 
   return (
-    <figure className='newMsgAlert active'>
+    <figure className={`newMsgAlert ${isOpen ? 'active' : ''}`}>
       <img
         className='newMsgAlert__img'
         src='https://picsum.photos/id/235/800'
         alt='profile-img'
       />
       <figcaption>
-        <h1 className='newMsgAlert__name'>User001</h1>
-        <p className='newMsgAlert__text'>New message</p>
+        <h1 className='newMsgAlert__name'>{newMsg.name}</h1>
+        <p className='newMsgAlert__text'>{newMsg.message}</p>
       </figcaption>
     </figure>
   )

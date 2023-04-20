@@ -1,10 +1,10 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import GifPicker from 'gif-picker-react'
-import usePopup from '../../hooks/usePopup'
+import { useSelector, useDispatch } from 'react-redux'
 import { sendChatMessage } from '../../redux/slices/chat'
+import usePopup from '../../hooks/usePopup'
 
-const Giphs = React.memo(function Giphs() {
+const Giphs = React.memo(function Giphs({ submitCount, setSubmitCount }) {
   const { isOpen, togglePopup } = usePopup()
   const { theme } = useSelector((state) => state.theme)
   const room = useSelector((state) => state.chat)
@@ -13,14 +13,21 @@ const Giphs = React.memo(function Giphs() {
   const dispatch = useDispatch()
 
   const handleSendMessage = (value) => {
-    dispatch(sendChatMessage(value, receiver.id))
+    if (submitCount === 15) {
+      alert('Please verify the captcha')
+    } else {
+      dispatch(sendChatMessage(value, receiver.id))
+    }
+    console.log('submitCount', submitCount)
+
+    setSubmitCount(submitCount + 1)
   }
 
   return (
     <div>
       <div className={`pop emoji-gif__wrapper ${isOpen ? 'open' : ''}`}>
         <GifPicker
-          tenorApiKey={'AIzaSyBglyKBDI9GlvU4qXZYzk459zKwERQ-r_I'}
+          tenorApiKey={process.env.REACT_APP_GIF_API_KEY}
           theme={theme}
           onGifClick={(gif) => handleSendMessage(gif.preview.url)}
         />

@@ -1,11 +1,8 @@
-import axios from 'axios'
+import { instance } from './axios'
 
 export const getFriends = async (id) => {
   try {
-    const response = await axios.post(
-      `https://localhost:7206/api/friends/getFriends`,
-      { userId: id }
-    )
+    const response = await instance.post(`friends/getFriends`, { userId: id })
     return response
   } catch (error) {
     if (error.response.data.Errors) {
@@ -18,8 +15,8 @@ export const getFriends = async (id) => {
 
 export const addFriend = async (id, friendId, token) => {
   try {
-    const response = await axios.post(
-      `https://localhost:7206/api/friends/addFriend`,
+    const response = await instance.post(
+      `friends/addFriend`,
       { userId: id, userFriendId: friendId },
       {
         headers: {
@@ -39,8 +36,8 @@ export const addFriend = async (id, friendId, token) => {
 
 export const removeFriend = async (id, friendId, token) => {
   try {
-    const response = await axios.post(
-      `https://localhost:7206/api/friends/removeFriend`,
+    const response = await instance.post(
+      `friends/removeFriend`,
       { userId: id, friendId: friendId },
       {
         headers: {

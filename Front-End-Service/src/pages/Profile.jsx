@@ -13,7 +13,7 @@ function Profile() {
       (friend) => friend.userName === userName
     )
     if (!selectedUser) {
-      alert('Friend not found')
+      alert('User not found')
     }
   } else {
     selectedUser = currentUser

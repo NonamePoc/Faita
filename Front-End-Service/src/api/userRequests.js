@@ -1,8 +1,8 @@
-import axios from 'axios'
+import { instance } from './axios'
 
 export const registerUser = async (user) => {
   try {
-    return await axios.post('https://localhost:7206/api/users/register', user)
+    return await instance.post('users/register', user)
   } catch (error) {
     alert(error.response.data.Errors[0].Detail)
   }
@@ -10,23 +10,8 @@ export const registerUser = async (user) => {
 
 export const loginUser = async (user) => {
   try {
-    const response = await axios.post(
-      'https://localhost:7206/api/users/authenticate',
-      user
-    )
+    const response = await instance.post('users/authenticate', user)
     return response
-  } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
-  }
-}
-
-export const logoutUser = async (token) => {
-  try {
-    return await axios.get('https://localhost:7206/api/users/logout', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
   } catch (error) {
     alert(error.response.data.Errors[0].Detail)
   }
@@ -34,8 +19,8 @@ export const logoutUser = async (token) => {
 
 export const changeEmail = async (newEmail, token) => {
   try {
-    return await axios.put(
-      'https://localhost:7206/api/users/change-email',
+    return await instance.put(
+      'users/change-email',
       {
         newEmail: newEmail,
       },
@@ -56,8 +41,8 @@ export const changeEmail = async (newEmail, token) => {
 
 export const changePassword = async (password, newPassword, email, token) => {
   try {
-    return await axios.put(
-      'https://localhost:7206/api/users/change-password',
+    return await instance.put(
+      'users/change-password',
       {
         password: password,
         email: email,
@@ -76,8 +61,8 @@ export const changePassword = async (password, newPassword, email, token) => {
 
 export const changeUserData = async (firstName, lastName, token) => {
   try {
-    return await axios.put(
-      'https://localhost:7206/api/users/change-user-data',
+    return await instance.put(
+      'users/change-user-data',
       {
         firstName: firstName,
         lastName: lastName,
@@ -95,7 +80,7 @@ export const changeUserData = async (firstName, lastName, token) => {
 
 export const searchUser = async (userName) => {
   try {
-    return await axios.post('https://localhost:7206/api/users/SearchUser', {
+    return await instance.post('users/SearchUser', {
       userName: userName,
     })
   } catch (error) {

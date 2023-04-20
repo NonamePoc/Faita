@@ -7,7 +7,7 @@ import {
   changeLastName,
   changeUserEmail,
   changeUserPassword,
-  exitUser,
+  resetUserData,
 } from '../redux/slices/user'
 
 function Settings() {
@@ -31,7 +31,7 @@ function Settings() {
   }
 
   const onClickExit = () => {
-    dispatch(exitUser())
+    dispatch(resetUserData())
   }
 
   return (

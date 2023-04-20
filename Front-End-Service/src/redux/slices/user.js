@@ -3,7 +3,6 @@ import {
   changeUserData,
   changeEmail,
   changePassword,
-  logoutUser,
   loginUser,
 } from '../../api/userRequests'
 import { getFriends, addFriend, removeFriend } from '../../api/friendRequests'
@@ -93,14 +92,6 @@ export const changeUserPassword = (newPass) => async (dispatch, getState) => {
       'Letter was sent on your email that your password was changed succesfuly.'
     )
     dispatch(user.actions.setUserData({ password: newPass }))
-  }
-}
-
-export const exitUser = () => async (dispatch, getState) => {
-  const { token } = getState().user
-  const res = await logoutUser(token)
-  if (res.status === 200) {
-    dispatch(user.actions.resetUserData())
   }
 }
 

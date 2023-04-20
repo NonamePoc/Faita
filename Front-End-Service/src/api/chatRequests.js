@@ -1,9 +1,9 @@
-import axios from 'axios'
+import { instance } from './axios'
 
 export const sendMessage = async (userId, receiverId, text, roomId, token) => {
   try {
-    const response = await axios.post(
-      `https://localhost:7206/api/chat/sendMessage`,
+    const response = await instance.post(
+      `chat/sendMessage`,
       {
         userId: userId,
         receiverId: receiverId,
@@ -28,14 +28,11 @@ export const sendMessage = async (userId, receiverId, text, roomId, token) => {
 
 export const getRooms = async (token) => {
   try {
-    const response = await axios.get(
-      `https://localhost:7206/api/chat/getChatRooms`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    )
+    const response = await instance.get(`chat/getChatRooms`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
     return response
   } catch (error) {
     if (error.response.data.Errors) {
@@ -48,8 +45,8 @@ export const getRooms = async (token) => {
 
 export const createRoom = async (room, userId, token) => {
   try {
-    const response = await axios.post(
-      `https://localhost:7206/api/chat/createChatRoom`,
+    const response = await instance.post(
+      `chat/createChatRoom`,
       {
         name: room,
         userId: userId,
@@ -72,8 +69,8 @@ export const createRoom = async (room, userId, token) => {
 
 export const joinRoom = async (userId, roomId, token) => {
   try {
-    const response = await axios.post(
-      `https://localhost:7206/api/chat/joinChatRoom`,
+    const response = await instance.post(
+      `chat/joinChatRoom`,
       {
         userId: userId,
         chatRoomId: roomId,
