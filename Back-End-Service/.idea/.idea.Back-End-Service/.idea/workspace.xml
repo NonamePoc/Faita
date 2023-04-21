@@ -13,52 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/AddCommentModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/AddLikeModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/DeletePostModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/EditCommentModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/EditPostModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetCommentsByUserModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetCommentsModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetLikesByUserModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetLikesModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostsByUserModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetRepostsModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/RemoveCommentModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/RemoveLikeModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/RepostPostModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriends.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriendsModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/ConfirmFriendRequestAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/ConfirmFriendRequestAsyncModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetFriends.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetFriendsModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/RemoveFriend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/RemoveFriendModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessageModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Audio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Audio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/CommentLike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/CommentLike.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Photo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Photo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Posts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/PostLike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/PostLike.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Video.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Video.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,32 +63,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.50076336&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.50076336",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "discord-application",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlserver&quot;,
-      &quot;sqlserver.localdb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver",
+      "sqlserver.localdb"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\pavlo\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\pavlo\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Back-End-Service.Api: Back_End_Service">
     <configuration name="Back-End-Service.Api: Back_End_Service" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" />
@@ -204,6 +160,8 @@
       <workItem from="1681978943564" duration="6152000" />
       <workItem from="1681995695005" duration="239000" />
       <workItem from="1681996219352" duration="2794000" />
+      <workItem from="1682002779798" duration="441000" />
+      <workItem from="1682060419577" duration="617000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -275,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681919689009</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add post or DataBase">
+      <created>1682002874927</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682002874927</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +278,8 @@
     <MESSAGE value="add MessageService.cs new method" />
     <MESSAGE value="Add funcional db Post,fix bag or MessageService.cs" />
     <MESSAGE value="Add AvatarModel , new logic FriendService.cs method  &quot; AddFriend&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add AvatarModel , new logic FriendService.cs method  &quot; AddFriend&quot;" />
+    <MESSAGE value="Add post or DataBase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add post or DataBase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
