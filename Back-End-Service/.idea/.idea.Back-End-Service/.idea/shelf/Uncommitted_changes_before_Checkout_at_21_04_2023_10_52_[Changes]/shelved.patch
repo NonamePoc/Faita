@@ -1,0 +1,201 @@
+Index: Back-End-Service.Identity/Models/SendChangeEmail.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Identity/Models/SendChangeEmail.cs b/Back-End-Service.Identity/Models/SendChangeEmailModel.cs
+rename from Back-End-Service.Identity/Models/SendChangeEmail.cs
+rename to Back-End-Service.Identity/Models/SendChangeEmailModel.cs
+--- a/Back-End-Service.Identity/Models/SendChangeEmail.cs	
++++ b/Back-End-Service.Identity/Models/SendChangeEmailModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Identity.Models;
+ 
+-public class SendChangeEmail
++public class SendChangeEmailModel
+ {
+     
+     public string NewEmail { get; set; }
+Index: Back-End-Service.Identity/Models/ChangePassword.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Identity/Models/ChangePassword.cs b/Back-End-Service.Identity/Models/ChangePasswordModel.cs
+rename from Back-End-Service.Identity/Models/ChangePassword.cs
+rename to Back-End-Service.Identity/Models/ChangePasswordModel.cs
+--- a/Back-End-Service.Identity/Models/ChangePassword.cs	
++++ b/Back-End-Service.Identity/Models/ChangePasswordModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Identity.Models;
+ 
+-public class ChangePassword
++public class ChangePasswordModel
+ {
+     /// <summary>
+     ///     Пароль.
+Index: Back-End-Service.Identity/Models/SearchUser.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Identity/Models/SearchUser.cs b/Back-End-Service.Identity/Models/SearchUserModel.cs
+rename from Back-End-Service.Identity/Models/SearchUser.cs
+rename to Back-End-Service.Identity/Models/SearchUserModel.cs
+--- a/Back-End-Service.Identity/Models/SearchUser.cs	
++++ b/Back-End-Service.Identity/Models/SearchUserModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Identity.Models;
+ 
+-public class SearchUser
++public class SearchUserModel
+ {
+     public string UserName { get; set; }
+ }
+\ No newline at end of file
+Index: Back-End-Service.Identity/Models/ChangeUserData.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Identity/Models/ChangeUserData.cs b/Back-End-Service.Identity/Models/ChangeUserDataModel.cs
+rename from Back-End-Service.Identity/Models/ChangeUserData.cs
+rename to Back-End-Service.Identity/Models/ChangeUserDataModel.cs
+--- a/Back-End-Service.Identity/Models/ChangeUserData.cs	
++++ b/Back-End-Service.Identity/Models/ChangeUserDataModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Identity.Models;
+ 
+-public class ChangeUserData
++public class ChangeUserDataModel
+ {
+     public string FirstName { get; set; }
+     
+Index: Back-End-Service.Identity/Models/ChangeEmail.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Identity/Models/ChangeEmail.cs b/Back-End-Service.Identity/Models/ChangeEmailModel.cs
+rename from Back-End-Service.Identity/Models/ChangeEmail.cs
+rename to Back-End-Service.Identity/Models/ChangeEmailModel.cs
+--- a/Back-End-Service.Identity/Models/ChangeEmail.cs	
++++ b/Back-End-Service.Identity/Models/ChangeEmailModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Identity.Models;
+ 
+-public class ChangeEmail
++public class ChangeEmailModel
+ {
+     /// <summary>
+     ///     Почта.
+Index: Back-End-Service.Identity/Entities/Post.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Identity/Entities/Post.cs b/Back-End-Service.Identity/Entities/Posts.cs
+rename from Back-End-Service.Identity/Entities/Post.cs
+rename to Back-End-Service.Identity/Entities/Posts.cs
+--- a/Back-End-Service.Identity/Entities/Post.cs	
++++ b/Back-End-Service.Identity/Entities/Posts.cs	
+@@ -1,16 +1,19 @@
++
+ using Back_End_Service.Identity.Entities;
+ 
+-public class Post
++public class Posts
+ {
+-    public int Id { get; set; }
++    public string Id { get; set; }
+     public string Title { get; set; }
+     public string Content { get; set; }
+     public DateTime CreatedAt { get; set; }
+-
+     public string ImageUrl { get; set; }
+     public string VideoUrl { get; set; }
+     public string AudioUrl { get; set; }
+ 
++    public string UserId { get; set; }
++    public virtual User User { get; set; }
++
+     public virtual ICollection<PostLike> Likes { get; set; }
+     public virtual ICollection<Comment> Comments { get; set; }
+ }
+\ No newline at end of file
+Index: Back-End-Service.Chat/Models/ConfirmFriendRequestAsync.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Chat/Models/ConfirmFriendRequestAsync.cs b/Back-End-Service.Chat/Models/ConfirmFriendRequestAsyncModel.cs
+rename from Back-End-Service.Chat/Models/ConfirmFriendRequestAsync.cs
+rename to Back-End-Service.Chat/Models/ConfirmFriendRequestAsyncModel.cs
+--- a/Back-End-Service.Chat/Models/ConfirmFriendRequestAsync.cs	
++++ b/Back-End-Service.Chat/Models/ConfirmFriendRequestAsyncModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Chat.Models;
+ 
+-public class ConfirmFriendRequestAsync
++public class ConfirmFriendRequestAsyncModel
+ {
+     public string UserId { get; set; }
+ 
+Index: Back-End-Service.Chat/Models/RemoveFriend.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Chat/Models/RemoveFriend.cs b/Back-End-Service.Chat/Models/RemoveFriendModel.cs
+rename from Back-End-Service.Chat/Models/RemoveFriend.cs
+rename to Back-End-Service.Chat/Models/RemoveFriendModel.cs
+--- a/Back-End-Service.Chat/Models/RemoveFriend.cs	
++++ b/Back-End-Service.Chat/Models/RemoveFriendModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Chat.Models;
+ 
+-public class RemoveFriend
++public class RemoveFriendModel
+ {
+     public string UserId { get; set; }
+     public string FriendId { get; set; }
+Index: Back-End-Service.Chat/Models/GetFriends.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Chat/Models/GetFriends.cs b/Back-End-Service.Chat/Models/GetFriendsModel.cs
+rename from Back-End-Service.Chat/Models/GetFriends.cs
+rename to Back-End-Service.Chat/Models/GetFriendsModel.cs
+--- a/Back-End-Service.Chat/Models/GetFriends.cs	
++++ b/Back-End-Service.Chat/Models/GetFriendsModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Chat.Models;
+ 
+-public class GetFriends
++public class GetFriendsModel
+ {
+     public string UserId { get; set; }
+ }
+\ No newline at end of file
+Index: Back-End-Service.Chat/Models/AddFriends.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Back-End-Service.Chat/Models/AddFriends.cs b/Back-End-Service.Chat/Models/AddFriendsModel.cs
+rename from Back-End-Service.Chat/Models/AddFriends.cs
+rename to Back-End-Service.Chat/Models/AddFriendsModel.cs
+--- a/Back-End-Service.Chat/Models/AddFriends.cs	
++++ b/Back-End-Service.Chat/Models/AddFriendsModel.cs	
+@@ -1,6 +1,6 @@
+ namespace Back_End_Service.Chat.Models;
+ 
+-public class AddFriends
++public class AddFriendsModel
+ {
+     public string UserId { get; set; }
+ 
+diff --git a/Back-End-Service.Chat/Models/SendMessage.cs b/Back-End-Service.Chat/Models/SendMessageModel.cs
+rename from Back-End-Service.Chat/Models/SendMessage.cs
+rename to Back-End-Service.Chat/Models/SendMessageModel.cs
