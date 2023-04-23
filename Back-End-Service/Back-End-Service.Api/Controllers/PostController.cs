@@ -7,7 +7,7 @@ namespace Back_End_Service.Controllers;
 [Route(Route)]
 public class PostController : ControllerBase
 {
-    private const string Route = "api/[controller]";
+    private const string Route = "api/post";
 
     private readonly IPostService _postService;
     
@@ -17,11 +17,19 @@ public class PostController : ControllerBase
     }
     
     [Authorize]
-    [HttpPost]
+    [HttpPost ("createPost")]
     public async Task<IActionResult> CreatePost(CreatePostModel model)
     {
         var post = await _postService.CreatePost(model);
         return Ok(post);
+    }
+    
+    [Authorize]
+    [HttpDelete ("deletePost")]
+    public async Task<IActionResult> DeletePost(DeletePostModel model)
+    {
+        await _postService.DeletePost(model);
+        return Ok();
     }
     
     [Authorize]

@@ -1,4 +1,3 @@
-
 using Back_End_Service.Identity.Entities;
 
 public class Posts
@@ -10,6 +9,7 @@ public class Posts
     public string ImageUrl { get; set; }
     public string VideoUrl { get; set; }
     public string AudioUrl { get; set; }
+
 
     public string UserId { get; set; }
     public virtual User User { get; set; }

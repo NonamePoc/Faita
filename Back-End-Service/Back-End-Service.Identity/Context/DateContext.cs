@@ -17,7 +17,7 @@ public class DataContext : IdentityDbContext<User>
     public DbSet<PostLike> PostLike { get; set; }
 
     public DbSet<Comment> Comment { get; set; }
-    
+
     public DbSet<CommentLike> CommentLike { get; set; }
 
     public DbSet<Repost> Repost { get; set; }
@@ -66,6 +66,43 @@ public class DataContext : IdentityDbContext<User>
             .WithMany(u => u.ReceivedMessages)
             .HasForeignKey(m => m.ReceiverId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        builder.Entity<PostLike>()
+            .HasOne(pl => pl.User)
+            .WithMany(u => u.PostLikes)
+            .HasForeignKey(pl => pl.UserId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<Comment>()
+            .HasOne(c => c.Posts)
+            .WithMany(p => p.Comments)
+            .HasForeignKey(c => c.PostId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<Comment>()
+            .HasOne(c => c.User)
+            .WithMany(u => u.Comments)
+            .HasForeignKey(c => c.UserId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<CommentLike>()
+            .HasOne(cl => cl.Comment)
+            .WithMany(c => c.Likes)
+            .HasForeignKey(cl => cl.CommentId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<CommentLike>()
+            .HasOne(cl => cl.User)
+            .WithMany(u => u.CommentLikes)
+            .HasForeignKey(cl => cl.UserId)
+            .OnDelete(DeleteBehavior.NoAction);
+        
+        builder.Entity<Repost>()
+            .HasOne(r => r.User)
+            .WithMany(u => u.Reposts)
+            .HasForeignKey(r => r.UserId)
+            .OnDelete(DeleteBehavior.NoAction);
+        
         
     }
 }

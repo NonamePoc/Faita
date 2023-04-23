@@ -29,6 +29,8 @@ public class User : IdentityUser
     // Связь между пользователем и постами
     public ICollection<Posts> Posts { get; set; }
     
+    // Связь между пользователем и комментариями
+    public ICollection<Comment> Comments { get; set; }
 
     public virtual ICollection<PostLike> PostLikes { get; set; }
     public virtual ICollection<CommentLike> CommentLikes { get; set; }
