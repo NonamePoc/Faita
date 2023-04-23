@@ -23,10 +23,9 @@ const chat = createSlice({
   },
 })
 
-export const joinToRoom = (friendId) => async (dispatch, getState) => {
-  const { id } = getState().chat
+export const joinToRoom = (friendId, chatId) => async (dispatch, getState) => {
   const { token } = getState().user
-  const res = await joinRoom(friendId, id, token)
+  const res = await joinRoom(friendId, chatId, token)
   if (res.status === 200) {
     dispatch(fetchRooms())
   }

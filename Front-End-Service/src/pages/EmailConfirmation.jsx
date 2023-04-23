@@ -1,14 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { registerUser } from '../api/userRequests'
 
 function EmailConfirmation() {
   const userData = useSelector((state) => state.user)
-
-  const handleClick = () => {
-    registerUser(userData)
-  }
 
   return (
     <div className='emailConfirm__bg'>
@@ -180,11 +175,8 @@ function EmailConfirmation() {
           </p>
           <hr className='emailConfirm__divider' />
           <p>
-            If you not got any mail
-            <span onClick={handleClick} className='accent'>
-              {' '}
-              Resend cofirmation mail
-            </span>
+            If you didn't got any mail from us, please check your spam folder or
+            try again.
           </p>
         </div>
       </div>

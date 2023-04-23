@@ -1,8 +1,9 @@
 import { instance } from './axios'
 
-export const registerUser = async (user) => {
+export const registerUser = async (user, callback) => {
   try {
-    return await instance.post('users/register', user)
+    const response = await instance.post('users/register', user).then(callback)
+    return response
   } catch (error) {
     alert(error.response.data.Errors[0].Detail)
   }

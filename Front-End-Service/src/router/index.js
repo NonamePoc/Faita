@@ -43,13 +43,15 @@ const Router = () => {
     if (!isAuth) {
       navigate('/auth')
     }
-  }, [isAuth, navigate])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuth])
 
   if (!isAuth) {
     return (
       <Routes>
         <Route path='/auth' element={<Auth />} />
         <Route path='/confirm-email' element={<EmailConfirmation />} exact />
+        <Route path='/*' element={<Auth />} />
       </Routes>
     )
   }
@@ -64,6 +66,7 @@ const Router = () => {
         <Route path='/post' element={<PostDetails />} exact />
         <Route path='/profile/:userName' element={<Profile />} />
         <Route path='/settings' element={<Settings />} exact />
+        <Route path='/*' element={<Home />} />
       </Route>
     </Routes>
   )

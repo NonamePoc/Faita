@@ -21,7 +21,7 @@ function Registration() {
       event.target.elements.password.value ===
       event.target.elements.confirmPassword.value
     ) {
-      registerUser(userData).then(navigate('/confirm-email'))
+      registerUser(userData, () => navigate('/confirm-email'))
     } else {
       alert('Passwords do not match!')
     }
