@@ -10,6 +10,6 @@ public class ChatHub : Hub
     
     public async Task SendMessage(SendMessageModel sendMessage)
     {
-        await Clients.All.SendAsync("SendMessage", sendMessage.ReceiverId, sendMessage.UserId, sendMessage.Text);
+        await Clients.All.SendAsync(sendMessage.ReceiverId, sendMessage.UserId, sendMessage.Text);
     }
 }

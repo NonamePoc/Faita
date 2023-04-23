@@ -2,10 +2,10 @@ namespace Back_End_Service.Identity.Entities;
 
 public class PostLike
 {
-    public int Id { get; set; }
+    public string Id { get; set; }
 
-    public int PostId { get; set; }
-    public virtual Post Post { get; set; }
+    public string PostId { get; set; }
+    public virtual Posts Posts { get; set; }
 
     public string UserId { get; set; }
     public virtual User User { get; set; }

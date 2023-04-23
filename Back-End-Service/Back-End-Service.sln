@@ -1,12 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-End-Service.Api", "Back-End-Service.Api\Back-End-Service.Api.csproj", "{7583845D-8681-4E85-9ADF-BEE7B05D4C6E}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Back-End-Service.Api", "Back-End-Service.Api\Back-End-Service.Api.csproj", "{7583845D-8681-4E85-9ADF-BEE7B05D4C6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-End-Service.Identity", "Back-End-Service.Identity\Back-End-Service.Identity.csproj", "{6EA71FD1-B5A9-49D7-A422-BF80ADE820B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Back-End-Service.Identity", "Back-End-Service.Identity\Back-End-Service.Identity.csproj", "{6EA71FD1-B5A9-49D7-A422-BF80ADE820B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-End-Service.Chat", "Back-End-Service.Chat\Back-End-Service.Chat.csproj", "{0EFB87E0-E141-4865-B928-9AB776902367}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Back-End-Service.Chat", "Back-End-Service.Chat\Back-End-Service.Chat.csproj", "{0EFB87E0-E141-4865-B928-9AB776902367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-End-Service.Post", "Back-End-Service.Post\Back-End-Service.Post.csproj", "{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Back-End-Service.Publication", "Back-End-Service.Post\Back-End-Service.Publication.csproj", "{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +33,8 @@ Global
 		{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

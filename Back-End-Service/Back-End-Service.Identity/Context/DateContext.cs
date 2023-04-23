@@ -12,7 +12,7 @@ public class DataContext : IdentityDbContext<User>
 
     public DbSet<ChatRoom> ChatRoom { get; set; }
 
-    public DbSet<Post> Post { get; set; }
+    public DbSet<Posts> Post { get; set; }
 
     public DbSet<PostLike> PostLike { get; set; }
 

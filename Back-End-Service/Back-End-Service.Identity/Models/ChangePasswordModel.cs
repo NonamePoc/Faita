@@ -1,6 +1,6 @@
 ﻿namespace Back_End_Service.Identity.Models;
 
-public class ChangePassword
+public class ChangePasswordModel
 {
     /// <summary>
     ///     Пароль.

@@ -34,15 +34,6 @@ public class UsersController : ControllerBase
         return Ok(response);
     }
 
-    [Authorize]
-    [HttpGet("logout")]
-    public async Task<IActionResult> Logout()
-    {
-        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-
-        await _userService.Logout(user);
-        return Ok();
-    }
 
     [AllowAnonymous]
     [HttpPost("register")]
@@ -82,7 +73,7 @@ public class UsersController : ControllerBase
 
     [AllowAnonymous]
     [HttpPut("change-password")]
-    public async Task<IActionResult> ChangePassword(ChangePassword changePassword)
+    public async Task<IActionResult> ChangePassword(ChangePasswordModel changePasswordModel)
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
         if (user == null)
@@ -90,7 +81,7 @@ public class UsersController : ControllerBase
             return BadRequest(new { message = "User not found." });
         }
 
-        await _userService.ChangePasswordAsync(changePassword,
+        await _userService.ChangePasswordAsync(changePasswordModel,
             Url.Action(nameof(ChangePassword), "Users", null, HttpContext.Request.Scheme) ?? string.Empty,
             await _userManager.FindByIdAsync(user));
         return Ok();
@@ -98,21 +89,21 @@ public class UsersController : ControllerBase
 
     [AllowAnonymous]
     [HttpGet("change-email")]
-    public async Task<IActionResult> ChangeEmail([FromQuery] ChangeEmail modelEmail)
+    public async Task<IActionResult> ChangeEmail([FromQuery] ChangeEmailModel modelEmailModel)
     {
-        await _userService.ChangeEmailAsync(modelEmail);
+        await _userService.ChangeEmailAsync(modelEmailModel);
 
         return Ok();
     }
 
     [Authorize]
     [HttpPut("change-email")]
-    public async Task<IActionResult> SendRequestChangeEmail(SendChangeEmail changeEmail)
+    public async Task<IActionResult> SendRequestChangeEmail(SendChangeEmailModel changeEmailModel)
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
 
 
-        await _userService.SendRequestChangeEmailAsync(changeEmail,
+        await _userService.SendRequestChangeEmailAsync(changeEmailModel,
             Url.Action(nameof(ChangeEmail), "Users", null, HttpContext.Request.Scheme) ?? string.Empty,
             await _userManager.FindByIdAsync(user));
 
@@ -122,7 +113,7 @@ public class UsersController : ControllerBase
 
     [Authorize]
     [HttpPut("change-user-data")]
-    public async Task<IActionResult> ChangeUserData(ChangeUserData changeUserData)
+    public async Task<IActionResult> ChangeUserData(ChangeUserDataModel changeUserDataModel)
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
         if (user == null)
@@ -130,7 +121,7 @@ public class UsersController : ControllerBase
             return BadRequest(new { message = "User not found." });
         }
 
-        await _userService.ChangeUserDataAsync(changeUserData, await _userManager.FindByIdAsync(user));
+        await _userService.ChangeUserDataAsync(changeUserDataModel, await _userManager.FindByIdAsync(user));
         return Ok();
     }
 
@@ -151,12 +142,26 @@ public class UsersController : ControllerBase
 
     [AllowAnonymous]
     [HttpPost("SearchUser")]
-    public async Task<IActionResult> SearchUser(SearchUser searchUser)
+    public async Task<IActionResult> SearchUser(SearchUserModel searchUserModel)
     {
         var users = await _userManager.Users
-            .Where(u => u.UserName.Contains(searchUser.UserName))
+            .Where(u => u.FirstName.Contains(searchUserModel.UserName))
             .ToListAsync();
 
         return Ok(users);
+    }
+
+    [Authorize]
+    [HttpPost("add-avatar")]
+    public async Task<IActionResult> AddAvatar(AddAvatarModel addAvatar)
+    {
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        if (user == null)
+        {
+            return BadRequest(new { message = "User not found." });
+        }
+
+        await _userService.AddAvatarAsync(addAvatar, await _userManager.FindByIdAsync(user));
+        return Ok();
     }
 }

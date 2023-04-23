@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Cryptography;
 using System.Text;
 using Back_End_Service.Chat.Service;
+using Back_End_Service.Post.Service;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -58,6 +59,7 @@ public static class ServiceCollectionExtensions
                     .AllowCredentials());
         });
         services.AddScoped<UserManager<User>>();
+        services.AddScoped<IPostService, PostService>();
 
         return services;
     }

@@ -48,7 +48,7 @@ public class MessageController : Controller
     }
 
 
-    [Authorize]
+    [AllowAnonymous]
     [HttpGet("getChatRooms")]
     public async Task<IActionResult> GetChatRooms()
     {

@@ -1,5 +1,4 @@
 using System;
-using System.Data;
 using System.Threading.Tasks;
 using AutoMapper;
 using Back_End_Service.Chat.Models;
@@ -105,7 +104,8 @@ public class MessageService : IMessage
             Users = c.Users.Select(u => new
             {
                 Id = u.Id,
-                UserName = u.UserName
+                UserName = u.UserName,
+                
             }),
             Messages = c.Messages.Select(m => new
             {
@@ -113,7 +113,7 @@ public class MessageService : IMessage
                 Text = m.Text,
                 SenderId = m.SenderId,
                 ChatRoomId = m.ChatRoomId,
-                CreatedAt = m.CreatedAt
+                CreatedAt = m.CreatedAt = DateTime.Now
             })
         }).ToList<object>();
 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back_End_Service.Identity.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230419092058_Migff")]
-    partial class Migff
+    [Migration("20230423080737_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,8 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.Audio", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -71,11 +68,8 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.Comment", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -84,26 +78,28 @@ namespace Back_End_Service.Identity.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PostId")
-                        .HasColumnType("int");
+                    b.Property<string>("PostId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostsId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PostId");
+                    b.HasIndex("PostsId");
 
                     b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.CommentLike", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CommentId")
-                        .HasColumnType("int");
+                    b.Property<string>("CommentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -173,11 +169,8 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.Photo", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -203,14 +196,16 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.PostLike", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("PostId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PostId")
-                        .HasColumnType("int");
+                    b.Property<string>("PostsId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -218,7 +213,7 @@ namespace Back_End_Service.Identity.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PostId");
+                    b.HasIndex("PostsId");
 
                     b.HasIndex("UserId");
 
@@ -227,14 +222,16 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.Repost", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("PostId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PostId")
-                        .HasColumnType("int");
+                    b.Property<string>("PostsId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -242,7 +239,7 @@ namespace Back_End_Service.Identity.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PostId");
+                    b.HasIndex("PostsId");
 
                     b.HasIndex("UserId");
 
@@ -337,11 +334,8 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.Video", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -513,13 +507,10 @@ namespace Back_End_Service.Identity.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Post", b =>
+            modelBuilder.Entity("Posts", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("AudioUrl")
                         .IsRequired()
@@ -541,6 +532,7 @@ namespace Back_End_Service.Identity.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("VideoUrl")
@@ -563,13 +555,11 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.Comment", b =>
                 {
-                    b.HasOne("Post", "Post")
+                    b.HasOne("Posts", "Posts")
                         .WithMany("Comments")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PostsId");
 
-                    b.Navigation("Post");
+                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.CommentLike", b =>
@@ -644,9 +634,9 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.PostLike", b =>
                 {
-                    b.HasOne("Post", "Post")
+                    b.HasOne("Posts", "Posts")
                         .WithMany("Likes")
-                        .HasForeignKey("PostId")
+                        .HasForeignKey("PostsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -656,16 +646,16 @@ namespace Back_End_Service.Identity.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Post");
+                    b.Navigation("Posts");
 
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.Repost", b =>
                 {
-                    b.HasOne("Post", "Post")
+                    b.HasOne("Posts", "Posts")
                         .WithMany()
-                        .HasForeignKey("PostId")
+                        .HasForeignKey("PostsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -675,7 +665,7 @@ namespace Back_End_Service.Identity.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Post");
+                    b.Navigation("Posts");
 
                     b.Navigation("User");
                 });
@@ -753,11 +743,15 @@ namespace Back_End_Service.Identity.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Post", b =>
+            modelBuilder.Entity("Posts", b =>
                 {
-                    b.HasOne("Back_End_Service.Identity.Entities.User", null)
+                    b.HasOne("Back_End_Service.Identity.Entities.User", "User")
                         .WithMany("Posts")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.ChatRoom", b =>
@@ -795,7 +789,7 @@ namespace Back_End_Service.Identity.Migrations
                     b.Navigation("Videos");
                 });
 
-            modelBuilder.Entity("Post", b =>
+            modelBuilder.Entity("Posts", b =>
                 {
                     b.Navigation("Comments");
 

@@ -35,6 +35,7 @@ namespace Back_End_Service.Identity.Migrations
                     Patronymic = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CanSendGifs = table.Column<bool>(type: "bit", nullable: false),
                     CanSendEmojis = table.Column<bool>(type: "bit", nullable: false),
+                    Avatar = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -174,11 +175,32 @@ namespace Back_End_Service.Identity.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Audio",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Audio", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Audio_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Friend",
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserFriendId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserFriendId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    IsAccepted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -195,6 +217,70 @@ namespace Back_End_Service.Identity.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Photo",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Photo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Photo_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Post",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    VideoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AudioUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Post", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Post_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Video",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Video", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Video_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -255,6 +341,103 @@ namespace Back_End_Service.Identity.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Comment",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PostId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PostsId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comment", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Comment_Post_PostsId",
+                        column: x => x.PostsId,
+                        principalTable: "Post",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PostLike",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PostId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PostsId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PostLike", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PostLike_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PostLike_Post_PostsId",
+                        column: x => x.PostsId,
+                        principalTable: "Post",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Repost",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PostId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PostsId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Repost", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Repost_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Repost_Post_PostsId",
+                        column: x => x.PostsId,
+                        principalTable: "Post",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CommentLike",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CommentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CommentLike", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CommentLike_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CommentLike_Comment_CommentId",
+                        column: x => x.CommentId,
+                        principalTable: "Comment",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -295,9 +478,29 @@ namespace Back_End_Service.Identity.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Audio_UserId",
+                table: "Audio",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ChatRoomUser_UsersId",
                 table: "ChatRoomUser",
                 column: "UsersId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comment_PostsId",
+                table: "Comment",
+                column: "PostsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CommentLike_CommentId",
+                table: "CommentLike",
+                column: "CommentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CommentLike_UserId",
+                table: "CommentLike",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Friend_UserFriendId",
@@ -318,6 +521,41 @@ namespace Back_End_Service.Identity.Migrations
                 name: "IX_Message_SenderId",
                 table: "Message",
                 column: "SenderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Photo_UserId",
+                table: "Photo",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_UserId",
+                table: "Post",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PostLike_PostsId",
+                table: "PostLike",
+                column: "PostsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PostLike_UserId",
+                table: "PostLike",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Repost_PostsId",
+                table: "Repost",
+                column: "PostsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Repost_UserId",
+                table: "Repost",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Video_UserId",
+                table: "Video",
+                column: "UserId");
         }
 
         /// <inheritdoc />
@@ -339,7 +577,13 @@ namespace Back_End_Service.Identity.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Audio");
+
+            migrationBuilder.DropTable(
                 name: "ChatRoomUser");
+
+            migrationBuilder.DropTable(
+                name: "CommentLike");
 
             migrationBuilder.DropTable(
                 name: "Friend");
@@ -348,13 +592,31 @@ namespace Back_End_Service.Identity.Migrations
                 name: "Message");
 
             migrationBuilder.DropTable(
+                name: "Photo");
+
+            migrationBuilder.DropTable(
+                name: "PostLike");
+
+            migrationBuilder.DropTable(
+                name: "Repost");
+
+            migrationBuilder.DropTable(
+                name: "Video");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Comment");
 
             migrationBuilder.DropTable(
                 name: "ChatRoom");
+
+            migrationBuilder.DropTable(
+                name: "Post");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
         }
     }
 }

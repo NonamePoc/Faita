@@ -27,7 +27,8 @@ public class User : IdentityUser
     public ICollection<ChatRoom> ChatRooms { get; set; }
 
     // Связь между пользователем и постами
-    public ICollection<Post> Posts { get; set; }
+    public ICollection<Posts> Posts { get; set; }
+    
 
     public virtual ICollection<PostLike> PostLikes { get; set; }
     public virtual ICollection<CommentLike> CommentLikes { get; set; }
