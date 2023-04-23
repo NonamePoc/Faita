@@ -346,17 +346,20 @@ namespace Back_End_Service.Identity.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PostId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PostsId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    PostId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comment", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Comment_Post_PostsId",
-                        column: x => x.PostsId,
+                        name: "FK_Comment_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Comment_Post_PostId",
+                        column: x => x.PostId,
                         principalTable: "Post",
                         principalColumn: "Id");
                 });
@@ -377,8 +380,7 @@ namespace Back_End_Service.Identity.Migrations
                         name: "FK_PostLike_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_PostLike_Post_PostsId",
                         column: x => x.PostsId,
@@ -403,8 +405,7 @@ namespace Back_End_Service.Identity.Migrations
                         name: "FK_Repost_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Repost_Post_PostsId",
                         column: x => x.PostsId,
@@ -428,14 +429,12 @@ namespace Back_End_Service.Identity.Migrations
                         name: "FK_CommentLike_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_CommentLike_Comment_CommentId",
                         column: x => x.CommentId,
                         principalTable: "Comment",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -488,9 +487,14 @@ namespace Back_End_Service.Identity.Migrations
                 column: "UsersId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comment_PostsId",
+                name: "IX_Comment_PostId",
                 table: "Comment",
-                column: "PostsId");
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comment_UserId",
+                table: "Comment",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CommentLike_CommentId",

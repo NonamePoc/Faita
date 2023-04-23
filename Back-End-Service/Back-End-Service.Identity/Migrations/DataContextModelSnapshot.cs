@@ -68,23 +68,19 @@ namespace Back_End_Service.Identity.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("PostId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PostsId")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PostsId");
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Comment");
                 });
@@ -554,9 +550,19 @@ namespace Back_End_Service.Identity.Migrations
                 {
                     b.HasOne("Posts", "Posts")
                         .WithMany("Comments")
-                        .HasForeignKey("PostsId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Back_End_Service.Identity.Entities.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.Navigation("Posts");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.CommentLike", b =>
@@ -564,13 +570,13 @@ namespace Back_End_Service.Identity.Migrations
                     b.HasOne("Back_End_Service.Identity.Entities.Comment", "Comment")
                         .WithMany("Likes")
                         .HasForeignKey("CommentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Back_End_Service.Identity.Entities.User", "User")
                         .WithMany("CommentLikes")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Comment");
@@ -640,7 +646,7 @@ namespace Back_End_Service.Identity.Migrations
                     b.HasOne("Back_End_Service.Identity.Entities.User", "User")
                         .WithMany("PostLikes")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Posts");
@@ -659,7 +665,7 @@ namespace Back_End_Service.Identity.Migrations
                     b.HasOne("Back_End_Service.Identity.Entities.User", "User")
                         .WithMany("Reposts")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Posts");
@@ -766,6 +772,8 @@ namespace Back_End_Service.Identity.Migrations
                     b.Navigation("Audios");
 
                     b.Navigation("CommentLikes");
+
+                    b.Navigation("Comments");
 
                     b.Navigation("Friends");
 

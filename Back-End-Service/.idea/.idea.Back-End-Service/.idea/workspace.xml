@@ -13,60 +13,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/AddAvatarModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2023_10_52_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2023_10_52_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2023_10_52__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2023_10_52__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2023_10_55_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2023_10_55__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriends.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriendsModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/ConfirmFriendRequestAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/ConfirmFriendRequestAsyncModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetFriends.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetFriendsModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/RemoveFriend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/RemoveFriendModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessageModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Audio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Audio.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/CommentLike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/CommentLike.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Photo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Photo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Posts.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/PostLike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/PostLike.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Posts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Posts.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Video.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Video.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230412155039_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230412155039_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230416164307_Mig!!!.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230416164307_Mig!!!.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230419092058_Migff.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230419092058_Migff.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230423080737_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230423080737_Initial.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeEmail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeEmailModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangePassword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangePasswordModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeUserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeUserDataModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SearchUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SearchUserModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SendChangeEmail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SendChangeEmailModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/.idea/.idea.Back-End-Service.dir/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/.idea/.idea.Back-End-Service.dir/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/.idea/.idea.Back-End-Service.dir/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/.idea/.idea.Back-End-Service.dir/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +58,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2Nm9YPlcEd8Ey1oyg4cCGYodrhg" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -110,33 +69,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TODO_SCOPE": "All Places",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.50076336",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "discord-application",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.50076336&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver",
-      "sqlserver.localdb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;,
+      &quot;sqlserver.localdb&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\marlb\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\pavlo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Back-End-Service.Api: Back_End_Service">
     <configuration name="Back-End-Service.Api: Back_End_Service" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" />
@@ -213,7 +172,7 @@
       <workItem from="1682068630056" duration="19000" />
       <workItem from="1682069454475" duration="370000" />
       <workItem from="1682069962630" duration="10000" />
-      <workItem from="1682237031400" duration="1796000" />
+      <workItem from="1682237511385" duration="1281000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
