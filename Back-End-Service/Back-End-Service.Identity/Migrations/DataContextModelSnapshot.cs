@@ -68,6 +68,13 @@ namespace Back_End_Service.Identity.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("PostId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -194,10 +201,6 @@ namespace Back_End_Service.Identity.Migrations
 
                     b.Property<string>("PostId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PostsId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId")
@@ -206,7 +209,7 @@ namespace Back_End_Service.Identity.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PostsId");
+                    b.HasIndex("PostId");
 
                     b.HasIndex("UserId");
 
@@ -637,9 +640,9 @@ namespace Back_End_Service.Identity.Migrations
 
             modelBuilder.Entity("Back_End_Service.Identity.Entities.PostLike", b =>
                 {
-                    b.HasOne("Posts", "Posts")
+                    b.HasOne("Posts", "Post")
                         .WithMany("Likes")
-                        .HasForeignKey("PostsId")
+                        .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -649,7 +652,7 @@ namespace Back_End_Service.Identity.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Posts");
+                    b.Navigation("Post");
 
                     b.Navigation("User");
                 });

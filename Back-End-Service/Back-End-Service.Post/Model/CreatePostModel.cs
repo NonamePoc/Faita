@@ -5,5 +5,4 @@ public class CreatePostModel
     public string ImageUrl { get; set; }
     public string VideoUrl { get; set; }
     public string AudioUrl { get; set; }
-    public string UserId { get; set; }
 }
