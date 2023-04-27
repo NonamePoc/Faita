@@ -4,6 +4,7 @@ import {
   changeEmail,
   changePassword,
   loginUser,
+  changeImage,
 } from '../../api/userRequests'
 import { getFriends, addFriend, removeFriend } from '../../api/friendRequests'
 import { getRooms, createRoom } from '../../api/chatRequests'
@@ -19,6 +20,7 @@ const user = createSlice({
     userName: '',
     password: '',
     email: '',
+    image: '',
     isAuth: false,
     isOnline: navigator.onLine,
     friends: [],
@@ -48,6 +50,7 @@ export const login = (userData, navigate) => async (dispatch) => {
         firstName: res.data.firstName,
         lastName: res.data.lastName,
         patronymic: res.data.patronymic,
+        image: res.data.avatar,
         friends: res.data.friends,
         rooms: res.data.rooms,
         isAuth: true,
@@ -92,6 +95,15 @@ export const changeUserPassword = (newPass) => async (dispatch, getState) => {
       'Letter was sent on your email that your password was changed succesfuly.'
     )
     dispatch(user.actions.setUserData({ password: newPass }))
+  }
+}
+
+export const changeUserImage = (image) => async (dispatch, getState) => {
+  const { token } = getState().user
+  const res = await changeImage(image, token)
+  if (res.status === 200) {
+    alert('New image is set succesfully.')
+    dispatch(user.actions.setUserData({ image: image }))
   }
 }
 

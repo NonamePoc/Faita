@@ -14,6 +14,9 @@ function Settings() {
   const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
 
+  const [modalImgOpen, setModalImgOpen] = React.useState(false)
+  const [image, setImage] = React.useState(null)
+
   const onBlurFirstName = (event) => {
     dispatch(changeFirstName(event.target.value))
   }
@@ -32,6 +35,17 @@ function Settings() {
 
   const onClickExit = () => {
     dispatch(resetUserData())
+  }
+
+  const onFileChange = (event) => {
+    event.target.files && setImage(event.target.files[0])
+    event.target.value && setImage(event.target.value)
+  }
+
+  const onClickUpload = () => {
+    if (!image) {
+      return
+    }
   }
 
   return (
@@ -102,6 +116,19 @@ function Settings() {
       <div className='card'>
         <div className='stngs__item'>
           <div>
+            <h2>Change image</h2>
+            <p>
+              Change your profile image by uploading new file or inserting url.
+            </p>
+          </div>
+          <div className='stngs__change'>
+            <button className='btn' onClick={() => setModalImgOpen(true)}>
+              Change
+            </button>
+          </div>
+        </div>
+        <div className='stngs__item'>
+          <div>
             <h2>Set Theme</h2>
             <p>Toggle light and dark theme.</p>
           </div>
@@ -138,6 +165,33 @@ function Settings() {
               Exit
             </button>
           </div>
+        </div>
+      </div>
+
+      <div className={`modal-overlay ${modalImgOpen ? 'active' : ''}`}></div>
+      <div className={`modal card ${modalImgOpen ? 'active' : ''}`}>
+        <div className='modal-header'>
+          <h2>Change photo</h2>
+          <span className='close' onClick={() => setModalImgOpen(false)}>
+            &times;
+          </span>
+        </div>
+        <div className='modal-body'>
+          <input
+            type='file'
+            aria-label='File Uploader'
+            onChange={onFileChange}
+          />
+          <p>or insert url of file</p>
+          <input
+            className='modal-input'
+            type='text'
+            aria-label='URL file input'
+            onChange={onFileChange}
+          />
+          <button className='btn' onClick={onClickUpload}>
+            Save changes
+          </button>
         </div>
       </div>
     </section>

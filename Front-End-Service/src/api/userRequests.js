@@ -88,3 +88,21 @@ export const searchUser = async (userName) => {
     alert(error.response.data.Errors[0].Detail)
   }
 }
+
+export const changeImage = async (image, token) => {
+  try {
+    return await instance.post(
+      'users/add-avatar',
+      {
+        avatar: image,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+  } catch (error) {
+    alert(error.response.data.Errors[0].Detail)
+  }
+}
