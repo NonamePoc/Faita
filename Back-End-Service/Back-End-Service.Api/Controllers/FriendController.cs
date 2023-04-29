@@ -29,10 +29,11 @@ public class FriendController : ControllerBase
 
 
     [AllowAnonymous]
-    [HttpPost("getFriends")]
-    public async Task<ActionResult<List<User>>> GetFriends(GetFriendsModel getFriendsModel)
+    [HttpGet("getFriends")]
+    public async Task<ActionResult<List<User>>> GetFriends()
     {
-        var friends = await _friendService.GetFriends(getFriendsModel);
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        var friends = await _friendService.GetFriends(user);
         return friends.ToList();
     }
 
@@ -47,7 +48,7 @@ public class FriendController : ControllerBase
             return BadRequest(new { message = "Invalid user." });
         }
 
-        var response = await _friendService.AddFriendAsync(friendsModel);
+        var response = await _friendService.AddFriendAsync(friendsModel, currentUser);
 
 
         return Ok(response);
@@ -65,7 +66,7 @@ public class FriendController : ControllerBase
             return NotFound("User not found");
         }
 
-        await _friendService.ConfirmFriendRequestAsync(confirmFriendRequestAsyncModel);
+        await _friendService.ConfirmFriendRequestAsync(confirmFriendRequestAsyncModel, user);
 
 
         return Ok();
@@ -75,7 +76,8 @@ public class FriendController : ControllerBase
     [HttpPost("removeFriend")]
     public async Task<IActionResult> RemoveFriend(RemoveFriendModel removeFriendModel)
     {
-        var user = await _userManager.FindByIdAsync(removeFriendModel.UserId);
+        var userid = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        var user = await _userManager.FindByIdAsync(userid);
 
         if (user == null)
         {
@@ -83,6 +85,56 @@ public class FriendController : ControllerBase
         }
 
         await _friendService.RemoveFriend(removeFriendModel, user);
+
+        return Ok();
+    }
+
+    [Authorize]
+    [HttpGet("GetReceiveRequest")]
+    public async Task<ActionResult<List<User>>> GetReceiveRequest()
+    {
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        var friends = await _friendService.GetReceiveRequest(user);
+        return friends.ToList();
+    }
+
+    [Authorize]
+    [HttpPost("cancelUserFriendRequest")]
+    public async Task<IActionResult> CancelFriendRequest(CancelFriendRequestModel cancelFriendRequestModel)
+    {
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+
+        if (user == null)
+        {
+            return NotFound("User not found");
+        }
+
+        await _friendService.CancelUserFriendRequest(cancelFriendRequestModel, user);
+
+        return Ok();
+    }
+
+    [Authorize]
+    [HttpGet("GetSendRequest")]
+    public async Task<ActionResult<List<User>>> GetSendRequest()
+    {
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        var friends = await _friendService.GetSendRequest(user);
+        return friends.ToList();
+    }
+
+    [Authorize]
+    [HttpPost("cancelFriendRequestAsync")]
+    public async Task<IActionResult> CancelFriendRequestAsync(CancelFriendRequestModel cancelFriendRequestModel)
+    {
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+
+        if (user == null)
+        {
+            return NotFound("User not found");
+        }
+
+        await _friendService.CancelFriendRequest(cancelFriendRequestModel, user);
 
         return Ok();
     }

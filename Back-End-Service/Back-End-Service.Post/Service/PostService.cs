@@ -107,10 +107,9 @@ public class PostService : IPostService
     }
 
 
-
-    public Posts GetPost(GetPostModel model)
+    public Posts GetPost(string getPost)
     {
-        var post = _context.Post.FirstOrDefault(x => x.Id == model.PostId);
+        var post = _context.Post.FirstOrDefault(x => x.Id == getPost);
 
         if (post == null)
         {
@@ -128,7 +127,6 @@ public class PostService : IPostService
     }
 
 
-    
     public async Task<PostLike> AddLike(AddLikeModel model, string userId)
     {
         var post = await _context.Post.FindAsync(model.PostId);
@@ -144,7 +142,8 @@ public class PostService : IPostService
             throw new Exception("User not found");
         }
 
-        var existingLike = await _context.PostLike.FirstOrDefaultAsync(pl => pl.PostId == post.Id && pl.UserId == user.Id);
+        var existingLike =
+            await _context.PostLike.FirstOrDefaultAsync(pl => pl.PostId == post.Id && pl.UserId == user.Id);
         if (existingLike != null)
         {
             _context.PostLike.Remove(existingLike);
@@ -166,9 +165,6 @@ public class PostService : IPostService
 
         return like;
     }
-
-
-
 
     public Task RemoveLike(RemoveLikeModel model)
     {
@@ -239,16 +235,16 @@ public class PostService : IPostService
         return comment;
     }
 
-    public List<Comment> GetComments(GetCommentsModel model)
+    public List<Comment> GetComments(string getComments)
     {
-        var comments = _context.Comment.Where(x => x.PostId == model.PostId).ToList();
+        var comments = _context.Comment.Where(x => x.PostId == getComments).ToList();
 
         return comments;
     }
 
-    public List<PostLike> GetLikes(GetLikesModel model)
+    public List<PostLike> GetLikes(string getLikes)
     {
-        var likes = _context.PostLike.Where(x => x.PostId == model.PostId).ToList();
+        var likes = _context.PostLike.Where(x => x.PostId == getLikes).ToList();
 
         return likes;
     }
@@ -267,17 +263,17 @@ public class PostService : IPostService
         return comments;
     }
 
-    public List<Repost> GetReposts(GetRepostsModel model)
+    public List<Repost> GetReposts(string getReposts)
     {
-        var reposts = _context.Repost.Where(x => x.PostId == model.PostId).ToList();
+        var reposts = _context.Repost.Where(x => x.PostId == getReposts).ToList();
 
         return reposts;
     }
 
     public List<Repost> GetRepostsByUser(string UserId)
     {
-        var  reposts = _context.Repost.Where(x => x.UserId == UserId).ToList();
-        
+        var reposts = _context.Repost.Where(x => x.UserId == UserId).ToList();
+
         return reposts;
     }
 }

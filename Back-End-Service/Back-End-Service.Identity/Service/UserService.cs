@@ -50,7 +50,7 @@ public class UserService : IUserService
         await SendEmailAsync(userModel.Email, $"confirm email",
             $"Link confirm email: {confirmationLink} ");
     }
-    
+
 
     private async Task SendEmailAsync(string email, string subject, string message)
     {
@@ -171,7 +171,8 @@ public class UserService : IUserService
         if (!result.IsCompletedSuccessfully)
         {
             throw new AggregateException(
-                result.Exception?.InnerExceptions.Select(s => new Exception(s.Message)) ?? throw new InvalidOperationException());
+                result.Exception?.InnerExceptions.Select(s => new Exception(s.Message)) ??
+                throw new InvalidOperationException());
         }
 
         return result;

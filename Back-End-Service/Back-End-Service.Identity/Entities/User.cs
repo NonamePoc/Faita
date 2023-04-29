@@ -11,7 +11,7 @@ public class User : IdentityUser
     public bool CanSendGifs { get; set; }
     public bool CanSendEmojis { get; set; }
     
-    public string? Avatar { get; set; }
+    public string Avatar { get; set; }
     public ICollection<Friend> FriendsOf { get; set; }
     public ICollection<Friend> Friends { get; set; }
 

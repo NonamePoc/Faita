@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Back-End-Service.Chat", "Ba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Back-End-Service.Publication", "Back-End-Service.Post\Back-End-Service.Publication.csproj", "{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-End-Service.Helper", "Back-End-Service.Helper\Back-End-Service.Helper.csproj", "{D9F930A5-5684-41B1-9452-43684F95B8EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E7D7EB0-9B9B-4426-ACEB-0F895D405775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9F930A5-5684-41B1-9452-43684F95B8EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F930A5-5684-41B1-9452-43684F95B8EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F930A5-5684-41B1-9452-43684F95B8EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F930A5-5684-41B1-9452-43684F95B8EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
