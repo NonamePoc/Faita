@@ -175,7 +175,7 @@
       <workItem from="1682780026623" duration="13751000" />
       <workItem from="1682944276765" duration="176000" />
       <workItem from="1682944750265" duration="211000" />
-      <workItem from="1682948605438" duration="1353000" />
+      <workItem from="1682948605438" duration="1609000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -289,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682794252881</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix FriendService.cs">
+      <created>1682950169394</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682950169394</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +340,8 @@
     <MESSAGE value="Add Logic post(plz update database)" />
     <MESSAGE value="Fix bugs FriendService.cs ,update Get Method , delete userId" />
     <MESSAGE value="add csproj, Plz update database" />
-    <option name="LAST_COMMIT_MESSAGE" value="add csproj, Plz update database" />
+    <MESSAGE value="fix FriendService.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix FriendService.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

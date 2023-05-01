@@ -9,13 +9,13 @@ import {
 
 function Request({ user }) {
   const dispatch = useDispatch()
+
   const cancelRequest = () => {
-    console.log('declineRequest')
     dispatch(declineRequest(user.id))
+    dispatch(fetchReceivedRequests())
   }
 
   const acceptRequest = () => {
-    console.log('acceptRequest')
     dispatch(acceptFriendRequest(user.id))
     dispatch(fetchReceivedRequests())
   }

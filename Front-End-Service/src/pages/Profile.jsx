@@ -6,23 +6,16 @@ import { useSelector } from 'react-redux'
 function Profile() {
   const { userName } = useParams()
   const currentUser = useSelector((state) => state.user)
-  let selectedUser = null
+  const [selectedUser, setSelectedUser] = React.useState(null)
 
-  if (userName !== currentUser.userName) {
-    selectedUser = currentUser.friends.find(
-      (friend) => friend.userName === userName
-    )
-    if (!selectedUser) {
-      alert('User not found')
-    }
-  } else {
-    selectedUser = currentUser
-  }
+  userName !== currentUser.userName
+    ? setSelectedUser(currentUser)
+    : setSelectedUser(currentUser)
 
   return (
     <main>
       <UserInfo user={selectedUser} currentUser={currentUser} />
-      <ProfilesFriendList user={selectedUser} />
+      <ProfilesFriendList user={selectedUser} currentUser={currentUser} />
     </main>
   )
 }
