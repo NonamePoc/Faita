@@ -6,9 +6,6 @@ import { useSelector } from 'react-redux'
 import { getLikesByPostId } from '../../api/postRequests'
 
 function Post({ post }) {
-  const userToken = useSelector((state) => state.user.token)
-  const [likes, setLikes] = React.useState([])
-
   return (
     <section className='card post'>
       <UserDetails post={post} />

@@ -1,21 +1,26 @@
 import React from 'react'
 import { ProfilesFriendList, UserInfo } from '../components'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { searchUser } from '../api/userRequests'
 
 function Profile() {
   const { userName } = useParams()
-  const currentUser = useSelector((state) => state.user)
+  const [loaded, setLoaded] = React.useState(false)
   const [selectedUser, setSelectedUser] = React.useState(null)
 
-  userName !== currentUser.userName
-    ? setSelectedUser(currentUser)
-    : setSelectedUser(currentUser)
+  React.useEffect(() => {
+    searchUser(userName).then((res) => {
+      setSelectedUser(res.data.$values)
+      setLoaded(true)
+    })
+  }, [userName])
 
-  return (
+  return !loaded ? (
+    <h1>Searching user...</h1>
+  ) : (
     <main>
-      <UserInfo user={selectedUser} currentUser={currentUser} />
-      <ProfilesFriendList user={selectedUser} currentUser={currentUser} />
+      <UserInfo user={selectedUser} />
+      {/* <ProfilesFriendList user={selectedUser} /> */}
     </main>
   )
 }

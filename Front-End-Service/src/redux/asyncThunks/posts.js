@@ -18,7 +18,7 @@ export const fetchPostById = createAsyncThunk(
   'posts/fetchPostById',
   async (postId, { getState }) => {
     const { token } = getState().user
-    return (await getPostsById(postId, token)).data.$values
+    return (await getPostsById(postId, token)).data
   }
 )
 

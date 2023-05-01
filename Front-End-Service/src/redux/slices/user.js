@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { changeImage } from '../../api/userRequests'
 import {
   login,
   changeFirstName,
   changeLastName,
   changeUserEmail,
   changeUserPassword,
+  changeProfileImage,
 } from '../asyncThunks/user'
 
 const user = createSlice({
@@ -59,17 +59,12 @@ const user = createSlice({
       alert('Letter was sent on your email. Please confirm your new password.')
       state.password = action.payload
     })
+    builder.addCase(changeProfileImage.fulfilled, (state, action) => {
+      alert('Profile image changed successfully!')
+      state.image = action.payload
+    })
   },
 })
-
-export const changeUserImage = (image) => async (dispatch, getState) => {
-  const { token } = getState().user
-  const res = await changeImage(image, token)
-  if (res.status === 200) {
-    alert('New image is set succesfully.')
-    dispatch(user.actions.setUserData({ image: image }))
-  }
-}
 
 export const { setUserData, resetUserData } = user.actions
 

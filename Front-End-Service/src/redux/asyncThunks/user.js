@@ -48,3 +48,12 @@ export const changeUserPassword = createAsyncThunk(
     return newPass
   }
 )
+
+export const changeProfileImage = createAsyncThunk(
+  'user/changeProfileImage',
+  async (newImage, { getState }) => {
+    const { token } = getState().user
+    await changeUserData(newImage, token)
+    return newImage
+  }
+)

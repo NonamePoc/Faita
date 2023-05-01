@@ -14,7 +14,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/postRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/postRequests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +181,7 @@
       <workItem from="1682944276765" duration="176000" />
       <workItem from="1682944750265" duration="211000" />
       <workItem from="1682948605438" duration="1609000" />
+      <workItem from="1682956530891" duration="1083000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -296,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682950169394</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fix mirco bag FriendService.cs">
+      <created>1682956850975</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682956850975</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +354,8 @@
     <MESSAGE value="Fix bugs FriendService.cs ,update Get Method , delete userId" />
     <MESSAGE value="add csproj, Plz update database" />
     <MESSAGE value="fix FriendService.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix FriendService.cs" />
+    <MESSAGE value="Fix mirco bag FriendService.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix mirco bag FriendService.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -351,12 +365,6 @@
           <line>67</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\MessageService.cs" initialLine="66" containingFunctionPresentation="Method 'JoinChatRoom'" />
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs</url>
-          <line>40</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\PostController.cs" initialLine="40" containingFunctionPresentation="Method 'RepostPost'" />
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs</url>
@@ -381,12 +389,6 @@
           <line>40</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\UserController.cs" initialLine="40" containingFunctionPresentation="Method 'Register'" />
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs</url>
-          <line>146</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\FriendService.cs" initialLine="143" containingFunctionPresentation="Method 'GetFriendRequests'" />
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

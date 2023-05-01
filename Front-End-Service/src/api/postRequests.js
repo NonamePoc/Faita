@@ -86,17 +86,11 @@ export const createPost = async (
 
 export const deletePost = async (postId, token) => {
   try {
-    const response = await instance.delete(
-      `post/deletePost`,
-      {
-        postId,
+    const response = await instance.delete(`post/deletePost=${postId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
       },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    )
+    })
     return response
   } catch (error) {
     if (error.response.data.Errors) {

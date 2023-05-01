@@ -25,17 +25,18 @@ function Card({ friend }) {
 
   const onClickChat = (friend) => {
     const room = findCurrentRoom(chats)
-    if (room) {
-      navigate(`/chat/${room.id}`)
-    } else {
-      dispatch(createChatRoom(`${user.userName}, ${friend.userName}`)).then(
-        dispatch(fetchRooms(user.id)).then(
-          dispatch(joinToRoom(friend.id, findCurrentRoom(chats).id)).then(
-            navigate(`/chat/${room.id}`)
-          )
-        )
+    /* if (room) {
+       navigate(`/chat/${room?.id}`) 
+    } else { */
+    dispatch(createChatRoom(`${user.userName}, ${friend.userName}`)).then(
+      dispatch(fetchRooms(user.id)).then(
+        dispatch(joinToRoom(friend.id, findCurrentRoom(chats).id))
+          .then
+          /* navigate(`/chat/${room.id}`) */
+          ()
       )
-    }
+    )
+    /*  } */
   }
 
   const findCurrentRoom = (rooms) => {

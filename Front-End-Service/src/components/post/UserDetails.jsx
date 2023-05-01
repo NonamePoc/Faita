@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 import truncateDate from '../../utils/truncateDate'
 import { useSelector, useDispatch } from 'react-redux'
-import { deleteUserPost } from '../../redux/asyncThunks/posts'
+import { deleteUserPost, fetchPosts } from '../../redux/asyncThunks/posts'
 
 function UserDetails({ post }) {
   const { isOpen, togglePopup } = usePopup()
@@ -16,7 +16,8 @@ function UserDetails({ post }) {
   }
 
   const deletePost = () => {
-    dispatch(deleteUserPost({ postId: post.id }))
+    dispatch(deleteUserPost(post.id))
+    dispatch(fetchPosts())
   }
 
   function isMyPost() {

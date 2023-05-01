@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
-function UserInfo({ user, currentUser }) {
+function UserInfo({ user }) {
+  const currentUser = useSelector((state) => state.user)
+
   return (
     <section className='card profile'>
       <div className='profile__topColor' />

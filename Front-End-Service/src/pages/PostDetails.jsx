@@ -7,10 +7,17 @@ import { fetchPostById } from '../redux/asyncThunks/posts'
 function PostDetails() {
   const { postId } = useParams()
   const dispatch = useDispatch()
-  const post = dispatch(fetchPostById(postId))
-  console.log(post)
+  const [post, setPost] = React.useState(null)
+  const [loaded, setLoaded] = React.useState(false)
 
-  return (
+  React.useEffect(() => {
+    dispatch(fetchPostById(postId)).then((res) => {
+      setPost(res.payload)
+      setLoaded(true)
+    })
+  }, [dispatch, postId])
+
+  return loaded ? (
     <main>
       <BackHeader />
       <Post post={post} />
@@ -19,7 +26,7 @@ function PostDetails() {
         <Comments />
       </section>
     </main>
-  )
+  ) : null
 }
 
 export default PostDetails

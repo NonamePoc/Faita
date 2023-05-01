@@ -6,7 +6,7 @@ public interface IPostService
 
     Task RepostPost(RepostPostModel model, string UserId);
 
-    Task DeletePost(DeletePostModel model);
+    Task DeletePost(string deletePost);
 
     Task<Posts> EditPost(EditPostModel model);
 
@@ -17,11 +17,11 @@ public interface IPostService
 
     Task<PostLike> AddLike(AddLikeModel model,string UserId);
 
-    Task RemoveLike(RemoveLikeModel model);
+    Task RemoveLike(string removeLike);
 
     Comment AddComment(AddCommentModel model, string userId);
 
-    Task RemoveComment(RemoveCommentModel model);
+    Task RemoveComment(string removeComment);
 
     Comment EditComment(EditCommentModel model);
 

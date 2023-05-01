@@ -52,9 +52,9 @@ public class PostService : IPostService
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeletePost(DeletePostModel model)
+    public async Task DeletePost(string deletePost)
     {
-        var post = _context.Post.FirstOrDefault(x => x.Id == model.PostId);
+        var post = _context.Post.FirstOrDefault(x => x.Id == deletePost);
 
         if (post == null)
         {
@@ -166,9 +166,9 @@ public class PostService : IPostService
         return like;
     }
 
-    public Task RemoveLike(RemoveLikeModel model)
+    public Task RemoveLike(string removeLike)
     {
-        var like = _context.PostLike.FirstOrDefault(x => x.Id == model.LikeId);
+        var like = _context.PostLike.FirstOrDefault(x => x.Id == removeLike);
 
         if (like == null)
         {
@@ -201,9 +201,9 @@ public class PostService : IPostService
         return comment;
     }
 
-    public Task RemoveComment(RemoveCommentModel model)
+    public Task RemoveComment(string RemoveComment)
     {
-        var comment = _context.Comment.FirstOrDefault(x => x.Id == model.CommentId);
+        var comment = _context.Comment.FirstOrDefault(x => x.Id == RemoveComment);
 
         if (comment == null)
         {
