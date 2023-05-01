@@ -2,7 +2,5 @@
 
 public class AddFriendsModel
 {
-    public string UserId { get; set; }
-
     public string UserFriendId { get; set; }
 }

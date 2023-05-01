@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Back-End-Service.Helper\Back-End-Service.Helper.csproj" />
       <ProjectReference Include="..\Back-End-Service.Identity\Back-End-Service.Identity.csproj" />
     </ItemGroup>
 

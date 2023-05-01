@@ -29,11 +29,12 @@ public class MessageController : Controller
     [HttpPost("sendMessage")]
     public async Task<IActionResult> SendMessage(SendMessageModel sendMessage)
     {
-        await _messageService.SendMessage(sendMessage);
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        await _messageService.SendMessage(sendMessage,user);
 
         // Отправить сообщение всем подключенным клиентам через хаб
-        await _hubContext.Clients.All.SendAsync("ReceiveMessage", sendMessage.UserId,
-            sendMessage.Text, sendMessage.ChatRoomId, sendMessage.CreateMessage);
+        await _hubContext.Clients.All.SendAsync("ReceiveMessage", user,
+            sendMessage.Text, sendMessage.ChatRoomId);
 
         return Ok();
     }
@@ -42,8 +43,9 @@ public class MessageController : Controller
     [HttpPost("createChatRoom")]
     public async Task<IActionResult> CreateChatRoom(CreateChatRoomModel createChatRoomModel)
     {
-        await _messageService.CreateChatRoom(createChatRoomModel);
-        await _hubContext.Clients.All.SendAsync("CreateChatRoom", createChatRoomModel.UserId);
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        await _messageService.CreateChatRoom(createChatRoomModel, user);
+        await _hubContext.Clients.All.SendAsync("CreateChatRoom", user);
         return Ok();
     }
 
@@ -67,8 +69,10 @@ public class MessageController : Controller
     [HttpPost("joinChatRoom")]
     public async Task<IActionResult> JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
     {
-        await _messageService.JoinChatRoom(joinChatRoomModel);
-        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, joinChatRoomModel.UserId);
+        
+        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+        await _messageService.JoinChatRoom(joinChatRoomModel,user);
+        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, user);
         return Ok();
     }
 }

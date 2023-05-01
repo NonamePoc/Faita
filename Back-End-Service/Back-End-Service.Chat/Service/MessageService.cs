@@ -23,9 +23,9 @@ public class MessageService : IMessage
         _mapper = mapper;
     }
 
-    public async Task SendMessage(SendMessageModel sendMessageModel)
+    public async Task SendMessage(SendMessageModel sendMessageModel, string userId)
     {
-        var sender = await _userManager.FindByIdAsync(sendMessageModel.UserId);
+        var sender = await _userManager.FindByIdAsync(userId);
         var receiver = await _userManager.FindByIdAsync(sendMessageModel.ReceiverId);
 
         // Создать новое сообщение и заполнить его данные
@@ -49,9 +49,9 @@ public class MessageService : IMessage
         await _dataContext.SaveChangesAsync();
     }
 
-    public async Task CreateChatRoom(CreateChatRoomModel createChatRoomModel)
+    public async Task CreateChatRoom(CreateChatRoomModel createChatRoomModel, string userId)
     {
-        var user = await _userManager.FindByIdAsync(createChatRoomModel.UserId);
+        var user = await _userManager.FindByIdAsync(userId);
 
         var chatRoom = new ChatRoom
         {
@@ -64,7 +64,7 @@ public class MessageService : IMessage
         await _dataContext.SaveChangesAsync();
     }
 
-    public async Task<ChatRoom> JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
+    public async Task<ChatRoom> JoinChatRoom(JoinChatRoomModel joinChatRoomModel, string userId)
     {
         var chatRoom = await _dataContext.ChatRoom
             .Include(cr => cr.Users)
@@ -76,7 +76,7 @@ public class MessageService : IMessage
             throw new ArgumentException("Chat room not found.");
         }
 
-        var user = await _dataContext.Users.FindAsync(joinChatRoomModel.UserId);
+        var user = await _dataContext.Users.FindAsync(userId);
         if (user == null)
         {
             throw new ArgumentException("User not found.");
@@ -113,7 +113,7 @@ public class MessageService : IMessage
                 Text = m.Text,
                 SenderId = m.SenderId,
                 ChatRoomId = m.ChatRoomId,
-                CreatedAt = m.CreatedAt = DateTime.Now
+                CreatedAt = m.CreatedAt 
             })
         }).ToList<object>();
 

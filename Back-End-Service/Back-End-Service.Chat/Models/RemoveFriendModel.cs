@@ -2,6 +2,5 @@
 
 public class RemoveFriendModel
 {
-    public string UserId { get; set; }
     public string FriendId { get; set; }
 }

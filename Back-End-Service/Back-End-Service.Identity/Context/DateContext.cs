@@ -28,6 +28,8 @@ public class DataContext : IdentityDbContext<User>
 
     public DbSet<Audio> Audio { get; set; }
 
+    public DbSet<FriendRequest> FriendRequest { get; set; }
+
 
     public DataContext(DbContextOptions<DataContext> options) :
         base(options)
@@ -96,13 +98,44 @@ public class DataContext : IdentityDbContext<User>
             .WithMany(u => u.CommentLikes)
             .HasForeignKey(cl => cl.UserId)
             .OnDelete(DeleteBehavior.NoAction);
-        
+
         builder.Entity<Repost>()
             .HasOne(r => r.User)
             .WithMany(u => u.Reposts)
             .HasForeignKey(r => r.UserId)
             .OnDelete(DeleteBehavior.NoAction);
-        
-        
+
+        // аватарка у юзера может быть null 
+
+        builder.Entity<User>()
+            .Property(u => u.Avatar)
+            .IsRequired(false);
+
+        builder.Entity<FriendRequest>()
+            .HasOne(f => f.User)
+            .WithMany()
+            .HasForeignKey(f => f.UserId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<FriendRequest>()
+            .HasOne(f => f.UserFriend)
+            .WithMany()
+            .HasForeignKey(f => f.UserFriendId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<FriendRequest>()
+            .HasIndex(f => new { f.UserId, f.UserFriendId })
+            .IsUnique();
     }
+    
+    public override int SaveChanges()
+    {
+        foreach (var entry in ChangeTracker.Entries().Where(e => e.State == EntityState.Added && e.Properties.Any(p => p.Metadata.Name == "Id")))
+        {
+            entry.Property("Id").CurrentValue ??= Guid.NewGuid().ToString();
+        }
+
+        return base.SaveChanges();
+    }
+
 }

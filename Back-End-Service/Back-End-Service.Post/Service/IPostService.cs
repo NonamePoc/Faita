@@ -10,7 +10,7 @@ public interface IPostService
 
     Task<Posts> EditPost(EditPostModel model);
 
-    Posts GetPost(GetPostModel model);
+    Posts GetPost(string getPost);
 
     Task<List<Posts>> GetPosts(string UserId);
     
@@ -25,15 +25,15 @@ public interface IPostService
 
     Comment EditComment(EditCommentModel model);
 
-    List<Comment> GetComments(GetCommentsModel model);
+    List<Comment> GetComments(string getComments);
 
-    List<PostLike> GetLikes(GetLikesModel model);
+    List<PostLike> GetLikes(string getLikes);
 
     List<PostLike> GetLikesByUser(string UserId);
 
     List<Comment> GetCommentsByUser(string UserIdl);
     
-    List<Repost> GetReposts(GetRepostsModel model);
+    List<Repost> GetReposts(string getReposts);
     
     List<Repost> GetRepostsByUser(string UserId);
 }

@@ -54,8 +54,8 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("getPost")]
-    public IActionResult GetPost(GetPostModel model)
+    [HttpGet("{getPost}")]
+    public IActionResult GetPost(string getPost)
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
 
@@ -64,9 +64,10 @@ public class PostController : ControllerBase
             return BadRequest(new { message = "User not found." });
         }
 
-        var post = _postService.GetPost(model);
+        var post = _postService.GetPost(getPost);
         return Ok(post);
     }
+
 
     [Authorize]
     [HttpGet("getPosts")]
@@ -128,18 +129,18 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("getComments")]
-    public IActionResult GetComments(GetCommentsModel model)
+    [HttpGet("{getComments}")]
+    public IActionResult GetComments(string getComments)
     {
-        var comments = _postService.GetComments(model);
+        var comments = _postService.GetComments(getComments);
         return Ok(comments);
     }
 
-    [AllowAnonymous]
-    [HttpPost("getLikes")]
-    public IActionResult GetLikes(GetLikesModel model)
+    [Authorize]
+    [HttpGet("{getLikes}")]
+    public IActionResult GetLikes(string getLikes)
     {
-        var likes = _postService.GetLikes(model);
+        var likes = _postService.GetLikes(getLikes);
         return Ok(likes);
     }
 
@@ -173,10 +174,10 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("getReposts")]
-    public IActionResult GetReposts(GetRepostsModel model)
+    [HttpGet("{getReposts}")]
+    public IActionResult GetReposts(string getReposts)
     {
-        var reposts = _postService.GetReposts(model);
+        var reposts = _postService.GetReposts(getReposts);
         return Ok(reposts);
     }
     
