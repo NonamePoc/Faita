@@ -27,10 +27,10 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpDelete("deletePost")]
-    public async Task<IActionResult> DeletePost(DeletePostModel model)
+    [HttpDelete("deletePost={deletePost}")]
+    public async Task<IActionResult> DeletePost(string deletePost)
     {
-        await _postService.DeletePost(model);
+        await _postService.DeletePost(deletePost);
         return Ok();
     }
 
@@ -54,7 +54,7 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{getPost}")]
+    [HttpGet("getPost={getPost}")]
     public IActionResult GetPost(string getPost)
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
@@ -94,10 +94,10 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpDelete("removeLike")]
-    public async Task<IActionResult> RemoveLike(RemoveLikeModel model)
+    [HttpDelete("removeLike={removeLike}")]
+    public async Task<IActionResult> RemoveLike(string removeLike)
     {
-        await _postService.RemoveLike(model);
+        await _postService.RemoveLike(removeLike);
         return Ok();
     }
 
@@ -113,10 +113,10 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpDelete("removeComment")]
-    public async Task<IActionResult> RemoveComment(RemoveCommentModel model)
+    [HttpDelete("removeComment={removeComment}")]
+    public async Task<IActionResult> RemoveComment(string removeComment)
     {
-        await _postService.RemoveComment(model);
+        await _postService.RemoveComment(removeComment);
         return Ok();
     }
 
@@ -129,7 +129,7 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{getComments}")]
+    [HttpGet("getComment={getComments}")]
     public IActionResult GetComments(string getComments)
     {
         var comments = _postService.GetComments(getComments);
@@ -137,7 +137,7 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{getLikes}")]
+    [HttpGet("getLike={getLikes}")]
     public IActionResult GetLikes(string getLikes)
     {
         var likes = _postService.GetLikes(getLikes);
