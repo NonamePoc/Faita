@@ -64,7 +64,7 @@ public class MessageService : IMessage
         await _dataContext.SaveChangesAsync();
     }
 
-    public async Task<ChatRoom> JoinChatRoom(JoinChatRoomModel joinChatRoomModel, string userId)
+    public async Task<ChatRoom> JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
     {
         var chatRoom = await _dataContext.ChatRoom
             .Include(cr => cr.Users)
@@ -76,7 +76,7 @@ public class MessageService : IMessage
             throw new ArgumentException("Chat room not found.");
         }
 
-        var user = await _dataContext.Users.FindAsync(userId);
+        var user = await _dataContext.Users.FindAsync(joinChatRoomModel.UserId);
         if (user == null)
         {
             throw new ArgumentException("User not found.");

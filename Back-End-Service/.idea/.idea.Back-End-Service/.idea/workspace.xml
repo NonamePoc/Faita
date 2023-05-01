@@ -14,9 +14,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +47,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9c8dd8bf233c4409b3da008fcaf737954f480/9c/ab6099bc/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9e385f927193487e8192e4d148746fa67e90/9b/c221f589/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/f7e2530ee1784107bb063950307afb9f2bc80/89/02d44647/UserManager`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Api/Controllers/PostController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -54,6 +55,7 @@
     <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Chat/Service/FriendService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/IPostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -186,7 +188,8 @@
       <workItem from="1682944276765" duration="176000" />
       <workItem from="1682944750265" duration="211000" />
       <workItem from="1682948605438" duration="1609000" />
-      <workItem from="1682956530891" duration="1083000" />
+      <workItem from="1682956530891" duration="1340000" />
+      <workItem from="1682959690181" duration="933000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -314,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682956850975</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix Delete method,fix bad name Get method">
+      <created>1682957857921</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682957857921</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +370,8 @@
     <MESSAGE value="add csproj, Plz update database" />
     <MESSAGE value="fix FriendService.cs" />
     <MESSAGE value="Fix mirco bag FriendService.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix mirco bag FriendService.cs" />
+    <MESSAGE value="Fix Delete method,fix bad name Get method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Delete method,fix bad name Get method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

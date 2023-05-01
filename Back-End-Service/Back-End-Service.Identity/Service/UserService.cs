@@ -179,9 +179,10 @@ public class UserService : IUserService
     }
 
 
-    public Task GetUserId(string userId)
+    public async Task<User?> GetUser(string userName)
     {
-        var user = _userManager.FindByIdAsync(userId);
+        var user = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == userName);
+        
         return user;
     }
 

@@ -23,5 +23,5 @@ public interface IUserService
 
     Task AddAvatarAsync(AddAvatarModel addAvatar, User user);
 
-    Task GetUserId(string userId);
+    Task<User?> GetUser(string userName);
 }
