@@ -130,6 +130,8 @@ public class FriendService : IFriendService
     public async Task<List<User>> GetFriends(string UserId)
     {
         var friends = await _context.Friend
+            .Include(f => f.User)
+            .Include(f => f.UserFriend)
             .Where(f => (f.UserId == UserId || f.UserFriendId == UserId) && f.IsAccepted == true)
             .ToListAsync();
 

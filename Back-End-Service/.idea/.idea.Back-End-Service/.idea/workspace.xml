@@ -12,10 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" afterDir="false" />
-    </list>
+    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Chat/Service/FriendService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Chat/Service/FriendService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -183,7 +181,7 @@
       <workItem from="1682780026623" duration="13751000" />
       <workItem from="1682944276765" duration="176000" />
       <workItem from="1682944750265" duration="211000" />
-      <workItem from="1682948605438" duration="1353000" />
+      <workItem from="1682948605438" duration="1609000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -297,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682794252881</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix FriendService.cs">
+      <created>1682950169394</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682950169394</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +346,8 @@
     <MESSAGE value="Add Logic post(plz update database)" />
     <MESSAGE value="Fix bugs FriendService.cs ,update Get Method , delete userId" />
     <MESSAGE value="add csproj, Plz update database" />
-    <option name="LAST_COMMIT_MESSAGE" value="add csproj, Plz update database" />
+    <MESSAGE value="fix FriendService.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix FriendService.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
