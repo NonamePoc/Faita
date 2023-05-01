@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Back_End_Service;
 using Back_End_Service.Chat;
 using Back_End_Service.Identity.Context;
@@ -33,7 +34,11 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Back-End-Service.Api WEB API v1" });
 });
-
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    });
 
 var app = builder.Build();
 

@@ -1,37 +1,39 @@
+using Back_End_Service.Identity.Entities;
+
 public interface IPostService
 {
-    Task<Posts> CreatePost(CreatePostModel model);
+    Task<Posts> CreatePost(CreatePostModel model, string UserId);
 
-    Task RepostPost(RepostPostModel model);
+    Task RepostPost(RepostPostModel model, string UserId);
 
     Task DeletePost(DeletePostModel model);
 
-    Task EditPost(EditPostModel model);
+    Task<Posts> EditPost(EditPostModel model);
 
-    Task GetPost(GetPostModel model);
+    Posts GetPost(GetPostModel model);
 
-    Task GetPosts(GetPostModel model);
+    Task<List<Posts>> GetPosts(string UserId);
+    
 
-    Task GetPostsByUser(GetPostsByUserModel model);
-
-    Task AddLike(AddLikeModel model);
+    Task<PostLike> AddLike(AddLikeModel model,string UserId);
 
     Task RemoveLike(RemoveLikeModel model);
 
-    Task AddComment(AddCommentModel model);
+    Comment AddComment(AddCommentModel model, string userId);
 
     Task RemoveComment(RemoveCommentModel model);
 
-    Task EditComment(EditCommentModel model);
+    Comment EditComment(EditCommentModel model);
 
-    Task GetComments(GetCommentsModel model);
+    List<Comment> GetComments(GetCommentsModel model);
 
-    Task GetLikes(GetLikesModel model);
+    List<PostLike> GetLikes(GetLikesModel model);
 
-    Task GetLikesByUser(GetLikesByUserModel model);
+    List<PostLike> GetLikesByUser(string UserId);
 
-    Task GetCommentsByUser(GetCommentsByUserModel model);
+    List<Comment> GetCommentsByUser(string UserIdl);
     
-    Task GetReposts(GetRepostsModel model);
+    List<Repost> GetReposts(GetRepostsModel model);
     
+    List<Repost> GetRepostsByUser(string UserId);
 }
