@@ -22,7 +22,6 @@ const user = createSlice({
     image: '',
     isAuth: false,
     isOnline: navigator.onLine,
-    friends: [],
   },
   reducers: {
     resetUserData: () => {

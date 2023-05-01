@@ -60,7 +60,7 @@ public class FriendService : IFriendService
         var existingFriendship = await _context.Friend.FirstOrDefaultAsync(x =>
             (x.UserId == userId && x.UserFriendId == confirmFriendRequestAsyncModel.UserFriendId) ||
             (x.UserId == confirmFriendRequestAsyncModel.UserFriendId &&
-             x.UserFriendId == confirmFriendRequestAsyncModel.UserFriendId));
+             x.UserFriendId == userId));
 
         if (existingFriendship != null)
         {
@@ -70,7 +70,7 @@ public class FriendService : IFriendService
 
         // Check if there is already a friend request sent from user to friend
         var existingFriendRequest = await _context.FriendRequest.FirstOrDefaultAsync(x =>
-            x.UserId == userId && x.UserFriendId == confirmFriendRequestAsyncModel.UserFriendId &&
+            x.UserId == confirmFriendRequestAsyncModel.UserFriendId && x.UserFriendId == userId &&
             x.IsAccepted == false);
 
         if (existingFriendRequest == null)

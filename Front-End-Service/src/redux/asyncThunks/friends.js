@@ -58,3 +58,19 @@ export const removeFromFriends = createAsyncThunk(
     return (await removeFriend(userFriendId, token)).data
   }
 )
+
+export const declineRequest = createAsyncThunk(
+  'friends/declineRequest',
+  async (userFriendId, { getState }) => {
+    const { token } = getState().user
+    return (await removeFriend(userFriendId, token)).data
+  }
+)
+
+export const cancelRequest = createAsyncThunk(
+  'friends/cancelRequest',
+  async (userFriendId, { getState }) => {
+    const { token } = getState().user
+    return (await removeFriend(userFriendId, token)).data
+  }
+)

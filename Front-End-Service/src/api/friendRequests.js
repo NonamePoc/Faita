@@ -117,6 +117,27 @@ export const removeFriend = async (friendId, token) => {
 export const cancelFriendRequest = async (friendId, token) => {
   try {
     const response = await instance.post(
+      `friends/cancelFriendRequestAsync`,
+      { userFriendId: friendId },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+    return response
+  } catch (error) {
+    if (error.response.data.Errors) {
+      alert(error.response.data.Errors[0].Detail)
+    } else {
+      alert(error.message)
+    }
+  }
+}
+
+export const cancelMyRequest = async (friendId, token) => {
+  try {
+    const response = await instance.post(
       `friends/cancelUserFriendRequest`,
       { userFriendId: friendId },
       {

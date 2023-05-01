@@ -4,12 +4,14 @@ import { useDispatch } from 'react-redux'
 import {
   acceptFriendRequest,
   fetchReceivedRequests,
+  declineRequest,
 } from '../../redux/asyncThunks/friends'
 
 function Request({ user }) {
   const dispatch = useDispatch()
   const cancelRequest = () => {
-    console.log('cancelRequest')
+    console.log('declineRequest')
+    dispatch(declineRequest(user.id))
   }
 
   const acceptRequest = () => {
