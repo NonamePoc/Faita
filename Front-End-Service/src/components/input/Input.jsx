@@ -1,13 +1,15 @@
 import React from 'react'
-import Emoji from '../emoji-giphs/Emoji'
 import useInput from '../../hooks/useInput'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { Captcha, Emoji } from '../../components'
+import { useDispatch } from 'react-redux'
+import { createNewPost, fetchPosts } from '../../redux/asyncThunks/posts'
 
 function Input({ type }) {
   const [focused, setFocused] = React.useState(false)
   const [submitCount, setSubmitCount] = React.useState(1)
   const inputRef = React.useRef(null)
   const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
+  const dispatch = useDispatch()
 
   const handleBlur = (event) => {
     if (event.relatedTarget === null && inputRef.current.value === '') {
@@ -19,22 +21,20 @@ function Input({ type }) {
     if (submitCount === 15) {
       alert('Please verify the captcha')
     } else {
-      /* dispatch(sendChatMessage(value, receiver.id)) */
+      type
+        ? dispatch(createNewPost({ content: value })).then(
+            dispatch(fetchPosts())
+          )
+        : console.log('create comment')
       resetValue()
     }
     setSubmitCount(submitCount + 1)
   }
 
-  const handleCaptchaVerify = () => {
-    setTimeout(() => {
-      setSubmitCount(1)
-    }, 2000)
-  }
-
   React.useEffect(() => {
     inputRef.current.style.height = 'auto'
     inputRef.current.style.height = inputRef.current.scrollHeight + 'px'
-  }, [inputRef, value])
+  }, [inputRef])
 
   return (
     <div
@@ -72,16 +72,7 @@ function Input({ type }) {
           className='btn postIt'
         >{`${type ? 'Post it!' : 'Send'}`}</button>
       </div>
-      {submitCount > 15 ? (
-        <>
-          <div className='modal-overlay active'></div>
-          <ReCAPTCHA
-            className='recaptcha'
-            sitekey={process.env.REACT_APP_CAPTCHA_API_KEY}
-            onChange={handleCaptchaVerify}
-          />
-        </>
-      ) : null}
+      <Captcha submitCount={submitCount} setSubmitCount={setSubmitCount} />
     </div>
   )
 }

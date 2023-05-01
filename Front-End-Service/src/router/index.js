@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes, Outlet, useNavigate } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import {
   Home,
   Friends,
@@ -11,29 +11,8 @@ import {
   EmailConfirmation,
   Settings,
 } from '../pages'
-import {
-  Header,
-  UserMiniCard,
-  MenuTab,
-  AsideFriendList,
-  NewMessageAlert,
-} from '../layouts'
+import MainLayout from '../layouts'
 import { useSelector } from 'react-redux'
-
-const MainLayout = () => (
-  <>
-    <Header />
-    <div className='wrapper'>
-      <article>
-        <UserMiniCard />
-        <MenuTab />
-        <NewMessageAlert />
-      </article>
-      <Outlet />
-      <AsideFriendList />
-    </div>
-  </>
-)
 
 const Router = () => {
   const navigate = useNavigate()

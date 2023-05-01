@@ -1,18 +1,15 @@
 import React from 'react'
 
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { setUserData } from '../../redux/slices/user'
 import { registerUser } from '../../api/userRequests'
 
 function Registration() {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const userData = useSelector((state) => state.user)
+  const [data, setData] = React.useState({})
 
   const handleChange = (event) => {
     const { name, value } = event.target
-    dispatch(setUserData({ ...userData, [name]: value }))
+    setData({ ...data, [name]: value })
   }
 
   const handleSubmit = (event) => {
@@ -21,7 +18,7 @@ function Registration() {
       event.target.elements.password.value ===
       event.target.elements.confirmPassword.value
     ) {
-      registerUser(userData, () => navigate('/confirm-email'))
+      registerUser(data, () => navigate('/confirm-email'))
     } else {
       alert('Passwords do not match!')
     }

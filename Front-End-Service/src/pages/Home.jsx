@@ -1,11 +1,11 @@
 import React from 'react'
-import { Post, Input } from '../components'
+import { PostList, Input } from '../components'
 
 function Home() {
   return (
     <main>
       <Input type={true} />
-      <Post />
+      <PostList />
     </main>
   )
 }

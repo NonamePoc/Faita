@@ -1,35 +1,42 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
-import { Status } from '../../components'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromFriends, createChatRoom } from '../../redux/slices/user'
-import { joinToRoom } from '../../redux/slices/chat'
+import { removeFromFriends, fetchFriends } from '../../redux/asyncThunks/user'
+import {
+  createChatRoom,
+  fetchRooms,
+  joinToRoom,
+} from '../../redux/asyncThunks/chats'
+import { Link } from 'react-router-dom'
 
 function Card({ friend }) {
   const { isOpen, togglePopup } = usePopup()
   const user = useSelector((state) => state.user)
+  const chats = useSelector((state) => state.chats.rooms)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const onClickRemove = (user) => {
-    dispatch(removeFromFriends(user))
+    dispatch(removeFromFriends(user)).then(() => dispatch(fetchFriends(user)))
   }
 
   const onClickChat = (friend) => {
-    const room = user.rooms?.find((room) =>
-      room.users.some((user) => user.id === friend.id)
-    )
-    console.log(room)
+    const room = findCurrentRoom(chats)
     if (room) {
       navigate(`/chat/${room.id}`)
     } else {
       dispatch(createChatRoom(`${user.userName}, ${friend.userName}`)).then(
-        dispatch(
-          joinToRoom(friend.id, user.rooms[user.rooms.length - 1].id)
-        ).then(navigate(`/chat/${user.rooms[user.rooms.length - 1].id}`))
+        dispatch(fetchRooms(user.id)).then(
+          dispatch(joinToRoom(friend.id, findCurrentRoom(chats).id)).then(
+            navigate(`/chat/${room.id}`)
+          )
+        )
       )
     }
+  }
+
+  const findCurrentRoom = (rooms) => {
+    return rooms.find((room) => room.name.includes(friend.userName))
   }
 
   return (
@@ -105,7 +112,7 @@ function Card({ friend }) {
       />
       <div className='friendCard__info'>
         <h1 className='friendCard__name'>{friend.userName}</h1>
-        <Status user={friend} />
+        {/* <Status user={friend} /> */}
       </div>
       <div className='friendCard__btns'>
         <Link to={`/profile/${friend.userName}`} aria-label='View Profile'>

@@ -36,6 +36,37 @@
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/RepostPostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/RepostPostModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Registration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Block.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Block.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Messages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Messages.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/emoji-giphs/Gif.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/emoji-giphs/Gif.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Aside.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Aside.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/ProfileItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/ProfileItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/ProfilesFriendList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/ProfilesFriendList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/input/Input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/Content.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/Post.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/layouts/AsideFriendList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/layouts/AsideFriendList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Chats.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Chats.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Settings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/chat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/app.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,18 +90,10 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/1264f5504f5849918eb1a1671090bcb2182b0/8d/9b43e3c3/IdentityDbContext`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/17185ccde76848e5967bcbd0672c984bb488/94/d8bdcda2/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/2267bf8938814188913fcd16d6773cf9bc80/ed/aa616887/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/36ef385736ec4d8da791d67144d6c4e2be90/a5/f0e6366f/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9c8dd8bf233c4409b3da008fcaf737954f480/9c/ab6099bc/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9e385f927193487e8192e4d148746fa67e90/9b/c221f589/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/f7e2530ee1784107bb063950307afb9f2bc80/89/02d44647/UserManager`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Model/AddCommentModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -111,9 +134,9 @@
       &quot;sqlserver.localdb&quot;
     ],
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\pavlo\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\marlb\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -199,6 +222,9 @@
       <workItem from="1682437142950" duration="256000" />
       <workItem from="1682488630519" duration="728000" />
       <workItem from="1682531173224" duration="8824000" />
+      <workItem from="1682584774485" duration="3036000" />
+      <workItem from="1682680843953" duration="5590000" />
+      <workItem from="1682754152869" duration="4297000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -340,54 +366,20 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs</url>
           <line>67</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\MessageService.cs" initialLine="66" containingFunctionPresentation="Method 'JoinChatRoom'">
-            <startOffsets>
-              <option value="2082" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2083" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\MessageService.cs" initialLine="66" containingFunctionPresentation="Method 'JoinChatRoom'" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs</url>
           <line>53</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\MessageController.cs" initialLine="53" containingFunctionPresentation="Method 'GetChatRooms'">
-            <startOffsets>
-              <option value="1640" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1641" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\MessageController.cs" initialLine="53" containingFunctionPresentation="Method 'GetChatRooms'" />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs</url>
-          <line>40</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\PostController.cs" initialLine="40" containingFunctionPresentation="Method 'RepostPost'">
-            <startOffsets>
-              <option value="1007" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1073" />
-            </endOffsets>
-          </properties>
+          <line>195</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\PostController.cs" initialLine="40" containingFunctionPresentation="Method 'RepostPost'" />
           <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs</url>
-          <line>50</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\PostController.cs" initialLine="50" containingFunctionPresentation="Method 'EditPost'">
-            <startOffsets>
-              <option value="1270" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1271" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

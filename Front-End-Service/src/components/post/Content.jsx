@@ -1,30 +1,9 @@
 import React from 'react'
 
-function Content() {
+function Content({ content }) {
   return (
     <div className='post__body'>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
+      <p>{content}</p>
     </div>
   )
 }

@@ -3,11 +3,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 import { useSelector } from 'react-redux'
 
-function Header() {
+function Header({ room }) {
   const { isOpen, togglePopup } = usePopup()
-  const room = useSelector((state) => state.chat)
   const user = useSelector((state) => state.user)
-  const receiver = room.users.find((u) => u.id !== user.id)
+  const receiver = room.users.$values.find((u) => u.id !== user.id)
   const navigate = useNavigate()
 
   const navigateToProfile = () => {

@@ -1,25 +1,28 @@
 import React from 'react'
 import GifPicker from 'gif-picker-react'
 import { useSelector, useDispatch } from 'react-redux'
-import { sendChatMessage } from '../../redux/slices/chat'
+import { sendChatMessage } from '../../redux/asyncThunks/chats'
 import usePopup from '../../hooks/usePopup'
 
-const Giphs = React.memo(function Giphs({ submitCount, setSubmitCount }) {
+const Giphs = React.memo(function Giphs({ submitCount, setSubmitCount, room }) {
   const { isOpen, togglePopup } = usePopup()
   const { theme } = useSelector((state) => state.theme)
-  const room = useSelector((state) => state.chat)
   const user = useSelector((state) => state.user)
-  const receiver = room.users.find((u) => u.id !== user.id)
+  const receiver = room.users.$values.find((u) => u.id !== user.id)
   const dispatch = useDispatch()
 
   const handleSendMessage = (value) => {
     if (submitCount === 15) {
       alert('Please verify the captcha')
     } else {
-      dispatch(sendChatMessage(value, receiver.id))
+      dispatch(
+        sendChatMessage({
+          text: value,
+          receiverId: receiver.id,
+          roomId: room.id,
+        })
+      )
     }
-    console.log('submitCount', submitCount)
-
     setSubmitCount(submitCount + 1)
   }
 

@@ -1,16 +1,14 @@
 import React from 'react'
-import { Emoji, Gif } from '../../components'
+import { Emoji, Gif, Captcha } from '../../components'
 import useInput from '../../hooks/useInput'
 import { useDispatch, useSelector } from 'react-redux'
-import { sendChatMessage } from '../../redux/slices/chat'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { fetchRooms, sendChatMessage } from '../../redux/asyncThunks/chats'
 
-function Input() {
+function Input({ room }) {
   const [submitCount, setSubmitCount] = React.useState(1)
   const inputRef = React.useRef()
-  const room = useSelector((state) => state.chat)
   const user = useSelector((state) => state.user)
-  const receiver = room.users.find((u) => u.id !== user.id)
+  const receiverId = room.users.$values.find((v) => v.id !== user.id)?.id
   const dispatch = useDispatch()
   const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
 
@@ -18,16 +16,16 @@ function Input() {
     if (submitCount === 15) {
       alert('Please verify the captcha')
     } else {
-      dispatch(sendChatMessage(value, receiver.id))
+      dispatch(
+        sendChatMessage({
+          text: value,
+          receiverId: receiverId,
+          roomId: room.id,
+        })
+      ).then(dispatch(fetchRooms()))
       resetValue()
     }
     setSubmitCount(submitCount + 1)
-  }
-
-  const handleCaptchaVerify = () => {
-    setTimeout(() => {
-      setSubmitCount(1)
-    }, 2000)
   }
 
   return (
@@ -44,7 +42,11 @@ function Input() {
         placeholder='Write something...'
       />
       <div className='flex'>
-        <Gif submitCount={submitCount} setSubmitCount={setSubmitCount} />
+        <Gif
+          submitCount={submitCount}
+          setSubmitCount={setSubmitCount}
+          room={room}
+        />
         <Emoji handleEmojiSelect={handleEmojiSelect} />
 
         <button
@@ -73,16 +75,7 @@ function Input() {
           Send
         </button>
       </div>
-      {submitCount > 15 ? (
-        <>
-          <div className='modal-overlay active'></div>
-          <ReCAPTCHA
-            className='recaptcha'
-            sitekey={process.env.REACT_APP_CAPTCHA_API_KEY}
-            onChange={handleCaptchaVerify}
-          />
-        </>
-      ) : null}
+      <Captcha submitCount={submitCount} setSubmitCount={setSubmitCount} />
     </fieldset>
   )
 }

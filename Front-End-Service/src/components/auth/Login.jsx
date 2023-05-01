@@ -1,22 +1,21 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { setUserData, login } from '../../redux/slices/user'
+import { useDispatch } from 'react-redux'
+import { login } from '../../redux/asyncThunks/user'
 
 function Login() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { userName, password } = useSelector((state) => state.user)
-  const userData = { userName, password }
+  const [data, setData] = React.useState({})
 
   const handleChange = (event) => {
     const { name, value } = event.target
-    dispatch(setUserData({ ...userData, [name]: value }))
+    setData({ ...data, [name]: value })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(login(userData, navigate))
+    dispatch(login(data, navigate))
   }
 
   return (

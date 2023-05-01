@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchFriends } from '../redux/slices/user'
+import { fetchFriends } from '../redux/asyncThunks/user'
 import { FriendCard, SearchBar } from '../components'
 import { useParams } from 'react-router-dom'
 

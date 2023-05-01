@@ -2,36 +2,32 @@ import React from 'react'
 import { ChatHeader, ChatInput, ChatMessages } from '../components'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { setRoom, exitRoom } from '../redux/slices/chat'
 
 function ChatRoom() {
   const { roomId } = useParams()
-  const [loading, setLoading] = React.useState(true)
-  const user = useSelector((state) => state.user)
-  const room = user.rooms.find((room) => room.id === roomId)
+  const chats = useSelector((state) => state.chats.rooms)
+  const [loaded, setLoaded] = React.useState(false)
+  const room = chats.find((room) => room.id === roomId)
   const dispatch = useDispatch()
 
   React.useEffect(() => {
+    console.log(room)
     if (room) {
-      dispatch(setRoom(room))
-    }
-    setLoading(false)
-    return () => {
-      dispatch(exitRoom(null))
+      setLoaded(true)
     }
   }, [dispatch, room])
 
   return (
     <main className='chatroom'>
-      {room && !loading ? (
+      {loaded ? (
         <>
-          <ChatHeader />
-          <ChatMessages />
-          <ChatInput />
+          <ChatHeader room={room} />
+          <ChatMessages room={room} />
+          <ChatInput room={room} />
         </>
       ) : (
         <div className='chatroom__empty'>
-          {loading ? <h3>Loading...</h3> : <h3>Chat Room is Empty</h3>}
+          {!loaded ? <h3>Loading...</h3> : <h3>Chat Room is Empty</h3>}
         </div>
       )}
     </main>

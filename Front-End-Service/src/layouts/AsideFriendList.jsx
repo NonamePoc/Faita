@@ -1,15 +1,15 @@
 import React from 'react'
 import Friend from '../components/friend/Aside'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchFriends } from '../redux/slices/user'
+import { fetchFriends } from '../redux/asyncThunks/user'
 
-function AsideFriendList() {
-  const user = useSelector((state) => state.user)
+const AsideFriendList = React.memo(function AsideFriendList() {
+  const userId = useSelector((state) => state.user.id)
   const dispatch = useDispatch()
 
   React.useEffect(() => {
-    dispatch(fetchFriends(user.id))
-  }, [dispatch, user.id])
+    dispatch(fetchFriends(userId))
+  }, [dispatch, userId])
 
   return (
     <aside>
@@ -25,6 +25,6 @@ function AsideFriendList() {
       </ul>
     </aside>
   )
-}
+})
 
 export default AsideFriendList

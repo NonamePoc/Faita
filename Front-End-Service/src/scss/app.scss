@@ -6,6 +6,7 @@
 
 body {
   accent-color: $accent-color;
+  overflow-y: auto;
 }
 
 .wrapper {
@@ -14,6 +15,7 @@ body {
   padding: 2rem 10rem;
   padding-left: 8rem;
   gap: 4.5rem;
+  /* overflow-y: auto; */
 }
 
 @media (max-width: 1600px) {

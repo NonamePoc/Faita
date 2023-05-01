@@ -7,7 +7,7 @@ function ProfilesFriendList({ user }) {
       <h1 className='friendsMini__title'>Friends</h1>
       <div className='friendsMini__list'>
         {user.friends.slice(0, 5).map((friend, index) => (
-          <ProfileItem keyItem={index} friend={friend} />
+          <ProfileItem key={index} friend={friend} />
         ))}
       </div>
 

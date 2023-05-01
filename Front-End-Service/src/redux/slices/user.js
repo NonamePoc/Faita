@@ -1,13 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { changeImage } from '../../api/userRequests'
 import {
-  changeUserData,
-  changeEmail,
-  changePassword,
-  loginUser,
-  changeImage,
-} from '../../api/userRequests'
-import { getFriends, addFriend, removeFriend } from '../../api/friendRequests'
-import { getRooms, createRoom } from '../../api/chatRequests'
+  login,
+  changeFirstName,
+  changeLastName,
+  changeUserEmail,
+  changeUserPassword,
+  fetchFriends,
+  addToFriends,
+  removeFromFriends,
+} from '../asyncThunks/user'
 
 const user = createSlice({
   name: 'user',
@@ -24,79 +26,50 @@ const user = createSlice({
     isAuth: false,
     isOnline: navigator.onLine,
     friends: [],
-    rooms: [],
   },
   reducers: {
-    setUserData: (state, action) => {
-      return {
-        ...state,
-        ...action.payload,
-      }
-    },
     resetUserData: () => {
       return { ...user.initialState }
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(login.fulfilled, (state, action) => {
+      state.id = action.payload.id
+      state.token = action.payload.token
+      state.userName = action.payload.userName
+      state.password = action.payload.password
+      state.email = action.payload.email
+      state.firstName = action.payload.firstName
+      state.lastName = action.payload.lastName
+      state.patronymic = action.payload.patronymic
+      state.image = action.payload.image
+      state.friends = action.payload.friends
+      state.rooms = action.payload.rooms
+      state.isAuth = true
+    })
+    builder.addCase(changeFirstName.fulfilled, (state, action) => {
+      alert('First name changed successfully!')
+      state.firstName = action.payload
+    })
+    builder.addCase(changeLastName.fulfilled, (state, action) => {
+      alert('Last name changed successfully!')
+      state.lastName = action.payload
+    })
+    builder.addCase(changeUserEmail.fulfilled, (state, action) => {
+      alert('Please confirm your new email address.')
+      state.email = action.payload
+    })
+    builder.addCase(changeUserPassword.fulfilled, (state, action) => {
+      alert('Letter was sent on your email. Please confirm your new password.')
+      state.password = action.payload
+    })
+    builder.addCase(fetchFriends.fulfilled, (state, action) => {
+      state.friends = action.payload
+    })
+    builder.addCase(addToFriends.fulfilled, () => {})
+    builder.addCase(removeFromFriends.fulfilled, () => {})
+  },
 })
-
-export const login = (userData, navigate) => async (dispatch) => {
-  const res = await loginUser(userData)
-  if (res.status === 200) {
-    dispatch(
-      setUserData({
-        token: res.data.token,
-        id: res.data.id,
-        email: res.data.email,
-        firstName: res.data.firstName,
-        lastName: res.data.lastName,
-        patronymic: res.data.patronymic,
-        image: res.data.avatar,
-        friends: res.data.friends,
-        rooms: res.data.rooms,
-        isAuth: true,
-      })
-    )
-    navigate('/')
-  }
-}
-
-export const changeFirstName = (newName) => async (dispatch, getState) => {
-  const { lastName, token } = getState().user
-  const res = await changeUserData(newName, lastName, token)
-  if (res.status === 200) {
-    alert('First name changed successfully!')
-    dispatch(user.actions.setUserData({ firstName: newName }))
-  }
-}
-
-export const changeLastName = (newName) => async (dispatch, getState) => {
-  const { firstName, token } = getState().user
-  const res = await changeUserData(firstName, newName, token)
-  if (res.status === 200) {
-    alert('Last name changed successfully!')
-    dispatch(user.actions.setUserData({ lastName: newName }))
-  }
-}
-
-export const changeUserEmail = (newEmail) => async (dispatch, getState) => {
-  const { token } = getState().user
-  const res = await changeEmail(newEmail, token)
-  if (res.status === 200) {
-    alert('Please confirm your new email address.')
-    dispatch(user.actions.setUserData({ email: newEmail }))
-  }
-}
-
-export const changeUserPassword = (newPass) => async (dispatch, getState) => {
-  const { password, email, token } = getState().user
-  const res = await changePassword(password, newPass, email, token)
-  if (res.status === 200) {
-    alert(
-      'Letter was sent on your email that your password was changed succesfuly.'
-    )
-    dispatch(user.actions.setUserData({ password: newPass }))
-  }
-}
 
 export const changeUserImage = (image) => async (dispatch, getState) => {
   const { token } = getState().user
@@ -107,47 +80,29 @@ export const changeUserImage = (image) => async (dispatch, getState) => {
   }
 }
 
-export const fetchFriends = (userId) => async (dispatch, getState) => {
-  const { id } = getState().user
-  const res = await getFriends(userId)
-  if (res.status === 200) {
-    dispatch(
-      user.actions.setUserData({ friends: res.data.filter((v) => v.id !== id) })
-    )
-  }
-}
-
-export const addToFriends = (friendId) => async (dispatch, getState) => {
+/* export const addToFriends = (friendId) => async (dispatch, getState) => {
   const { id, token } = getState().user
   const res = await addFriend(id, friendId, token)
   if (res.status === 200) {
     dispatch(fetchFriends(id))
   }
-}
+} */
 
-export const removeFromFriends = (friendId) => async (dispatch, getState) => {
+/* export const removeFromFriends = (friendId) => async (dispatch, getState) => {
   const { id, token } = getState().user
   const res = await removeFriend(id, friendId, token)
   if (res.status === 200) {
     dispatch(fetchFriends(id))
   }
-}
+} */
 
-export const fetchRooms = () => async (dispatch, getState) => {
-  const { token } = getState().user
-  const res = await getRooms(token)
-  if (res.status === 200) {
-    dispatch(user.actions.setUserData({ rooms: res.data }))
-  }
-}
-
-export const createChatRoom = (room) => async (dispatch, getState) => {
+/* export const createChatRoom = (room) => async (dispatch, getState) => {
   const { id, token } = getState().user
   const res = await createRoom(room, id, token)
   if (res.status === 200) {
     dispatch(fetchRooms())
   }
-}
+} */
 
 export const { setUserData, resetUserData } = user.actions
 

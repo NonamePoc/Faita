@@ -135,8 +135,8 @@ public class PostController : ControllerBase
         return Ok(comments);
     }
 
-    [Authorize]
-    [HttpGet("getLikes")]
+    [AllowAnonymous]
+    [HttpPost("getLikes")]
     public IActionResult GetLikes(GetLikesModel model)
     {
         var likes = _postService.GetLikes(model);

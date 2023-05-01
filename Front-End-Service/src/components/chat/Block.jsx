@@ -43,11 +43,13 @@ function ChatBlock({ room }) {
               <h1 className='chat__name'>{room.name}</h1>
               <div className='statusCircle'></div>
             </div>
-            <p className='chat__message'>{getLastMessage(room.messages)[0]}</p>
+            <p className='chat__message'>
+              {getLastMessage(room.messages.$values)[0]}
+            </p>
           </div>
           <div className='chat__info right'>
             <p className='chat__date'>
-              {getLastMessage(room.messages)[1]} mins ago
+              {getLastMessage(room.messages.$values)[1]} mins ago
             </p>
             <div className='msgCounter'>7</div>
           </div>

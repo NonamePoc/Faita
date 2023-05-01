@@ -1,14 +1,14 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { ThemeSwitcher } from '../components'
-import { pen } from '../assets'
+import { resetPersistor } from '../redux/store'
 import {
   changeFirstName,
   changeLastName,
   changeUserEmail,
   changeUserPassword,
-  resetUserData,
-} from '../redux/slices/user'
+} from '../redux/asyncThunks/user'
+import { ThemeSwitcher } from '../components'
+import { pen } from '../assets'
 
 function Settings() {
   const user = useSelector((state) => state.user)
@@ -34,7 +34,8 @@ function Settings() {
   }
 
   const onClickExit = () => {
-    dispatch(resetUserData())
+    resetPersistor()
+    window.location.reload()
   }
 
   const onFileChange = (event) => {

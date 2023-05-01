@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
+import truncateDate from '../../utils/truncateDate'
 
-function UserDetails() {
+function UserDetails({ userName, userAvatar, date }) {
   const { isOpen, togglePopup } = usePopup()
   const navigate = useNavigate()
 
@@ -20,8 +21,8 @@ function UserDetails() {
         />
       </Link>
       <div>
-        <h1 className='post__name'>ProfileName</h1>
-        <p className='post__date'>27 hours ago</p>
+        <h1 className='post__name'>{userName}</h1>
+        <p className='post__date'>{truncateDate(date)}</p>
       </div>
       <svg
         onClick={togglePopup}

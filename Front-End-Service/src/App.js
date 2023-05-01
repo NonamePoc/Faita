@@ -4,6 +4,7 @@ import { HubConnectionState } from '@microsoft/signalr'
 import connection from './utils/connection'
 import { useSelector, useDispatch } from 'react-redux'
 import { setMessage, setConnect } from './redux/slices/message'
+import { SkeletonTheme } from 'react-loading-skeleton'
 
 function App() {
   const { theme } = useSelector((state) => state.theme)
@@ -36,7 +37,12 @@ function App() {
 
   return (
     <div className={theme}>
-      <Router />
+      <SkeletonTheme
+        baseColor={theme === 'dark' ? '#202020' : '#ebebeb'}
+        highlightColor={theme === 'dark' ? '#333232' : '#f5f5f5'}
+      >
+        <Router />
+      </SkeletonTheme>
     </div>
   )
 }
