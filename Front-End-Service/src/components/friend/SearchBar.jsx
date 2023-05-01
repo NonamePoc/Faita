@@ -2,7 +2,7 @@ import React from 'react'
 import { searchUser } from '../../api/userRequests'
 import usePopup from '../../hooks/usePopup'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToFriends, fetchFriends } from '../../redux/asyncThunks/user'
+import { addToFriends, fetchFriends } from '../../redux/asyncThunks/friends'
 
 function SearchBar() {
   const { isOpen, togglePopup } = usePopup()
@@ -20,7 +20,7 @@ function SearchBar() {
 
   const onClickAddFriend = (user) => {
     dispatch(addToFriends(user)).then(() => {
-      dispatch(fetchFriends(currentUser.id))
+      dispatch(fetchFriends())
     })
   }
 

@@ -39,10 +39,10 @@ const Router = () => {
     <Routes>
       <Route element={<MainLayout />}>
         <Route path='/' element={<Home />} exact />
-        <Route path='/friends/:userName' element={<Friends />} />
+        <Route path='/friends' element={<Friends />} exact />
         <Route path='/chat' element={<Chats />} exact />
         <Route path='/chat/:roomId' element={<ChatRoom />} />
-        <Route path='/post' element={<PostDetails />} exact />
+        <Route path='/post/:postId' element={<PostDetails />} />
         <Route path='/profile/:userName' element={<Profile />} />
         <Route path='/settings' element={<Settings />} exact />
         <Route path='/*' element={<Home />} />

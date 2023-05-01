@@ -1,7 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromFriends, fetchFriends } from '../../redux/asyncThunks/user'
+import {
+  removeFromFriends,
+  fetchFriends,
+} from '../../redux/asyncThunks/friends'
 import {
   createChatRoom,
   fetchRooms,

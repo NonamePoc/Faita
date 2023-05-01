@@ -5,7 +5,6 @@ import {
   changeEmail,
   changePassword,
 } from '../../api/userRequests'
-import { getFriends, addFriend, removeFriend } from '../../api/friendRequests'
 
 export const login = createAsyncThunk('user/login', async (userData) => {
   const res = (await loginUser(userData)).data
@@ -47,30 +46,5 @@ export const changeUserPassword = createAsyncThunk(
     const { password, email, token } = getState().user
     await changePassword(password, newPass, email, token)
     return newPass
-  }
-)
-
-export const fetchFriends = createAsyncThunk(
-  'user/fetchFriends',
-  async (userId, { getState }) => {
-    const { id } = getState().user
-    const res = await getFriends(userId)
-    return res.data.$values.filter((friend) => friend.id !== id)
-  }
-)
-
-export const addToFriends = createAsyncThunk(
-  'user/addToFriends',
-  async (friendId, { getState }) => {
-    const { id, token } = getState().user
-    return (await addFriend(id, friendId, token)).data
-  }
-)
-
-export const removeFromFriends = createAsyncThunk(
-  'user/removeFromFriends',
-  async (userFriendId, { getState }) => {
-    const { id, token } = getState().user
-    return (await removeFriend(id, userFriendId, token)).data
   }
 )

@@ -12,7 +12,7 @@ function PostList() {
 
   React.useEffect(() => {
     dispatch(fetchPosts())
-  }, [dispatch])
+  }, [])
 
   if (!loaded) return <Skeleton count={2} height={150} className='post' />
 
@@ -20,7 +20,7 @@ function PostList() {
     posts?.length > 0 &&
     [...posts]
       .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))
-      .slice(0, 1)
+      /* .slice(0, 5) */
       .map((post) => <Post key={post.id} post={post} />)
   )
 }

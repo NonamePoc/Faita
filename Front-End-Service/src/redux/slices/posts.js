@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { createNewPost, fetchPosts } from '../asyncThunks/posts'
+import {
+  createNewPost,
+  deleteUserPost,
+  fetchPostById,
+  fetchPosts,
+} from '../asyncThunks/posts'
 
 const posts = createSlice({
   name: 'posts',
@@ -23,6 +28,11 @@ const posts = createSlice({
     })
     builder.addCase(createNewPost.fulfilled, () => {})
     builder.addCase(createNewPost.rejected, (state, action) => {
+      state.error = action.error.message
+    })
+    builder.addCase(fetchPostById.fulfilled, () => {})
+    builder.addCase(deleteUserPost.fulfilled, () => {})
+    builder.addCase(deleteUserPost.rejected, (state, action) => {
       state.error = action.error.message
     })
   },

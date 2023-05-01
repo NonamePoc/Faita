@@ -9,14 +9,9 @@ function Post({ post }) {
   const userToken = useSelector((state) => state.user.token)
   const [likes, setLikes] = React.useState([])
 
-  React.useEffect(() => {
-    console.log(post.id, userToken)
-    getLikesByPostId(post.id)
-  }, [post.id])
-
   return (
     <section className='card post'>
-      <UserDetails userName={post.title} date={post.createdAt} />
+      <UserDetails post={post} />
       <Content content={post.content} />
       <Reactions />
     </section>

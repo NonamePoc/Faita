@@ -124,6 +124,18 @@
   }
 }
 
+.aside-friend-actions {
+  display: flex;
+  align-items: center;
+  svg {
+    cursor: pointer;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 @media (max-width: 500px) {
   .friendPage {
     gap: 1rem;

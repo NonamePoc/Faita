@@ -54,7 +54,7 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{getPost}")]
+    [HttpGet("getPost={getPost}")]
     public IActionResult GetPost(string getPost)
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
@@ -129,7 +129,7 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{getComments}")]
+    [HttpGet("getComments={getComments}")]
     public IActionResult GetComments(string getComments)
     {
         var comments = _postService.GetComments(getComments);
@@ -137,7 +137,7 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{getLikes}")]
+    [HttpGet("getLikes={getLikes}")]
     public IActionResult GetLikes(string getLikes)
     {
         var likes = _postService.GetLikes(getLikes);
@@ -174,7 +174,7 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{getReposts}")]
+    [HttpGet("getReposts={getReposts}")]
     public IActionResult GetReposts(string getReposts)
     {
         var reposts = _postService.GetReposts(getReposts);

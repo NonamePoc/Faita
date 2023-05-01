@@ -6,9 +6,6 @@ import {
   changeLastName,
   changeUserEmail,
   changeUserPassword,
-  fetchFriends,
-  addToFriends,
-  removeFromFriends,
 } from '../asyncThunks/user'
 
 const user = createSlice({
@@ -63,11 +60,6 @@ const user = createSlice({
       alert('Letter was sent on your email. Please confirm your new password.')
       state.password = action.payload
     })
-    builder.addCase(fetchFriends.fulfilled, (state, action) => {
-      state.friends = action.payload
-    })
-    builder.addCase(addToFriends.fulfilled, () => {})
-    builder.addCase(removeFromFriends.fulfilled, () => {})
   },
 })
 
@@ -79,30 +71,6 @@ export const changeUserImage = (image) => async (dispatch, getState) => {
     dispatch(user.actions.setUserData({ image: image }))
   }
 }
-
-/* export const addToFriends = (friendId) => async (dispatch, getState) => {
-  const { id, token } = getState().user
-  const res = await addFriend(id, friendId, token)
-  if (res.status === 200) {
-    dispatch(fetchFriends(id))
-  }
-} */
-
-/* export const removeFromFriends = (friendId) => async (dispatch, getState) => {
-  const { id, token } = getState().user
-  const res = await removeFriend(id, friendId, token)
-  if (res.status === 200) {
-    dispatch(fetchFriends(id))
-  }
-} */
-
-/* export const createChatRoom = (room) => async (dispatch, getState) => {
-  const { id, token } = getState().user
-  const res = await createRoom(room, id, token)
-  if (res.status === 200) {
-    dispatch(fetchRooms())
-  }
-} */
 
 export const { setUserData, resetUserData } = user.actions
 

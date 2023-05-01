@@ -17,6 +17,23 @@ export const getPostsByUser = async (token) => {
   }
 }
 
+export const getPostsById = async (postId, token) => {
+  try {
+    const response = await instance.get(`post/getPost=${postId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    return response
+  } catch (error) {
+    if (error.response.data.Errors) {
+      alert(error.response.data.Errors[0].Detail)
+    } else {
+      alert(error.message)
+    }
+  }
+}
+
 export const getLikesByPostId = async (postId) => {
   try {
     const response = await instance.post(`post/getLikes`, {
@@ -50,6 +67,29 @@ export const createPost = async (
         imageUrl: image,
         videoUrl: video,
         audioUrl: audio,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+    return response
+  } catch (error) {
+    if (error.response.data.Errors) {
+      alert(error.response.data.Errors[0].Detail)
+    } else {
+      alert(error.message)
+    }
+  }
+}
+
+export const deletePost = async (postId, token) => {
+  try {
+    const response = await instance.delete(
+      `post/deletePost`,
+      {
+        postId,
       },
       {
         headers: {

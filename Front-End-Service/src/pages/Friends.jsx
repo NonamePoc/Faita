@@ -1,42 +1,37 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchFriends } from '../redux/asyncThunks/user'
+import { fetchFriends } from '../redux/asyncThunks/friends'
 import { FriendCard, SearchBar } from '../components'
-import { useParams } from 'react-router-dom'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function Friends() {
-  const { userName } = useParams()
-  const currentUser = useSelector((state) => state.user)
+  const friends = useSelector((state) => state.friends.friends)
+  const loaded = useSelector((state) => state.friends.loaded)
   const dispatch = useDispatch()
-  let selectedUser = null
-
-  if (userName !== currentUser.userName) {
-    selectedUser = currentUser.friends.find(
-      (friend) => friend.userName === userName
-    )
-    if (!selectedUser) {
-      alert('Friend not found')
-    }
-  } else {
-    selectedUser = currentUser
-  }
 
   React.useEffect(() => {
-    dispatch(fetchFriends(selectedUser.id))
-  }, [dispatch, selectedUser.id])
+    dispatch(fetchFriends())
+  }, [dispatch])
 
   return (
     <main className='friendsMain'>
       <SearchBar />
-      <section className='friendPage'>
-        {selectedUser.friends.length > 0 ? (
-          currentUser.friends.map((friend, index) => (
-            <FriendCard key={index} friend={friend} />
-          ))
-        ) : (
-          <h3>You have no friends</h3>
-        )}
-      </section>
+      {loaded ? (
+        <>
+          <section className='friendPage'>
+            {friends.length > 0 ? (
+              friends.map((friend, index) => (
+                <FriendCard key={index} friend={friend} />
+              ))
+            ) : (
+              <h3>You have no friends</h3>
+            )}
+          </section>
+        </>
+      ) : (
+        <Skeleton height={100} width={320} />
+      )}
     </main>
   )
 }

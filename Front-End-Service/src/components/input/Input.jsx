@@ -22,7 +22,7 @@ function Input({ type }) {
       alert('Please verify the captcha')
     } else {
       type
-        ? dispatch(createNewPost({ content: value })).then(
+        ? dispatch(createNewPost({ content: value })).then(() =>
             dispatch(fetchPosts())
           )
         : console.log('create comment')

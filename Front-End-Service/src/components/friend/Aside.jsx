@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 
-function Aside() {
+function Aside({ friend }) {
   const { isOpen, togglePopup } = usePopup()
 
   const popup = React.useMemo(
@@ -86,7 +86,7 @@ function Aside() {
             src='https://picsum.photos/id/235/500'
             alt='friend'
           />
-          <figcaption className='friend__name'>Friend 1</figcaption>
+          <figcaption className='friend__name'>Friend Username</figcaption>
         </figure>
       </Link>
       <svg
