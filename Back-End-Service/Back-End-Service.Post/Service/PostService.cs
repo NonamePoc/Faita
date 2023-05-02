@@ -114,6 +114,7 @@ public class PostService : IPostService
             .Include(p => p.User)
             .FirstOrDefault(p => p.Id == getPost);
 
+        
         if (post == null)
         {
             throw new Exception("Post not found");
@@ -129,6 +130,7 @@ public class PostService : IPostService
             .Where(p => p.UserId == userId)
             .ToListAsync();
 
+        
         return posts.Select(p => new PostWithUserModel
         {
             Post = p,
@@ -252,6 +254,7 @@ public class PostService : IPostService
             .Include(c => c.User)
             .ToList();
 
+        
         return comments;
     }
 

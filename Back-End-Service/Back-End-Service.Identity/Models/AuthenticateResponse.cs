@@ -11,7 +11,7 @@ public class AuthenticateResponse
     public string Username { get; set; }
     public string Email { get; set; }
     
-    public string Avatar { get; set; }
+    public string Avatars { get; set; }
     public string Token { get; set; }
 
     public AuthenticateResponse(User user, string token)
@@ -21,7 +21,7 @@ public class AuthenticateResponse
         LastName = user.LastName;
         Patronymic = user.Patronymic;
         Username = user.UserName;
-        Avatar = user.Avatar;
+        Avatars = user.Avatar;
         Email = user.Email;
         Token = token;
     }

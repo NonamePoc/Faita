@@ -13,7 +13,7 @@ public interface IPostService
 
     Posts GetPost(string getPost);
 
-    Task<List<PostWithUserModel>> GetPosts(string UserId);
+    Task<List<PostWithUserModel>>  GetPosts(string UserId);
     
 
     Task<PostLike> AddLike(AddLikeModel model,string UserId);
