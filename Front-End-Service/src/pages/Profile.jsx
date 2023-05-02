@@ -1,26 +1,26 @@
 import React from 'react'
-import { ProfilesFriendList, UserInfo } from '../components'
+import { ProfilesFriendList, UserInfo, PostList } from '../components'
 import { useParams } from 'react-router-dom'
-import { searchUser } from '../api/userRequests'
+import { useSelector, useDispatch } from 'react-redux'
+import { getUserData } from '../redux/asyncThunks/user'
 
 function Profile() {
   const { userName } = useParams()
-  const [loaded, setLoaded] = React.useState(false)
-  const [selectedUser, setSelectedUser] = React.useState(null)
+  const [user, setUser] = React.useState({})
+  const loaded = useSelector((state) => state.user.userLoaded)
+  const dispatch = useDispatch()
 
   React.useEffect(() => {
-    searchUser(userName).then((res) => {
-      setSelectedUser(res.data.$values)
-      setLoaded(true)
-    })
-  }, [userName])
+    dispatch(getUserData(userName)).then((res) => setUser(res.payload))
+  }, [dispatch, userName])
 
   return !loaded ? (
-    <h1>Searching user...</h1>
+    <h3>Searching user...</h3>
   ) : (
     <main>
-      <UserInfo user={selectedUser} />
-      {/* <ProfilesFriendList user={selectedUser} /> */}
+      <UserInfo user={user} />
+      <ProfilesFriendList friends={user.friends} />
+      <PostList />
     </main>
   )
 }

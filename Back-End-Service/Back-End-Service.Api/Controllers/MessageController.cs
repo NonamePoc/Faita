@@ -70,9 +70,8 @@ public class MessageController : Controller
     public async Task<IActionResult> JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
     {
         
-        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-        await _messageService.JoinChatRoom(joinChatRoomModel,user);
-        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, user);
+        await _messageService.JoinChatRoom(joinChatRoomModel);
+        await _hubContext.Clients.All.SendAsync("JoinChatRoom", joinChatRoomModel.ChatRoomId, joinChatRoomModel.UserId);
         return Ok();
     }
 }

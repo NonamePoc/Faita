@@ -4,6 +4,7 @@ import { resetPersistor } from '../redux/store'
 import {
   changeFirstName,
   changeLastName,
+  changeProfileImage,
   changeUserEmail,
   changeUserPassword,
 } from '../redux/asyncThunks/user'
@@ -39,14 +40,11 @@ function Settings() {
   }
 
   const onFileChange = (event) => {
-    event.target.files && setImage(event.target.files[0])
     event.target.value && setImage(event.target.value)
   }
 
   const onClickUpload = () => {
-    if (!image) {
-      return
-    }
+    image && dispatch(changeProfileImage(image))
   }
 
   return (
@@ -178,12 +176,7 @@ function Settings() {
           </span>
         </div>
         <div className='modal-body'>
-          <input
-            type='file'
-            aria-label='File Uploader'
-            onChange={onFileChange}
-          />
-          <p>or insert url of file</p>
+          <p>Insert the url of file</p>
           <input
             className='modal-input'
             type='text'

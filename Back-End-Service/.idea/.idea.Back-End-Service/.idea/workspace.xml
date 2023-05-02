@@ -14,12 +14,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/postRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/postRequests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/JoinChatRoomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/JoinChatRoomModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/chatRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/chatRequests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/chats.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,33 +71,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.50076336&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.50076336",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "discord-application",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlserver&quot;,
-      &quot;sqlserver.localdb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver",
+      "sqlserver.localdb"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\pavlo\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\marlb\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Back-End-Service.Api: Back_End_Service">
     <configuration name="Back-End-Service.Api: Back_End_Service" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" />
@@ -181,7 +186,9 @@
       <workItem from="1682944276765" duration="176000" />
       <workItem from="1682944750265" duration="211000" />
       <workItem from="1682948605438" duration="1609000" />
-      <workItem from="1682956530891" duration="1083000" />
+      <workItem from="1682956530891" duration="1340000" />
+      <workItem from="1682959690181" duration="933000" />
+      <workItem from="1683012807023" duration="3258000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -309,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682956850975</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix Delete method,fix bad name Get method">
+      <created>1682957857921</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682957857921</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +369,8 @@
     <MESSAGE value="add csproj, Plz update database" />
     <MESSAGE value="fix FriendService.cs" />
     <MESSAGE value="Fix mirco bag FriendService.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix mirco bag FriendService.cs" />
+    <MESSAGE value="Fix Delete method,fix bad name Get method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Delete method,fix bad name Get method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

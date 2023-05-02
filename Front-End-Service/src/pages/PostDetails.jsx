@@ -1,19 +1,22 @@
 import React from 'react'
 import { BackHeader, Input, Post, Comments } from '../components'
 import { useParams } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { fetchPostById } from '../redux/asyncThunks/posts'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchPostById, getComments } from '../redux/asyncThunks/posts'
 
 function PostDetails() {
   const { postId } = useParams()
   const dispatch = useDispatch()
   const [post, setPost] = React.useState(null)
   const [loaded, setLoaded] = React.useState(false)
+  const [comments, setComments] = React.useState([])
+  const loadedComs = useSelector((state) => state.posts.commentsLoaded)
 
   React.useEffect(() => {
     dispatch(fetchPostById(postId)).then((res) => {
       setPost(res.payload)
       setLoaded(true)
+      dispatch(getComments(postId)).then((res) => setComments(res.payload))
     })
   }, [dispatch, postId])
 
@@ -22,8 +25,8 @@ function PostDetails() {
       <BackHeader />
       <Post post={post} />
       <section className='card'>
-        <Input type={false} />
-        <Comments />
+        <Input type={false} postId={post.id} />
+        {loadedComs ? <Comments post={post} comments={comments} /> : null}
       </section>
     </main>
   ) : null

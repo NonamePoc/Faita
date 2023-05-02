@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {
+  getUserData,
   login,
   changeFirstName,
   changeLastName,
@@ -22,6 +23,7 @@ const user = createSlice({
     image: '',
     isAuth: false,
     isOnline: navigator.onLine,
+    userLoaded: false,
   },
   reducers: {
     resetUserData: () => {
@@ -29,6 +31,12 @@ const user = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(getUserData.pending, (state) => {
+      state.userLoaded = false
+    })
+    builder.addCase(getUserData.fulfilled, (state) => {
+      state.userLoaded = true
+    })
     builder.addCase(login.fulfilled, (state, action) => {
       state.id = action.payload.id
       state.token = action.payload.token

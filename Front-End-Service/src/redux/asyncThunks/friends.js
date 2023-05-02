@@ -6,6 +6,8 @@ import {
   getReceivedRequests,
   getSentRequests,
   confirmFriendRequest,
+  cancelMyRequest,
+  cancelFriendRequest,
 } from '../../api/friendRequests'
 
 export const fetchFriends = createAsyncThunk(
@@ -63,7 +65,7 @@ export const declineRequest = createAsyncThunk(
   'friends/declineRequest',
   async (userFriendId, { getState }) => {
     const { token } = getState().user
-    return (await removeFriend(userFriendId, token)).data
+    return (await cancelFriendRequest(userFriendId, token)).data
   }
 )
 
@@ -71,6 +73,6 @@ export const cancelRequest = createAsyncThunk(
   'friends/cancelRequest',
   async (userFriendId, { getState }) => {
     const { token } = getState().user
-    return (await removeFriend(userFriendId, token)).data
+    return (await cancelMyRequest(userFriendId, token)).data
   }
 )

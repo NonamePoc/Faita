@@ -127,17 +127,13 @@ public class UsersController : ControllerBase
 
 
     [Authorize]
-    [HttpGet("get-user-id")]
-    public async Task<IActionResult> GetUserId()
+    [HttpGet("getUser={userName}")]
+    public async Task<IActionResult> GetUserId(string userName)
     {
-        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-        if (user == null)
-        {
-            return BadRequest(new { message = "User not found." });
-        }
+        var userInfo = await _userService.GetUser(userName);
 
-        await _userService.GetUserId(user);
-        return Ok();
+
+        return Ok(userInfo);
     }
 
     [AllowAnonymous]

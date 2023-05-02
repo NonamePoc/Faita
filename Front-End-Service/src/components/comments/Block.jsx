@@ -1,6 +1,7 @@
 import React from 'react'
+import truncateDate from '../../utils/truncateDate'
 
-function Block() {
+function Block({ comment }) {
   return (
     <div className='comment'>
       <div className='comment__info'>
@@ -10,8 +11,10 @@ function Block() {
           alt='avatar'
         />
         <div>
-          <h1 className='comment__info__name'>JoeDoe</h1>
-          <p className='comment__info__date'>2 hours ago</p>
+          <h1 className='comment__info__name'>{comment.userId}</h1>
+          <p className='comment__info__date'>
+            {truncateDate(comment.createdAt)}
+          </p>
         </div>
         <div className='comment__info__reactions'>
           <svg
@@ -57,7 +60,7 @@ function Block() {
         </div>
         <div></div>
         <div className='comment__content'>
-          <p>A comment example!</p>
+          <p>{comment.content}</p>
         </div>
       </div>
       <div className='comment__replies'>

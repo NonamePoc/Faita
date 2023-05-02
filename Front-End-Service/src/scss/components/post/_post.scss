@@ -29,42 +29,46 @@
   }
   &__below {
     display: flex;
-    align-items: center;
-    gap: 0.5em;
-    margin-bottom: 0.5em;
-    p {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    li p {
       font-size: 16px;
       font-weight: 600;
       margin-right: 1em;
     }
-    .reaction {
+    li .reaction {
       display: grid;
       align-self: flex-end;
       transition: fill 0.2s ease-in-out, transform 0.2s ease-in-out;
     }
-    .reaction path {
+    li .reaction path {
       cursor: pointer;
       transition: fill 0.2s ease-in-out, transform 0.2s ease-in-out;
     }
-    .heart:hover path {
+    li .heart:hover path {
       fill: rgba(225, 70, 70, 0.55);
     }
-    .heart:active path {
+    li .heart.active path {
       fill: rgb(200, 67, 67);
     }
-    .com:hover path {
+    li .com:hover path {
       fill: rgba(70, 83, 225, 0.55);
     }
-    .com:active path {
+    li .com.active path {
       fill: rgb(50, 87, 208);
     }
-    .repost:hover path {
+    li .repost:hover path {
       stroke: rgba(70, 83, 225, 0.55);
     }
-    .repost:active path {
+    li .repost.active path {
       stroke: rgb(50, 87, 208);
     }
-    .reaction:active {
+    li .reaction.active {
       animation-name: reaction;
       animation-duration: 0.5s;
     }

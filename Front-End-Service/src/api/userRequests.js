@@ -1,5 +1,17 @@
 import { instance } from './axios'
 
+export const getUser = async (userName, token) => {
+  try {
+    return await instance.get(`users/getUser=${userName}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+  } catch (error) {
+    alert(error.response.data.Errors[0].Detail)
+  }
+}
+
 export const registerUser = async (user, callback) => {
   try {
     const response = await instance.post('users/register', user).then(callback)
@@ -89,12 +101,12 @@ export const searchUser = async (userName) => {
   }
 }
 
-export const changeImage = async (image, token) => {
+export const changeImage = async (avatar, token) => {
   try {
     return await instance.post(
       'users/add-avatar',
       {
-        avatar: image,
+        avatar,
       },
       {
         headers: {

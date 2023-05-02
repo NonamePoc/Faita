@@ -67,13 +67,13 @@ export const createRoom = async (room, userId, token) => {
   }
 }
 
-export const joinRoom = async (userId, roomId, token) => {
+export const joinRoom = async (userId, chatRoomId, token) => {
   try {
     const response = await instance.post(
       `chat/joinChatRoom`,
       {
+        chatRoomId: chatRoomId,
         userId: userId,
-        chatRoomId: roomId,
       },
       {
         headers: {

@@ -174,7 +174,7 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{getReposts}")]
+    [HttpGet("getRepost={getReposts}")]
     public IActionResult GetReposts(string getReposts)
     {
         var reposts = _postService.GetReposts(getReposts);

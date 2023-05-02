@@ -2,6 +2,10 @@
   .modal {
     top: 30%;
     left: 40%;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+    }
     &-input {
       border: 1px solid #cccccc2c;
       border-radius: 5px;

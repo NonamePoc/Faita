@@ -4,6 +4,7 @@ import {
   deleteUserPost,
   fetchPostById,
   fetchPosts,
+  getComments,
 } from '../asyncThunks/posts'
 
 const posts = createSlice({
@@ -11,6 +12,7 @@ const posts = createSlice({
   initialState: {
     userPosts: [],
     loaded: false,
+    commentsLoaded: false,
     error: null,
   },
   reducers: {
@@ -34,6 +36,12 @@ const posts = createSlice({
     builder.addCase(deleteUserPost.fulfilled, () => {})
     builder.addCase(deleteUserPost.rejected, (state, action) => {
       state.error = action.error.message
+    })
+    builder.addCase(getComments.pending, (state) => {
+      state.commentsLoaded = false
+    })
+    builder.addCase(getComments.fulfilled, (state) => {
+      state.commentsLoaded = true
     })
   },
 })

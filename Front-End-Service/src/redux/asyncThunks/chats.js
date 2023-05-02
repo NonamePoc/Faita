@@ -25,9 +25,9 @@ export const createChatRoom = createAsyncThunk(
 
 export const joinToRoom = createAsyncThunk(
   'chats/joinToRoom',
-  async ({ friendId, chatId }, { getState }) => {
+  async ({ userId, chatRoomId }, { getState }) => {
     const { token } = getState().user
-    return await joinRoom(friendId, chatId, token)
+    return await joinRoom(userId, chatRoomId, token)
   }
 )
 

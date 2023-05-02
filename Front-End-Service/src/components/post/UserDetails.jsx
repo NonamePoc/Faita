@@ -23,10 +23,11 @@ function UserDetails({ post }) {
   function isMyPost() {
     return post.title === userName ? true : false
   }
+  console.log(post)
 
   return (
     <div className='post__info'>
-      <Link to='/profile'>
+      <Link to={`/profile/${post.userId}`}>
         <img
           src='https://picsum.photos/id/34/200'
           alt='Profile'

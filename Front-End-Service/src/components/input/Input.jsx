@@ -1,15 +1,21 @@
 import React from 'react'
 import useInput from '../../hooks/useInput'
 import { Captcha, Emoji } from '../../components'
-import { useDispatch } from 'react-redux'
-import { createNewPost, fetchPosts } from '../../redux/asyncThunks/posts'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  createNewPost,
+  createComment,
+  fetchPosts,
+  getComments,
+} from '../../redux/asyncThunks/posts'
 
-function Input({ type }) {
+function Input({ type, postId }) {
   const [focused, setFocused] = React.useState(false)
   const [submitCount, setSubmitCount] = React.useState(1)
   const inputRef = React.useRef(null)
   const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
   const dispatch = useDispatch()
+  const userName = useSelector((state) => state.user.userName)
 
   const handleBlur = (event) => {
     if (event.relatedTarget === null && inputRef.current.value === '') {
@@ -25,7 +31,9 @@ function Input({ type }) {
         ? dispatch(createNewPost({ content: value })).then(() =>
             dispatch(fetchPosts())
           )
-        : console.log('create comment')
+        : dispatch(createComment({ content: value, postId })).then(
+            (res) => res && dispatch(getComments(postId))
+          )
       resetValue()
     }
     setSubmitCount(submitCount + 1)
@@ -50,7 +58,7 @@ function Input({ type }) {
           src='https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?fit=476%2C280&ssl=1'
           alt='user avatar'
         />
-        <h1 className='input__name'>ProfileName_001</h1>
+        <h1 className='input__name'>{userName}</h1>
       </div>
       <textarea
         ref={inputRef}

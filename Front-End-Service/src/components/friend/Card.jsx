@@ -1,3 +1,4 @@
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,32 +12,53 @@ import {
   joinToRoom,
 } from '../../redux/asyncThunks/chats'
 import { Link } from 'react-router-dom'
+import { cancelRequest } from '../../redux/asyncThunks/friends'
+import { fetchSentRequests } from '../../redux/asyncThunks/friends'
 
-function Card({ friend }) {
+function Card({ friend, type }) {
   const { isOpen, togglePopup } = usePopup()
+  const [textOption, setTextOption] = React.useState('')
   const user = useSelector((state) => state.user)
   const chats = useSelector((state) => state.chats.rooms)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const onClickRemove = (user) => {
-    dispatch(removeFromFriends(user)).then(() => dispatch(fetchFriends(user)))
+  React.useEffect(() => {
+    type === 'friend'
+      ? setTextOption('Remove from friends')
+      : setTextOption('Cancel request')
+  }, [type])
+
+  const onClickOption = (userId) => {
+    type === 'friend'
+      ? dispatch(removeFromFriends(userId)).then(() => dispatch(fetchFriends()))
+      : dispatch(cancelRequest(userId)).then(() =>
+          dispatch(fetchSentRequests())
+        )
   }
 
   const onClickChat = (friend) => {
     const room = findCurrentRoom(chats)
-    /* if (room) {
-       navigate(`/chat/${room?.id}`) 
-    } else { */
-    dispatch(createChatRoom(`${user.userName}, ${friend.userName}`)).then(
-      dispatch(fetchRooms(user.id)).then(
-        dispatch(joinToRoom(friend.id, findCurrentRoom(chats).id))
-          .then
-          /* navigate(`/chat/${room.id}`) */
-          ()
+    if (room) {
+      navigate(`/chat/${room.id}`)
+    } else {
+      dispatch(createChatRoom(`${user.userName}, ${friend.userName}`)).then(
+        (res) => {
+          res.payload.status === 200 &&
+            dispatch(fetchRooms(user.id)).then((res) => {
+              dispatch(
+                joinToRoom({
+                  userId: friend.id,
+                  chatRoomId: findCurrentRoom(chats).id,
+                }).then(
+                  (res) =>
+                    res.payload.status === 200 && navigate(`/chat/${room.id}`)
+                )
+              )
+            })
+        }
       )
-    )
-    /*  } */
+    }
   }
 
   const findCurrentRoom = (rooms) => {
@@ -78,11 +100,7 @@ function Card({ friend }) {
         </defs>
       </svg>
       <ul className={`pop popup popup__friendCard ${isOpen ? 'open' : ''}`}>
-        <li
-          onClick={() => {
-            onClickRemove(friend.id)
-          }}
-        >
+        <li onClick={() => onClickOption(friend.id)}>
           <svg
             width='24'
             height='24'
@@ -106,7 +124,7 @@ function Card({ friend }) {
               </clipPath>
             </defs>
           </svg>
-          Remove friend
+          {textOption}
         </li>
       </ul>
       <img
