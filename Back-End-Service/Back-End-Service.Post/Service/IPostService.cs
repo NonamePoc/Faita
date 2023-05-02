@@ -1,5 +1,4 @@
 using Back_End_Service.Identity.Entities;
-using Back_End_Service.Post.Model;
 
 public interface IPostService
 {
@@ -11,7 +10,7 @@ public interface IPostService
 
     Task<Posts> EditPost(EditPostModel model);
 
-    PostWithUserModel GetPost(string getPost);
+    object GetPost(string getPost);
 
     Task<List<object>> GetPostsByUser(string UserName);
     

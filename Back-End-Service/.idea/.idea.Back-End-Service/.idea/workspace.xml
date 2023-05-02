@@ -13,7 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/PostWithUserDetailsModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/UserPostModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/PostWithUserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/PostWithUserModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
     </list>
@@ -51,8 +54,8 @@
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/IPostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/IPostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -193,7 +196,8 @@
       <workItem from="1683027851481" duration="1430000" />
       <workItem from="1683029628192" duration="311000" />
       <workItem from="1683032163026" duration="1401000" />
-      <workItem from="1683034609136" duration="848000" />
+      <workItem from="1683034609136" duration="1104000" />
+      <workItem from="1683039162859" duration="2117000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -349,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683033569585</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix">
+      <created>1683035705245</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1683035705245</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +410,8 @@
     <MESSAGE value="Fix micro bag UserId ,update UserController.cs" />
     <MESSAGE value="v2 fix problem" />
     <MESSAGE value="Fix get method PostService.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix get method PostService.cs" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -432,13 +444,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs</url>
-          <line>304</line>
+          <line>312</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Post\Service\PostService.cs" initialLine="277" containingFunctionPresentation="Method 'GetRepostsByUser'">
             <startOffsets>
-              <option value="7865" />
+              <option value="8069" />
             </startOffsets>
             <endOffsets>
-              <option value="7866" />
+              <option value="8070" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
