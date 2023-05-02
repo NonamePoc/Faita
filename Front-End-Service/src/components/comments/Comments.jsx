@@ -1,10 +1,7 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import Block from './Block'
 
-function Comments({ post, comments }) {
-  const dispatch = useDispatch()
-
+function Comments({ comments }) {
   return (
     <div className='commentsList'>
       {comments.map((comment) => (

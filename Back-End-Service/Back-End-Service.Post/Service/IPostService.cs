@@ -1,4 +1,5 @@
 using Back_End_Service.Identity.Entities;
+using Back_End_Service.Post.Model;
 
 public interface IPostService
 {
@@ -12,7 +13,7 @@ public interface IPostService
 
     Posts GetPost(string getPost);
 
-    Task<List<Posts>> GetPosts(string UserId);
+    Task<List<PostWithUserModel>>  GetPosts(string UserId);
     
 
     Task<PostLike> AddLike(AddLikeModel model,string UserId);
