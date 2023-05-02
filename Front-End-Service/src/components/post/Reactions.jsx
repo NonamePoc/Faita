@@ -13,6 +13,9 @@ function Reactions({ post }) {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const userId = useSelector((state) => state.user.id)
+  const commentsLoaded = useSelector((state) => state.posts.commentsLoaded)
+  const likesLoaded = useSelector((state) => state.posts.likesLoaded)
+  const sharesLoaded = useSelector((state) => state.posts.sharesLoaded)
   const [likes, setLikes] = React.useState([])
   const [likeActive, setLikeActive] = React.useState(false)
   const [likeByUser, setLikeByUser] = React.useState({})
@@ -22,10 +25,10 @@ function Reactions({ post }) {
   const [shareByUser, setShareByUser] = React.useState({})
 
   React.useEffect(() => {
-    dispatch(getLikes(post.id)).then((res) => setLikes(res.payload))
-    dispatch(getComments(post.id)).then((res) => setComments(res.payload))
-    dispatch(getShares(post.id)).then((res) => setShares(res.payload))
-  }, [dispatch, post.id])
+    dispatch(getLikes(post.postId)).then((res) => setLikes(res.payload))
+    dispatch(getComments(post.postId)).then((res) => setComments(res.payload))
+    dispatch(getShares(post.postId)).then((res) => setShares(res.payload))
+  }, [dispatch, post.postId])
 
   React.useEffect(() => {
     setLikeByUser(likes.find((like) => like.userId === userId))
@@ -38,19 +41,19 @@ function Reactions({ post }) {
   }, [likeByUser, shareByUser])
 
   const handleLike = () => {
-    dispatch(putLike(post.id)).then(() => {
-      dispatch(getLikes(post.id)).then((res) => setLikes(res.payload))
+    dispatch(putLike(post.postId)).then(() => {
+      dispatch(getLikes(post.postId)).then((res) => setLikes(res.payload))
       setLikeActive(!likeActive)
     })
   }
 
   const handleComment = () => {
-    navigate(`/post/${post.id}`)
+    navigate(`/post/${post.postId}`)
   }
 
   const handleShare = () => {
-    dispatch(sharePost(post.id)).then(() => {
-      dispatch(getShares(post.id)).then((res) => setShares(res.payload))
+    dispatch(sharePost(post.postId)).then(() => {
+      dispatch(getShares(post.postId)).then((res) => setShares(res.payload))
       setShareActive(!shareActive)
     })
   }
@@ -78,7 +81,7 @@ function Reactions({ post }) {
             </clipPath>
           </defs>
         </svg>
-        <p>{likes.length}</p>
+        <p>{likesLoaded ? likes.length : 0}</p>
       </li>
       <li onClick={handleComment}>
         <svg
@@ -101,7 +104,7 @@ function Reactions({ post }) {
             </clipPath>
           </defs>
         </svg>
-        <p>{comments.length}</p>
+        <p>{commentsLoaded ? comments.length : 0}</p>
       </li>
       <li onClick={handleShare}>
         <svg
@@ -141,7 +144,7 @@ function Reactions({ post }) {
             strokeLinejoin='round'
           />
         </svg>
-        <p>{shares.length}</p>
+        <p>{sharesLoaded ? shares.length : 0}</p>
       </li>
     </ul>
   )

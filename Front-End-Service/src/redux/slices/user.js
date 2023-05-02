@@ -20,7 +20,7 @@ const user = createSlice({
     userName: '',
     password: '',
     email: '',
-    image: '',
+    avatar: '',
     isAuth: false,
     isOnline: navigator.onLine,
     userLoaded: false,
@@ -46,7 +46,7 @@ const user = createSlice({
       state.firstName = action.payload.firstName
       state.lastName = action.payload.lastName
       state.patronymic = action.payload.patronymic
-      state.image = action.payload.image
+      state.avatar = action.payload.avatars
       state.friends = action.payload.friends
       state.rooms = action.payload.rooms
       state.isAuth = true
@@ -69,7 +69,7 @@ const user = createSlice({
     })
     builder.addCase(changeProfileImage.fulfilled, (state, action) => {
       alert('Profile image changed successfully!')
-      state.image = action.payload
+      state.avatar = action.payload
     })
   },
 })

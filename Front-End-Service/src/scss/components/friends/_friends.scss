@@ -33,6 +33,16 @@
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+  .search_avatar {
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: $main-border-radius;
+    -webkit-border-radius: $main-border-radius;
+    -moz-border-radius: $main-border-radius;
+    -ms-border-radius: $main-border-radius;
+    -o-border-radius: $main-border-radius;
+  }
   ul {
     display: grid;
     gap: 0.5rem;

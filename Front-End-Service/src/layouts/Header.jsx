@@ -1,18 +1,17 @@
 import React from 'react'
 import ThemeSwitcher from '../components/switcher/ThemeSwitcher'
 import { logo } from '../assets'
+import { useSelector } from 'react-redux'
+import { setAvatar } from '../utils/setAvatar'
 
 function Header() {
+  const userAvatar = useSelector((state) => state.user.avatar)
   return (
     <header className='header'>
       <img width='115' height='50' src={logo} alt='Faita logo' />
       <div className='flex'>
         <ThemeSwitcher />
-        <img
-          className='avatar'
-          src='https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?fit=476%2C280&ssl=1'
-          alt='avatar'
-        />
+        <img className='avatar' src={setAvatar(userAvatar)} alt='avatar' />
       </div>
     </header>
   )

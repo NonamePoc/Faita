@@ -25,7 +25,7 @@ function PostDetails() {
       <BackHeader />
       <Post post={post} />
       <section className='card'>
-        <Input type={false} postId={post.id} />
+        <Input type={false} postId={postId} />
         {loadedComs ? <Comments post={post} comments={comments} /> : null}
       </section>
     </main>

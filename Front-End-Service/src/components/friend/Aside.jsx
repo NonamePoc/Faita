@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
+import { setAvatar } from '../../utils/setAvatar'
 
 function Aside({ friend }) {
   const { isOpen, togglePopup } = usePopup()
@@ -83,7 +84,7 @@ function Aside({ friend }) {
         <figure className='friend__figure'>
           <img
             className='friend__avatar'
-            src='https://picsum.photos/id/235/500'
+            src={setAvatar(friend.avatar)}
             alt='friend'
           />
           <figcaption className='friend__name'>Friend Username</figcaption>

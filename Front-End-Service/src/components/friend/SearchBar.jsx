@@ -6,6 +6,7 @@ import {
   addToFriends,
   fetchSentRequests,
 } from '../../redux/asyncThunks/friends'
+import { setAvatar } from '../../utils/setAvatar'
 
 function SearchBar() {
   const { isOpen, togglePopup } = usePopup()
@@ -76,7 +77,11 @@ function SearchBar() {
         <ul>
           {users.map((user, index) => (
             <li key={index}>
-              <img src='https://picsum.photos/id/235/30' alt='User avatar' />
+              <img
+                className='search_avatar'
+                src={setAvatar(user.avatar)}
+                alt='User avatar'
+              />
               <p>{user.userName}</p>
               <svg
                 onClick={togglePopup}

@@ -6,6 +6,7 @@ import {
   fetchReceivedRequests,
   declineRequest,
 } from '../../redux/asyncThunks/friends'
+import { setAvatar } from '../../utils/setAvatar'
 
 function Request({ user }) {
   const dispatch = useDispatch()
@@ -26,7 +27,7 @@ function Request({ user }) {
         <figure className='friend__figure'>
           <img
             className='friend__avatar'
-            src='https://picsum.photos/id/235/500'
+            src={setAvatar(user.avatar)}
             alt='friend'
           />
           <figcaption className='friend__name'>{user.userName}</figcaption>

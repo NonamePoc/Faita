@@ -14,6 +14,7 @@ import {
 import { Link } from 'react-router-dom'
 import { cancelRequest } from '../../redux/asyncThunks/friends'
 import { fetchSentRequests } from '../../redux/asyncThunks/friends'
+import { setAvatar } from '../../utils/setAvatar'
 
 function Card({ friend, type }) {
   const { isOpen, togglePopup } = usePopup()
@@ -128,8 +129,8 @@ function Card({ friend, type }) {
         </li>
       </ul>
       <img
-        className='friendCard__image'
-        src='https://picsum.photos/id/235/800'
+        className='friendCard__image avatar'
+        src={setAvatar(friend.avatar)}
         alt='avatar'
       />
       <div className='friendCard__info'>

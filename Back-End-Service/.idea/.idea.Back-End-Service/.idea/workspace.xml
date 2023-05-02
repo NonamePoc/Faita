@@ -14,7 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
     </list>
@@ -185,7 +184,8 @@
       <workItem from="1683010853908" duration="1969000" />
       <workItem from="1683027851481" duration="1430000" />
       <workItem from="1683029628192" duration="311000" />
-      <workItem from="1683032163026" duration="1247000" />
+      <workItem from="1683032163026" duration="1401000" />
+      <workItem from="1683034609136" duration="848000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -334,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683029809876</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fix get method PostService.cs">
+      <created>1683033569585</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1683033569585</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +390,8 @@
     <MESSAGE value="Fix Delete method,fix bad name Get method" />
     <MESSAGE value="Fix micro bag UserId ,update UserController.cs" />
     <MESSAGE value="v2 fix problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2 fix problem" />
+    <MESSAGE value="Fix get method PostService.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix get method PostService.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -402,7 +410,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs</url>
-          <line>293</line>
+          <line>304</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Post\Service\PostService.cs" initialLine="277" containingFunctionPresentation="Method 'GetRepostsByUser'" />
           <option name="timeStamp" value="18" />
         </line-breakpoint>

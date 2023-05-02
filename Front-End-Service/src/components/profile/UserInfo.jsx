@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { setAvatar } from '../../utils/setAvatar'
 
 function UserInfo({ user }) {
   const currentUser = useSelector((state) => state.user)
@@ -8,8 +9,8 @@ function UserInfo({ user }) {
     <section className='card profile'>
       <div className='profile__topColor' />
       <img
-        className='profile__photo'
-        src='https://picsum.photos/200'
+        className='profile__photo avatar'
+        src={setAvatar(user.avatar)}
         alt='avatar'
       />
       <div className='profile__info'>

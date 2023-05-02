@@ -159,6 +159,10 @@ body {
   gap: 0.3rem;
 }
 
+.avatar {
+  object-fit: cover;
+}
+
 .modal-overlay {
   z-index: -1;
   position: fixed;

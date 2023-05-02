@@ -12,18 +12,17 @@ function UserDetails({ post }) {
   const userName = useSelector((state) => state.user.userName)
 
   const navigateTo = () => {
-    navigate(`/post/${post.id}`)
+    navigate(`/post/${post.postId}`)
   }
 
   const deletePost = () => {
-    dispatch(deleteUserPost(post.id))
+    dispatch(deleteUserPost(post.postId))
     dispatch(fetchPosts())
   }
 
   function isMyPost() {
     return post.title === userName ? true : false
   }
-  console.log(post)
 
   return (
     <div className='post__info'>

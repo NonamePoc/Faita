@@ -127,20 +127,31 @@ public class PostService : IPostService
     }
 
 
-    public async Task<List<PostWithUserModel>> GetPostsByUser(string userName)
+    public async Task<List<object>> GetPostsByUser(string userName)
     {
         var posts = await _context.Post
             .Include(p => p.User)
             .Where(p => p.User.UserName == userName)
             .ToListAsync();
 
-        return posts.Select(p => new PostWithUserModel
-        {
-            Post = p,
-            User = p.User
-        }).ToList();
-    }
+        var user = posts.FirstOrDefault()?.User;
 
+        return posts.Select(p => new
+        {
+            PostId = p.Id,
+            Title = p.Title,
+            Content = p.Content,
+            CreatedAt = p.CreatedAt,
+            User = user == null
+                ? null
+                : new
+                {
+                    UserId = user.Id,
+                    UserName = user.UserName,
+                    Avatar = user.Avatar
+                }
+        }).ToList<object>();
+    }
 
 
     public async Task<PostLike> AddLike(AddLikeModel model, string userId)
@@ -258,7 +269,7 @@ public class PostService : IPostService
             .Include(c => c.User)
             .ToList();
 
-        
+
         return comments;
     }
 

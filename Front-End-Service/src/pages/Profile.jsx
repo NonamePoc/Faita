@@ -20,7 +20,7 @@ function Profile() {
     <main>
       <UserInfo user={user} />
       <ProfilesFriendList friends={user.friends} />
-      <PostList userName={user.userName} />
+      <PostList userName={userName} />
     </main>
   )
 }

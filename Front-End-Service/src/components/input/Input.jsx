@@ -9,14 +9,15 @@ import {
   getComments,
 } from '../../redux/asyncThunks/posts'
 import FileClip from './FileClip'
+import { setAvatar } from '../../utils/setAvatar'
 
 function Input({ type, postId }) {
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.user)
+  const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
   const [focused, setFocused] = React.useState(false)
   const [submitCount, setSubmitCount] = React.useState(1)
   const inputRef = React.useRef(null)
-  const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
-  const dispatch = useDispatch()
-  const userName = useSelector((state) => state.user.userName)
 
   const handleBlur = (event) => {
     if (event.relatedTarget === null && inputRef.current.value === '') {
@@ -56,10 +57,10 @@ function Input({ type, postId }) {
       <div className='input__info'>
         <img
           className={`input__avatar ${type ? 'sendPost' : ''}`}
-          src='https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?fit=476%2C280&ssl=1'
+          src={setAvatar(user.avatar)}
           alt='user avatar'
         />
-        <h1 className='input__name'>{userName}</h1>
+        <h1 className='input__name'>{user.userName}</h1>
       </div>
       <textarea
         ref={inputRef}

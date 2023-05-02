@@ -7,20 +7,20 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 function PostList({ userName }) {
   const dispatch = useDispatch()
-  const posts = useSelector((state) => state.posts.userPosts)
+  const [posts, setPosts] = React.useState([])
   const loaded = useSelector((state) => state.posts.loaded)
 
   React.useEffect(() => {
-    dispatch(fetchPosts(userName))
-  }, [])
+    dispatch(fetchPosts(userName)).then((res) => setPosts(res.payload))
+  }, [dispatch, userName])
 
   if (!loaded) return <Skeleton count={2} height={150} className='post' />
 
   return (
-    posts?.length > 0 &&
+    posts.length > 0 &&
     [...posts]
       .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))
-      .map((post) => <Post key={post.id} post={post} />)
+      .map((post) => <Post key={post.postId} post={post} />)
   )
 }
 

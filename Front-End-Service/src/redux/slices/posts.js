@@ -5,6 +5,8 @@ import {
   fetchPostById,
   fetchPosts,
   getComments,
+  getLikes,
+  getShares,
 } from '../asyncThunks/posts'
 
 const posts = createSlice({
@@ -13,6 +15,8 @@ const posts = createSlice({
     userPosts: [],
     loaded: false,
     commentsLoaded: false,
+    likesLoaded: false,
+    sharesLoaded: false,
     error: null,
   },
   reducers: {
@@ -45,6 +49,18 @@ const posts = createSlice({
     })
     builder.addCase(getComments.fulfilled, (state) => {
       state.commentsLoaded = true
+    })
+    builder.addCase(getLikes.pending, (state) => {
+      state.likesLoaded = false
+    })
+    builder.addCase(getLikes.fulfilled, (state) => {
+      state.likesLoaded = true
+    })
+    builder.addCase(getShares.pending, (state) => {
+      state.sharesLoaded = false
+    })
+    builder.addCase(getShares.fulfilled, (state) => {
+      state.sharesLoaded = true
     })
   },
 })

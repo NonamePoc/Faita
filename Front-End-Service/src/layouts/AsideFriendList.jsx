@@ -36,11 +36,11 @@ const AsideFriendList = React.memo(function AsideFriendList() {
         </>
       )}
 
-      <h1 className='friendsTitle'>Offline Friends</h1>
+      {/* <h1 className='friendsTitle'>Offline Friends</h1>
       <ul className='card friends'>
         <Friend />
         <Friend />
-      </ul>
+      </ul> */}
     </aside>
   )
 })
