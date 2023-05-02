@@ -107,7 +107,7 @@ public class PostController : ControllerBase
 
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-        var comment = _postService.AddComment(model,user);
+        var comment = _postService.AddComment(model, user);
 
         return Ok(comment);
     }
@@ -127,6 +127,7 @@ public class PostController : ControllerBase
         var comment = _postService.EditComment(model);
         return Ok(comment);
     }
+
 
     [Authorize]
     [HttpGet("getComment={getComments}")]
@@ -169,6 +170,7 @@ public class PostController : ControllerBase
         {
             return BadRequest(new { message = "User not found." });
         }
+
         var comments = _postService.GetCommentsByUser(user);
         return Ok(comments);
     }
@@ -180,10 +182,9 @@ public class PostController : ControllerBase
         var reposts = _postService.GetReposts(getReposts);
         return Ok(reposts);
     }
-    
+
     [Authorize]
     [HttpGet("getRepostsByUser")]
-    
     public IActionResult GetRepostsByUser()
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
@@ -192,6 +193,7 @@ public class PostController : ControllerBase
         {
             return BadRequest(new { message = "User not found." });
         }
+
         var reposts = _postService.GetRepostsByUser(user);
         return Ok(reposts);
     }

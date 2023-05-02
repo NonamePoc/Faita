@@ -1,6 +1,7 @@
 using System.Reflection;
 using Back_End_Service.Identity.Context;
 using Back_End_Service.Identity.Entities;
+using Back_End_Service.Post.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -109,7 +110,9 @@ public class PostService : IPostService
 
     public Posts GetPost(string getPost)
     {
-        var post = _context.Post.FirstOrDefault(x => x.Id == getPost);
+        var post = _context.Post
+            .Include(p => p.User)
+            .FirstOrDefault(p => p.Id == getPost);
 
         if (post == null)
         {
@@ -119,11 +122,18 @@ public class PostService : IPostService
         return post;
     }
 
-    public async Task<List<Posts>> GetPosts(string userId)
+    public async Task<List<PostWithUserModel>> GetPosts(string userId)
     {
-        var posts = _context.Post.Where(x => x.UserId == userId).ToList();
+        var posts = await _context.Post
+            .Include(p => p.User)
+            .Where(p => p.UserId == userId)
+            .ToListAsync();
 
-        return posts;
+        return posts.Select(p => new PostWithUserModel
+        {
+            Post = p,
+            User = p.User
+        }).ToList();
     }
 
 
@@ -237,7 +247,10 @@ public class PostService : IPostService
 
     public List<Comment> GetComments(string getComments)
     {
-        var comments = _context.Comment.Where(x => x.PostId == getComments).ToList();
+        var comments = _context.Comment
+            .Where(c => c.PostId == getComments)
+            .Include(c => c.User)
+            .ToList();
 
         return comments;
     }
