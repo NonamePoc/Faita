@@ -53,34 +53,20 @@ public class PostController : ControllerBase
         return Ok();
     }
 
-    [Authorize]
+    [AllowAnonymous]
     [HttpGet("getPost={getPost}")]
     public IActionResult GetPost(string getPost)
     {
-        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-
-        if (user == null)
-        {
-            return BadRequest(new { message = "User not found." });
-        }
-
         var post = _postService.GetPost(getPost);
         return Ok(post);
     }
 
 
-    [Authorize]
-    [HttpGet("getPosts")]
-    public async Task<IActionResult> GetPosts()
+    [AllowAnonymous]
+    [HttpGet("getPostsByUser={getPostsByUser}")]
+    public async Task<IActionResult> GetPosts(string getPostsByUser)
     {
-        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-
-        if (user == null)
-        {
-            return BadRequest(new { message = "User not found." });
-        }
-
-        var posts = await _postService.GetPosts(user);
+        var posts = await _postService.GetPostsByUser(getPostsByUser);
         return Ok(posts);
     }
 

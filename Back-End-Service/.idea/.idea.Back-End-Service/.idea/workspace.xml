@@ -12,7 +12,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="" />
+    <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,9 +51,13 @@
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Chat/Service/IMessage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Identity/Models/AuthenticateResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Identity/Models/AuthenticateResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/IPostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/PostService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/PostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -187,6 +196,8 @@
       <workItem from="1682965299270" duration="2220000" />
       <workItem from="1683010853908" duration="1969000" />
       <workItem from="1683027851481" duration="1430000" />
+      <workItem from="1683029628192" duration="311000" />
+      <workItem from="1683032163026" duration="1247000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -328,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682960915508</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="v2 fix problem">
+      <created>1683029809876</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1683029809876</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +394,8 @@
     <MESSAGE value="Fix mirco bag FriendService.cs" />
     <MESSAGE value="Fix Delete method,fix bad name Get method" />
     <MESSAGE value="Fix micro bag UserId ,update UserController.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix micro bag UserId ,update UserController.cs" />
+    <MESSAGE value="v2 fix problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2 fix problem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -409,13 +428,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs</url>
-          <line>286</line>
+          <line>293</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Post\Service\PostService.cs" initialLine="277" containingFunctionPresentation="Method 'GetRepostsByUser'">
             <startOffsets>
-              <option value="7370" />
+              <option value="7499" />
             </startOffsets>
             <endOffsets>
-              <option value="7371" />
+              <option value="7500" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
@@ -445,32 +464,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs</url>
-          <line>112</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Post\Service\PostService.cs" initialLine="112" containingFunctionPresentation="Method 'GetPost'">
-            <startOffsets>
-              <option value="3080" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3189" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs</url>
-          <line>59</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\PostController.cs" initialLine="59" containingFunctionPresentation="Method 'GetPost'">
-            <startOffsets>
-              <option value="1472" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1538" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
