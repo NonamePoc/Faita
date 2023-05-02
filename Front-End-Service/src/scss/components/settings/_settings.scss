@@ -1,18 +1,4 @@
 .stngs {
-  .modal {
-    top: 30%;
-    left: 40%;
-    &-header {
-      display: flex;
-      justify-content: space-between;
-    }
-    &-input {
-      border: 1px solid #cccccc2c;
-      border-radius: 5px;
-      text-align: start;
-      margin-bottom: 0.5rem;
-    }
-  }
   .card {
     padding-bottom: 0.6rem;
     margin-bottom: 1rem;

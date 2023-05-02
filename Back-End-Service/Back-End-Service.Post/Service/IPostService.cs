@@ -11,9 +11,9 @@ public interface IPostService
 
     Task<Posts> EditPost(EditPostModel model);
 
-    Posts GetPost(string getPost);
+    PostWithUserModel GetPost(string getPost);
 
-    Task<List<PostWithUserModel>>  GetPosts(string UserId);
+    Task<List<PostWithUserModel>>  GetPostsByUser(string UserName);
     
 
     Task<PostLike> AddLike(AddLikeModel model,string UserId);

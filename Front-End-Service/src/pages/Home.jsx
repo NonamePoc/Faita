@@ -1,11 +1,13 @@
 import React from 'react'
-import { PostList, Input } from '../components'
+import { PostList, Input, FileModal } from '../components'
+import { useSelector } from 'react-redux'
 
 function Home() {
   return (
     <main>
+      <FileModal />
       <Input type={true} />
-      <PostList />
+      {/* <PostList /> */}
     </main>
   )
 }

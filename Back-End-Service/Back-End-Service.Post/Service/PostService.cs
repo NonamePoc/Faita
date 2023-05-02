@@ -108,35 +108,39 @@ public class PostService : IPostService
     }
 
 
-    public Posts GetPost(string getPost)
+    public PostWithUserModel GetPost(string postId)
     {
         var post = _context.Post
             .Include(p => p.User)
-            .FirstOrDefault(p => p.Id == getPost);
+            .FirstOrDefault(p => p.Id == postId);
 
-        
         if (post == null)
         {
             throw new Exception("Post not found");
         }
 
-        return post;
+        return new PostWithUserModel
+        {
+            Post = post,
+            User = post.User
+        };
     }
 
-    public async Task<List<PostWithUserModel>> GetPosts(string userId)
+
+    public async Task<List<PostWithUserModel>> GetPostsByUser(string userName)
     {
         var posts = await _context.Post
             .Include(p => p.User)
-            .Where(p => p.UserId == userId)
+            .Where(p => p.User.UserName == userName)
             .ToListAsync();
 
-        
         return posts.Select(p => new PostWithUserModel
         {
             Post = p,
             User = p.User
         }).ToList();
     }
+
 
 
     public async Task<PostLike> AddLike(AddLikeModel model, string userId)

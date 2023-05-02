@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 
 import theme from './theme'
+import modal from './modal'
 import user from './user'
 import friends from './friends'
 import chats from './chats'
@@ -9,6 +10,7 @@ import posts from './posts'
 
 const rootReducer = combineReducers({
   theme,
+  modal,
   user,
   friends,
   chats,

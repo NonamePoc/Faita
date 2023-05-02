@@ -8,6 +8,7 @@ import {
   fetchPosts,
   getComments,
 } from '../../redux/asyncThunks/posts'
+import FileClip from './FileClip'
 
 function Input({ type, postId }) {
   const [focused, setFocused] = React.useState(false)
@@ -75,6 +76,7 @@ function Input({ type, postId }) {
 
       <div className='input__btns'>
         <Emoji handleEmojiSelect={handleEmojiSelect} />
+        {type && <FileClip />}
         <button
           onClick={() => handleSendMessage(inputRef.current.value)}
           className='btn postIt'

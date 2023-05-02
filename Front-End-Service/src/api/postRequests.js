@@ -1,12 +1,8 @@
 import { instance } from './axios'
 
-export const getPostsByUser = async (token) => {
+export const getPostsByUser = async (userName) => {
   try {
-    const response = await instance.get(`post/getPosts`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+    const response = await instance.get(`post/getPostsByUser=${userName}`)
     return response
   } catch (error) {
     if (error.response.data.Errors) {

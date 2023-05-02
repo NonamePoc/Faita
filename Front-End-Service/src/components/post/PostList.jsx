@@ -5,13 +5,13 @@ import { fetchPosts } from '../../redux/asyncThunks/posts'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-function PostList() {
+function PostList({ userName }) {
   const dispatch = useDispatch()
   const posts = useSelector((state) => state.posts.userPosts)
   const loaded = useSelector((state) => state.posts.loaded)
 
   React.useEffect(() => {
-    dispatch(fetchPosts())
+    dispatch(fetchPosts(userName))
   }, [])
 
   if (!loaded) return <Skeleton count={2} height={150} className='post' />

@@ -28,6 +28,9 @@ const posts = createSlice({
       state.userPosts = action.payload
       state.loaded = true
     })
+    builder.addCase(fetchPosts.rejected, (state, action) => {
+      state.error = action.error.message
+    })
     builder.addCase(createNewPost.fulfilled, () => {})
     builder.addCase(createNewPost.rejected, (state, action) => {
       state.error = action.error.message
