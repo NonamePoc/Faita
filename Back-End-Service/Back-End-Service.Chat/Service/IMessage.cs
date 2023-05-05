@@ -8,10 +8,10 @@ public interface IMessage
 {
     Task SendMessage(SendMessageModel sendMessageModel, string userId);
     
-    Task CreateChatRoom(CreateChatRoomModel createChatRoomModel, string userId);
+    Task<ChatRoom> CreateChatRoom(CreateChatRoomModel createChatRoomModel, string userId);
     
     Task<ChatRoom> JoinChatRoom(JoinChatRoomModel joinChatRoomModel);
     
-    Task<List<object>> GetChatRooms(string UserId);
+    Task<List<GetChatRoomsModel>> GetChatRooms(string UserId);
     
 }

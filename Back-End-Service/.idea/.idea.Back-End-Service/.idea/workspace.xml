@@ -13,10 +13,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/PostWithUserDetailsModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/UserPostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomMessageModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomUserModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomsModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetComments.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetRepostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostsByUser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/PostWithUserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/PostWithUserModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/CreateChatRoomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/CreateChatRoomModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Back-End-Service.Publication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Back-End-Service.Publication.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
     </list>
@@ -55,8 +67,8 @@
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/IPostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/PostService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -197,7 +209,9 @@
       <workItem from="1683029628192" duration="311000" />
       <workItem from="1683032163026" duration="1401000" />
       <workItem from="1683034609136" duration="1104000" />
-      <workItem from="1683039162859" duration="2117000" />
+      <workItem from="1683039162859" duration="2371000" />
+      <workItem from="1683041933615" duration="1546000" />
+      <workItem from="1683217849476" duration="10978000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -360,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683035705245</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="delete useless file">
+      <created>1683041523141</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683041523141</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,49 +432,24 @@
     <MESSAGE value="v2 fix problem" />
     <MESSAGE value="Fix get method PostService.cs" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="delete useless file" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete useless file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs</url>
-          <line>67</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\MessageService.cs" initialLine="66" containingFunctionPresentation="Method 'JoinChatRoom'">
-            <startOffsets>
-              <option value="2075" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2076" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs</url>
-          <line>50</line>
+          <line>51</line>
           <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\PostController.cs" initialLine="50" containingFunctionPresentation="Method 'EditPost'">
             <startOffsets>
-              <option value="1284" />
+              <option value="1319" />
             </startOffsets>
             <endOffsets>
-              <option value="1285" />
+              <option value="1320" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs</url>
-          <line>312</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Post\Service\PostService.cs" initialLine="277" containingFunctionPresentation="Method 'GetRepostsByUser'">
-            <startOffsets>
-              <option value="8069" />
-            </startOffsets>
-            <endOffsets>
-              <option value="8070" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs</url>

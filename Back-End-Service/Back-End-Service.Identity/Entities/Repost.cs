@@ -7,4 +7,6 @@ public class Repost
     public Posts Posts { get; set; }
     public string UserId { get; set; }
     public User User { get; set; }
+    
+    public DateTime CreatedAt  { get; set; }
 }

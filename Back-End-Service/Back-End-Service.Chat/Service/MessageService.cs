@@ -49,19 +49,22 @@ public class MessageService : IMessage
         await _dataContext.SaveChangesAsync();
     }
 
-    public async Task CreateChatRoom(CreateChatRoomModel createChatRoomModel, string userId)
+    public async Task<ChatRoom> CreateChatRoom(CreateChatRoomModel createChatRoomModel, string userId)
     {
-        var user = await _userManager.FindByIdAsync(userId);
+        var  user = await _userManager.FindByIdAsync(userId);
+        var friend = await _userManager.FindByIdAsync(createChatRoomModel.FriendId);
 
         var chatRoom = new ChatRoom
         {
             Id = Guid.NewGuid().ToString(),
             Name = createChatRoomModel.Name,
-            Users = new List<User> { user }
+            Users = new List<User> { user, friend }
         };
 
         _dataContext.ChatRoom.Add(chatRoom);
         await _dataContext.SaveChangesAsync();
+
+        return chatRoom;
     }
 
     public async Task<ChatRoom> JoinChatRoom(JoinChatRoomModel joinChatRoomModel)
@@ -69,7 +72,6 @@ public class MessageService : IMessage
         var chatRoom = await _dataContext.ChatRoom
             .Include(cr => cr.Users)
             .FirstOrDefaultAsync(cr => cr.Id == joinChatRoomModel.ChatRoomId);
-
 
         if (chatRoom == null)
         {
@@ -87,7 +89,7 @@ public class MessageService : IMessage
         return chatRoom;
     }
 
-    public async Task<List<object>> GetChatRooms(string UserId)
+    public async Task<List<GetChatRoomsModel>> GetChatRooms(string UserId)
     {
         var user = await _userManager.FindByIdAsync(UserId);
 
@@ -97,26 +99,25 @@ public class MessageService : IMessage
             .Where(c => c.Users.Contains(user))
             .ToListAsync();
 
-        var result = chatRooms.Select(c => new
+        var response = chatRooms.Select(c => new GetChatRoomsModel
         {
-            Id = c.Id,
-            Name = c.Name,
-            Users = c.Users.Select(u => new
+            ChatId = c.Id,
+            ChatName = c.Name,
+            Users = c.Users.Select(u => new GetChatRoomUserModel
             {
-                Id = u.Id,
+                UserId = u.Id,
                 UserName = u.UserName,
-                
-            }),
-            Messages = c.Messages.Select(m => new
+                Avatar = u.Avatar
+            }).ToList(),
+            Messages = c.Messages.Select(m => new GetChatRoomMessageModel
             {
-                Id = m.Id,
+                MessageId = m.Id,
                 Text = m.Text,
                 SenderId = m.SenderId,
-                ChatRoomId = m.ChatRoomId,
-                CreatedAt = m.CreatedAt 
-            })
-        }).ToList<object>();
+                CreatedAt = m.CreatedAt
+            }).ToList()
+        }).ToList();
 
-        return result;
+        return response;
     }
 }

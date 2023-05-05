@@ -157,25 +157,24 @@ public class UserService : IUserService
         }
     }
 
-    public Task AddAvatarAsync(AddAvatarModel addAvatar, User user)
+    public async Task AddAvatarAsync(AddAvatarModel addAvatar, User user)
     {
         if (user == null)
         {
             throw new Exception("User not found");
         }
 
+        // Add additional checks for image URL, e.g. file type, file size, etc.
+
         user.Avatar = addAvatar.Avatar;
 
-        var result = _userManager.UpdateAsync(user);
+        var result = await _userManager.UpdateAsync(user);
 
-        if (!result.IsCompletedSuccessfully)
+        if (!result.Succeeded)
         {
             throw new AggregateException(
-                result.Exception?.InnerExceptions.Select(s => new Exception(s.Message)) ??
-                throw new InvalidOperationException());
+                result.Errors.Select(s => new Exception(s.Description)));
         }
-
-        return result;
     }
 
 

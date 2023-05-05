@@ -1,6 +1,8 @@
 using System.Reflection;
+using Back_End_Service.Chat.Models;
 using Back_End_Service.Identity.Context;
 using Back_End_Service.Identity.Entities;
+using Back_End_Service.Post.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,7 +47,8 @@ public class PostService : IPostService
             Id = Guid.NewGuid().ToString(),
             PostId = model.PostId,
             UserId = UserId,
-            Posts = _context.Post.FirstOrDefault(x => x.Id == model.PostId)
+            Posts = _context.Post.FirstOrDefault(x => x.Id == model.PostId),
+            CreatedAt = DateTime.Now
         };
 
         _context.Repost.Add(repost);
@@ -93,21 +96,22 @@ public class PostService : IPostService
         _context.Post.Update(post);
         await _context.SaveChangesAsync();
 
-        var posts = new Posts // создаем объект типа Posts и заполняем его свойства из объекта типа Post
+        var respose = new Posts // создаем объект типа Posts и заполняем его свойства из объекта типа Post
         {
             Id = post.Id,
             Title = post.Title,
             Content = post.Content,
             ImageUrl = post.ImageUrl,
             VideoUrl = post.VideoUrl,
-            AudioUrl = post.AudioUrl
+            AudioUrl = post.AudioUrl,
+            CreatedAt = post.CreatedAt,
         };
 
-        return posts;
+        return respose;
     }
 
 
-    public object GetPost(string postId)
+    public async Task<GetPostModel> GetPost(string postId)
     {
         var post = _context.Post
             .Include(p => p.User)
@@ -118,47 +122,53 @@ public class PostService : IPostService
             throw new Exception("Post not found");
         }
 
-        return new
+        var response = new GetPostModel
         {
-            PostId = post.Id,
+            PostId = postId,
             Title = post.Title,
             Content = post.Content,
             CreatedAt = post.CreatedAt,
-            User = new
-            {
-                UserId = post.User.Id,
-                UserName = post.User.UserName,
-                Avatar = post.User.Avatar
-            }
+            UserId = post.User.Id,
+            UserName = post.User.UserName,
+            Avatar = post.User.Avatar,
+            ImageUrl = post.ImageUrl,
+            VideoUrl = post.VideoUrl,
+            AudioUrl = post.AudioUrl
         };
+
+        return response;
     }
 
 
-    public async Task<List<object>> GetPostsByUser(string userName)
+    public async Task<List<GetPostsByUser>> GetPostsByUser(string userName, int limit = 25, int offset = 0)
     {
         var posts = await _context.Post
             .Include(p => p.User)
             .Where(p => p.User.UserName == userName)
+            .OrderByDescending(p => p.CreatedAt)
+            .Skip(offset)
+            .Take(limit)
             .ToListAsync();
 
         var user = posts.FirstOrDefault()?.User;
 
-        return posts.Select(p => new
+        var response = posts.Select(p => new GetPostsByUser
         {
             PostId = p.Id,
             Title = p.Title,
             Content = p.Content,
             CreatedAt = p.CreatedAt,
-            User = user == null
-                ? null
-                : new
-                {
-                    UserId = user.Id,
-                    UserName = user.UserName,
-                    Avatar = user.Avatar
-                }
-        }).ToList<object>();
+            UserId = p.User.Id,
+            UserName = p.User.UserName,
+            Avatar = p.User.Avatar,
+            ImageUrl = p.ImageUrl,
+            VideoUrl = p.VideoUrl,
+            AudioUrl = p.AudioUrl
+        }).ToList();
+
+        return response;
     }
+
 
 
     public async Task<PostLike> AddLike(AddLikeModel model, string userId)
@@ -200,20 +210,6 @@ public class PostService : IPostService
         return like;
     }
 
-    public Task RemoveLike(string removeLike)
-    {
-        var like = _context.PostLike.FirstOrDefault(x => x.Id == removeLike);
-
-        if (like == null)
-        {
-            throw new Exception("Like not found");
-        }
-
-        _context.PostLike.Remove(like);
-        _context.SaveChanges();
-
-        return Task.CompletedTask;
-    }
 
     public Comment AddComment(AddCommentModel model, string userId)
     {
@@ -269,16 +265,27 @@ public class PostService : IPostService
         return comment;
     }
 
-    public List<Comment> GetComments(string getComments)
+    public async Task<List<GetComments>> GetComments(string postId)
     {
-        var comments = _context.Comment
-            .Where(c => c.PostId == getComments)
+        var comments = await _context.Comment
             .Include(c => c.User)
-            .ToList();
+            .Where(c => c.PostId == postId)
+            .ToListAsync();
 
+        var response = comments.Select(c => new GetComments
+        {
+            CommentId = c.Id,
+            PostId = c.PostId,
+            UserId = c.UserId,
+            UserName = c.User.UserName,
+            Avatar = c.User.Avatar,
+            Content = c.Content,
+            CreatedAt = c.CreatedAt,
+        }).ToList();
 
-        return comments;
+        return response;
     }
+
 
     public List<PostLike> GetLikes(string getLikes)
     {
@@ -294,24 +301,35 @@ public class PostService : IPostService
         return likes;
     }
 
-    public List<Comment> GetCommentsByUser(string UserId)
+    public List<Comment> GetCommentsByUser(string UserName)
     {
-        var comments = _context.Comment.Where(x => x.UserId == UserId).ToList();
+        var comments = _context.Comment.Where(x => x.User.UserName == UserName).ToList();
 
         return comments;
     }
 
-    public List<Repost> GetReposts(string getReposts)
+    public List<Repost> GetReposts(string postId)
     {
-        var reposts = _context.Repost.Where(x => x.PostId == getReposts).ToList();
-
+        var reposts = _context.Repost.Where(x => x.PostId == postId).ToList();
         return reposts;
     }
 
-    public List<Repost> GetRepostsByUser(string UserId)
+    public List<GetRepostModel> GetRepostsByUser(string UserName)
     {
-        var reposts = _context.Repost.Where(x => x.UserId == UserId).ToList();
+        var reposts = _context.Repost.Where(x => x.User.UserName == UserName)
+            .Include(x => x.User)
+            .ToList();
 
-        return reposts;
+        var response = reposts.Select(s => new GetRepostModel
+        {
+            RepostId = s.Id,
+            PostId = s.PostId,
+            UserId = s.UserId,
+            UserName = s.User.UserName,
+            Avatar = s.User.Avatar,
+            CreatedAt = s.CreatedAt,
+        }).ToList();
+
+        return response;
     }
 }
