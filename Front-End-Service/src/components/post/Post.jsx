@@ -7,7 +7,7 @@ function Post({ post }) {
   return (
     <section className='card post'>
       <UserDetails post={post} />
-      <Content content={post.content} />
+      <Content post={post} />
       <Reactions post={post} />
     </section>
   )

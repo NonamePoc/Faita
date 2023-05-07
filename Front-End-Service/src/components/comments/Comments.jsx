@@ -2,6 +2,7 @@ import React from 'react'
 import Block from './Block'
 
 function Comments({ comments }) {
+  console.log(comments)
   return (
     <div className='commentsList'>
       {comments.map((comment) => (

@@ -2,9 +2,23 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleFileModal } from '../../redux/slices/modal'
 
-function FileModal() {
+function FileModal({ image, setImage, setAudio, setVideo }) {
   const open = useSelector((state) => state.modal.fileModalOpen)
   const dispatch = useDispatch()
+
+  const handleImageChange = (e) => {
+    setImage(e.target.value)
+
+    console.log(image)
+  }
+
+  const handleAudioChange = (e) => {
+    setAudio(e.target.value)
+  }
+
+  const handleVideoChange = (e) => {
+    setVideo(e.target.value)
+  }
 
   const handleOpen = () => {
     dispatch(toggleFileModal())
@@ -22,6 +36,8 @@ function FileModal() {
         <div className='modal-body'>
           <p>Insert the url of image</p>
           <input
+            onChange={handleImageChange}
+            defaultValue={image}
             className='modal-input'
             name='imageURL'
             type='text'
@@ -29,6 +45,7 @@ function FileModal() {
           />
           <p>Insert the url of audio</p>
           <input
+            onChange={handleAudioChange}
             className='modal-input'
             name='audioURL'
             type='text'
@@ -36,6 +53,7 @@ function FileModal() {
           />
           <p>Insert the url of video</p>
           <input
+            onChange={handleVideoChange}
             className='modal-input'
             name='videoURL'
             type='text'

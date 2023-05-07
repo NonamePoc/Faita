@@ -1,7 +1,6 @@
 using System.Reflection;
 using Back_End_Service.Identity.Context;
 using Back_End_Service.Identity.Entities;
-using Back_End_Service.Post.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -108,7 +107,7 @@ public class PostService : IPostService
     }
 
 
-    public PostWithUserModel GetPost(string postId)
+    public object GetPost(string postId)
     {
         var post = _context.Post
             .Include(p => p.User)
@@ -119,10 +118,18 @@ public class PostService : IPostService
             throw new Exception("Post not found");
         }
 
-        return new PostWithUserModel
+        return new
         {
-            Post = post,
-            User = post.User
+            PostId = post.Id,
+            Title = post.Title,
+            Content = post.Content,
+            CreatedAt = post.CreatedAt,
+            User = new
+            {
+                UserId = post.User.Id,
+                UserName = post.User.UserName,
+                Avatar = post.User.Avatar
+            }
         };
     }
 

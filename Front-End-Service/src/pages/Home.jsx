@@ -3,10 +3,19 @@ import { PostList, Input, FileModal } from '../components'
 import { useSelector } from 'react-redux'
 
 function Home() {
+  const [image, setImage] = React.useState(null)
+  const [audio, setAudio] = React.useState(null)
+  const [video, setVideo] = React.useState(null)
+
   return (
     <main>
-      <FileModal />
-      <Input type={true} />
+      <FileModal
+        image={image}
+        setImage={setImage}
+        setAudio={setAudio}
+        setVideo={setVideo}
+      />
+      <Input type={true} image={image} audio={audio} video={video} />
       {/* <PostList /> */}
     </main>
   )

@@ -5,12 +5,12 @@ const truncateDate = (createdAt) => {
   const date = moment(createdAt)
   if (date.year() === now.year() && date.month() === now.month()) {
     if (date.date() === now.date()) {
-      return date.format('H:mm')
+      return date.format('HH:mm')
     } else {
-      return date.format('M/D')
+      return date.format('MM/DD')
     }
   } else {
-    return date.format('YYYY/M/D')
+    return date.format('YYYY/MM/DD')
   }
 }
 
