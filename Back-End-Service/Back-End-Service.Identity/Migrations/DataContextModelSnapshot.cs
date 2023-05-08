@@ -247,6 +247,9 @@ namespace Back_End_Service.Identity.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("PostId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

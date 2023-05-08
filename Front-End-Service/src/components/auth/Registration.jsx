@@ -1,11 +1,11 @@
 import React from 'react'
-
 import { useNavigate } from 'react-router-dom'
 import { registerUser } from '../../api/userRequests'
 
 function Registration() {
   const navigate = useNavigate()
   const [data, setData] = React.useState({})
+  const [loading, setLoading] = React.useState(false)
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -14,11 +14,11 @@ function Registration() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (
-      event.target.elements.password.value ===
-      event.target.elements.confirmPassword.value
-    ) {
-      registerUser(data, () => navigate('/confirm-email'))
+    if (data.password === event.target.confirmPassword.value) {
+      setLoading(true)
+      registerUser(data, () => {
+        navigate('/confirm-email')
+      })
     } else {
       alert('Passwords do not match!')
     }
@@ -200,8 +200,21 @@ function Registration() {
           </div>
         </label>
       </div>
+
       <button type='submit' className='btn submit'>
-        Sign Up Now
+        {loading ? (
+          <>
+            Loading...
+            <div className='lds-ring'>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </>
+        ) : (
+          <>Sign Up</>
+        )}
       </button>
     </form>
   )

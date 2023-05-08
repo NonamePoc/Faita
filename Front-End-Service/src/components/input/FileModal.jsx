@@ -8,8 +8,6 @@ function FileModal({ image, setImage, setAudio, setVideo }) {
 
   const handleImageChange = (e) => {
     setImage(e.target.value)
-
-    console.log(image)
   }
 
   const handleAudioChange = (e) => {
@@ -59,7 +57,9 @@ function FileModal({ image, setImage, setAudio, setVideo }) {
             type='text'
             aria-label='URL file input'
           />
-          <button className='btn'>Save changes</button>
+          <button className='btn' onClick={handleOpen}>
+            Save changes
+          </button>
         </div>
       </div>
     </>

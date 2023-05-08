@@ -1,61 +1,36 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { setAvatar } from '../../utils/setAvatar'
+import getLastMessage from '../../utils/getLastMessage'
 
 function ChatBlock({ room }) {
   const navigate = useNavigate()
+  const userId = useSelector((state) => state.user.id)
+  const { avatar, userName } =
+    room.users.$values.find((u) => u.id !== userId) || {}
 
-  const onClickRoom = (roomId) => {
-    navigate(`/chat/${roomId}`)
-  }
+  const onClickRoom = () => navigate(`/chat/${room.chatId}`)
 
-  const getLastMessage = (messages) => {
-    let sortedMessages = [...messages].sort((a, b) => {
-      return new Date(b.createdAt) - new Date(a.createdAt)
-    })
-    const currentTime = new Date()
-    if (sortedMessages.length) {
-      const lastMessageTime = new Date(sortedMessages[0].createdAt)
-      const timeElapsedInMilliseconds =
-        currentTime.getTime() - lastMessageTime.getTime()
-      const timeElapsedInMinutes = Math.floor(
-        timeElapsedInMilliseconds / 1000 / 60
-      )
-      const [text] =
-        sortedMessages[0].text.length > 200
-          ? [sortedMessages[0].text.slice(0, 170) + '...']
-          : [sortedMessages[0].text]
-      return [text, timeElapsedInMinutes]
-    }
-    return 'No messages yet'
-  }
+  const [lastMessageText, formattedTime] = getLastMessage(room.messages.$values)
 
   return (
-    <>
-      <section onClick={() => onClickRoom(room.id)}>
-        <div className='chat card'>
-          <img
-            className='chat__img'
-            src='https://picsum.photos/id/858/200'
-            alt='profile-img'
-          />
-          <div className='chat__info'>
-            <div className='chat__info__firstLine'>
-              <h1 className='chat__name'>{room.name}</h1>
-              <div className='statusCircle'></div>
-            </div>
-            <p className='chat__message'>
-              {getLastMessage(room.messages.$values)[0]}
-            </p>
+    <section onClick={onClickRoom}>
+      <div className='chat card'>
+        <img className='chat__img' src={setAvatar(avatar)} alt='profile-img' />
+        <div className='chat__info'>
+          <div className='chat__info__firstLine'>
+            <h1 className='chat__name'>{userName}</h1>
+            <div className='statusCircle'></div>
           </div>
-          <div className='chat__info right'>
-            <p className='chat__date'>
-              {getLastMessage(room.messages.$values)[1]} mins ago
-            </p>
-            <div className='msgCounter'>7</div>
-          </div>
+          <p className='chat__message'>{lastMessageText}</p>
         </div>
-      </section>
-    </>
+        <div className='chat__info right'>
+          <p className='chat__date'>{formattedTime}</p>
+          {/* <div className='msgCounter'>7</div> */}
+        </div>
+      </div>
+    </section>
   )
 }
 

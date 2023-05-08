@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import {
   getPostsByUser,
+  getRepostsByUser,
   getPostsById,
   getLikesByPostId,
   getCommentsByPostId,
@@ -14,9 +15,17 @@ import {
 } from '../../api/postRequests'
 
 export const fetchPosts = createAsyncThunk(
-  'posts/fetchPosts',
+  'posts/fetchUserPosts',
   async (userName) => {
     return (await getPostsByUser(userName)).data.$values
+  }
+)
+
+export const fetchUserReposts = createAsyncThunk(
+  'posts/fetchUserReposts',
+  async (userName, { getState }) => {
+    const { token } = getState().user
+    return (await getRepostsByUser(userName, token)).data.$values
   }
 )
 
@@ -24,7 +33,7 @@ export const fetchPostById = createAsyncThunk(
   'posts/fetchPostById',
   async (postId, { getState }) => {
     const { token } = getState().user
-    return (await getPostsById(postId, token)).data
+    return (await getPostsById(postId, token)).data.result
   }
 )
 

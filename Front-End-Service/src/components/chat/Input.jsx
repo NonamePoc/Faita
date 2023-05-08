@@ -1,31 +1,39 @@
 import React from 'react'
-import { Emoji, Gif, Captcha } from '../../components'
-import useInput from '../../hooks/useInput'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchRooms, sendChatMessage } from '../../redux/asyncThunks/chats'
+import { Emoji, Gif, Captcha } from '../../components'
+import useInput from '../../hooks/useInput'
 
-function Input({ room }) {
-  const [submitCount, setSubmitCount] = React.useState(1)
+const Input = React.memo(({ room }) => {
   const inputRef = React.useRef()
   const user = useSelector((state) => state.user)
-  const receiverId = room.users.$values.find((v) => v.id !== user.id)?.id
-  const dispatch = useDispatch()
+  const receiverId = room.users.$values.find((u) => u.id !== user.id).userId
   const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
+  const [submitCount, setSubmitCount] = React.useState(1)
+  const dispatch = useDispatch()
 
-  const handleSendMessage = (value) => {
+  const handleSendMessage = () => {
+    const message = inputRef.current.value
     if (submitCount === 15) {
       alert('Please verify the captcha')
     } else {
       dispatch(
         sendChatMessage({
-          text: value,
           receiverId: receiverId,
-          roomId: room.id,
+          text: message,
+          roomId: room.chatId,
         })
-      ).then(dispatch(fetchRooms()))
+      ).then(() => dispatch(fetchRooms()))
       resetValue()
     }
     setSubmitCount(submitCount + 1)
+  }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      handleSendMessage()
+    }
   }
 
   return (
@@ -34,9 +42,7 @@ function Input({ room }) {
         ref={inputRef}
         type='text'
         onChange={handleChange}
-        onKeyDown={(event) =>
-          event.key === 'Enter' && handleSendMessage(inputRef.current.value)
-        }
+        onKeyDown={handleKeyDown}
         value={value}
         className='chatroom__field__input'
         placeholder='Write something...'
@@ -49,10 +55,7 @@ function Input({ room }) {
         />
         <Emoji handleEmojiSelect={handleEmojiSelect} />
 
-        <button
-          className='btn send-btn'
-          onClick={() => handleSendMessage(inputRef.current.value)}
-        >
+        <button className='btn send-btn' onClick={handleSendMessage}>
           <svg
             width='17'
             height='17'
@@ -78,6 +81,6 @@ function Input({ room }) {
       <Captcha submitCount={submitCount} setSubmitCount={setSubmitCount} />
     </fieldset>
   )
-}
+})
 
 export default Input

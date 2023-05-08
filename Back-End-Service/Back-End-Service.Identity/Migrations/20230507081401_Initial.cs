@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Back_End_Service.Identity.Migrations
 {
     /// <inheritdoc />
-    public partial class Migv1 : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -421,7 +421,8 @@ namespace Back_End_Service.Identity.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     PostId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PostsId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

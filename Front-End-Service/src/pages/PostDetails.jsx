@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchPostById, getComments } from '../redux/asyncThunks/posts'
 
 function PostDetails() {
-  const { postId } = useParams()
   const dispatch = useDispatch()
+  const { postId } = useParams()
   const [post, setPost] = React.useState(null)
   const [loaded, setLoaded] = React.useState(false)
   const [comments, setComments] = React.useState([])
@@ -26,7 +26,7 @@ function PostDetails() {
       <Post post={post} />
       <section className='card'>
         <Input type={false} postId={postId} />
-        {loadedComs ? <Comments post={post} comments={comments} /> : null}
+        {loadedComs ? <Comments comments={comments} /> : null}
       </section>
     </main>
   ) : null

@@ -1,14 +1,17 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { setAvatar } from '../../utils/setAvatar'
 
 function ProfileItem({ friend }) {
+  const { userName, avatar } = friend
   return (
-    <Link to={`/profile/${friend.userName}`}>
+    <Link to={`/profile/${userName}`}>
       <div className='friendsMini__item'>
-        <img src='https://picsum.photos/200' alt='friend' />
-        <h2>{friend.userName}</h2>
+        <img src={setAvatar(avatar)} alt='friend' />
+        <h2>{userName}</h2>
       </div>
     </Link>
   )
 }
 
-export default ProfileItem
+export default React.memo(ProfileItem)

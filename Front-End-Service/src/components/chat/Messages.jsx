@@ -1,16 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import truncateDate from '../../utils/truncateDate'
 import useToShow from '../../hooks/useToShow'
+import truncateDate from '../../utils/truncateDate'
 
-function Messages({ room }) {
+const Messages = React.memo(({ room }) => {
+  const user = useSelector((state) => state.user)
+  let connection = useSelector((state) => state.message.connection)
+  const [messages, setMessages] = React.useState([...room.messages.$values])
   const msgContainerRef = React.useRef(null)
   const { itemsToShow, handleScroll } = useToShow(10, msgContainerRef)
-
-  const user = useSelector((state) => state.user)
-
-  const [messages, setMessages] = React.useState([...room.messages.$values])
-  let connection = useSelector((state) => state.message.connection)
 
   React.useEffect(() => {
     msgContainerRef.current.scrollTop = msgContainerRef.current.scrollHeight
@@ -24,10 +22,13 @@ function Messages({ room }) {
           { senderId, text, chatRoomId, createdAt: new Date() },
         ])
       })
-
       return () => connection.off('ReceiveMessage')
     }
   })
+
+  const IsGif = (text) => text.includes('https://media.tenor.com')
+
+  const IsCurrentUser = (senderId) => senderId === user.id
 
   return (
     <div
@@ -39,34 +40,30 @@ function Messages({ room }) {
         messages
           .sort((a, b) => Date.parse(a.createdAt) - Date.parse(b.createdAt))
           .slice(-itemsToShow)
-          .map((msg, index) =>
-            msg.senderId === user.id ? (
-              <div key={index} className='msg msg__user'>
-                <span className='msg__date'>{truncateDate(msg.createdAt)}</span>
-                {msg.text.includes('https://media.tenor.com') ? (
-                  <img className='msg__text' src={msg.text} alt='gif' />
-                ) : (
-                  <p className='msg__text'>{msg.text}</p>
-                )}
-              </div>
-            ) : (
-              <div key={index} className='msg msg__stranger'>
+          .map(({ senderId, text, createdAt }, index) => (
+            <div
+              key={index}
+              className={`msg msg__${
+                IsCurrentUser(senderId) ? 'user' : 'stranger'
+              }`}
+            >
+              {!IsCurrentUser(senderId) && (
                 <img
                   className='msg__stranger__img'
                   src='https://picsum.photos/id/235/800'
                   alt='profile-img'
                 />
-                {msg.text.includes('https://media.tenor.com') ? (
-                  <img className='msg__text' src={msg.text} alt='gif' />
-                ) : (
-                  <p className='msg__text'>{msg.text}</p>
-                )}
-                <span className='msg__date'>{truncateDate(msg.createdAt)}</span>
-              </div>
-            )
-          )}
+              )}
+              {IsGif(text) ? (
+                <img className='msg__text' src={text} alt='gif' />
+              ) : (
+                <p className='msg__text'>{text}</p>
+              )}
+              <span className='msg__date'>{truncateDate(createdAt)}</span>
+            </div>
+          ))}
     </div>
   )
-}
+})
 
 export default Messages

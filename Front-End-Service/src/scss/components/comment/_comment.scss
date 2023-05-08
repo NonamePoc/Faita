@@ -12,7 +12,7 @@
   }
   &__info {
     display: grid;
-    grid-template-columns: min-content 1fr min-content;
+    grid-template-columns: min-content 1fr;
     align-items: center;
     gap: 0.5rem;
     &__name {
@@ -22,21 +22,6 @@
     &__date {
       font-size: 14px;
       font-weight: 600;
-    }
-
-    &__reactions {
-      display: flex;
-      gap: 0.2em;
-      justify-content: flex-end;
-      align-items: center;
-      svg {
-        width: 24px;
-      }
-      p {
-        font-size: 14px;
-        font-weight: 600;
-        margin-right: 0.5em;
-      }
     }
   }
   &__content {

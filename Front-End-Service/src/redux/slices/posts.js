@@ -4,6 +4,7 @@ import {
   deleteUserPost,
   fetchPostById,
   fetchPosts,
+  fetchUserReposts,
   getComments,
   getLikes,
   getShares,
@@ -14,6 +15,8 @@ const posts = createSlice({
   initialState: {
     userPosts: [],
     loaded: false,
+    userReposts: [],
+    repostsLoaded: false,
     commentsLoaded: false,
     likesLoaded: false,
     sharesLoaded: false,
@@ -33,6 +36,16 @@ const posts = createSlice({
       state.loaded = true
     })
     builder.addCase(fetchPosts.rejected, (state, action) => {
+      state.error = action.error.message
+    })
+    builder.addCase(fetchUserReposts.pending, (state) => {
+      state.repostsLoaded = false
+    })
+    builder.addCase(fetchUserReposts.fulfilled, (state, action) => {
+      state.userReposts = action.payload
+      state.repostsLoaded = true
+    })
+    builder.addCase(fetchUserReposts.rejected, (state, action) => {
       state.error = action.error.message
     })
     builder.addCase(createNewPost.fulfilled, () => {})

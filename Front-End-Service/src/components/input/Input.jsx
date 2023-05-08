@@ -1,29 +1,28 @@
 import React from 'react'
-import useInput from '../../hooks/useInput'
-import { Captcha, Emoji, FileModal } from '../../components'
 import { useDispatch, useSelector } from 'react-redux'
+import { Captcha, Emoji } from '../../components'
+import FileClip from './FileClip'
 import {
   createNewPost,
   createComment,
   fetchPosts,
   getComments,
 } from '../../redux/asyncThunks/posts'
-import FileClip from './FileClip'
+import useInput from '../../hooks/useInput'
 import { setAvatar } from '../../utils/setAvatar'
 
 function Input({ type, postId, image, audio, video }) {
-  const dispatch = useDispatch()
-  const user = useSelector((state) => state.user)
-  const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
+  const { userName, avatar } = useSelector((state) => state.user)
   const [focused, setFocused] = React.useState(false)
   const [submitCount, setSubmitCount] = React.useState(1)
   const inputRef = React.useRef(null)
+  const { value, handleChange, handleEmojiSelect, resetValue } = useInput('')
+  const dispatch = useDispatch()
 
-  const handleBlur = (event) => {
-    if (event.relatedTarget === null && inputRef.current.value === '') {
-      setFocused(false)
-    }
-  }
+  const handleBlur = (event) =>
+    event.relatedTarget === null &&
+    inputRef.current.value === '' &&
+    setFocused(false)
 
   const handleSendMessage = (value) => {
     if (submitCount === 15) {
@@ -58,10 +57,10 @@ function Input({ type, postId, image, audio, video }) {
         <div className='input__info'>
           <img
             className={`input__avatar ${type ? 'sendPost' : ''}`}
-            src={setAvatar(user.avatar)}
+            src={setAvatar(avatar)}
             alt='user avatar'
           />
-          <h1 className='input__name'>{user.userName}</h1>
+          <h1 className='input__name'>{userName}</h1>
         </div>
         <textarea
           ref={inputRef}
@@ -90,4 +89,4 @@ function Input({ type, postId, image, audio, video }) {
   )
 }
 
-export default Input
+export default React.memo(Input)

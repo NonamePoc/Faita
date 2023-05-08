@@ -1,26 +1,22 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import usePopup from '../../hooks/usePopup'
+import { useNavigate, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   removeFromFriends,
   fetchFriends,
+  cancelRequest,
+  fetchSentRequests,
 } from '../../redux/asyncThunks/friends'
-import {
-  createChatRoom,
-  fetchRooms,
-  joinToRoom,
-} from '../../redux/asyncThunks/chats'
-import { Link } from 'react-router-dom'
-import { cancelRequest } from '../../redux/asyncThunks/friends'
-import { fetchSentRequests } from '../../redux/asyncThunks/friends'
+import { createChatRoom, fetchRooms } from '../../redux/asyncThunks/chats'
+import usePopup from '../../hooks/usePopup'
 import { setAvatar } from '../../utils/setAvatar'
 
-function Card({ friend, type }) {
+const Card = React.memo(({ friend, type }) => {
   const { isOpen, togglePopup } = usePopup()
   const [textOption, setTextOption] = React.useState('')
   const user = useSelector((state) => state.user)
   const chats = useSelector((state) => state.chats.rooms)
+  const { avatar, userName, id } = friend
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -30,41 +26,42 @@ function Card({ friend, type }) {
       : setTextOption('Cancel request')
   }, [type])
 
-  const onClickOption = (userId) => {
-    type === 'friend'
-      ? dispatch(removeFromFriends(userId)).then(() => dispatch(fetchFriends()))
-      : dispatch(cancelRequest(userId)).then(() =>
-          dispatch(fetchSentRequests())
-        )
-  }
+  const onClickOption = React.useCallback(
+    (userId) =>
+      type === 'friend'
+        ? dispatch(removeFromFriends(userId)).then(() =>
+            dispatch(fetchFriends())
+          )
+        : dispatch(cancelRequest(userId)).then(() =>
+            dispatch(fetchSentRequests())
+          ),
+    [dispatch, type]
+  )
 
-  const onClickChat = (friend) => {
+  const onClickChat = (friendId) => {
     const room = findCurrentRoom(chats)
     if (room) {
-      navigate(`/chat/${room.id}`)
+      navigate(`/chat/${room.chatId}`)
     } else {
-      dispatch(createChatRoom(`${user.userName}, ${friend.userName}`)).then(
-        (res) => {
+      dispatch(
+        createChatRoom({
+          roomName: `${user.userName}, ${userName}`,
+          friendId: friendId,
+        })
+      ).then(
+        (res) =>
           res.payload.status === 200 &&
-            dispatch(fetchRooms(user.id)).then((res) => {
-              dispatch(
-                joinToRoom({
-                  userId: friend.id,
-                  chatRoomId: findCurrentRoom(chats).id,
-                }).then(
-                  (res) =>
-                    res.payload.status === 200 && navigate(`/chat/${room.id}`)
-                )
-              )
-            })
-        }
+          dispatch(fetchRooms(user.id)).then(
+            (res) =>
+              res.payload.status === 200 &&
+              navigate(`/chat/${findCurrentRoom(chats).chatId}`)
+          )
       )
     }
   }
 
-  const findCurrentRoom = (rooms) => {
-    return rooms.find((room) => room.name.includes(friend.userName))
-  }
+  const findCurrentRoom = (rooms) =>
+    rooms.find((room) => room.chatName.includes(userName))
 
   return (
     <div className='card friendCard'>
@@ -101,7 +98,7 @@ function Card({ friend, type }) {
         </defs>
       </svg>
       <ul className={`pop popup popup__friendCard ${isOpen ? 'open' : ''}`}>
-        <li onClick={() => onClickOption(friend.id)}>
+        <li onClick={() => onClickOption(id)}>
           <svg
             width='24'
             height='24'
@@ -130,15 +127,15 @@ function Card({ friend, type }) {
       </ul>
       <img
         className='friendCard__image avatar'
-        src={setAvatar(friend.avatar)}
+        src={setAvatar(avatar)}
         alt='avatar'
       />
       <div className='friendCard__info'>
-        <h1 className='friendCard__name'>{friend.userName}</h1>
+        <h1 className='friendCard__name'>{userName}</h1>
         {/* <Status user={friend} /> */}
       </div>
       <div className='friendCard__btns'>
-        <Link to={`/profile/${friend.userName}`} aria-label='View Profile'>
+        <Link to={`/profile/${userName}`} aria-label='View Profile'>
           <button className='btn prfl' aria-label='view profile'>
             <svg
               width='26'
@@ -164,7 +161,7 @@ function Card({ friend, type }) {
         </Link>
 
         <button
-          onClick={() => onClickChat(friend)}
+          onClick={() => onClickChat(id)}
           className='btn msg'
           aria-label='chat with user'
         >
@@ -181,6 +178,6 @@ function Card({ friend, type }) {
       </div>
     </div>
   )
-}
+})
 
 export default Card

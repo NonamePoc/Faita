@@ -1,13 +1,12 @@
 import { instance } from './axios'
 
-export const sendMessage = async (userId, receiverId, text, roomId, token) => {
+export const sendMessage = async (receiverId, text, roomId, token) => {
   try {
     const response = await instance.post(
       `chat/sendMessage`,
       {
-        userId: userId,
-        receiverId: receiverId,
-        text: text,
+        receiverId,
+        text,
         chatRoomId: roomId,
       },
       {
@@ -43,37 +42,13 @@ export const getRooms = async (token) => {
   }
 }
 
-export const createRoom = async (room, userId, token) => {
+export const createRoom = async (roomName, friendId, token) => {
   try {
     const response = await instance.post(
       `chat/createChatRoom`,
       {
-        name: room,
-        userId: userId,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    )
-    return response
-  } catch (error) {
-    if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
-    } else {
-      alert(error.message)
-    }
-  }
-}
-
-export const joinRoom = async (userId, chatRoomId, token) => {
-  try {
-    const response = await instance.post(
-      `chat/joinChatRoom`,
-      {
-        chatRoomId: chatRoomId,
-        userId: userId,
+        name: roomName,
+        friendId,
       },
       {
         headers: {

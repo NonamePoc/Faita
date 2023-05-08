@@ -13,6 +13,23 @@ export const getPostsByUser = async (userName) => {
   }
 }
 
+export const getRepostsByUser = async (userName, token) => {
+  try {
+    const response = await instance.get(`post/getRepostsByUser=${userName}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    return response
+  } catch (error) {
+    if (error.response.data.Errors) {
+      alert(error.response.data.Errors[0].Detail)
+    } else {
+      alert(error.message)
+    }
+  }
+}
+
 export const getPostsById = async (postId, token) => {
   try {
     const response = await instance.get(`post/getPost=${postId}`, {
@@ -66,7 +83,7 @@ export const getCommentsByPostId = async (postId, token) => {
 
 export const getRepostsByPostId = async (postId, token) => {
   try {
-    const response = await instance.get(`post/getRepost=${postId}`, {
+    const response = await instance.get(`post/getReposts=${postId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

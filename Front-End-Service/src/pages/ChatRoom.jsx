@@ -1,21 +1,18 @@
 import React from 'react'
-import { ChatHeader, ChatInput, ChatMessages } from '../components'
 import { useParams } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { ChatHeader, ChatInput, ChatMessages } from '../components'
+import Skeleton from 'react-loading-skeleton'
 
 function ChatRoom() {
   const { roomId } = useParams()
-  const chats = useSelector((state) => state.chats.rooms)
+  const { rooms } = useSelector((state) => state.chats)
+  const room = rooms.find((room) => room.chatId === roomId)
   const [loaded, setLoaded] = React.useState(false)
-  const room = chats.find((room) => room.id === roomId)
-  const dispatch = useDispatch()
 
   React.useEffect(() => {
-    console.log(room)
-    if (room) {
-      setLoaded(true)
-    }
-  }, [dispatch, room])
+    room && setLoaded(true)
+  }, [room])
 
   return (
     <main className='chatroom'>
@@ -27,11 +24,11 @@ function ChatRoom() {
         </>
       ) : (
         <div className='chatroom__empty'>
-          {!loaded ? <h3>Loading...</h3> : <h3>Chat Room is Empty</h3>}
+          <Skeleton height={500} />
         </div>
       )}
     </main>
   )
 }
 
-export default ChatRoom
+export default React.memo(ChatRoom)

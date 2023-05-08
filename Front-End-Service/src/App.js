@@ -39,7 +39,7 @@ function App() {
     <div className={theme}>
       <SkeletonTheme
         baseColor={theme === 'dark' ? '#202020' : '#ebebeb'}
-        highlightColor={theme === 'dark' ? '#333232' : '#f5f5f5'}
+        highlightColor={theme === 'dark' ? '#292929' : '#f5f5f5'}
       >
         <Router />
       </SkeletonTheme>

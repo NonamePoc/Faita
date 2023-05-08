@@ -64,9 +64,9 @@ public class PostController : ControllerBase
 
     [AllowAnonymous]
     [HttpGet("getPostsByUser={getPostsByUser}")]
-    public async Task<IActionResult> GetPosts(string getPostsByUser)
+    public async Task<IActionResult> GetPosts(string getPostsByUser,int limit = 25, int offset = 0)
     {
-        var posts = await _postService.GetPostsByUser(getPostsByUser);
+        var posts = await _postService.GetPostsByUser(getPostsByUser, limit,offset);
         return Ok(posts);
     }
 
@@ -79,13 +79,6 @@ public class PostController : ControllerBase
         return Ok(like);
     }
 
-    [Authorize]
-    [HttpDelete("removeLike={removeLike}")]
-    public async Task<IActionResult> RemoveLike(string removeLike)
-    {
-        await _postService.RemoveLike(removeLike);
-        return Ok();
-    }
 
     [Authorize]
     [HttpPost("addComment")]
@@ -116,10 +109,10 @@ public class PostController : ControllerBase
 
 
     [Authorize]
-    [HttpGet("getComment={getComments}")]
-    public IActionResult GetComments(string getComments)
+    [HttpGet("getComment={postId}")]
+    public async Task<IActionResult> GetComments(string postId)
     {
-        var comments = _postService.GetComments(getComments);
+        var comments = await _postService.GetComments(postId);
         return Ok(comments);
     }
 
@@ -147,8 +140,8 @@ public class PostController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("getCommentsByUser")]
-    public IActionResult GetCommentsByUser()
+    [HttpGet("getCommentsByUser={userName}")]
+    public IActionResult GetCommentsByUser(string userName)
     {
         var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
 
@@ -157,30 +150,23 @@ public class PostController : ControllerBase
             return BadRequest(new { message = "User not found." });
         }
 
-        var comments = _postService.GetCommentsByUser(user);
+        var comments = _postService.GetCommentsByUser(userName);
         return Ok(comments);
     }
 
     [Authorize]
-    [HttpGet("getRepost={getReposts}")]
-    public IActionResult GetReposts(string getReposts)
+    [HttpGet("GetReposts={postId}")]
+    public IActionResult GetReposts(string postId)
     {
-        var reposts = _postService.GetReposts(getReposts);
+        var reposts = _postService.GetReposts(postId);
         return Ok(reposts);
     }
 
     [Authorize]
-    [HttpGet("getRepostsByUser")]
-    public IActionResult GetRepostsByUser()
+    [HttpGet("getRepostsByUser={userName}")]
+    public IActionResult GetRepostsByUser(string userName)
     {
-        var user = User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-
-        if (user == null)
-        {
-            return BadRequest(new { message = "User not found." });
-        }
-
-        var reposts = _postService.GetRepostsByUser(user);
+        var reposts = _postService.GetRepostsByUser(userName);
         return Ok(reposts);
     }
 }

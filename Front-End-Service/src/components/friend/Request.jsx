@@ -12,13 +12,15 @@ function Request({ user }) {
   const dispatch = useDispatch()
 
   const cancelRequest = () => {
-    dispatch(declineRequest(user.id))
-    dispatch(fetchReceivedRequests())
+    dispatch(declineRequest(user.id)).then(
+      (res) => res.payload.status === 200 && dispatch(fetchReceivedRequests())
+    )
   }
 
   const acceptRequest = () => {
-    dispatch(acceptFriendRequest(user.id))
-    dispatch(fetchReceivedRequests())
+    dispatch(acceptFriendRequest(user.id)).then(
+      (res) => res.payload.status === 200 && dispatch(fetchReceivedRequests())
+    )
   }
 
   return (

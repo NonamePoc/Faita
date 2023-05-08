@@ -13,18 +13,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomMessageModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomUserModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomsModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetComments.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetRepostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostsByUser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/DeletePostModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetCommentsModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetLikesModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetRepostsModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/PostWithUserModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/RemoveCommentModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Model/RemoveLikeModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/CreateChatRoomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/CreateChatRoomModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230427084206_Mig2.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230427084206_Mig2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230501082032_Migv1.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230501082032_Migv1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Back-End-Service.Publication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Back-End-Service.Publication.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/chatRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/chatRequests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/api/postRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/api/postRequests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/auth/Registration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/captcha/Captcha.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/captcha/Captcha.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Block.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Block.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Messages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Messages.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/comments/Block.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/comments/Block.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/comments/Comments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/comments/Comments.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/emoji-giphs/Gif.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/emoji-giphs/Gif.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Aside.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Aside.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/ProfileItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/ProfileItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Request.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/Request.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/input/FileModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/input/FileModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/input/Input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/Content.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/PostList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/PostList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/ChatRoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/ChatRoom.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Chats.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Chats.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Friends.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/PostDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/PostDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Settings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/chats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/friends.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/friends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/chats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/chat/_chats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/chat/_chats.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/chat/_messages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/chat/_messages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/comment/_comment.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/comment/_comment.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/post/_post.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/post/_post.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/static/_popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/static/_popup.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,9 +148,9 @@
       &quot;athena&quot;
     ],
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\pavlo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\pavlo\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\marlb\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\marlb\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -195,7 +250,11 @@
       <workItem from="1683029628192" duration="311000" />
       <workItem from="1683032163026" duration="1401000" />
       <workItem from="1683034609136" duration="1104000" />
-      <workItem from="1683039162859" duration="2117000" />
+      <workItem from="1683039162859" duration="2371000" />
+      <workItem from="1683041933615" duration="1546000" />
+      <workItem from="1683217849476" duration="10978000" />
+      <workItem from="1683446331180" duration="3916000" />
+      <workItem from="1683526390042" duration="842000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -358,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683035705245</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="delete useless file">
+      <created>1683041523141</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683041523141</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,29 +475,12 @@
     <MESSAGE value="v2 fix problem" />
     <MESSAGE value="Fix get method PostService.cs" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="delete useless file" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete useless file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs</url>
-          <line>67</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\MessageService.cs" initialLine="66" containingFunctionPresentation="Method 'JoinChatRoom'" />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs</url>
-          <line>50</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\PostController.cs" initialLine="50" containingFunctionPresentation="Method 'EditPost'" />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs</url>
-          <line>312</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Post\Service\PostService.cs" initialLine="277" containingFunctionPresentation="Method 'GetRepostsByUser'" />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs</url>
           <line>29</line>

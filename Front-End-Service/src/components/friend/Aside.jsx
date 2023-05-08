@@ -5,6 +5,7 @@ import { setAvatar } from '../../utils/setAvatar'
 
 function Aside({ friend }) {
   const { isOpen, togglePopup } = usePopup()
+  const { userName, avatar } = friend
 
   const popup = React.useMemo(
     () => (
@@ -80,12 +81,12 @@ function Aside({ friend }) {
 
   return (
     <li className='friend'>
-      <Link to='/profile'>
+      <Link to={`/profile/${userName}`}>
         <figure className='friend__figure'>
           <img
             className='friend__avatar'
-            src={setAvatar(friend.avatar)}
-            alt='friend'
+            src={setAvatar(avatar)}
+            alt='Friend Avatar'
           />
           <figcaption className='friend__name'>Friend Username</figcaption>
         </figure>
@@ -127,4 +128,4 @@ function Aside({ friend }) {
   )
 }
 
-export default Aside
+export default React.memo(Aside)

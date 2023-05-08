@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back_End_Service.Identity.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230501082032_Migv1")]
-    partial class Migv1
+    [Migration("20230507081401_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -249,6 +249,9 @@ namespace Back_End_Service.Identity.Migrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("PostId")
                         .IsRequired()

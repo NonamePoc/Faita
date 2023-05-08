@@ -23,9 +23,12 @@
     height: clamp(3.5rem, 3.0455rem + 2.2727vw, 4.75rem);
     align-self: center;
     object-position: center;
+    object-fit: cover;
     border-radius: $main-border-radius;
     -webkit-border-radius: $main-border-radius;
     -moz-border-radius: $main-border-radius;
+    -ms-border-radius: $main-border-radius;
+    -o-border-radius: $main-border-radius;
   }
   &__info {
     padding: 0.5rem 0;
@@ -65,6 +68,7 @@
     padding: 0.3rem 2rem;
     position: relative;
     &__img {
+      object-fit: cover;
       width: clamp(2.8125rem, 2.5852rem + 1.1364vw, 3.4375rem);
       height: clamp(2.8125rem, 2.5852rem + 1.1364vw, 3.4375rem);
       border-radius: $main-border-radius;

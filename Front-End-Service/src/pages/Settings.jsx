@@ -10,6 +10,7 @@ import {
 } from '../redux/asyncThunks/user'
 import { ThemeSwitcher } from '../components'
 import { pen } from '../assets'
+import checkValidMedia from '../utils/checkValidMedia'
 
 function Settings() {
   const user = useSelector((state) => state.user)
@@ -44,7 +45,9 @@ function Settings() {
   }
 
   const onClickUpload = () => {
-    image && dispatch(changeProfileImage(image))
+    checkValidMedia(image, (isValid) => {
+      isValid ? dispatch(changeProfileImage(image)) : alert('Invalid image url')
+    })
   }
 
   return (
