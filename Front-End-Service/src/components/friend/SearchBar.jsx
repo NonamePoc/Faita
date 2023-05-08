@@ -39,8 +39,8 @@ function SearchBar() {
   }, [searchBar])
 
   return (
-    <section ref={searchBar} className='card'>
-      <div className='search-bar'>
+    <section ref={searchBar}>
+      <div className='card search-bar'>
         <input
           type='text'
           placeholder='Find a user...'
@@ -71,7 +71,7 @@ function SearchBar() {
       </div>
       <div className={`card search-modal ${open ? 'active' : ''}`}>
         <ul>
-          {users.map((user, index) => (
+          {users.slice(0, 10).map((user, index) => (
             <li key={index}>
               <img
                 className='search_avatar'

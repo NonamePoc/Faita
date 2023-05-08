@@ -4,9 +4,11 @@ import Block from './Block'
 function Comments({ comments }) {
   return (
     <div className='commentsList'>
-      {comments.map((comment) => (
-        <Block key={comment.commentId} comment={comment} />
-      ))}
+      {[...comments]
+        ?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        .map((comment) => (
+          <Block key={comment.commentId} comment={comment} />
+        ))}
     </div>
   )
 }

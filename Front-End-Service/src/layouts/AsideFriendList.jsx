@@ -26,7 +26,7 @@ const AsideFriendList = React.memo(function AsideFriendList() {
       {receivedReqsLoaded && receivedRequests.length > 0 && (
         <>
           <h1 className='friendsTitle'>
-            There are users would like to be your friend
+            Friend Requests ({receivedRequests.length})
           </h1>
           <ul className='card friends'>
             {receivedRequests.map((request) => (

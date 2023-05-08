@@ -69,8 +69,7 @@ export const createNewPost = createAsyncThunk(
     if (!image) image = ''
     if (!video) video = ''
     if (!audio) audio = ''
-    return (await createPost(userName, content, image, video, audio, token))
-      .data.$values
+    return await createPost(userName, content, image, video, audio, token)
   }
 )
 
@@ -78,7 +77,7 @@ export const createComment = createAsyncThunk(
   'posts/createComment',
   async ({ postId, content }, { getState }) => {
     const { token } = getState().user
-    return (await addComment(postId, content, token)).data.$values
+    return await addComment(postId, content, token)
   }
 )
 

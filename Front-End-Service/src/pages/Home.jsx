@@ -2,19 +2,16 @@ import React from 'react'
 import { PostList, Input, FileModal } from '../components'
 
 function Home() {
-  const [image, setImage] = React.useState(null)
-  const [audio, setAudio] = React.useState(null)
-  const [video, setVideo] = React.useState(null)
+  const [media, setMedia] = React.useState({
+    image: '',
+    audio: '',
+    video: '',
+  })
 
   return (
     <main>
-      <FileModal
-        image={image}
-        setImage={setImage}
-        setAudio={setAudio}
-        setVideo={setVideo}
-      />
-      <Input type={true} image={image} audio={audio} video={video} />
+      <FileModal media={media} setMedia={setMedia} />
+      <Input type={true} media={media} />
       {/* <PostList /> */}
     </main>
   )

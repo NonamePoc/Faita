@@ -10,8 +10,8 @@
   align-items: center;
   padding: 0.5rem;
   input {
+    width: calc(100dvw - clamp(5rem, -9.1017rem + 70.5085vw, 70rem));
     padding: 0.5rem 1rem;
-    width: clamp(15.625rem, 2.1767rem + 67.2414vw, 40rem);
     font-size: 17px;
     font-weight: 600;
     border: none;
@@ -25,7 +25,7 @@
 .search-modal {
   position: absolute;
   margin-top: 0.5rem;
-  width: clamp(15.625rem, 2.1767rem + 67.2414vw, 40rem);
+  width: calc(100dvw - clamp(5rem, -9.1017rem + 70.5085vw, 70rem));
   padding: 1rem;
   opacity: 0;
   transition: all 0.3s ease-in-out;

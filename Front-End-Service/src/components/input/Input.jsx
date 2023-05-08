@@ -11,7 +11,7 @@ import {
 import useInput from '../../hooks/useInput'
 import { setAvatar } from '../../utils/setAvatar'
 
-function Input({ type, postId, image, audio, video }) {
+function Input({ type, postId, media, setComments }) {
   const { userName, avatar } = useSelector((state) => state.user)
   const [focused, setFocused] = React.useState(false)
   const [submitCount, setSubmitCount] = React.useState(1)
@@ -29,11 +29,23 @@ function Input({ type, postId, image, audio, video }) {
       alert('Please verify the captcha')
     } else {
       type
-        ? dispatch(createNewPost({ content: value, image, audio, video })).then(
-            () => dispatch(fetchPosts())
+        ? dispatch(
+            createNewPost({
+              content: value,
+              image: media.image,
+              audio: media.audio,
+              video: media.video,
+            })
+          ).then(
+            (res) =>
+              res.payload.status === 200 && dispatch(fetchPosts(userName))
           )
         : dispatch(createComment({ content: value, postId })).then(
-            (res) => res && dispatch(getComments(postId))
+            (res) =>
+              res.payload.status === 200 &&
+              dispatch(getComments(postId)).then((res) =>
+                setComments(res.payload)
+              )
           )
       resetValue()
     }
@@ -89,4 +101,4 @@ function Input({ type, postId, image, audio, video }) {
   )
 }
 
-export default React.memo(Input)
+export default Input

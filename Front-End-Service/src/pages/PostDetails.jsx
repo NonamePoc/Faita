@@ -9,14 +9,16 @@ function PostDetails() {
   const { postId } = useParams()
   const [post, setPost] = React.useState(null)
   const [loaded, setLoaded] = React.useState(false)
-  const [comments, setComments] = React.useState([])
+  const [comments, setComments] = React.useState()
   const loadedComs = useSelector((state) => state.posts.commentsLoaded)
 
   React.useEffect(() => {
     dispatch(fetchPostById(postId)).then((res) => {
       setPost(res.payload)
-      setLoaded(true)
-      dispatch(getComments(postId)).then((res) => setComments(res.payload))
+      dispatch(getComments(postId)).then((res) => {
+        setComments(res.payload)
+        setLoaded(true)
+      })
     })
   }, [dispatch, postId])
 
@@ -25,7 +27,7 @@ function PostDetails() {
       <BackHeader />
       <Post post={post} />
       <section className='card'>
-        <Input type={false} postId={postId} />
+        <Input type={false} postId={postId} setComments={setComments} />
         {loadedComs ? <Comments comments={comments} /> : null}
       </section>
     </main>

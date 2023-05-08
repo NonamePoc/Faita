@@ -27,4 +27,6 @@ function Repost({ repost }) {
   )
 }
 
-export default Repost
+export default React.memo(Repost, (prevProps, nextProps) => {
+  return prevProps.repost === nextProps.repost
+})

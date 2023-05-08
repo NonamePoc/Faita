@@ -6,9 +6,11 @@ namespace Back_End_Service.Chat;
 
 public class ChatHub : Hub
 {
-    
-    
     public async Task SendMessage(SendMessageModel sendMessage,string UserId)
+    {
+        await Clients.All.SendAsync(sendMessage.ReceiverId, UserId, sendMessage.Text);
+    }
+    public async Task ReceiveMessage(SendMessageModel sendMessage, string UserId)
     {
         await Clients.All.SendAsync(sendMessage.ReceiverId, UserId, sendMessage.Text);
     }

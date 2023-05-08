@@ -8,7 +8,7 @@ function ChatBlock({ room }) {
   const navigate = useNavigate()
   const userId = useSelector((state) => state.user.id)
   const { avatar, userName } =
-    room.users.$values.find((u) => u.id !== userId) || {}
+    room.users.$values.find((u) => u.userId !== userId) || {}
 
   const onClickRoom = () => navigate(`/chat/${room.chatId}`)
 
@@ -21,13 +21,11 @@ function ChatBlock({ room }) {
         <div className='chat__info'>
           <div className='chat__info__firstLine'>
             <h1 className='chat__name'>{userName}</h1>
-            <div className='statusCircle'></div>
           </div>
           <p className='chat__message'>{lastMessageText}</p>
         </div>
         <div className='chat__info right'>
           <p className='chat__date'>{formattedTime}</p>
-          {/* <div className='msgCounter'>7</div> */}
         </div>
       </div>
     </section>

@@ -7,25 +7,28 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 function PostList({ userName }) {
   const dispatch = useDispatch()
-  const [posts, setPosts] = React.useState([])
-  const [reposts, setReposts] = React.useState([])
-  const postsLoaded = useSelector((state) => state.posts.loaded)
-  const repostsLoaded = useSelector((state) => state.posts.repostsLoaded)
+  const [isLoading, setIsLoading] = React.useState(true)
+  const mergedData = useSelector((state) => {
+    const posts = state.posts.userPosts
+    const reposts = state.posts.userReposts
+    const merged = [...posts, ...reposts]
+    merged.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    return merged
+  })
 
   React.useEffect(() => {
-    dispatch(fetchPosts(userName)).then((res) => setPosts(res.payload))
-    dispatch(fetchUserReposts(userName)).then((res) => setReposts(res.payload))
+    dispatch(fetchPosts(userName)).then(() => {
+      dispatch(fetchUserReposts(userName)).then(() => {
+        setIsLoading(false)
+      })
+    })
   }, [dispatch, userName])
 
-  if (!postsLoaded) return <Skeleton count={2} height={200} />
-  if (!repostsLoaded) return <Skeleton count={2} height={200} />
-
-  const mergedData = [...posts, ...reposts]
-  mergedData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+  if (isLoading) return <Skeleton count={2} height={200} />
 
   return (
     <>
-      {mergedData.map((item, index) => {
+      {[...mergedData].map((item, index) => {
         if (item.hasOwnProperty('repostId')) {
           return <Repost key={item.repostId} repost={item} />
         } else {
@@ -36,4 +39,6 @@ function PostList({ userName }) {
   )
 }
 
-export default PostList
+export default React.memo(PostList, (prevProps, nextProps) => {
+  return prevProps.userName === nextProps.userName
+})

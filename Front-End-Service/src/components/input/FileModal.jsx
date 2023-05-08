@@ -2,25 +2,18 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleFileModal } from '../../redux/slices/modal'
 
-function FileModal({ image, setImage, setAudio, setVideo }) {
+function FileModal({ media, setMedia }) {
   const open = useSelector((state) => state.modal.fileModalOpen)
   const dispatch = useDispatch()
 
-  const handleImageChange = (e) => {
-    setImage(e.target.value)
-  }
-
-  const handleAudioChange = (e) => {
-    setAudio(e.target.value)
-  }
-
-  const handleVideoChange = (e) => {
-    setVideo(e.target.value)
+  const handleChange = (event) => {
+    setMedia({ ...media, [event.target.name]: event.target.value })
   }
 
   const handleOpen = () => {
     dispatch(toggleFileModal())
   }
+
   return open ? (
     <>
       <div className={`modal-overlay ${open ? 'active' : ''}`}></div>
@@ -34,26 +27,28 @@ function FileModal({ image, setImage, setAudio, setVideo }) {
         <div className='modal-body'>
           <p>Insert the url of image</p>
           <input
-            onChange={handleImageChange}
-            defaultValue={image}
+            onChange={handleChange}
+            defaultValue={media.image}
             className='modal-input'
-            name='imageURL'
+            name='image'
             type='text'
             aria-label='URL file input'
           />
           <p>Insert the url of audio</p>
           <input
-            onChange={handleAudioChange}
+            onChange={handleChange}
+            defaultValue={media.audio}
             className='modal-input'
-            name='audioURL'
+            name='audio'
             type='text'
             aria-label='URL file input'
           />
           <p>Insert the url of video</p>
           <input
-            onChange={handleVideoChange}
+            onChange={handleChange}
+            defaultValue={media.video}
             className='modal-input'
-            name='videoURL'
+            name='video'
             type='text'
             aria-label='URL file input'
           />

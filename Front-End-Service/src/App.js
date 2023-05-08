@@ -5,10 +5,12 @@ import connection from './utils/connection'
 import { useSelector, useDispatch } from 'react-redux'
 import { setMessage, setConnect } from './redux/slices/message'
 import { SkeletonTheme } from 'react-loading-skeleton'
+import truncateText from './utils/truncateText'
 
 function App() {
   const { theme } = useSelector((state) => state.theme)
-  const user = useSelector((state) => state.user)
+  const { rooms } = useSelector((state) => state.chats)
+  const { id: userId } = useSelector((state) => state.user)
   const dispatch = useDispatch()
 
   React.useEffect(() => {
@@ -17,23 +19,24 @@ function App() {
 
   React.useEffect(() => {
     connection.on('ReceiveMessage', (senderId, text, chatRoomId) => {
-      const currentRoom = user.rooms.find((r) => r.id === chatRoomId)
-      const otherUser = currentRoom.users.find((u) => u.id === senderId)
-      if (senderId !== user.id) {
+      const currentRoom = rooms.find((room) => room.chatId === chatRoomId)
+      const otherUser = currentRoom.users.$values.find(
+        (user) => user.userId === senderId
+      )
+      userId !== senderId &&
         dispatch(
           setMessage({
             isShown: true,
             name: otherUser.userName,
-            message: text,
+            message: truncateText(text, 20),
             chatId: chatRoomId,
           })
         )
-      }
     })
     connection.state === HubConnectionState.Disconnected && connection.start()
 
     return () => connection.off('ReceiveMessage')
-  }, [dispatch, user])
+  }, [dispatch, rooms, userId])
 
   return (
     <div className={theme}>

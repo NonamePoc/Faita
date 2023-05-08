@@ -5,7 +5,6 @@ import truncateDate from '../../utils/truncateDate'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleDeletePostModal } from '../../redux/slices/modal'
 import { setAvatar } from '../../utils/setAvatar'
-import DeletePostModal from './DeletePostModal'
 
 function UserDetails({ post }) {
   const { isOpen, togglePopup } = usePopup()
@@ -23,7 +22,7 @@ function UserDetails({ post }) {
   return (
     <>
       <div className='post__info'>
-        <Link to={`/profile/${post.userId}`}>
+        <Link to={`/profile/${post.userName}`}>
           <img
             src={setAvatar(post.avatar)}
             alt='Avatar of Creator'
