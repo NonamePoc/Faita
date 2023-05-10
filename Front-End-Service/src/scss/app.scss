@@ -68,6 +68,21 @@ body {
       -moz-transition: all 0.25s ease-in-out;
     }
   }
+  &-green {
+    background-color: rgb(29, 128, 29);
+    &:hover {
+      color: rgb(29, 128, 29);
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      svg path {
+        fill: rgb(29, 128, 29);
+        transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+      }
+    }
+  }
 }
 
 @media (max-width: 500px) {
@@ -247,40 +262,4 @@ Skeleton {
   -moz-border-radius: $main-border-radius;
   -ms-border-radius: $main-border-radius;
   -o-border-radius: $main-border-radius;
-}
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 20px;
-  height: 22px;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  margin: 8px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

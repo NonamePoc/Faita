@@ -14,22 +14,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Block.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Block.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/comments/Comments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/comments/Comments.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/ProfileItem.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/friend/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/chat/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/input/FileModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/input/FileModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/input/Input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/PostList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/PostList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/post/UserDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Chats.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Chats.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/PostDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/PostDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/asyncThunks/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/components/profile/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/components/profile/UserInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/pages/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/pages/Settings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/redux/slices/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/_all.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End-Service/src/scss/components/_all.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +197,8 @@
       <workItem from="1683217849476" duration="10978000" />
       <workItem from="1683446331180" duration="3916000" />
       <workItem from="1683526390042" duration="842000" />
-      <workItem from="1683551018678" duration="3687000" />
+      <workItem from="1683551018678" duration="4284000" />
+      <workItem from="1683723813711" duration="447000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>

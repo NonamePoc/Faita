@@ -5,7 +5,7 @@ import { setAvatar } from '../../utils/setAvatar'
 
 function Header({ room }) {
   const user = useSelector((state) => state.user)
-  const receiver = room.users.$values.find((u) => u.id !== user.id)
+  const receiver = room.users.$values.find((u) => u.userId !== user.id)
   const { avatar, userName } = receiver
 
   return (

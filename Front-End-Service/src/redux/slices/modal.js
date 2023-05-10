@@ -4,6 +4,7 @@ const modal = createSlice({
   name: 'modal',
   initialState: {
     fileModalOpen: false,
+    avatarModalOpen: false,
     deletePostModalOpen: false,
     deletePostId: null,
   },
@@ -15,9 +16,13 @@ const modal = createSlice({
       state.deletePostModalOpen = !state.deletePostModalOpen
       state.deletePostId = action.payload
     },
+    toggleAvatarModal: (state) => {
+      state.avatarModalOpen = !state.avatarModalOpen
+    },
   },
 })
 
-export const { toggleFileModal, toggleDeletePostModal } = modal.actions
+export const { toggleFileModal, toggleDeletePostModal, toggleAvatarModal } =
+  modal.actions
 
 export default modal.reducer

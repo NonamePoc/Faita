@@ -4,6 +4,7 @@ const message = createSlice({
   name: 'message',
   initialState: {
     isShown: false,
+    isAllowed: true,
     name: '',
     message: '',
     chatId: '',
@@ -24,6 +25,12 @@ const message = createSlice({
       return {
         ...state,
         connection: action.payload,
+      }
+    },
+    setIsAllowed: (state, action) => {
+      return {
+        ...state,
+        isAllowed: action.payload,
       }
     },
   },
