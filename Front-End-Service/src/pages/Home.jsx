@@ -1,5 +1,5 @@
 import React from 'react'
-import { PostList, Input, FileModal } from '../components'
+import { Input, FileModal } from '../components'
 
 function Home() {
   const [media, setMedia] = React.useState({

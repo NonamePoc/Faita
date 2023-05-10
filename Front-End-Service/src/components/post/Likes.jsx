@@ -23,7 +23,7 @@ function Likes({ post, userId }) {
     likes.find((like) => like.userId === userId)
       ? setLikeActive(true)
       : setLikeActive(false)
-  }, [likes])
+  }, [likes, userId])
 
   return (
     <li onClick={handleLike}>

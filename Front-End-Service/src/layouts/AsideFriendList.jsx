@@ -1,5 +1,4 @@
 import React from 'react'
-import Friend from '../components/friend/Aside'
 import Request from '../components/friend/Request'
 import { useDispatch, useSelector } from 'react-redux'
 import {
