@@ -26,6 +26,11 @@ Designed in Figma ![](https://img.shields.io/badge/Figma-F24E1E?style=for-the-ba
 
 [📌 Please click to see the figma file..](https://www.figma.com/file/GfONdOkOllR5Q3xAwdR8tg/Social-app?type=design&node-id=0%3A1&t=s6DDRF1zNzKtsCSW-1)
 
+## 💨 Deployment
+
+Link of the site: https://lemon-smoke-0321e8303.2.azurestaticapps.net
+(Azure Deployment. Only Frontend part)
+
 ## 🏃‍♂️ Run Locally
 
 Clone the project
