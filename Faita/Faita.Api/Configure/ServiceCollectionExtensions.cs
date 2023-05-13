@@ -15,10 +15,9 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddIdentity<User, IdentityRole>(options =>
-            {
-               
-            })
+        services.AddDbContext<DataContext>(options =>
+            options.UseSqlServer(configuration.GetConnectionString("Service-Context-Connection")));
+        services.AddIdentity<User, IdentityRole>(options => { })
             .AddEntityFrameworkStores<DataContext>()
             .AddDefaultTokenProviders();
 
@@ -40,8 +39,6 @@ public static class ServiceCollectionExtensions
             };
         });
 
-        services.AddDbContext<DataContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("Service-Context-Connection")));
 
         services.AddScoped<UserManager<User>>();
 
@@ -57,7 +54,7 @@ public static class ServiceCollectionExtensions
 
         services.Configure<IdentityOptions>(options =>
             options.SignIn.RequireConfirmedEmail = true);
-        
+
         return services;
     }
 }
