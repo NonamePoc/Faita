@@ -1,8 +1,6 @@
 namespace Faita.Post.Model;
 
-public class AddCommentModel
+public class RepostBlogModel
 {
     public string PostId { get; set; }
-
-    public string Content { get; set; }
 }

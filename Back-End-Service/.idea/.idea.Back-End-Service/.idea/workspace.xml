@@ -13,24 +13,104 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dcf4656-5e63-4770-a730-1144d7f9780f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomMessageModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomUserModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomsModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetComments.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetRepostModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetPostsByUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End-Service.Post/Model/GetRandomPost.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Controllers/BaseController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Controllers/FriendController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Controllers/MessageController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Controllers/PostController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Controllers/UserController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Faita.Api.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Map/UserChat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Map/UserFriend.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Map/UserPost.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Map/UserProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Middlware/GlobalExceptionMiddleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/SeedData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Api/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Chat/DTO/ExistingFriendship.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faita.Chat/Service/IFriendService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreCommonOptions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/efCoreDialogsState.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Back-End-Service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/CreateChatRoomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Models/CreateChatRoomModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Back-End-Service.Publication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Back-End-Service.Publication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/FriendController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/MessageController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Middlware/GlobalExceptionMiddleware.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/ServiceCollectionExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Api/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Back-End-Service.Chat.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Faita.Chat.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/ChatHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/AddFriendsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/AddFriendsModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/CancelFriendRequestModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/CancelFriendRequestModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/ConfirmFriendRequestAsyncModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/ConfirmFriendRequestAsyncModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/CreateChatRoomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/CreateChatRoomModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomMessageModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/GetChatRoomMessageModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/GetChatRoomModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomUserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/GetChatRoomUserModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetChatRoomsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/GetChatRoomsModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetComments.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/GetComments.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/GetRepostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/GetRepostModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/JoinChatRoomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/JoinChatRoomModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/RemoveFriendModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/RemoveFriendModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Models/SendMessageModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Models/SendMessageModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/FriendService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Service/FriendService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IFriendService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/IMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Service/IMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/Service/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/Service/MessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Chat/UserConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Chat/UserConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Helper/Back-End-Service.Helper.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Helper/Faita.Helper.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Helper/HelperFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Helper/HelperFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Back-End-Service.Identity.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Faita.Identity.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Context/DateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Context/DateContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Audio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/Audio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/ChatRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/ChatRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/Comment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/CommentLike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/CommentLike.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Friend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/Friend.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/FriendRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/FriendRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/IdentityUserManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/IdentityUserManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/Message.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Photo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/Photo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/PostLike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/PostLike.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Posts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/Posts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Repost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/Repost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Entities/Video.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Entities/Video.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Helpers/UserHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Helpers/UserHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230429154455_Initial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Migrations/20230429154455_Initial.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230429154455_Initial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Migrations/20230429154455_Initial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230429155121_zxc.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Migrations/20230429155121_zxc.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/20230429155121_zxc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Migrations/20230429155121_zxc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/AddAvatarModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/AddAvatarModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/AuthenticateRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/AuthenticateRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/AuthenticateResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/AuthenticateResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeEmailModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/ChangeEmailModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangePasswordModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/ChangePasswordModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/ChangeUserDataModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/ChangeUserDataModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SearchUserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/SearchUserModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/SendChangeEmailModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/SendChangeEmailModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Models/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Models/UserModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Service/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Identity/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Identity/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Back-End-Service.Publication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Faita.Publication.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End-Service.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Faita.Service.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +141,23 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9c8dd8bf233c4409b3da008fcaf737954f480/9c/ab6099bc/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/9e385f927193487e8192e4d148746fa67e90/9b/c221f589/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/f7e2530ee1784107bb063950307afb9f2bc80/89/02d44647/UserManager`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Back-End-Service.Api/UserProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Model/CreatePostModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/IPostService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Message/Back-End-Service/Back-End-Service.Post/Service/PostService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Controllers/BaseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Controllers/FriendController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Controllers/MessageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Controllers/PostController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Map/UserChat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Map/UserFriend.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Middlware/GlobalExceptionMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Api/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Chat/Models/RemoveFriendModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Faita.Chat/Service/IFriendService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -97,7 +186,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -115,7 +204,7 @@
 }</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Back-End-Service.Api: Back_End_Service">
     <configuration name="Back-End-Service.Api: Back_End_Service" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Faita.Api/Faita.Api.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
       <option name="LAUNCH_PROFILE_NAME" value="Back_End_Service" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -130,7 +219,7 @@
       </method>
     </configuration>
     <configuration name="Back-End-Service.Api: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Back-End-Service.Api/Back-End-Service.Api.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Faita.Api/Faita.Api.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
       <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -211,7 +300,25 @@
       <workItem from="1683034609136" duration="1104000" />
       <workItem from="1683039162859" duration="2371000" />
       <workItem from="1683041933615" duration="1546000" />
-      <workItem from="1683217849476" duration="10978000" />
+      <workItem from="1683217849476" duration="11360000" />
+      <workItem from="1683276699974" duration="37000" />
+      <workItem from="1683464779996" duration="466000" />
+      <workItem from="1683465294029" duration="26000" />
+      <workItem from="1683483323674" duration="33000" />
+      <workItem from="1683530716489" duration="585000" />
+      <workItem from="1683547016480" duration="2096000" />
+      <workItem from="1683573217644" duration="881000" />
+      <workItem from="1683633134138" duration="1127000" />
+      <workItem from="1683789774812" duration="33000" />
+      <workItem from="1683796297497" duration="10020000" />
+      <workItem from="1683827100674" duration="347000" />
+      <workItem from="1683970799767" duration="4064000" />
+      <workItem from="1683982378758" duration="150000" />
+      <workItem from="1683983805520" duration="2315000" />
+      <workItem from="1683986353488" duration="452000" />
+      <workItem from="1683986828278" duration="8000" />
+      <workItem from="1683992418015" duration="3103000" />
+      <workItem from="1684006056114" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="Add joinRoom ,update DataBase">
       <created>1681217556272</created>
@@ -381,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683041523141</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="New logic MessageService.cs, new logic PostService.cs,fix Controller PostController.cs,Add GetModel,Add new attribute DB Repost">
+      <created>1683276582206</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1683276582206</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,49 +547,37 @@
     <MESSAGE value="Fix get method PostService.cs" />
     <MESSAGE value="fix" />
     <MESSAGE value="delete useless file" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete useless file" />
+    <MESSAGE value="New logic MessageService.cs, new logic PostService.cs,fix Controller PostController.cs,Add GetModel,Add new attribute DB Repost" />
+    <option name="LAST_COMMIT_MESSAGE" value="New logic MessageService.cs, new logic PostService.cs,fix Controller PostController.cs,Add GetModel,Add new attribute DB Repost" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/PostController.cs</url>
-          <line>51</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\PostController.cs" initialLine="50" containingFunctionPresentation="Method 'EditPost'">
+          <url>file://$PROJECT_DIR$/Faita.Chat/Service/FriendService.cs</url>
+          <line>179</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Chat\Service\FriendService.cs" initialLine="179" containingFunctionPresentation="Method 'CancelFriendRequest'">
             <startOffsets>
-              <option value="1319" />
+              <option value="5684" />
             </startOffsets>
             <endOffsets>
-              <option value="1320" />
+              <option value="5710" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs</url>
-          <line>29</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\UserController.cs" initialLine="29" containingFunctionPresentation="Method 'Authenticate'">
+          <url>file://$PROJECT_DIR$/Back-End-Service.Post/Service/PostService.cs</url>
+          <line>142</line>
+          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Post\Service\PostService.cs" initialLine="139" containingFunctionPresentation="Method 'AddLike'">
             <startOffsets>
-              <option value="855" />
+              <option value="3845" />
             </startOffsets>
             <endOffsets>
-              <option value="856" />
+              <option value="3900" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Back-End-Service.Api/Controllers/UserController.cs</url>
-          <line>40</line>
-          <properties documentPath="D:\Message\Back-End-Service\Back-End-Service.Api\Controllers\UserController.cs" initialLine="40" containingFunctionPresentation="Method 'Register'">
-            <startOffsets>
-              <option value="1078" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1079" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -485,5 +587,9 @@
         <PinnedItemInfo parentTag="Type#System.Security.Claims.ClaimsIdentity" memberName="Claims" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
