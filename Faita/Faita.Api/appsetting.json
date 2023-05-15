@@ -1,0 +1,14 @@
+{
+  "Secret": "secretkeyclient0",
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "Service-Context-Connection": "Server=DESKTOP-RRJ6N8K\\SQLEXPRESS;Database=BackEndServiceUser5;Trusted_Connection=True;TrustServerCertificate= True;Encrypt = False;MultipleActiveResultSets=true"
+  }
+}
