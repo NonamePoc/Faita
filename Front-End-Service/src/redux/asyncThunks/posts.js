@@ -65,7 +65,6 @@ export const createNewPost = createAsyncThunk(
   'posts/createNewPost',
   async ({ content, image, video, audio }, { getState }) => {
     const { userName, token } = getState().user
-    console.log('userName', getState().user, getState().posts)
     if (!image) image = ''
     if (!video) video = ''
     if (!audio) audio = ''

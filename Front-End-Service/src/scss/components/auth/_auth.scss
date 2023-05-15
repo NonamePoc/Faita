@@ -23,10 +23,10 @@
     display: flex;
     flex-direction: column;
     width: 640px;
-    -webkit-transition: -webkit-transform 1.2s ease-in-out;
-    transition: -webkit-transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
   }
 
   h2 {
@@ -107,9 +107,9 @@
     height: 100%;
     padding-left: 260px;
     background: #fff;
-    -webkit-transition: -webkit-transform 1.2s ease-in-out;
-    transition: -webkit-transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
   }
 
   .cont.s-signup .sub-cont {
@@ -137,8 +137,8 @@
     height: 100%;
     background-image: url(https://picsum.photos/id/251/2515/1830);
     background-size: cover;
-    transition: -webkit-transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+    transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
   }
 
   .img:after {
@@ -164,9 +164,9 @@
     width: 100%;
     padding: 4.5rem clamp(0rem, 2rem + -10vw, 1.25rem);
     text-align: center;
-    -webkit-transition: -webkit-transform 1.2s ease-in-out;
-    transition: -webkit-transform 1.2s ease-in-out;
-    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
   }
 
   .img-text h2 {
@@ -203,8 +203,8 @@
   .cont.s-signup .sign-in {
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
-    -webkit-transition-duration: 1.2s;
-    transition-duration: 1.2s;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
     -webkit-transform: translate3d(640px, 0, 0);
     transform: translate3d(640px, 0, 0);
   }
@@ -259,10 +259,10 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    -webkit-transition: -webkit-transform 1.2s;
-    transition: -webkit-transform 1.2s;
-    transition: transform 1.2s;
-    transition: transform 1.2s, -webkit-transform 1.2s;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
   }
 
   .img-btn span.m-in {

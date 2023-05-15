@@ -1,17 +1,26 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleDeletePostModal } from '../../redux/slices/modal'
-import { deleteUserPost, fetchPosts } from '../../redux/asyncThunks/posts'
+import { closeDeletePostModal } from '../../redux/slices/modal'
+import {
+  deleteUserPost,
+  fetchPosts,
+  fetchUserReposts,
+} from '../../redux/asyncThunks/posts'
 
 function DeletePostModal() {
   const open = useSelector((state) => state.modal.deletePostModalOpen)
   const deletePostId = useSelector((state) => state.modal.deletePostId)
+  const { userName } = useSelector((state) => state.user)
   const dispatch = useDispatch()
 
   const deletePost = () => {
-    dispatch(deleteUserPost(deletePostId))
-    dispatch(fetchPosts())
-    toggleDeletePostModal()
+    dispatch(deleteUserPost(deletePostId)).then(() =>
+      dispatch(fetchPosts(userName)).then(() =>
+        dispatch(fetchUserReposts(userName)).then(() =>
+          dispatch(closeDeletePostModal())
+        )
+      )
+    )
   }
 
   return open ? (
@@ -22,7 +31,7 @@ function DeletePostModal() {
           <h2>Are you sure you want to delete that post?</h2>
           <span
             className='close'
-            onClick={() => dispatch(toggleDeletePostModal(null))}
+            onClick={() => dispatch(closeDeletePostModal())}
           >
             &times;
           </span>

@@ -1,10 +1,14 @@
 .chat {
-  &__msgs__cont {
+  &__msgs__wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     height: calc(100dvh - 21rem);
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
+  }
+  &__msgs__cont {
     overflow-y: scroll;
+    padding: 1rem;
   }
 }
 
@@ -12,7 +16,7 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
-
+  margin-top: 1rem;
   &__stranger {
     justify-content: flex-start;
     &__img {

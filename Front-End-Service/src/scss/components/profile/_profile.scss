@@ -14,9 +14,14 @@
     background: #859bd488;
     border-radius: $main-border-radius $main-border-radius 0 0;
   }
-  button {
+  .btn,
+  .lds-ring {
     z-index: 1;
     margin-left: auto;
+  }
+  .lds-ring {
+    margin-right: 2rem;
+    margin-bottom: 0.7rem;
   }
   .addFriendBtn:hover {
     svg path {

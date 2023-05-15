@@ -25,7 +25,7 @@ function Registration() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='form sign-up'>
+    <form id='registration' onSubmit={handleSubmit} className='form sign-up'>
       <h2>Sign Up</h2>
       <label className='label'>
         <span>First Name</span>

@@ -12,7 +12,9 @@ import {
 } from '../components'
 
 function Settings() {
-  const user = useSelector((state) => state.user)
+  const { firstName, lastName, email, password, userName } = useSelector(
+    (state) => state.user
+  )
 
   const onClickExit = () => {
     resetPersistor()
@@ -23,10 +25,10 @@ function Settings() {
     <section className='stngs'>
       <h1>Personal Information</h1>
       <div className='card'>
-        <FirstName firstName={user.firstName} />
-        <LastName lastName={user.lastName} />
-        <ChangeEmail email={user.email} />
-        <ChangePass password={user.password} />
+        <FirstName firstName={firstName} />
+        <LastName lastName={lastName} />
+        <ChangeEmail email={email} />
+        <ChangePass password={password} userName={userName} />
       </div>
       <h1>UI Settings</h1>
       <div className='card'>

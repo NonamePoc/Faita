@@ -20,6 +20,17 @@
   a:focus {
     color: $lt-body-text-color;
   }
+  iframe {
+    background-color: $lt-body-bg-color;
+  }
+  .rhap_container {
+    background-color: $lt-body-bg-color;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.131);
+  }
+  .rhap_volume-indicator,
+  .rhap_progress-indicator {
+    background-color: $light-secondary-color;
+  }
   .card {
     background-color: $lt-card-bg-color;
   }
@@ -32,7 +43,6 @@
 
     &:hover {
       background-color: white;
-      border: 1px solid $accent-color;
     }
   }
   .btn__outline {
@@ -204,6 +214,23 @@
   a:focus {
     color: $drk-body-text-color;
   }
+  iframe {
+    background-color: $drk-body-bg-color;
+  }
+
+  .rhap_container {
+    background-color: $drk-body-bg-color;
+  }
+  .rhap_time,
+  .rhap_additional-controls button,
+  .rhap_main-controls button,
+  .rhap_volume-controls button {
+    color: $drk-secondary-color;
+  }
+  .rhap_volume-indicator,
+  .rhap_progress-indicator {
+    background-color: $drk-secondary-color;
+  }
   .card {
     background-color: $drk-card-bg-color;
   }
@@ -215,7 +242,6 @@
     border: 1px solid black;
     &:hover {
       background-color: $drk-body-bg-color;
-      border: 1px solid $accent-color;
     }
   }
   .btn__outline {
@@ -359,5 +385,11 @@
   .modal-input {
     background-color: transparent;
     color: $drk-body-text-color;
+  }
+  .button-48 {
+    background-color: $drk-header-bg-color;
+    &:before {
+      background-color: $drk-btn-bg-color;
+    }
   }
 }

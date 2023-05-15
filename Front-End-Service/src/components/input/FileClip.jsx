@@ -12,6 +12,7 @@ function FileClip() {
   return (
     <>
       <svg
+        className='file-clip'
         onClick={handleOpen}
         width='32'
         height='32'

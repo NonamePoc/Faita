@@ -1,0 +1,142 @@
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: clamp(0.75rem, 0.6818rem + 0.3409vw, 0.9375rem);
+  color: white;
+  background-color: $accent-color;
+  padding: 0.8em 1.2em;
+  border-radius: $main-border-radius;
+  -webkit-border-radius: $main-border-radius;
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  svg path {
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+  }
+  &:hover {
+    border: 1px solid $accent-color;
+    color: $accent-color;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    svg path {
+      fill: $accent-color;
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+    }
+  }
+  &-green {
+    background-color: rgb(29, 128, 29);
+    &:hover {
+      border: 1px solid rgb(29, 128, 29);
+      color: rgb(29, 128, 29);
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      svg path {
+        fill: rgb(29, 128, 29);
+        transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .btn {
+    padding: 0.8em;
+    max-height: 2.8rem;
+  }
+}
+
+.btn__outline {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 15px;
+  color: $accent-color;
+  border: 1px solid $accent-color;
+  padding: 0.8em 1.2em;
+  border-radius: $main-border-radius;
+  -webkit-border-radius: $main-border-radius;
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  &:hover {
+    background-color: $accent-color;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    svg path {
+      fill: white;
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+    }
+  }
+}
+
+.button-48 {
+  appearance: none;
+  background-color: #ffffff;
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 1em;
+  font-weight: bold;
+  opacity: 1;
+  padding: 1.2em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+    background-color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+    color 100ms cubic-bezier(0.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-48:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: $lt-header-brdr-color;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}

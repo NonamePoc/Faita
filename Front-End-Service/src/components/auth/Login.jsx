@@ -49,7 +49,7 @@ function Login() {
   )
 
   return (
-    <form className='form sign-in' onSubmit={handleSubmit}>
+    <form id='login' className='form sign-in' onSubmit={handleSubmit}>
       <h2>Sign In</h2>
       <label className='label'>
         <span>Username</span>

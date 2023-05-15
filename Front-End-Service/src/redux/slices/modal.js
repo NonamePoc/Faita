@@ -12,9 +12,12 @@ const modal = createSlice({
     toggleFileModal: (state) => {
       state.fileModalOpen = !state.fileModalOpen
     },
-    toggleDeletePostModal: (state, action) => {
-      state.deletePostModalOpen = !state.deletePostModalOpen
+    openDeletePostModal: (state, action) => {
+      state.deletePostModalOpen = true
       state.deletePostId = action.payload
+    },
+    closeDeletePostModal: (state) => {
+      state.deletePostModalOpen = false
     },
     toggleAvatarModal: (state) => {
       state.avatarModalOpen = !state.avatarModalOpen
@@ -22,7 +25,11 @@ const modal = createSlice({
   },
 })
 
-export const { toggleFileModal, toggleDeletePostModal, toggleAvatarModal } =
-  modal.actions
+export const {
+  toggleFileModal,
+  openDeletePostModal,
+  closeDeletePostModal,
+  toggleAvatarModal,
+} = modal.actions
 
 export default modal.reducer

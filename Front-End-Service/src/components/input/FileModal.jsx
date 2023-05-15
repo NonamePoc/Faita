@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleFileModal } from '../../redux/slices/modal'
+import { checkValidMedia } from '../../utils/checkValidMedia'
 
 function FileModal({ media, setMedia }) {
   const open = useSelector((state) => state.modal.fileModalOpen)
@@ -10,8 +11,14 @@ function FileModal({ media, setMedia }) {
     setMedia({ ...media, [event.target.name]: event.target.value })
   }
 
-  const handleOpen = () => {
-    dispatch(toggleFileModal())
+  const handleSave = () => {
+    if (media.image || media.audio || media.video) {
+      checkValidMedia(media, (isValid) => {
+        isValid ? dispatch(toggleFileModal()) : alert('Invalid media url')
+      })
+    } else {
+      dispatch(toggleFileModal())
+    }
   }
 
   return open ? (
@@ -20,9 +27,6 @@ function FileModal({ media, setMedia }) {
       <div className={`modal card ${open ? 'active' : ''}`}>
         <div className='modal-header'>
           <h2>Put media in post</h2>
-          <span className='close' onClick={handleOpen}>
-            &times;
-          </span>
         </div>
         <div className='modal-body'>
           <p>Insert the url of image</p>
@@ -52,7 +56,7 @@ function FileModal({ media, setMedia }) {
             type='text'
             aria-label='URL file input'
           />
-          <button className='btn' onClick={handleOpen}>
+          <button className='btn' onClick={handleSave}>
             Save changes
           </button>
         </div>

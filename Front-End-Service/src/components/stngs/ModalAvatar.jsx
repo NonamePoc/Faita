@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleAvatarModal } from '../../redux/slices/modal'
 import { changeProfileImage } from '../../redux/asyncThunks/user'
-import checkValidMedia from '../../utils/checkValidMedia'
+import { checkValidImage } from '../../utils/checkValidMedia'
 
 function ModalAvatar() {
   const modalImgOpen = useSelector((state) => state.modal.avatarModalOpen)
@@ -18,7 +18,7 @@ function ModalAvatar() {
   }
 
   const onClickUpload = () => {
-    checkValidMedia(image, (isValid) => {
+    checkValidImage(image, (isValid) => {
       isValid ? dispatch(changeProfileImage(image)) : alert('Invalid image url')
     })
   }

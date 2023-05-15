@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import usePopup from '../../hooks/usePopup'
 import truncateDate from '../../utils/truncateDate'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleDeletePostModal } from '../../redux/slices/modal'
+import { openDeletePostModal } from '../../redux/slices/modal'
 import { setAvatar } from '../../utils/setAvatar'
 
 function UserDetails({ post }) {
@@ -99,7 +99,7 @@ function UserDetails({ post }) {
             Go to post
           </li>
           {isMyPost() ? (
-            <li onClick={() => dispatch(toggleDeletePostModal(post.postId))}>
+            <li onClick={() => dispatch(openDeletePostModal(post.postId))}>
               <svg
                 width='26'
                 height='26'

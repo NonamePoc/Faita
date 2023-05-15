@@ -35,6 +35,33 @@
     -webkit-border-radius: $main-border-radius;
     object-fit: cover;
   }
+  &__audio {
+    width: 100%;
+    border: none;
+    border-radius: $main-border-radius;
+  }
+  iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: $main-border-radius;
+    -webkit-border-radius: $main-border-radius;
+    object-fit: cover;
+  }
+  &__video {
+    width: 560;
+    height: 315;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &__container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+  }
   &__below {
     display: flex;
     li {

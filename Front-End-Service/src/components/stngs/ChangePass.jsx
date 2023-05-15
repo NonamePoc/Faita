@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { changeUserPassword } from '../../redux/asyncThunks/user'
 import { pen } from '../../assets'
 
-function ChangePass({ password }) {
+function ChangePass({ password, userName }) {
   const dispatch = useDispatch()
   const [loading, setLoading] = React.useState(false)
 
@@ -20,6 +20,14 @@ function ChangePass({ password }) {
         <p>Change your password.</p>
       </div>
       <form className='stngs__change'>
+        <input
+          type='text'
+          id='username'
+          autoComplete='username'
+          aria-label='Username'
+          disabled
+          className='none'
+        />
         <input
           type='password'
           defaultValue={password}

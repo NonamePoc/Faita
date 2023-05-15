@@ -15,7 +15,6 @@ body {
   padding: 2rem 10rem;
   padding-left: 8rem;
   gap: 4.5rem;
-  /* overflow-y: auto; */
 }
 
 @media (max-width: 1600px) {
@@ -33,93 +32,6 @@ body {
 @media (max-width: 960px) {
   .wrapper {
     padding: 0;
-  }
-}
-
-.btn {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
-  font-size: clamp(0.75rem, 0.6818rem + 0.3409vw, 0.9375rem);
-  color: white;
-  background-color: $accent-color;
-  padding: 0.8em 1.2em;
-  border-radius: $main-border-radius;
-  -webkit-border-radius: $main-border-radius;
-  font-weight: 600;
-  transition: all 0.25s ease-in-out;
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  svg path {
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-  }
-  &:hover {
-    color: $accent-color;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    svg path {
-      fill: $accent-color;
-      transition: all 0.25s ease-in-out;
-      -webkit-transition: all 0.25s ease-in-out;
-      -moz-transition: all 0.25s ease-in-out;
-    }
-  }
-  &-green {
-    background-color: rgb(29, 128, 29);
-    &:hover {
-      color: rgb(29, 128, 29);
-      transition: all 0.25s ease-in-out;
-      -webkit-transition: all 0.25s ease-in-out;
-      -moz-transition: all 0.25s ease-in-out;
-      svg path {
-        fill: rgb(29, 128, 29);
-        transition: all 0.25s ease-in-out;
-        -webkit-transition: all 0.25s ease-in-out;
-        -moz-transition: all 0.25s ease-in-out;
-      }
-    }
-  }
-}
-
-@media (max-width: 500px) {
-  .btn {
-    padding: 0.8em;
-    max-height: 2.8rem;
-  }
-}
-
-.btn__outline {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
-  font-size: 15px;
-  color: $accent-color;
-  border: 1px solid $accent-color;
-  padding: 0.8em 1.2em;
-  border-radius: $main-border-radius;
-  -webkit-border-radius: $main-border-radius;
-  font-weight: 600;
-  transition: all 0.25s ease-in-out;
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  &:hover {
-    background-color: $accent-color;
-    color: white;
-    border: 1px solid white;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    svg path {
-      fill: white;
-      transition: all 0.25s ease-in-out;
-      -webkit-transition: all 0.25s ease-in-out;
-      -moz-transition: all 0.25s ease-in-out;
-    }
   }
 }
 
@@ -174,86 +86,12 @@ body {
   gap: 0.3rem;
 }
 
+.none {
+  display: none;
+}
+
 .avatar {
   object-fit: cover;
-}
-
-.modal-overlay {
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  &.active {
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.361);
-  }
-}
-
-.modal {
-  z-index: -1;
-  opacity: 0;
-  position: fixed;
-  top: 20%;
-  left: 36%;
-  padding: 1rem;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  &.active {
-    opacity: 1;
-    z-index: 10;
-  }
-  &-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-    h2 {
-      font-size: 1rem;
-    }
-    span {
-      font-size: 1.4rem;
-      cursor: pointer;
-    }
-  }
-  &-input {
-    font-size: 14px;
-    padding: 0.2rem 0.8rem;
-    border: 1px solid #cccccc2c;
-    border-radius: 5px;
-    text-align: start;
-    margin-bottom: 0.5rem;
-  }
-
-  &-body {
-    padding: 0.5rem 2.5rem;
-    .modal-friend {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      h3 {
-        font-size: 14px;
-        font-weight: 600;
-      }
-      button {
-        font-size: 12px;
-        padding: 0.2rem 0.5rem;
-        margin: 0.5rem;
-      }
-    }
-    button {
-      margin: auto;
-    }
-  }
 }
 
 Skeleton {

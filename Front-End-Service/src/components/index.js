@@ -25,3 +25,5 @@ export { default as ChangeEmail } from './stngs/ChangeEmail'
 export { default as ChangePass } from './stngs/ChangePass'
 export { default as ChangeAvatar } from './stngs/ChangeAvatar'
 export { default as ModalAvatar } from './stngs/ModalAvatar'
+
+export { default as Loader } from './loader/BasicLoader'
