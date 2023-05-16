@@ -2,7 +2,7 @@ namespace Faita.Chat.Models;
 
 public class GetRepostModel
 {
-    public string RepostId { get; set; }
+    public string Id { get; set; }
     
     public string PostId { get; set; }
     
