@@ -39,6 +39,10 @@ public class BlogService : IBlogService
     public async Task RepostPost(RepostBlogModel model, string userId)
     {
         var response = _mapper.Map<Repost>(model);
+        response.Id = Guid.NewGuid().ToString();
+        response.UserId = userId;
+        response.CreatedAt = DateTime.Now;
+        response.Posts = await _context.Post.FirstOrDefaultAsync(x => x.Id == model.PostId);
 
         await _context.Repost.AddAsync(response);
         await _context.SaveChangesAsync();
@@ -166,7 +170,7 @@ public class BlogService : IBlogService
             User = user
         };
 
-      
+
 
         _context.PostLike.Add(like);
         await _context.SaveChangesAsync();
@@ -230,9 +234,10 @@ public class BlogService : IBlogService
     public async Task<List<GetComments>> GetComments(string postId)
     {
         var comments = await _context.Comment
-            .Include(c => c.User)
-            .Where(c => c.PostId == postId)
-            .ToListAsync();
+           .Include(c => c.User)
+           .Where(c => c.PostId == postId)
+           .ToListAsync();
+
 
         var response = _mapper.Map<List<GetComments>>(comments);
 
@@ -269,12 +274,14 @@ public class BlogService : IBlogService
 
     public List<GetRepostModel> GetRepostsByUser(string UserName)
     {
-        var reposts = _context.Repost.Where(x => x.User.UserName == UserName)
+        var reposts = _context.Repost
+            .Where(x => x.User.UserName == UserName)
             .Include(x => x.User)
             .ToList();
 
-        var response = _mapper.Map<List<GetRepostModel>>(reposts);
+        var response = _mapper.Map<List<Repost>, List<GetRepostModel>>(reposts);
 
         return response;
     }
+
 }

@@ -1,4 +1,5 @@
 using AutoMapper;
+using Faita.Chat.Models;
 using Faita.Identity.Entities;
 using Faita.Post.Model;
 
@@ -12,6 +13,18 @@ public class UserPost : Profile
         CreateMap<CreateBlogModel, Posts>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid().ToString()));
 
+        CreateMap<Repost, GetRepostModel>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.PostId, opt => opt.MapFrom(src => src.PostId))
+            .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+            .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt))
+            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.UserName))
+            .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.User.Avatar));
+
+        CreateMap<Comment, GetComments>()
+            .ForMember(dest => dest.CommentId, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.UserName))
+            .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.User.Avatar));
 
         CreateMap<RepostBlogModel, Repost>();
 
