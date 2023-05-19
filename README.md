@@ -42,7 +42,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd Front-End-Service
+  cd Client
 ```
 
 Install dependencies
