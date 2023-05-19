@@ -52,6 +52,23 @@ export const getPostsById = async (postId, token) => {
   }
 }
 
+export const getRandomPosts = async (count, token) => {
+  try {
+    const response = await instance.get(`blog/randomBlog?count=${count}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    return response
+  } catch (error) {
+    if (error.response.data.Errors) {
+      alert(error.response.data.Errors[0].Detail)
+    } else {
+      alert(error.message)
+    }
+  }
+}
+
 export const getLikesByPostId = async (postId, token) => {
   try {
     const response = await instance.get(`blog/like?getLikes=${postId}`, {

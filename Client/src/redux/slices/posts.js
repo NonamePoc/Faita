@@ -3,6 +3,7 @@ import {
   createNewPost,
   deleteUserPost,
   fetchPostById,
+  fetchRandomPosts,
   fetchPosts,
   fetchUserReposts,
   getComments,
@@ -13,6 +14,8 @@ import {
 const posts = createSlice({
   name: 'posts',
   initialState: {
+    posts: [],
+    loadedPosts: false,
     userPosts: [],
     loaded: false,
     userReposts: [],
@@ -74,6 +77,13 @@ const posts = createSlice({
     })
     builder.addCase(getShares.fulfilled, (state) => {
       state.sharesLoaded = true
+    })
+    builder.addCase(fetchRandomPosts.fulfilled, (state, action) => {
+      state.posts = action.payload
+      state.loadedPosts = true
+    })
+    builder.addCase(fetchRandomPosts.pending, (state) => {
+      state.loadedPosts = false
     })
   },
 })

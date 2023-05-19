@@ -162,7 +162,7 @@ const Card = React.memo(({ friend, type }) => {
 
         <button
           onClick={() => onClickChat(id)}
-          className='btn msg'
+          className='btn btn-msg'
           aria-label='chat with user'
         >
           <svg

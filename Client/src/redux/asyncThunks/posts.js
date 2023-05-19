@@ -12,7 +12,15 @@ import {
   deletePost,
   removeLike,
   addComment,
+  getRandomPosts,
 } from '../../api/postRequests'
+
+export const fetchRandomPosts = createAsyncThunk(
+  'posts/fetchRandomPosts',
+  async (count) => {
+    return (await getRandomPosts(count)).data.$values
+  }
+)
 
 export const fetchPosts = createAsyncThunk(
   'posts/fetchUserPosts',

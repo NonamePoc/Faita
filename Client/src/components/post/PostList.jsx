@@ -34,10 +34,10 @@ function PostList({ userName }) {
   return (
     <>
       {[...mergedData].slice(0, visibleItems).map((item, index) => {
-        if (item.hasOwnProperty('repostId')) {
-          return <Repost key={item.repostId} repost={item} />
-        } else {
+        if (item.hasOwnProperty('content')) {
           return <Post key={index} post={item} />
+        } else {
+          return <Repost key={item.id} repost={item} />
         }
       })}
       {visibleItems < mergedData.length && (

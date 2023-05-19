@@ -52,11 +52,11 @@
   .friendsTitle {
     color: $lt-secondary-color;
   }
-  .friendCard__btns .msg {
+  .friendCard__btns .btn-msg {
     background-color: white;
     border: 1px solid $accent-color;
     &:hover {
-      background-color: $light-secondary-color;
+      background-color: #eeee;
     }
   }
   .friends .friend {
@@ -247,7 +247,7 @@
   .btn__outline {
     background-color: $drk-btn-bg-color;
   }
-  .friendCard__btns .msg {
+  .friendCard__btns .btn-msg {
     background-color: $drk-body-bg-color;
     &:hover {
       background-color: $drk-hover-bg-color;
