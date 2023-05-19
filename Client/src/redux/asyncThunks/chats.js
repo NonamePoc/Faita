@@ -16,6 +16,7 @@ export const createChatRoom = createAsyncThunk(
     return await createRoom(roomName, friendId, token)
   }
 )
+
 export const sendChatMessage = createAsyncThunk(
   'chats/sendChatMessage',
   async ({ receiverId, text, roomId }, { getState }) => {

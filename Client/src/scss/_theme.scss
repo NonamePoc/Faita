@@ -76,6 +76,16 @@
   }
   .comment {
     border-top: 1px solid $lt-line-color;
+    &__actions {
+      .comment__svg {
+        &__edit g {
+          fill: $lt-secondary-color;
+        }
+        &__delete path {
+          stroke: $lt-secondary-color;
+        }
+      }
+    }
   }
   .comment__replies__button {
     background-color: $lt-rpls-btn-bg-color;
@@ -102,6 +112,12 @@
   .auth {
     background-color: $lt-auth-body-bg-color;
     .field {
+      background-color: $lt-auth-field-bg-color;
+    }
+  }
+  .modal {
+    input,
+    textarea {
       background-color: $lt-auth-field-bg-color;
     }
   }
@@ -208,7 +224,8 @@
   h4,
   p,
   span,
-  input {
+  input,
+  textarea {
     color: $drk-body-text-color;
   }
   a:focus {
@@ -270,12 +287,16 @@
   }
   .comment {
     border-top: 1px solid $drk-line-color;
-  }
-  .comment__replies__button {
-    background-color: $drk-hover-bg-color;
-  }
-  .comment__replies__create p {
-    color: $drk-secondary-color;
+    &__actions {
+      .comment__svg {
+        &__edit g {
+          fill: $drk-secondary-color;
+        }
+        &__delete path {
+          stroke: $drk-secondary-color;
+        }
+      }
+    }
   }
   .comment__info__date {
     color: $drk-secondary-color;

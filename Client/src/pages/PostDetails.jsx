@@ -1,5 +1,14 @@
 import React from 'react'
-import { BackHeader, Input, Post, Comments } from '../components'
+import {
+  BackHeader,
+  Input,
+  Post,
+  Comments,
+  DeletePostModal,
+  DeleteCommentModal,
+  EditCommentModal,
+  EditPostModal,
+} from '../components'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPostById, getComments } from '../redux/asyncThunks/posts'
@@ -16,8 +25,8 @@ function PostDetails() {
     dispatch(fetchPostById(postId)).then((res) => {
       setPost(res.payload)
       dispatch(getComments(postId)).then((res) => {
-        setComments(res.payload)
         setLoaded(true)
+        setComments(res.payload)
       })
     })
   }, [dispatch, postId])
@@ -26,9 +35,13 @@ function PostDetails() {
     <main>
       <BackHeader />
       <Post post={post} />
+      <EditPostModal />
+      <DeletePostModal />
       <section className='card'>
         <Input type={false} postId={postId} setComments={setComments} />
         {loadedComs ? <Comments comments={comments} /> : null}
+        <DeleteCommentModal postId={postId} setComments={setComments} />
+        <EditCommentModal postId={postId} setComments={setComments} />
       </section>
     </main>
   ) : null

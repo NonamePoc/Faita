@@ -1,14 +1,13 @@
 import React from 'react'
 import Block from './Block'
+import sortByDate from '../../utils/sortByDate'
 
 function Comments({ comments }) {
   return (
     <div className='commentsList'>
-      {[...comments]
-        ?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-        .map((comment) => (
-          <Block key={comment.commentId} comment={comment} />
-        ))}
+      {sortByDate(comments).map((comment) => (
+        <Block key={comment.commentId} comment={comment} />
+      ))}
     </div>
   )
 }

@@ -8,6 +8,13 @@ import {
   changeImage,
 } from '../../api/userRequests'
 
+export const login = createAsyncThunk('user/login', async (userData) => {
+  const res = (await loginUser(userData)).data
+  res.userName = userData.userName
+  res.password = userData.password
+  return res
+})
+
 export const getUserData = createAsyncThunk(
   'user/getUserData',
   async (userName, { getState }) => {
@@ -15,13 +22,6 @@ export const getUserData = createAsyncThunk(
     return (await getUser(userName, token)).data
   }
 )
-
-export const login = createAsyncThunk('user/login', async (userData) => {
-  const res = (await loginUser(userData)).data
-  res.userName = userData.userName
-  res.password = userData.password
-  return res
-})
 
 export const changeFirstName = createAsyncThunk(
   'user/changeFirstName',

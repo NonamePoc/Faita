@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { setAvatar } from '../../utils/setAvatar'
+import { IsGif } from '../../utils/checkGif'
 import getLastMessage from '../../utils/getLastMessage'
 
 function ChatBlock({ room }) {
@@ -22,7 +23,9 @@ function ChatBlock({ room }) {
           <div className='chat__info__firstLine'>
             <h1 className='chat__name'>{userName}</h1>
           </div>
-          <p className='chat__message'>{lastMessageText}</p>
+          <p className='chat__message'>
+            {IsGif(lastMessageText) ? '🔮 Gif' : lastMessageText}
+          </p>
         </div>
         <div className='chat__info right'>
           <p className='chat__date'>{formattedTime}</p>

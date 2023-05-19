@@ -1,29 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {
-  createNewPost,
-  deleteUserPost,
-  fetchPostById,
-  fetchRandomPosts,
-  fetchPosts,
+  fetchUserPosts,
   fetchUserReposts,
-  getComments,
+  fetchRandomPosts,
   getLikes,
+  getComments,
   getShares,
 } from '../asyncThunks/posts'
 
 const posts = createSlice({
   name: 'posts',
   initialState: {
-    posts: [],
-    loadedPosts: false,
     userPosts: [],
     loaded: false,
     userReposts: [],
     repostsLoaded: false,
-    commentsLoaded: false,
+    posts: [],
+    loadedPosts: false,
     likesLoaded: false,
+    commentsLoaded: false,
     sharesLoaded: false,
-    error: null,
   },
   reducers: {
     setPosts: (state, action) => {
@@ -31,15 +27,12 @@ const posts = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchPosts.pending, (state) => {
+    builder.addCase(fetchUserPosts.pending, (state) => {
       state.loaded = false
     })
-    builder.addCase(fetchPosts.fulfilled, (state, action) => {
+    builder.addCase(fetchUserPosts.fulfilled, (state, action) => {
       state.userPosts = action.payload
       state.loaded = true
-    })
-    builder.addCase(fetchPosts.rejected, (state, action) => {
-      state.error = action.error.message
     })
     builder.addCase(fetchUserReposts.pending, (state) => {
       state.repostsLoaded = false
@@ -48,23 +41,12 @@ const posts = createSlice({
       state.userReposts = action.payload
       state.repostsLoaded = true
     })
-    builder.addCase(fetchUserReposts.rejected, (state, action) => {
-      state.error = action.error.message
+    builder.addCase(fetchRandomPosts.fulfilled, (state, action) => {
+      state.posts = action.payload
+      state.loadedPosts = true
     })
-    builder.addCase(createNewPost.fulfilled, () => {})
-    builder.addCase(createNewPost.rejected, (state, action) => {
-      state.error = action.error.message
-    })
-    builder.addCase(fetchPostById.fulfilled, () => {})
-    builder.addCase(deleteUserPost.fulfilled, () => {})
-    builder.addCase(deleteUserPost.rejected, (state, action) => {
-      state.error = action.error.message
-    })
-    builder.addCase(getComments.pending, (state) => {
-      state.commentsLoaded = false
-    })
-    builder.addCase(getComments.fulfilled, (state) => {
-      state.commentsLoaded = true
+    builder.addCase(fetchRandomPosts.pending, (state) => {
+      state.loadedPosts = false
     })
     builder.addCase(getLikes.pending, (state) => {
       state.likesLoaded = false
@@ -72,18 +54,17 @@ const posts = createSlice({
     builder.addCase(getLikes.fulfilled, (state) => {
       state.likesLoaded = true
     })
+    builder.addCase(getComments.pending, (state) => {
+      state.commentsLoaded = false
+    })
+    builder.addCase(getComments.fulfilled, (state) => {
+      state.commentsLoaded = true
+    })
     builder.addCase(getShares.pending, (state) => {
       state.sharesLoaded = false
     })
     builder.addCase(getShares.fulfilled, (state) => {
       state.sharesLoaded = true
-    })
-    builder.addCase(fetchRandomPosts.fulfilled, (state, action) => {
-      state.posts = action.payload
-      state.loadedPosts = true
-    })
-    builder.addCase(fetchRandomPosts.pending, (state) => {
-      state.loadedPosts = false
     })
   },
 })

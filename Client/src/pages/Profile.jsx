@@ -1,9 +1,15 @@
 import React from 'react'
-import { UserInfo, PostList, FileModal, Input } from '../components'
+import {
+  UserInfo,
+  PostList,
+  FileModal,
+  Input,
+  DeletePostModal,
+  EditPostModal,
+} from '../components'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { getUserData } from '../redux/asyncThunks/user'
-import DeletePostModal from '../components/post/DeletePostModal'
 
 function Profile() {
   const { userName } = useParams()
@@ -13,9 +19,9 @@ function Profile() {
   const dispatch = useDispatch()
 
   const [media, setMedia] = React.useState({
-    image: '',
-    audio: '',
-    video: '',
+    imageUrl: '',
+    audioUrl: '',
+    videoUrl: '',
   })
 
   React.useEffect(() => {
@@ -30,6 +36,7 @@ function Profile() {
       <FileModal media={media} setMedia={setMedia} />
       {curUserId === user.id && <Input type={true} media={media} />}
       <DeletePostModal />
+      <EditPostModal />
       <PostList userName={userName} />
     </main>
   )

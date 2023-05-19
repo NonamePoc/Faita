@@ -35,9 +35,9 @@ export const getRepostsByUser = async (userName, token) => {
   }
 }
 
-export const getPostsById = async (postId, token) => {
+export const getRandomPosts = async (count, token) => {
   try {
-    const response = await instance.get(`blog/blog?getPost=${postId}`, {
+    const response = await instance.get(`blog/randomBlog?count=${count}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -52,9 +52,9 @@ export const getPostsById = async (postId, token) => {
   }
 }
 
-export const getRandomPosts = async (count, token) => {
+export const getPostById = async (postId, token) => {
   try {
-    const response = await instance.get(`blog/randomBlog?count=${count}`, {
+    const response = await instance.get(`blog/blog?getPost=${postId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -120,7 +120,7 @@ export const getRepostsByPostId = async (postId, token) => {
   }
 }
 
-export const createPost = async (
+export const postPost = async (
   creator,
   content,
   image,
@@ -154,27 +154,7 @@ export const createPost = async (
   }
 }
 
-export const addComment = async (postId, content, token) => {
-  try {
-    const response = await instance.post(
-      `blog/comment`,
-      {
-        postId,
-        content,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    )
-    return response
-  } catch (error) {
-    alert(error.message)
-  }
-}
-
-export const addLike = async (postId, token) => {
+export const postLike = async (postId, token) => {
   try {
     const response = await instance.post(
       `blog/like`,
@@ -197,7 +177,27 @@ export const addLike = async (postId, token) => {
   }
 }
 
-export const repost = async (postId, token) => {
+export const postComment = async (postId, content, token) => {
+  try {
+    const response = await instance.post(
+      `blog/comment`,
+      {
+        postId,
+        content,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+    return response
+  } catch (error) {
+    alert(error.message)
+  }
+}
+
+export const postRepost = async (postId, token) => {
   try {
     const response = await instance.post(
       `blog/repost`,
@@ -220,13 +220,52 @@ export const repost = async (postId, token) => {
   }
 }
 
-export const removeLike = async (likeId, token) => {
+export const putPost = async (
+  postId,
+  title,
+  content,
+  imageUrl,
+  videoUrl,
+  audioUrl,
+  token
+) => {
   try {
-    const response = await instance.delete(`post/removeLike=${likeId}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    const response = await instance.put(
+      `blog/editBlog`,
+      {
+        postId,
+        title,
+        content,
+        imageUrl,
+        videoUrl,
+        audioUrl,
       },
-    })
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+    return response
+  } catch (error) {
+    alert(error.message)
+  }
+}
+
+export const putComment = async (commentId, content, token) => {
+  try {
+    const response = await instance.put(
+      `blog/comment`,
+      {
+        commentId,
+        content,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
     return response
   } catch (error) {
     alert(error.message)
@@ -240,6 +279,26 @@ export const deletePost = async (postId, token) => {
         Authorization: `Bearer ${token}`,
       },
     })
+    return response
+  } catch (error) {
+    if (error.response.data.Errors) {
+      alert(error.response.data.Errors[0].Detail)
+    } else {
+      alert(error.message)
+    }
+  }
+}
+
+export const deleteComment = async (commentId, token) => {
+  try {
+    const response = await instance.delete(
+      `blog/comment?removeComment=${commentId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
     return response
   } catch (error) {
     if (error.response.data.Errors) {

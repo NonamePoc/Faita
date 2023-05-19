@@ -1,10 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from '../layouts/Header.jsx'
-import UserMiniCard from '../layouts/UserMiniCard'
-import MenuTab from '../layouts/MenuTab'
-import NewMessageAlert from '../layouts/NewMessageAlert'
-import AsideFriendList from '../layouts/AsideFriendList'
+import Header from './Header.jsx'
+import UserMiniCard from './UserMiniCard'
+import MenuTab from './MenuTab'
+import NewMessageAlert from './NewMessageAlert'
+import AsideFriendList from './AsideFriendList'
+import AsidePost from './AsidePost.jsx'
 
 const MainLayout = () => (
   <>
@@ -16,7 +17,10 @@ const MainLayout = () => (
         <NewMessageAlert />
       </article>
       <Outlet />
-      <AsideFriendList />
+      <aside>
+        <AsideFriendList />
+        <AsidePost />
+      </aside>
     </div>
   </>
 )

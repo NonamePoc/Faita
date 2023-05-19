@@ -1,17 +1,5 @@
 import { instance } from './axios'
 
-export const getUser = async (userName, token) => {
-  try {
-    return await instance.get(`users/getUser=${userName}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-  } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
-  }
-}
-
 export const registerUser = async (user, callback) => {
   try {
     const response = await instance.post('users/register', user).then(callback)
@@ -25,6 +13,18 @@ export const loginUser = async (user) => {
   try {
     const response = await instance.post('users/authenticate', user)
     return response
+  } catch (error) {
+    alert(error.response.data.Errors[0].Detail)
+  }
+}
+
+export const getUser = async (userName, token) => {
+  try {
+    return await instance.get(`users/getUser=${userName}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
   } catch (error) {
     alert(error.response.data.Errors[0].Detail)
   }

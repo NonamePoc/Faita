@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import useToShow from '../../hooks/useToShow'
 import truncateDate from '../../utils/truncateDate'
+import { IsGif } from '../../utils/checkGif'
 
 const Messages = React.memo(({ room }) => {
   const user = useSelector((state) => state.user)
@@ -25,8 +26,6 @@ const Messages = React.memo(({ room }) => {
       return () => connection.off('ReceiveMessage')
     }
   })
-
-  const IsGif = (text) => text.includes('https://media.tenor.com')
 
   const IsCurrentUser = (senderId) => senderId === user.id
 

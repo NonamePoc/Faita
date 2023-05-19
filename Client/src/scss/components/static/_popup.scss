@@ -59,3 +59,32 @@
 .popup__friendCard {
   top: 2rem;
 }
+
+.exit-popup-container {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    .exit-popup {
+      opacity: 1;
+      &-img {
+        filter: brightness(50%);
+        transition: all 0.25s ease;
+        -webkit-transition: all 0.25s ease;
+        -webkit-filter: brightness(50%);
+      }
+    }
+  }
+  .exit-popup {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.25s ease;
+    animation: in-animation 0.25s ease-in-out;
+    -webkit-animation: in-animation 0.25s ease-in-out;
+  }
+  .exit-svg path {
+    fill: $accent-color;
+  }
+}

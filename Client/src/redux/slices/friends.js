@@ -16,7 +16,6 @@ const friends = createSlice({
     receivedReqsLoaded: false,
     sentRequests: [],
     sentReqsLoaded: false,
-    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -35,9 +34,6 @@ const friends = createSlice({
     builder.addCase(fetchReceivedRequests.fulfilled, (state, action) => {
       state.receivedRequests = action.payload
       state.receivedReqsLoaded = true
-    })
-    builder.addCase(fetchReceivedRequests.rejected, (state, action) => {
-      state.error = action.error.message
     })
     builder.addCase(fetchSentRequests.pending, (state) => {
       state.sentReqsLoaded = false

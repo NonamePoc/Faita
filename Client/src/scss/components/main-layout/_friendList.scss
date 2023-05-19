@@ -1,10 +1,3 @@
-.friendsTitle {
-  margin-left: 0.5em;
-  margin-bottom: 0.8rem;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 .friends {
   display: flex;
   flex-direction: column;
@@ -39,6 +32,12 @@
 @media (max-width: 1400px) {
   .friends,
   .friendsTitle {
+    display: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  .aside-post {
     display: none;
   }
 }

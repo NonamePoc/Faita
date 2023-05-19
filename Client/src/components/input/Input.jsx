@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Captcha, Emoji } from '../../components'
 import FileClip from './FileClip'
 import {
-  createNewPost,
+  createPost,
   createComment,
-  fetchPosts,
+  fetchUserPosts,
   getComments,
 } from '../../redux/asyncThunks/posts'
 import useInput from '../../hooks/useInput'
@@ -30,7 +30,7 @@ function Input({ type, postId, media, setComments }) {
     } else {
       type
         ? dispatch(
-            createNewPost({
+            createPost({
               content: value,
               image: media.image,
               audio: media.audio,
@@ -38,7 +38,7 @@ function Input({ type, postId, media, setComments }) {
             })
           ).then(
             (res) =>
-              res.payload.status === 200 && dispatch(fetchPosts(userName))
+              res.payload.status === 200 && dispatch(fetchUserPosts(userName))
           )
         : dispatch(createComment({ content: value, postId })).then(
             (res) =>

@@ -9,8 +9,10 @@ function Repost({ repost }) {
   const dispatch = useDispatch()
 
   React.useEffect(() => {
-    dispatch(fetchPostById(repost.postId)).then((res) => setPost(res.payload))
-    console.log('repost', repost.postId)
+    dispatch(fetchPostById(repost.postId)).then((res) => {
+      setPost(res.payload)
+      console.log('Post of Repost', res.payload)
+    })
   }, [dispatch, repost.postId])
 
   return (

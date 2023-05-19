@@ -5,6 +5,7 @@
 .comment {
   padding: 1em;
   &__avatar {
+    object-fit: cover;
     width: 50px;
     height: 50px;
     border-radius: $main-border-radius;
@@ -12,7 +13,7 @@
   }
   &__info {
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: min-content 1fr min-content;
     align-items: center;
     gap: 0.5rem;
     &__name {
@@ -24,36 +25,31 @@
       font-weight: 600;
     }
   }
-  &__content {
-    grid-column: span 2;
-  }
-  &__replies {
+
+  &__actions {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.5em;
-    &__create {
-      display: flex;
-      p {
-        font-size: 16px;
-        font-weight: 600;
-      }
-    }
-    &__button {
-      color: $accent-color;
-      border-radius: $main-border-radius;
-      -webkit-border-radius: $main-border-radius;
-      padding: 0.5em 2em;
-      border: none;
-      font-size: 15px;
-      font-weight: 600;
+    gap: 0.5rem;
+    li {
       display: flex;
       align-items: center;
-      gap: 0.2em;
+      gap: 0.2rem;
+      cursor: pointer;
       svg {
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
+        width: 22px;
+        height: 22px;
+      }
+      .comment__svg {
+        &__edit:hover g {
+          fill: $accent-color;
+        }
+        &__delete:hover path {
+          stroke: $accent-color;
+        }
       }
     }
+  }
+
+  &__content {
+    grid-column: span 2;
   }
 }

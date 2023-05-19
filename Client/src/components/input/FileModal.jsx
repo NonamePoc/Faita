@@ -12,7 +12,7 @@ function FileModal({ media, setMedia }) {
   }
 
   const handleSave = () => {
-    if (media.image || media.audio || media.video) {
+    if (media.imageUrl || media.audioUrl || media.videoUrl) {
       checkValidMedia(media, (isValid) => {
         isValid ? dispatch(toggleFileModal()) : alert('Invalid media url')
       })
@@ -29,37 +29,37 @@ function FileModal({ media, setMedia }) {
           <h2>Put media in post</h2>
         </div>
         <div className='modal-body'>
-          <p>Insert the url of image</p>
+          <p>Insert the url of image 📸</p>
           <input
             onChange={handleChange}
-            defaultValue={media.image}
+            defaultValue={media.imageUrl}
             className='modal-input'
-            name='image'
+            name='imageUrl'
             type='text'
             aria-label='URL file input'
           />
-          <p>Insert the url of audio</p>
+          <p>Insert the url of audio 🔊</p>
           <input
             onChange={handleChange}
-            defaultValue={media.audio}
+            defaultValue={media.audioUrl}
             className='modal-input'
-            name='audio'
+            name='audioUrl'
             type='text'
             aria-label='URL file input'
           />
-          <p>Insert the url of video</p>
+          <p>Insert the url of video 🎥</p>
           <input
             onChange={handleChange}
-            defaultValue={media.video}
+            defaultValue={media.videoUrl}
             className='modal-input'
-            name='video'
+            name='videoUrl'
             type='text'
             aria-label='URL file input'
           />
-          <button className='btn' onClick={handleSave}>
-            Save changes
-          </button>
         </div>
+        <button className='btn' onClick={handleSave}>
+          Save changes 📝
+        </button>
       </div>
     </>
   ) : null

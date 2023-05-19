@@ -1,7 +1,7 @@
 import moment from 'moment'
 
 const getLastMessage = (messages) => {
-  const [lastMessage = {}] = [...messages].sort(
+  let [lastMessage = {}] = [...messages].sort(
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
   )
   const currentTime = moment()

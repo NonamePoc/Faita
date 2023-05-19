@@ -1,7 +1,7 @@
 import React from 'react'
-import { Post, Repost } from '../../components'
+import { Post, Repost } from '..'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchPosts, fetchUserReposts } from '../../redux/asyncThunks/posts'
+import { fetchUserPosts, fetchUserReposts } from '../../redux/asyncThunks/posts'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -18,11 +18,9 @@ function PostList({ userName }) {
   })
 
   React.useEffect(() => {
-    dispatch(fetchPosts(userName)).then(() => {
-      dispatch(fetchUserReposts(userName)).then(() => {
-        setIsLoading(false)
-      })
-    })
+    dispatch(fetchUserPosts(userName)).then(() =>
+      dispatch(fetchUserReposts(userName)).then(() => setIsLoading(false))
+    )
   }, [dispatch, userName])
 
   const loadMore = () => {

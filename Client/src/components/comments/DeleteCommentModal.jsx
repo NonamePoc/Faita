@@ -1,37 +1,37 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { closeDeletePostModal } from '../../redux/slices/modal'
+import { closeDeleteCommentModal } from '../../redux/slices/modal'
 import {
-  deleteUserPost,
+  deleteUserComment,
   fetchUserPosts,
-  fetchUserReposts,
+  getComments,
 } from '../../redux/asyncThunks/posts'
 
-function DeletePostModal() {
-  const open = useSelector((state) => state.modal.deletePostModalOpen)
-  const deletePostId = useSelector((state) => state.modal.deletePostId)
+function DeleteCommentModal({ postId, setComments }) {
+  const open = useSelector((state) => state.modal.deleteCommentModalOpen)
+  const deleteCommentId = useSelector((state) => state.modal.deleteCommentId)
   const { userName } = useSelector((state) => state.user)
   const dispatch = useDispatch()
 
-  const deletePost = () => {
-    dispatch(deleteUserPost(deletePostId)).then(() =>
+  const deleteComment = () => {
+    dispatch(deleteUserComment(deleteCommentId)).then(() =>
       dispatch(fetchUserPosts(userName)).then(() =>
-        dispatch(fetchUserReposts(userName)).then(() =>
-          dispatch(closeDeletePostModal())
-        )
+        dispatch(getComments(postId)).then((res) => {
+          setComments(res.payload)
+          dispatch(closeDeleteCommentModal())
+        })
       )
     )
   }
-
   return open ? (
     <>
       <div className={`modal-overlay ${open ? 'active' : ''}`}></div>
       <div className={`modal card ${open ? 'active' : ''}`}>
         <div className='modal-header'>
-          <h2>Delete post ❌</h2>
+          <h2>Delete Comment ❌</h2>
           <span
             className='close'
-            onClick={() => dispatch(closeDeletePostModal())}
+            onClick={() => dispatch(closeDeleteCommentModal())}
           >
             &times;
           </span>
@@ -39,7 +39,7 @@ function DeletePostModal() {
         <div className='modal-body'>
           <p> This action cannot be undone.</p>
         </div>
-        <button className='btn danger' onClick={deletePost}>
+        <button className='btn danger' onClick={deleteComment}>
           Yes, delete it 🧺
         </button>
       </div>
@@ -47,4 +47,4 @@ function DeletePostModal() {
   ) : null
 }
 
-export default DeletePostModal
+export default DeleteCommentModal

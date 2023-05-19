@@ -54,7 +54,9 @@ function extractYouTubeVideoId(url) {
 }
 
 export const checkValidMedia = (media, callback) => {
-  media.image !== '' && checkValidImage(media.image, callback)
-  media.audio !== '' && checkValidAudio(media.audio, callback)
-  media.video !== '' && checkValidVideo(media.video, callback)
+  console.log(media)
+  media.imageUrl !== '' && checkValidImage(media.imageUrl, callback)
+  media.audioUrl !== '' && checkValidAudio(media.audioUrl, callback)
+  if (media.videoUrl !== '' || media.videoUrl)
+    checkValidVideo(media.videoUrl, callback)
 }

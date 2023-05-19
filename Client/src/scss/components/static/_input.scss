@@ -20,14 +20,13 @@
   grid-template-columns: 8% 1fr min-content;
   transition: padding-bottom 0.5s ease-in-out;
   -webkit-transition: padding-bottom 0.5s ease-in-out;
-
   &.sendPost {
     margin-bottom: 1.5rem;
     padding: 1em;
   }
   &__info {
     display: flex;
-    gap: 0.8em;
+    position: relative;
   }
   &__avatar {
     object-fit: cover;
@@ -38,15 +37,18 @@
     -webkit-border-radius: $main-border-radius;
     -moz-border-radius: $main-border-radius;
     &.sendPost {
+      object-fit: cover;
       width: 50px;
       height: 50px;
     }
   }
   &__name {
+    position: absolute;
     z-index: -1;
     padding-top: 0.5em;
     font-size: 16px;
     font-weight: 600;
+    left: calc(50px + 0.8rem);
     opacity: 0;
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
@@ -54,6 +56,7 @@
   &__input {
     overflow: hidden;
     padding-top: 1em;
+
     border: none;
     width: 100%;
     font-size: clamp(0.84375rem, 0.7869rem + 0.2841vw, 1rem);

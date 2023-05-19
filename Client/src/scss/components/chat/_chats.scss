@@ -7,6 +7,7 @@
   transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
+
   &:hover {
     z-index: 5;
     transform: translateX(0.5rem);
@@ -49,11 +50,15 @@
     font-size: clamp(0.625rem, 0.5795rem + 0.2273vw, 0.75rem);
     white-space: nowrap;
   }
-  .msgCounter {
-    font-size: 15px;
-    height: 30px;
-    width: 30px;
-    margin: 0.4em auto;
+}
+
+@media screen and (max-width: 580px) {
+  .chat:hover {
+    z-index: 5;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
   }
 }
 

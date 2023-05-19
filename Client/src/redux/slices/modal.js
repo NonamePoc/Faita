@@ -7,10 +7,19 @@ const modal = createSlice({
     avatarModalOpen: false,
     deletePostModalOpen: false,
     deletePostId: null,
+    editPostModalOpen: false,
+    editPost: null,
+    deleteCommentModalOpen: false,
+    deleteCommentId: null,
+    editCommentModalOpen: false,
+    editComment: null,
   },
   reducers: {
     toggleFileModal: (state) => {
       state.fileModalOpen = !state.fileModalOpen
+    },
+    toggleAvatarModal: (state) => {
+      state.avatarModalOpen = !state.avatarModalOpen
     },
     openDeletePostModal: (state, action) => {
       state.deletePostModalOpen = true
@@ -19,17 +28,41 @@ const modal = createSlice({
     closeDeletePostModal: (state) => {
       state.deletePostModalOpen = false
     },
-    toggleAvatarModal: (state) => {
-      state.avatarModalOpen = !state.avatarModalOpen
+    openEditPostModal: (state, action) => {
+      state.editPostModalOpen = true
+      state.editPost = action.payload
+    },
+    closeEditPostModal: (state) => {
+      state.editPostModalOpen = false
+    },
+    openDeleteCommentModal: (state, action) => {
+      state.deleteCommentModalOpen = true
+      state.deleteCommentId = action.payload
+    },
+    closeDeleteCommentModal: (state) => {
+      state.deleteCommentModalOpen = false
+    },
+    openEditCommentModal: (state, action) => {
+      state.editCommentModalOpen = true
+      state.editComment = action.payload
+    },
+    closeEditCommentModal: (state) => {
+      state.editCommentModalOpen = false
     },
   },
 })
 
 export const {
   toggleFileModal,
+  toggleAvatarModal,
   openDeletePostModal,
   closeDeletePostModal,
-  toggleAvatarModal,
+  openEditPostModal,
+  closeEditPostModal,
+  openDeleteCommentModal,
+  closeDeleteCommentModal,
+  openEditCommentModal,
+  closeEditCommentModal,
 } = modal.actions
 
 export default modal.reducer

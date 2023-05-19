@@ -3,9 +3,9 @@ import { Input, FileModal, RandomPostsList } from '../components'
 
 function Home() {
   const [media, setMedia] = React.useState({
-    image: '',
-    audio: '',
-    video: '',
+    imageUrl: '',
+    audioUrl: '',
+    videoUrl: '',
   })
 
   return (
