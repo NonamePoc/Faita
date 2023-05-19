@@ -13,6 +13,11 @@ public class UserPost : Profile
         CreateMap<CreateBlogModel, Posts>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid().ToString()));
 
+        CreateMap<Posts, GetBlogModel>()
+            .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.UserName))
+            .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.User.Avatar));
+           
         CreateMap<Repost, GetRepostModel>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
             .ForMember(dest => dest.PostId, opt => opt.MapFrom(src => src.PostId))

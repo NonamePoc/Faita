@@ -107,6 +107,10 @@ public class BlogService : IBlogService
         }
 
         var response = _mapper.Map<GetBlogModel>(post);
+        response.UserId = post.UserId;
+        response.UserName = post.User.UserName;
+        response.Avatar = post.User.Avatar;
+        
         return response;
     }
 
