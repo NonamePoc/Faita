@@ -1,7 +1,7 @@
 import * as signalR from '@microsoft/signalr'
 
 let connection = new signalR.HubConnectionBuilder()
-  .withUrl('https://localhost:7206/chatHub')
+  .withUrl(`${process.env.REACT_APP_DB_API}chatHub`)
   .withAutomaticReconnect()
   .build()
 
