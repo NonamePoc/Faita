@@ -16,8 +16,16 @@ public class UserPost : Profile
         CreateMap<Posts, GetBlogModel>()
             .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
             .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.UserName))
-            .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.User.Avatar));
-           
+            .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.User.Avatar))
+            .ForMember(dest => dest.PostId, opt => opt.MapFrom(src => src.Id));
+
+        CreateMap<Posts, GetBlogsModel>()
+            .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.UserName))
+            .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.User.Avatar))
+            .ForMember(dest => dest.PostId, opt => opt.MapFrom(src => src.Id));
+
+
         CreateMap<Repost, GetRepostModel>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
             .ForMember(dest => dest.PostId, opt => opt.MapFrom(src => src.PostId))
@@ -58,5 +66,6 @@ public class UserPost : Profile
            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl))
            .ForMember(dest => dest.VideoUrl, opt => opt.MapFrom(src => src.VideoUrl))
            .ForMember(dest => dest.AudioUrl, opt => opt.MapFrom(src => src.AudioUrl));
+
     }
 }

@@ -15,6 +15,10 @@ public interface IBlogService
     Task<Posts> EditPost(EditBlogModel model);
 
     Task<GetBlogModel> GetPost(string getPost);
+
+    Task<List<GetBlogsModel>> GetBlogs(int limit, int offset);
+
+    Task<GetRandomBlog> GetRandomBlog();
     
     Task<List<GetRandomBlog>> GetRandomPost(int count);
 
