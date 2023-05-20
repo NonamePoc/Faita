@@ -35,6 +35,14 @@ public class BlogController : BaseController
         return Ok(post);
     }
 
+    [AllowAnonymous]
+    [HttpGet("blogs")]
+    public async Task<IActionResult> GetBlog([FromQuery]  int limit = 25, int offset = 0)
+    {
+        var posts = await _blogService.GetBlogs(limit, offset);
+        return Ok(posts);
+    }
+
     [HttpDelete("blog")]
     public async Task<IActionResult> DeletePost([FromQuery] string deletePost)
     {
@@ -58,11 +66,19 @@ public class BlogController : BaseController
     }
 
     [AllowAnonymous]
-    [HttpGet("randomBlog")]
+    [HttpGet("randomBlogs")]
     public async Task<IActionResult> GetRandomPosts([FromQuery] int count)
     {
         var posts = await _blogService.GetRandomPost(count);
         return Ok(posts);
+    }
+
+    [AllowAnonymous]
+    [HttpGet("randomBlog")]
+    public async Task<IActionResult> GetRandomBlog()
+    {
+        var post = await _blogService.GetRandomBlog();
+        return Ok(post);
     }
 
     [HttpPost("repost")]

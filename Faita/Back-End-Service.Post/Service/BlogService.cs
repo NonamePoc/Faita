@@ -110,7 +110,22 @@ public class BlogService : IBlogService
         response.UserId = post.UserId;
         response.UserName = post.User.UserName;
         response.Avatar = post.User.Avatar;
-        
+        response.PostId = postId;
+
+        return response;
+    }
+
+    public async Task<List<GetBlogsModel>> GetBlogs(int limit = 25, int offset = 0)
+    {
+        var posts = await _context.Post
+            .Include(p => p.User)
+            .OrderByDescending(p => p.CreatedAt)
+            .Skip(offset)
+            .Take(limit)
+            .ToListAsync();
+
+        var response = _mapper.Map<List<GetBlogsModel>>(posts);
+
         return response;
     }
 
@@ -127,6 +142,16 @@ public class BlogService : IBlogService
         return response;
     }
 
+    public async Task<GetRandomBlog> GetRandomBlog()
+    {
+        var randomBlog = await _context.Post
+            .Include(p => p.User)
+            .OrderBy(x => Guid.NewGuid())
+            .FirstOrDefaultAsync();
+
+        var response = _mapper.Map<GetRandomBlog>(randomBlog);
+        return response;
+    }
 
     public async Task<List<GetBlogByUser>> GetPostsByUser(string userName, int limit = 25, int offset = 0)
     {
