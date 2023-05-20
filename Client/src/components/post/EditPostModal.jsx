@@ -13,10 +13,10 @@ function EditPostModal() {
   const post = useSelector((state) => state.modal.editPost)
   const { userName } = useSelector((state) => state.user)
   const [data, setData] = React.useState({
-    content: post.content,
-    imageUrl: post.imageUrl,
-    videoUrl: post.videoUrl,
-    audioUrl: post.audioUrl,
+    content: post?.content || '',
+    imageUrl: post?.imageUrl || '',
+    videoUrl: post?.videoUrl || '',
+    audioUrl: post?.audioUrl || '',
   })
   const dispatch = useDispatch()
 
@@ -33,8 +33,6 @@ function EditPostModal() {
             )
           : alert('Invalid media url')
       })
-    } else {
-      console.log('Else')
     }
   }
 
@@ -75,14 +73,14 @@ function EditPostModal() {
           <textarea
             type='text'
             name='videoUrl'
-            defaultValue={post.imageUrl}
+            defaultValue={post.videoUrl}
             onChange={onChangeData}
           />
           <span>Audio Url</span>
           <textarea
             type='text'
             name='audioUrl'
-            defaultValue={post.imageUrl}
+            defaultValue={post.audioUrl}
             onChange={onChangeData}
           />
         </div>

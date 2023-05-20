@@ -3,9 +3,11 @@ import { useSelector } from 'react-redux'
 import useToShow from '../../hooks/useToShow'
 import truncateDate from '../../utils/truncateDate'
 import { IsGif } from '../../utils/checkGif'
+import { setAvatar } from '../../utils/setAvatar'
 
 const Messages = React.memo(({ room }) => {
   const user = useSelector((state) => state.user)
+  const receiver = room.users.$values.find((u) => u.userId !== user.id)
   let connection = useSelector((state) => state.message.connection)
   const [messages, setMessages] = React.useState([...room.messages.$values])
   const msgContainerRef = React.useRef(null)
@@ -50,7 +52,7 @@ const Messages = React.memo(({ room }) => {
                 {!IsCurrentUser(senderId) && (
                   <img
                     className='msg__stranger__img'
-                    src='https://picsum.photos/id/235/800'
+                    src={setAvatar(receiver.avatar)}
                     alt='profile-img'
                   />
                 )}

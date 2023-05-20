@@ -8,7 +8,6 @@ const message = createSlice({
     name: '',
     message: '',
     chatId: '',
-    image: '',
     connection: null,
   },
   reducers: {
@@ -19,7 +18,7 @@ const message = createSlice({
       }
     },
     resetMessage: () => {
-      return { isShown: false, name: '', message: '', chatId: '', image: '' }
+      return { isShown: false, name: '', message: '', chatId: '' }
     },
     setConnect: (state, action) => {
       return {

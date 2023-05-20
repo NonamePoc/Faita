@@ -20,6 +20,7 @@
   &__stranger {
     justify-content: flex-start;
     &__img {
+      object-fit: cover;
       width: 55px;
       height: 55px;
       border-radius: $main-border-radius;

@@ -38,7 +38,6 @@ export const checkValidVideo = (url, callback) => {
         callback(isValid)
       })
       .catch((error) => {
-        console.error('Error validating YouTube video:', error)
         callback(false)
       })
   } else {
@@ -54,7 +53,6 @@ function extractYouTubeVideoId(url) {
 }
 
 export const checkValidMedia = (media, callback) => {
-  console.log(media)
   media.imageUrl !== '' && checkValidImage(media.imageUrl, callback)
   media.audioUrl !== '' && checkValidAudio(media.audioUrl, callback)
   if (media.videoUrl !== '' || media.videoUrl)

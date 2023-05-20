@@ -31,15 +31,6 @@
     -o-transform: translateY(0);
   }
 
-  &__img {
-    width: 3rem;
-    height: 3rem;
-    border-radius: $main-border-radius;
-    -webkit-border-radius: $main-border-radius;
-    -moz-border-radius: $main-border-radius;
-    -ms-border-radius: $main-border-radius;
-    -o-border-radius: $main-border-radius;
-  }
   &__name {
     font-size: 16px;
     font-weight: 600;

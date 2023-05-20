@@ -37,7 +37,7 @@ export const getRepostsByUser = async (userName, token) => {
 
 export const getRandomPosts = async (count, token) => {
   try {
-    const response = await instance.get(`blog/randomBlog?count=${count}`, {
+    const response = await instance.get(`blog/randomBlogs?count=${count}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

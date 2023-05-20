@@ -6,16 +6,22 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 function HomePostsList() {
+  const count = 7
+  const [posts, setPosts] = React.useState([])
+  const { loadedPosts } = useSelector((state) => state.posts)
   const dispatch = useDispatch()
-  const { posts, loadedPosts } = useSelector((state) => state.posts)
-  const [count, setCount] = React.useState(1)
 
   React.useEffect(() => {
-    dispatch(fetchRandomPosts(count))
+    dispatch(fetchRandomPosts(count)).then((res) => {
+      setPosts(res.payload)
+    })
   }, [dispatch, count])
 
   const loadMore = () => {
-    setCount((prev) => prev + count)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    dispatch(fetchRandomPosts(count)).then((res) => {
+      setPosts(res.payload)
+    })
   }
 
   return (
@@ -28,7 +34,7 @@ function HomePostsList() {
               <Post key={post.postId} post={post} />
             ))}
           <button className='button-48' onClick={loadMore}>
-            <span className='text'>Load more 👇</span>
+            <span className='text'>Regenerate posts 👆</span>
           </button>
         </>
       ) : (
