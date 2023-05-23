@@ -89,7 +89,7 @@ public class BlogService : IBlogService
         _context.Post.Update(post);
         await _context.SaveChangesAsync();
 
-        var response = _mapper.Map<Posts>(post);
+        var response = _mapper.Map<Posts>(model);
 
         return response;
     }
