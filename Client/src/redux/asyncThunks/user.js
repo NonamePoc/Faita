@@ -1,12 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import {
   getUser,
+  registerUser,
   loginUser,
   changeUserData,
   changeEmail,
   changePassword,
   changeImage,
 } from '../../api/userRequests'
+
+export const register = createAsyncThunk('user/register', async (userData) => {
+  return await registerUser(userData)
+})
 
 export const login = createAsyncThunk('user/login', async (userData) => {
   const res = (await loginUser(userData)).data

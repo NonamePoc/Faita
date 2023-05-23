@@ -1,11 +1,11 @@
 import { instance } from './axios'
 
-export const registerUser = async (user, callback) => {
+export const registerUser = async (userData) => {
   try {
-    const response = await instance.post('users/register', user).then(callback)
+    const response = await instance.post('users/register', userData)
     return response
   } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
+    throw new Error(error.response.data.Errors[0].Detail)
   }
 }
 
@@ -14,7 +14,7 @@ export const loginUser = async (user) => {
     const response = await instance.post('users/authenticate', user)
     return response
   } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
+    throw new Error(error.response.data.Errors[0].Detail)
   }
 }
 
@@ -26,7 +26,7 @@ export const getUser = async (userName, token) => {
       },
     })
   } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
+    throw new Error(error.response.data.Errors[0].Detail)
   }
 }
 
@@ -45,9 +45,9 @@ export const changeEmail = async (newEmail, token) => {
     )
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -68,7 +68,7 @@ export const changePassword = async (password, newPassword, email, token) => {
       }
     )
   } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
+    throw new Error(error.response.data.Errors[0].Detail)
   }
 }
 
@@ -87,7 +87,7 @@ export const changeUserData = async (firstName, lastName, token) => {
       }
     )
   } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
+    throw new Error(error.response.data.Errors[0].Detail)
   }
 }
 
@@ -97,7 +97,7 @@ export const searchUser = async (userName) => {
       userName: userName,
     })
   } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
+    throw new Error(error.response.data.Errors[0].Detail)
   }
 }
 
@@ -115,6 +115,6 @@ export const changeImage = async (avatar, token) => {
       }
     )
   } catch (error) {
-    alert(error.response.data.Errors[0].Detail)
+    throw new Error(error.response.data.Errors[0].Detail)
   }
 }

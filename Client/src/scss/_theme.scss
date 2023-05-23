@@ -205,6 +205,11 @@
   .stngs input {
     color: $lt-secondary-color;
   }
+  .stngs .error-span,
+  .error-span {
+    color: #ff1a1a;
+  }
+
   .chat__message {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -399,6 +404,10 @@
   .stngs p,
   .stngs input {
     color: $drk-secondary-color;
+  }
+  .stngs .error-span,
+  .error-span {
+    color: #ff856b;
   }
   .chat__message {
     color: $dark-secondary-color;

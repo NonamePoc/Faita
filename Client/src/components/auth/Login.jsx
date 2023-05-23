@@ -1,10 +1,8 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../../redux/asyncThunks/user'
 
 function Login() {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   const [data, setData] = React.useState({ userName: '', password: '' })
 
@@ -17,9 +15,9 @@ function Login() {
   const handleSubmit = React.useCallback(
     (event) => {
       event.preventDefault()
-      dispatch(login(data, navigate))
+      dispatch(login(data))
     },
-    [data, dispatch, navigate]
+    [data, dispatch]
   )
 
   const UserNameInput = React.useMemo(

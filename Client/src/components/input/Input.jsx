@@ -27,6 +27,8 @@ function Input({ type, postId, media, setComments }) {
   const handleSendMessage = (value) => {
     if (submitCount === 15) {
       alert('Please verify the captcha')
+    } else if (value === '') {
+      return
     } else {
       type
         ? dispatch(

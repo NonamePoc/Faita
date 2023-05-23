@@ -80,13 +80,15 @@
   }
 
   .submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     margin-top: 1rem;
-    text-align: center;
-    width: 10rem;
+    width: 12rem;
     font-size: clamp(0.875rem, 0.6528rem + 1.1111vw, 1rem);
-    display: block;
     text-align: center;
+
     &:hover {
       a {
         color: $accent-color;

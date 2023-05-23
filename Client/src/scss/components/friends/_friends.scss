@@ -64,10 +64,8 @@
 }
 
 .friendPage {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
 }
 
@@ -146,6 +144,12 @@
   }
 }
 
+@media (max-width: 850px) {
+  .friendPage {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 500px) {
   .friendPage {
     gap: 1rem;
@@ -166,7 +170,7 @@
           content: none;
         }
       }
-      .msg {
+      .btn-msg {
         padding: 0.5rem;
         &:after {
           content: none;

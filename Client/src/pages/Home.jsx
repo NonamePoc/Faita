@@ -1,5 +1,11 @@
 import React from 'react'
-import { Input, FileModal, RandomPostsList } from '../components'
+import {
+  Input,
+  FileModal,
+  RandomPostsList,
+  DeletePostModal,
+  EditPostModal,
+} from '../components'
 
 function Home() {
   const [media, setMedia] = React.useState({
@@ -13,6 +19,8 @@ function Home() {
       <FileModal media={media} setMedia={setMedia} />
       <Input type={true} media={media} />
       <RandomPostsList />
+      <DeletePostModal />
+      <EditPostModal />
     </main>
   )
 }

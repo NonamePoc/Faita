@@ -27,12 +27,12 @@ function Friends() {
                 <FriendCard key={index} friend={friend} type='friend' />
               ))
             ) : (
-              <h3>You have no friends</h3>
+              <h3 className='title'>You have no friends</h3>
             )}
           </section>
           {sentReqsLoaded && sentRequests.length > 0 && (
             <>
-              <h3>Your requests:</h3>
+              <h3 className='title'>Your requests:</h3>
               <section className='friendPage'>
                 {sentRequests.map((sentReq, index) => (
                   <FriendCard key={index} friend={sentReq} type='req' />

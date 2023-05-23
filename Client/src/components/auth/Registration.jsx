@@ -1,11 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { registerUser } from '../../api/userRequests'
+import { useDispatch } from 'react-redux'
+import { Loader } from '../../components'
+import { register } from '../../redux/asyncThunks/user'
 
 function Registration() {
   const navigate = useNavigate()
   const [data, setData] = React.useState({})
   const [loading, setLoading] = React.useState(false)
+  const dispatch = useDispatch()
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -14,13 +17,16 @@ function Registration() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (data.password === event.target.confirmPassword.value) {
+    const confirmPassword = event.target.confirmPassword
+    if (data.password === confirmPassword.value) {
       setLoading(true)
-      registerUser(data, () => {
-        navigate('/confirm-email')
-      })
+      dispatch(register(data))
+        .then((res) => res.payload.status === 200 && navigate('/confirm-email'))
+        .catch(() => {
+          setLoading(false)
+        })
     } else {
-      alert('Passwords do not match!')
+      confirmPassword.setCustomValidity('Passwords do not match!')
     }
   }
 
@@ -204,13 +210,7 @@ function Registration() {
       <button type='submit' className='btn submit'>
         {loading ? (
           <>
-            Loading...
-            <div className='lds-ring'>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            <Loader /> Loading
           </>
         ) : (
           <>Sign Up</>

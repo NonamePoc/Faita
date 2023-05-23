@@ -8,9 +8,9 @@ export const getPostsByUser = async (userName) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -28,9 +28,9 @@ export const getRepostsByUser = async (userName, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -45,9 +45,9 @@ export const getRandomPosts = async (count, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -62,9 +62,9 @@ export const getPostById = async (postId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -79,9 +79,9 @@ export const getLikesByPostId = async (postId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -96,9 +96,9 @@ export const getCommentsByPostId = async (postId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -113,9 +113,9 @@ export const getRepostsByPostId = async (postId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -147,9 +147,9 @@ export const postPost = async (
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -170,9 +170,9 @@ export const postLike = async (postId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -193,7 +193,7 @@ export const postComment = async (postId, content, token) => {
     )
     return response
   } catch (error) {
-    alert(error.message)
+    throw new Error(error.message)
   }
 }
 
@@ -213,9 +213,9 @@ export const postRepost = async (postId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -248,7 +248,7 @@ export const putPost = async (
     )
     return response
   } catch (error) {
-    alert(error.message)
+    throw new Error(error.message)
   }
 }
 
@@ -268,7 +268,7 @@ export const putComment = async (commentId, content, token) => {
     )
     return response
   } catch (error) {
-    alert(error.message)
+    throw new Error(error.message())
   }
 }
 
@@ -282,9 +282,9 @@ export const deletePost = async (postId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      return error.response.data.Errors[0].Detail
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -302,9 +302,9 @@ export const deleteComment = async (commentId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }

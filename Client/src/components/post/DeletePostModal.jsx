@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { closeDeletePostModal } from '../../redux/slices/modal'
 import {
   deleteUserPost,
+  fetchRandomPosts,
   fetchUserPosts,
   fetchUserReposts,
 } from '../../redux/asyncThunks/posts'
@@ -17,7 +18,9 @@ function DeletePostModal() {
     dispatch(deleteUserPost(deletePostId)).then(() =>
       dispatch(fetchUserPosts(userName)).then(() =>
         dispatch(fetchUserReposts(userName)).then(() =>
-          dispatch(closeDeletePostModal())
+          dispatch(fetchRandomPosts(7)).then(() =>
+            dispatch(closeDeletePostModal())
+          )
         )
       )
     )

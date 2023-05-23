@@ -42,22 +42,6 @@ function Settings() {
             <ThemeSwitcher />
           </div>
         </div>
-        <div className='stngs__item'>
-          <div>
-            <h2>Show Notifications</h2>
-            <p>
-              You can get notifications about new messages while this option is
-              enabled.
-            </p>
-          </div>
-          <div className='stngs__change'>
-            <input
-              type='checkbox'
-              id='switch'
-              aria-label='Message Notifications Switcher'
-            />
-          </div>
-        </div>
       </div>
       <h1>Exit</h1>
       <div className='card'>

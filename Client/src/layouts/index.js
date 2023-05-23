@@ -6,10 +6,12 @@ import MenuTab from './MenuTab'
 import NewMessageAlert from './NewMessageAlert'
 import AsideFriendList from './AsideFriendList'
 import AsidePost from './AsidePost.jsx'
+import Error from './Error.jsx'
 
 const MainLayout = () => (
   <>
     <Header />
+    <Error />
     <div className='wrapper'>
       <article>
         <UserMiniCard />

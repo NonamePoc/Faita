@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {
   getUserData,
+  register,
   login,
   changeFirstName,
   changeLastName,
@@ -24,10 +25,14 @@ const user = createSlice({
     isAuth: false,
     isOnline: navigator.onLine,
     userLoaded: false,
+    error: null,
   },
   reducers: {
     resetUserData: () => {
       return { ...user.initialState }
+    },
+    resetUserError: (state) => {
+      state.error = null
     },
   },
   extraReducers: (builder) => {
@@ -36,6 +41,9 @@ const user = createSlice({
     })
     builder.addCase(getUserData.fulfilled, (state) => {
       state.userLoaded = true
+    })
+    builder.addCase(register.rejected, (state, action) => {
+      state.error = action.error.message
     })
     builder.addCase(login.fulfilled, (state, action) => {
       state.id = action.payload.id
@@ -50,6 +58,9 @@ const user = createSlice({
       state.friends = action.payload.friends
       state.rooms = action.payload.rooms
       state.isAuth = true
+    })
+    builder.addCase(login.rejected, (state, action) => {
+      state.error = action.error.message
     })
     builder.addCase(changeFirstName.fulfilled, (state, action) => {
       alert('First name changed successfully!')
@@ -74,6 +85,6 @@ const user = createSlice({
   },
 })
 
-export const { setUserData, resetUserData } = user.actions
+export const { resetUserData, resetUserError } = user.actions
 
 export default user.reducer

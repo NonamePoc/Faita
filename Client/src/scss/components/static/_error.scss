@@ -1,0 +1,9 @@
+.error-span {
+  opacity: 0;
+  margin: 0 clamp(0rem, -0.4706rem + 2.3529vw, 1rem);
+  &.active {
+    opacity: 1;
+    animation: in-animation 0.25s ease-in-out;
+    -webkit-animation: in-animation 0.25s ease-in-out;
+  }
+}

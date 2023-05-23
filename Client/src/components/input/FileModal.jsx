@@ -4,6 +4,7 @@ import { toggleFileModal } from '../../redux/slices/modal'
 import { checkValidMedia } from '../../utils/checkValidMedia'
 
 function FileModal({ media, setMedia }) {
+  const [error, setError] = React.useState(null)
   const open = useSelector((state) => state.modal.fileModalOpen)
   const dispatch = useDispatch()
 
@@ -14,7 +15,7 @@ function FileModal({ media, setMedia }) {
   const handleSave = () => {
     if (media.imageUrl || media.audioUrl || media.videoUrl) {
       checkValidMedia(media, (isValid) => {
-        isValid ? dispatch(toggleFileModal()) : alert('Invalid media url')
+        isValid ? dispatch(toggleFileModal()) : setError('⚠ Invalid media url')
       })
     } else {
       dispatch(toggleFileModal())
@@ -57,6 +58,7 @@ function FileModal({ media, setMedia }) {
             aria-label='URL file input'
           />
         </div>
+        <p className={`error-span ${error && 'active'}`}>{error}</p>
         <button className='btn' onClick={handleSave}>
           Save changes 📝
         </button>

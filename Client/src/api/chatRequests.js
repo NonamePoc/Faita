@@ -10,9 +10,9 @@ export const getRooms = async (token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -34,9 +34,9 @@ export const createRoom = async (roomName, friendId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -59,9 +59,9 @@ export const sendMessage = async (receiverId, text, roomId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }

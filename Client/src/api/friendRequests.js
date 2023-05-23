@@ -10,9 +10,9 @@ export const getFriends = async (token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -27,9 +27,9 @@ export const getReceivedRequests = async (token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -44,9 +44,9 @@ export const getSentRequests = async (token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -65,9 +65,9 @@ export const addFriend = async (friendId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -86,9 +86,9 @@ export const confirmFriendRequest = async (friendId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -107,9 +107,9 @@ export const cancelFriendRequest = async (friendId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -128,9 +128,9 @@ export const cancelMyRequest = async (friendId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
@@ -148,9 +148,9 @@ export const removeFriend = async (friendId, token) => {
     return response
   } catch (error) {
     if (error.response.data.Errors) {
-      alert(error.response.data.Errors[0].Detail)
+      throw new Error(error.response.data.Errors[0].Detail)
     } else {
-      alert(error.message)
+      throw new Error(error.message)
     }
   }
 }
