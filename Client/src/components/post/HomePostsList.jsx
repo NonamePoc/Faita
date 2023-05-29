@@ -7,21 +7,16 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 function HomePostsList() {
   const count = 7
-  const [posts, setPosts] = React.useState([])
-  const { loadedPosts } = useSelector((state) => state.posts)
+  const { posts, loadedPosts } = useSelector((state) => state.posts)
   const dispatch = useDispatch()
 
   React.useEffect(() => {
-    dispatch(fetchRandomPosts(count)).then((res) => {
-      setPosts(res.payload)
-    })
+    dispatch(fetchRandomPosts(count))
   }, [dispatch, count])
 
   const loadMore = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    dispatch(fetchRandomPosts(count)).then((res) => {
-      setPosts(res.payload)
-    })
+    dispatch(fetchRandomPosts(count))
   }
 
   return (
@@ -38,7 +33,7 @@ function HomePostsList() {
           </button>
         </>
       ) : (
-        <Skeleton count={2} height={200} />
+        <Skeleton className='post' count={count} height={150} />
       )}
     </div>
   )

@@ -14,6 +14,7 @@ const Input = React.memo(({ room }) => {
 
   const handleSendMessage = () => {
     const message = inputRef.current.value
+    if (!message.trim()) return
     if (submitCount === 15) {
       alert('Please verify the captcha')
     } else {

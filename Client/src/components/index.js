@@ -32,4 +32,4 @@ export { default as ChangePass } from './stngs/ChangePass'
 export { default as ChangeAvatar } from './stngs/ChangeAvatar'
 export { default as ModalAvatar } from './stngs/ModalAvatar'
 
-export { default as Loader } from './loader/BasicLoader'
+export { default as Loader } from './loader/Loader'

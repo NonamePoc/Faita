@@ -23,6 +23,8 @@ function Error() {
     dispatch(resetFriendsError())
   }
 
+  if (!error) return null
+
   return (
     <>
       <div className={`modal-overlay ${error && 'active'}`}></div>

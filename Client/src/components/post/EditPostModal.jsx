@@ -5,6 +5,7 @@ import {
   editPost,
   fetchUserPosts,
   fetchUserReposts,
+  fetchRandomPosts,
 } from '../../redux/asyncThunks/posts'
 import { checkValidMedia } from '../../utils/checkValidMedia'
 
@@ -18,25 +19,33 @@ function EditPostModal() {
     videoUrl: post?.videoUrl || '',
     audioUrl: post?.audioUrl || '',
   })
+  const [error, setError] = React.useState(null)
   const dispatch = useDispatch()
 
   const onClickEditPost = () => {
     if (data.imageUrl || data.videoUrl || data.audioUrl) {
       checkValidMedia(data, (isValid) => {
-        isValid
-          ? dispatch(editPost({ postId: post.postId, data })).then(() =>
-              dispatch(fetchUserPosts(userName)).then(() =>
-                dispatch(fetchUserReposts(userName)).then(() =>
-                  dispatch(closeEditPostModal())
-                )
-              )
-            )
-          : alert('Invalid media url')
+        isValid ? onEditPost() : setError('⚠ Invalid media url')
       })
+    } else {
+      onEditPost()
     }
   }
 
+  const onEditPost = () => {
+    dispatch(editPost({ postId: post.postId, data })).then(() =>
+      dispatch(fetchUserPosts(userName)).then(() =>
+        dispatch(fetchUserReposts(userName)).then(() =>
+          dispatch(fetchRandomPosts(7)).then(() =>
+            dispatch(closeEditPostModal())
+          )
+        )
+      )
+    )
+  }
+
   const onChangeData = (e) => {
+    setError(null)
     setData({ ...data, [e.target.name]: e.target.value })
   }
 
@@ -84,6 +93,7 @@ function EditPostModal() {
             onChange={onChangeData}
           />
         </div>
+        <p className={`error-span ${error && 'active'}`}>{error}</p>
         <button className='btn danger' onClick={onClickEditPost}>
           Save changes 📝
         </button>

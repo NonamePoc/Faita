@@ -217,6 +217,10 @@
     overflow: hidden;
     color: $lt-secondary-color;
   }
+  .lds-ring div {
+    border: 2px solid $accent-color;
+    border-color: $accent-color transparent transparent transparent;
+  }
 }
 
 .dark {
@@ -421,5 +425,10 @@
     &:before {
       background-color: $drk-btn-bg-color;
     }
+  }
+
+  .lds-ring div {
+    border: 2px solid #fff;
+    border-color: #fff transparent transparent transparent;
   }
 }
