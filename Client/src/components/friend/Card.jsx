@@ -48,18 +48,17 @@ const Card = React.memo(({ friend, type }) => {
           roomName: `${user.userName}, ${userName}`,
           friendId: friendId,
         })
-      ).then(
-        (res) =>
-          res.payload.status === 200 &&
-          dispatch(fetchRooms(user.id)).then(
-            (res) =>
-              res.payload.status === 200 &&
-              navigate(`/chat/${findCurrentRoom(chats).chatId}`)
-          )
+      ).then(() =>
+        dispatch(fetchRooms(user.id)).then(
+          (res) =>
+            res.payload.status === 200 &&
+            navigate(
+              `/chat/${findCurrentRoom(res.payload.data.$values).chatId}`
+            )
+        )
       )
     }
   }
-
   const findCurrentRoom = (rooms) =>
     rooms.find((room) => room.chatName.includes(userName))
 

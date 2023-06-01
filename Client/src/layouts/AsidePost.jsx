@@ -9,12 +9,17 @@ export default function AsidePost() {
 
   return (
     <aside className='aside-post'>
-      <h1 className='title'>Look what people post</h1>
-      {loadedPosts ? (
-        <Post post={posts[0]} />
-      ) : (
-        <Skeleton count={1} height={200} />
-      )}
+      {posts[0] ? (
+        <>
+          <h1 className='title'>Look what people post</h1>
+
+          {loadedPosts ? (
+            <Post post={posts[0]} />
+          ) : (
+            <Skeleton count={1} height={200} />
+          )}
+        </>
+      ) : null}
     </aside>
   )
 }

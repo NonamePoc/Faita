@@ -31,7 +31,7 @@ function Chats() {
             })
             .map((room, index) => <ChatBlock key={index} room={room} />)
         ) : (
-          <h3>You have no chats</h3>
+          <h3 className='title'>You have no chats</h3>
         )
       ) : (
         <Skeleton count={5} height={200} />

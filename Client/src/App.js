@@ -5,6 +5,7 @@ import { SkeletonTheme } from 'react-loading-skeleton'
 
 function App() {
   const { theme } = useSelector((state) => state.theme)
+
   return (
     <div className={theme}>
       <SkeletonTheme
